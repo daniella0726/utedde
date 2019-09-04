@@ -28,9 +28,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "autocomplete-off"
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.3.1'
 gem 'sprockets-rails'
 gem 'font-awesome-rails'
+gem "bootstrap_form", ">= 4.2.0"
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
