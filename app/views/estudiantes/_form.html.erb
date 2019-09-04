@@ -225,10 +225,10 @@
   </button>
 </div>  
 
-<div class="centrado hidden" style="width: 90%" id="div_pregunta_1">
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_pregunta_1">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P1. ¿En que curso estás? </h2>
   <br>
-  <div class="field qts">
+  <div class="field qts" >
     <div class="inputGroup">
       <%= f.radio_button :p1, "5" , id:"radio-1-p1"%>
       <%= f.label :p1, "5", for: "radio-1-p1"%>
@@ -367,8 +367,8 @@
   </div> 
 </div>
 
-<div class="centrado hidden" style="width: 90%" id="div_pregunta_4">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P2. ¿Con quién vives? (Puedes rellenar varias) </h2>
+<div class="centrado hidden" style="width: 90%;" id="div_pregunta_4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px;">P2. ¿Con quién vives? (Puedes rellenar varias) </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -424,7 +424,7 @@
       <%= f.label :p4_13, "Sólo(a)", for: "radio-1-p4_13"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_pregunta_4">Por favor, <strong>escogé al menos uno!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_pregunta_4">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_4">
     <i class="fas fa-check-circle";></i>
       OK
@@ -432,7 +432,7 @@
   <p  class="hidden" style="color: #254064;" id="p_pregunta_4">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_4_footer">
-  <div class="centrado-abajo">
+  <div class="centrado-abajo" style="margin-top: 230px;" >
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">4 de 54 respuestas</span>
