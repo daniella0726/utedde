@@ -1,0 +1,105 @@
+<%= form_with(model: estudiante, local: true) do |form| %>
+  <% if estudiante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+
+      <ul>
+      <% estudiante.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_pregunta_0">
+  <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+    <i class="fas fa-check-circle"; id="but_pregunta_0"></i>
+    Empezar a digitar encuesta estudiantes
+  </button>
+</div> 
+ 
+<br> <br> <br> <br>
+
+<div class="form-group">
+  <h3>P1. ¿En que curso estás?</h3>  
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th style="text-align: center;"><%= form.radio_button :p1, "5"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "6"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "7"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "8"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "9"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "10"%></th>
+        <th style="text-align: center;"><%= form.radio_button :p1, "11"%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center;">5</td>
+        <td style="text-align: center;">6</td>
+        <td style="text-align: center;">7</td>
+        <td style="text-align: center;">8</td>
+        <td style="text-align: center;">9</td>
+        <td style="text-align: center;">10</td>
+        <td style="text-align: center;">11</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="form-group">
+    <h3>P2. ¿Eres hombre o mujer?</h3>
+
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th style="text-align: center;"><%= form.radio_button :p2, "1"%></th>
+          <th style="text-align: center;"><%= form.radio_button :p2, "2"%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center;">Hombre</td>
+          <td style="text-align: center;">Mujer</td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+
+  <div class="form-group">
+    <h3>P3. ¿Cuál fue la fecha de tu nacimiento?:</h3>
+    <%= form.date_field :p3 %>
+  </div>
+
+  <div class="form-group">
+    <h3>P4. ¿Con quién vives?</h3><span>(Puedes rellenar varias)</span>
+    <br>
+        <table class="table table-striped">
+          <tr>
+            <th style="text-align: center;"><h5>a. Papá</h5></th>
+            <td style="text-align: center;"><%= form.check_box :p4 %></td>
+          </tr>
+          <tr>
+            <th style="text-align: center;">b. Padrastro</th>
+            <td style="text-align: center;"><%= form.check_box :p4 %></td>
+          </tr>
+          <tr>
+            <th style="text-align: center;"><h5>c. Mamá</h5></th>
+            <td style="text-align: center;"><%= form.check_box :p4 %></td>
+          </tr>
+          <tr>
+            <th style="text-align: center;">d. Madrastra</th>
+            <td style="text-align: center;"><%= form.check_box :p4 %></td>
+          </tr>
+      </table>
+      </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+  
