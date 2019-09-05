@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  p1: MyString
+  p2a: MyString
+  p2b: MyString
+  p3: MyString
+
+two:
+  p1: MyString
+  p2a: MyString
+  p2b: MyString
+  p3: MyString
