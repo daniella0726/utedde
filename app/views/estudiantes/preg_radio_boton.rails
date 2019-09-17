@@ -1,5 +1,6 @@
-<div class="centrado hidden" style="width: 90%; margin-top: 120px;" id="div_estoy">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">estoy. XXXXXXX </h2>
+<div class="centrado hidden" style="width: 90%;" id="div_estoy">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">XXXXXXX </h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. XXXXXXX </h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -55,7 +56,7 @@
   <p  class="hidden" style="color: #254064;" id="p_estoy">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_estoy_footer">
-  <div class="centrado-abajo" style="margin-top: 250px;">
+  <div class="centrado-abajo" style="">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">2 de 54 respuestas</span>
