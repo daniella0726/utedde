@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+  document.getElementById("pregunta_antes_estoy_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_antes').slideDown();
+      $('#div_antes').removeClass('hidden');
+      $('#pregunta_antes_footer').removeClass('hidden');
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
+
+  document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
+
+  function fun_estoy() {
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_voy').slideDown();
+      $('#div_voy').removeClass('hidden');
+      $('#pregunta_voy_footer').removeClass('hidden');
+      $('#div_error_voy').addClass('hidden');
+  }
+
+  document.getElementById("radio-1-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-estoy").addEventListener("click", fun_multi);
+  
+  function fun_multi() {
+      $('#but_res_estoy').removeClass('hidden');
+
+  }
+</script>

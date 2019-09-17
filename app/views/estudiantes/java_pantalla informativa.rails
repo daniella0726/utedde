@@ -1,0 +1,25 @@
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_estoy");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_estoy").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_estoy").addEventListener("click", fun_pregunta_estoy);
+  function fun_pregunta_estoy() {
+      $('#div_pregunta_estoy').slideUp();
+      $('#div_pregunta_estoy').addClass('hidden');
+      $('#div_pregunta_voy').slideDown();
+      $('#div_pregunta_voy').removeClass('hidden');
+      $('#pregunta_voy_footer').removeClass('hidden');
+      $('#div_error_voy').addClass('hidden');
+      document.getElementById("res_voy").focus();
+  }
+
+</script>
