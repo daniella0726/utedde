@@ -1227,7 +1227,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p8_p7_boton">
+          <a class="boton1" id="pregunta_p8a_p7_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p6_p7_boton">
@@ -1252,17 +1252,17 @@
       $('#div_error_p7').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p8_p7_boton").addEventListener("click", fun_p7);
+  document.getElementById("pregunta_p8a_p7_boton").addEventListener("click", fun_p7);
   document.getElementById("radio-1-p7").addEventListener("click", fun_p7);
   function fun_p7() {
     setTimeout(function(){
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
-      $('#div_p8').slideDown();
-      $('#div_p8').removeClass('hidden');
-      $('#pregunta_p8_footer').removeClass('hidden');
-      $('#div_error_p8').addClass('hidden');
+      $('#div_p8a').slideDown();
+      $('#div_p8a').removeClass('hidden');
+      $('#pregunta_p8a_footer').removeClass('hidden');
+      $('#div_error_p8a').addClass('hidden');
   } , 500);
   }
 
@@ -1454,10 +1454,10 @@ document.getElementById("radio-2-p7").addEventListener("click", fun_op1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p8_p7b_boton">
+          <a class="boton1" id="pregunta_p8a_p7b_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_antes_p7b_boton">
+          <a class="boton1" id="pregunta_p7a_p7b_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -1479,7 +1479,7 @@ document.getElementById("radio-2-p7").addEventListener("click", fun_op1);
       $('#div_error_p7b').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p8_p7b_boton").addEventListener("click", fun_p7b);
+  document.getElementById("pregunta_p8a_p7b_boton").addEventListener("click", fun_p7b);
   document.getElementById("radio-1-p7b").addEventListener("click", fun_p7b);
   document.getElementById("radio-2-p7b").addEventListener("click", fun_p7b);
   document.getElementById("radio-3-p7b").addEventListener("click", fun_p7b);
@@ -1495,10 +1495,10 @@ document.getElementById("radio-2-p7").addEventListener("click", fun_op1);
       $('#div_p7b').slideUp();
       $('#div_p7b').addClass('hidden');
       $('#pregunta_p7b_footer').addClass('hidden');
-      $('#div_p8').slideDown();
-      $('#div_p8').removeClass('hidden');
-      $('#pregunta_p8_footer').removeClass('hidden');
-      $('#div_error_p8').addClass('hidden');
+      $('#div_p8a').slideDown();
+      $('#div_p8a').removeClass('hidden');
+      $('#pregunta_p8a_footer').removeClass('hidden');
+      $('#div_error_p8a').addClass('hidden');
   } , 500);
   }
 
@@ -1543,7 +1543,7 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p8_p7c_boton">
+          <a class="boton1" id="pregunta_p8a_p7c_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p7b_p7c_boton">
@@ -1575,7 +1575,7 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
       $('#div_error_p7c').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p8_p7c_boton").addEventListener("click", fun_p7c);
+  document.getElementById("pregunta_p8a_p7c_boton").addEventListener("click", fun_p7c);
   document.getElementById("but_res_p7c").addEventListener("click", fun_p7c);
     function fun_p7c() {
     var frase = document.getElementById("res_p7c").value; 
@@ -1593,11 +1593,11 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
       $('#div_p7c').slideUp();
       $('#div_p7c').addClass('hidden');
       $('#pregunta_p7c_footer').addClass('hidden');
-      $('#div_p8').slideDown();
-      $('#div_p8').removeClass('hidden');
-      $('#pregunta_p8_footer').removeClass('hidden');
-      $('#div_error_p8').addClass('hidden');
-      document.getElementById("res_p8").focus();
+      $('#div_p8a').slideDown();
+      $('#div_p8a').removeClass('hidden');
+      $('#pregunta_p8a_footer').removeClass('hidden');
+      $('#div_error_p8a').addClass('hidden');
+      document.getElementById("res_p8a").focus();
     }
   }
 
@@ -1623,8 +1623,77 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   }); 
 </script>
 
+<div class="centrado hidden" style="width: 90%; margin-top: 120px;" id="div_p8a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p8a. Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2> a. Enfermedad grave de algún miembro del hogar
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8a, "si" , id:"radio-1-p8a"%>
+      <%= f.label :p8a, "Si", for: "radio-1-p8a"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8a, "no" , id:"radio-2-p8a"%>
+      <%= f.label :p8a, "No", for: "radio-2-p8a"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8a">Por favor, <strong>escogé un género!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8a_footer">
+  <div class="centrado-abajo" style="margin-top: 250px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8b_p8a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p7_p8a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
 
+<script type="text/javascript">
 
+  document.getElementById("pregunta_p7_p8a_boton").addEventListener("click", fun_p8a_dev);
+  function fun_p8a_dev() {
+      $('#div_p7').slideDown();
+      $('#div_p7').removeClass('hidden');
+      $('#pregunta_p7_footer').removeClass('hidden');
+      $('#div_p8a').slideUp();
+      $('#div_p8a').addClass('hidden');
+      $('#pregunta_p8a_footer').addClass('hidden');
+      $('#div_error_p8a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8b_p8a_boton").addEventListener("click", fun_p8a);
+  document.getElementById("radio-1-p8a").addEventListener("click", fun_p8a);
+  document.getElementById("radio-2-p8a").addEventListener("click", fun_p8a);
+  function fun_p8a() {
+    setTimeout(function(){
+      $('#div_p8a').slideUp();
+      $('#div_p8a').addClass('hidden');
+      $('#pregunta_p8a_footer').addClass('hidden');
+      $('#div_p8b').slideDown();
+      $('#div_p8b').removeClass('hidden');
+      $('#pregunta_p8b_footer').removeClass('hidden');
+      $('#div_error_p8b').addClass('hidden');
+  } , 500);
+  }
+</script>
 
 
  
