@@ -1623,8 +1623,11 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%; margin-top: 120px;" id="div_p8a">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p8a. Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2> a. Enfermedad grave de algún miembro del hogar
+<div class="centrado hidden" style="width: 90%;" id="div_p8a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2> 
+
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8a. Enfermedad grave de algún miembro del hogar</h3>
+
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1644,7 +1647,7 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   <p  class="hidden" style="color: #254064;" id="p_p8a">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8a_footer">
-  <div class="centrado-abajo" style="margin-top: 250px;">
+  <div class="centrado-abajo" style="">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">2 de 54 respuestas</span>
@@ -1694,6 +1697,458 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   } , 500);
   }
 </script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p8b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2>
+
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8b. Muerte de alguno de los miembros del hogar </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8b, "si" , id:"radio-1-p8b"%>
+      <%= f.label :p8b, "Si", for: "radio-1-p8b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8b, "no" , id:"radio-2-p8b"%>
+      <%= f.label :p8b, "No", for: "radio-2-p8b"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8b">Por favor, <strong>escogé un género!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8b_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8c_p8b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8a_p8b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8a_p8b_boton").addEventListener("click", fun_p8b_dev);
+  function fun_p8b_dev() {
+      $('#div_p8a').slideDown();
+      $('#div_p8a').removeClass('hidden');
+      $('#pregunta_p8a_footer').removeClass('hidden');
+      $('#div_p8b').slideUp();
+      $('#div_p8b').addClass('hidden');
+      $('#pregunta_p8b_footer').addClass('hidden');
+      $('#div_error_p8b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8c_p8b_boton").addEventListener("click", fun_p8b);
+  document.getElementById("radio-1-p8b").addEventListener("click", fun_p8b);
+  document.getElementById("radio-2-p8b").addEventListener("click", fun_p8b);
+  function fun_p8b() {
+    setTimeout(function(){
+      $('#div_p8b').slideUp();
+      $('#div_p8b').addClass('hidden');
+      $('#pregunta_p8b_footer').addClass('hidden');
+      $('#div_p8c').slideDown();
+      $('#div_p8c').removeClass('hidden');
+      $('#pregunta_p8c_footer').removeClass('hidden');
+      $('#div_error_p8c').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p8c">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2>
+
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8c. Algún menor de 18 años se fue del hogar </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8c, "si" , id:"radio-1-p8c"%>
+      <%= f.label :p8c, "Si", for: "radio-1-p8c"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8c, "no" , id:"radio-2-p8c"%>
+      <%= f.label :p8c, "No", for: "radio-2-p8c"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8c">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8c">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8c_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8d_p8c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8b_p8c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8b_p8c_boton").addEventListener("click", fun_p8c_dev);
+  function fun_p8c_dev() {
+      $('#div_p8b').slideDown();
+      $('#div_p8b').removeClass('hidden');
+      $('#pregunta_p8b_footer').removeClass('hidden');
+      $('#div_p8c').slideUp();
+      $('#div_p8c').addClass('hidden');
+      $('#pregunta_p8c_footer').addClass('hidden');
+      $('#div_error_p8c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8d_p8c_boton").addEventListener("click", fun_p8c);
+  document.getElementById("radio-1-p8c").addEventListener("click", fun_p8c);
+  document.getElementById("radio-2-p8c").addEventListener("click", fun_p8c);
+  function fun_p8c() {
+    setTimeout(function(){
+      $('#div_p8c').slideUp();
+      $('#div_p8c').addClass('hidden');
+      $('#pregunta_p8c_footer').addClass('hidden');
+      $('#div_p8d').slideDown();
+      $('#div_p8d').removeClass('hidden');
+      $('#pregunta_p8d_footer').removeClass('hidden');
+      $('#div_error_p8d').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p8d">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2>
+  
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8d. Alguno de los padres tuvo que irse del hogar </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8d, "si" , id:"radio-1-p8d"%>
+      <%= f.label :p8d, "Si", for: "radio-1-p8d"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8d, "no" , id:"radio-2-p8d"%>
+      <%= f.label :p8d, "No", for: "radio-2-p8d"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8d">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8d">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8d_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8e_p8d_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8c_p8d_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8c_p8d_boton").addEventListener("click", fun_p8d_dev);
+  function fun_p8d_dev() {
+      $('#div_p8c').slideDown();
+      $('#div_p8c').removeClass('hidden');
+      $('#pregunta_p8c_footer').removeClass('hidden');
+      $('#div_p8d').slideUp();
+      $('#div_p8d').addClass('hidden');
+      $('#pregunta_p8d_footer').addClass('hidden');
+      $('#div_error_p8d').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8e_p8d_boton").addEventListener("click", fun_p8d);
+  document.getElementById("radio-1-p8d").addEventListener("click", fun_p8d);
+  document.getElementById("radio-2-p8d").addEventListener("click", fun_p8d);
+  function fun_p8d() {
+    setTimeout(function(){
+      $('#div_p8d').slideUp();
+      $('#div_p8d').addClass('hidden');
+      $('#pregunta_p8d_footer').addClass('hidden');
+      $('#div_p8e').slideDown();
+      $('#div_p8e').removeClass('hidden');
+      $('#pregunta_p8e_footer').removeClass('hidden');
+      $('#div_error_p8e').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p8e">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2>
+
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8e. Separación de los padres o el cónyuge</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8e, "si" , id:"radio-1-p8e"%>
+      <%= f.label :p8e, "Si", for: "radio-1-p8e"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8e, "no" , id:"radio-2-p8e"%>
+      <%= f.label :p8e, "No", for: "radio-2-p8e"%>
+    </div>
+    
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8e">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8e">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8e_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8f_p8e_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8d_p8e_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8d_p8e_boton").addEventListener("click", fun_p8e_dev);
+  function fun_p8e_dev() {
+      $('#div_p8d').slideDown();
+      $('#div_p8d').removeClass('hidden');
+      $('#pregunta_p8d_footer').removeClass('hidden');
+      $('#div_p8e').slideUp();
+      $('#div_p8e').addClass('hidden');
+      $('#pregunta_p8e_footer').addClass('hidden');
+      $('#div_error_p8e').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8f_p8e_boton").addEventListener("click", fun_p8e);
+  document.getElementById("radio-1-p8e").addEventListener("click", fun_p8e);
+  document.getElementById("radio-2-p8e").addEventListener("click", fun_p8e);
+  function fun_p8e() {
+    setTimeout(function(){
+      $('#div_p8e').slideUp();
+      $('#div_p8e').addClass('hidden');
+      $('#pregunta_p8e_footer').addClass('hidden');
+      $('#div_p8f').slideDown();
+      $('#div_p8f').removeClass('hidden');
+      $('#pregunta_p8f_footer').removeClass('hidden');
+      $('#div_error_p8f').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p8f">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Durante el ÚLTIMO AÑO, ¿cuáles de los siguientes problemas se han presentado en tu hogar?: (Marca un recuadro en cada caso) </h2>
+
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p8f. Problemas de plata </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p8f, "si" , id:"radio-1-p8f"%>
+      <%= f.label :p8f, "Si", for: "radio-1-p8f"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8f, "no" , id:"radio-2-p8f"%>
+      <%= f.label :p8f, "No", for: "radio-2-p8f"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8f">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p8f">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p8f_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p9_p8f_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8e_p8f_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8e_p8f_boton").addEventListener("click", fun_p8f_dev);
+  function fun_p8f_dev() {
+      $('#div_p8e').slideDown();
+      $('#div_p8e').removeClass('hidden');
+      $('#pregunta_p8e_footer').removeClass('hidden');
+      $('#div_p8f').slideUp();
+      $('#div_p8f').addClass('hidden');
+      $('#pregunta_p8f_footer').addClass('hidden');
+      $('#div_error_p8f').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p9_p8f_boton").addEventListener("click", fun_p8f);
+  document.getElementById("radio-1-p8f").addEventListener("click", fun_p8f);
+  document.getElementById("radio-2-p8f").addEventListener("click", fun_p8f);
+  function fun_p8f() {
+    setTimeout(function(){
+      $('#div_p8f').slideUp();
+      $('#div_p8f').addClass('hidden');
+      $('#pregunta_p8f_footer').addClass('hidden');
+      $('#div_p9').slideDown();
+      $('#div_p9').removeClass('hidden');
+      $('#pregunta_p9_footer').removeClass('hidden');
+      $('#div_error_p9').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 120px;" id="div_p9">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene retardo mental, etc.)?</h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "si" , id:"radio-1-p9"%>
+      <%= f.label :p9, "Si", for: "radio-1-p9"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "no" , id:"radio-2-p9"%>
+      <%= f.label :p9, "No", for: "radio-2-p9"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p9, "99" , id:"radio-3-p9"%>
+      <%= f.label :p9, "No Sabe", for: "radio-3-p9"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p9">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p9">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p9_footer">
+  <div class="centrado-abajo" style="margin-top: 250px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p10_p9_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p8f_p9_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p8f_p9_boton").addEventListener("click", fun_p9_dev);
+  function fun_p9_dev() {
+      $('#div_p8f').slideDown();
+      $('#div_p8f').removeClass('hidden');
+      $('#pregunta_p8f_footer').removeClass('hidden');
+      $('#div_p9').slideUp();
+      $('#div_p9').addClass('hidden');
+      $('#pregunta_p9_footer').addClass('hidden');
+      $('#div_error_p9').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p10_p9_boton").addEventListener("click", fun_p9);
+  document.getElementById("radio-1-p9").addEventListener("click", fun_p9);
+  document.getElementById("radio-2-p9").addEventListener("click", fun_p9);
+  document.getElementById("radio-3-p9").addEventListener("click", fun_p9);
+  function fun_p9() {
+    setTimeout(function(){
+      $('#div_p9').slideUp();
+      $('#div_p9').addClass('hidden');
+      $('#pregunta_p9_footer').addClass('hidden');
+      $('#div_p10').slideDown();
+      $('#div_p10').removeClass('hidden');
+      $('#pregunta_p10_footer').removeClass('hidden');
+      $('#div_error_p10').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+
+
+
 
 
  
