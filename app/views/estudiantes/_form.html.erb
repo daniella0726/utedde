@@ -3021,7 +3021,1100 @@ document.getElementById("radio-1-p12").addEventListener("click", fun_op1);
   }
 </script>
 
+<div class="centrado hidden" style="width: 90%;" id="div_p14a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14a. Falta de concentración; me disperso fácilmente</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14a, "si" , id:"radio-1-p14a"%>
+      <%= f.label :p14a, "Si", for: "radio-1-p14a"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14a, "no" , id:"radio-2-p14a"%>
+      <%= f.label :p14a, "No", for: "radio-2-p14a"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14a_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14b_p14a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p13g_p14a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p13g_p14a_boton").addEventListener("click", fun_p14a_dev);
+  function fun_p14a_dev() {
+      $('#div_p13g').slideDown();
+      $('#div_p13g').removeClass('hidden');
+      $('#pregunta_p13g_footer').removeClass('hidden');
+      $('#div_p14a').slideUp();
+      $('#div_p14a').addClass('hidden');
+      $('#pregunta_p14a_footer').addClass('hidden');
+      $('#div_error_p14a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14b_p14a_boton").addEventListener("click", fun_p14a);
+  document.getElementById("radio-1-p14a").addEventListener("click", fun_p14a);
+  document.getElementById("radio-2-p14a").addEventListener("click", fun_p14a);
+  function fun_p14a() {
+    setTimeout(function(){
+      $('#div_p14a').slideUp();
+      $('#div_p14a').addClass('hidden');
+      $('#pregunta_p14a_footer').addClass('hidden');
+      $('#div_p14b').slideDown();
+      $('#div_p14b').removeClass('hidden');
+      $('#pregunta_p14b_footer').removeClass('hidden');
+      $('#div_error_p14b').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14b. Falta de organización y responsabilidad en el cumplimiento de los deberes escolares  </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14b, "si" , id:"radio-1-p14b"%>
+      <%= f.label :p14b, "Si", for: "radio-1-p14b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14b, "no" , id:"radio-2-p14b"%>
+      <%= f.label :p14b, "No", for: "radio-2-p14b"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14b">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14b_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14c_p14b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14a_p14b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14a_p14b_boton").addEventListener("click", fun_p14b_dev);
+  function fun_p14b_dev() {
+      $('#div_p14a').slideDown();
+      $('#div_p14a').removeClass('hidden');
+      $('#pregunta_p14a_footer').removeClass('hidden');
+      $('#div_p14b').slideUp();
+      $('#div_p14b').addClass('hidden');
+      $('#pregunta_p14b_footer').addClass('hidden');
+      $('#div_error_p14b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14c_p14b_boton").addEventListener("click", fun_p14b);
+  document.getElementById("radio-1-p14b").addEventListener("click", fun_p14b);
+  document.getElementById("radio-2-p14b").addEventListener("click", fun_p14b);
+  function fun_p14b() {
+    setTimeout(function(){
+      $('#div_p14b').slideUp();
+      $('#div_p14b').addClass('hidden');
+      $('#pregunta_p14b_footer').addClass('hidden');
+      $('#div_p14c').slideDown();
+      $('#div_p14c').removeClass('hidden');
+      $('#pregunta_p14c_footer').removeClass('hidden');
+      $('#div_error_p14c').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14c">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14c. Me intereso en otras cosas que no tienen que ver con el estudio</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14c, "si" , id:"radio-1-p14c"%>
+      <%= f.label :p14c, "Si", for: "radio-1-p14c"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14c, "no" , id:"radio-2-p14c"%>
+      <%= f.label :p14c, "No", for: "radio-2-p14c"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14c">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14c">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14c_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14d_p14c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14b_p14c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14b_p14c_boton").addEventListener("click", fun_p14c_dev);
+  function fun_p14c_dev() {
+      $('#div_p14b').slideDown();
+      $('#div_p14b').removeClass('hidden');
+      $('#pregunta_p14b_footer').removeClass('hidden');
+      $('#div_p14c').slideUp();
+      $('#div_p14c').addClass('hidden');
+      $('#pregunta_p14c_footer').addClass('hidden');
+      $('#div_error_p14c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14d_p14c_boton").addEventListener("click", fun_p14c);
+  document.getElementById("radio-1-p14c").addEventListener("click", fun_p14c);
+  document.getElementById("radio-2-p14c").addEventListener("click", fun_p14c);
+  function fun_p14c() {
+    setTimeout(function(){
+      $('#div_p14c').slideUp();
+      $('#div_p14c').addClass('hidden');
+      $('#pregunta_p14c_footer').addClass('hidden');
+      $('#div_p14d').slideDown();
+      $('#div_p14d').removeClass('hidden');
+      $('#pregunta_p14d_footer').removeClass('hidden');
+      $('#div_error_p14d').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14d">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14d. Considero que el estudio no es importante para tener una vida exitosa</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14d, "si" , id:"radio-1-p14d"%>
+      <%= f.label :p14d, "Si", for: "radio-1-p14d"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14d, "no" , id:"radio-2-p14d"%>
+      <%= f.label :p14d, "No", for: "radio-2-p14d"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14d">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14d">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14d_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14e_p14d_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14c_p14d_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14c_p14d_boton").addEventListener("click", fun_p14d_dev);
+  function fun_p14d_dev() {
+      $('#div_p14c').slideDown();
+      $('#div_p14c').removeClass('hidden');
+      $('#pregunta_p14c_footer').removeClass('hidden');
+      $('#div_p14d').slideUp();
+      $('#div_p14d').addClass('hidden');
+      $('#pregunta_p14d_footer').addClass('hidden');
+      $('#div_error_p14d').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14e_p14d_boton").addEventListener("click", fun_p14d);
+  document.getElementById("radio-1-p14d").addEventListener("click", fun_p14d);
+  document.getElementById("radio-2-p14d").addEventListener("click", fun_p14d);
+  function fun_p14d() {
+    setTimeout(function(){
+      $('#div_p14d').slideUp();
+      $('#div_p14d').addClass('hidden');
+      $('#pregunta_p14d_footer').addClass('hidden');
+      $('#div_p14e').slideDown();
+      $('#div_p14e').removeClass('hidden');
+      $('#pregunta_p14e_footer').removeClass('hidden');
+      $('#div_error_p14e').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14e">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14e. No entiendo la manera como algunos docentes explican y evalúan los temas</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14e, "si" , id:"radio-1-p14e"%>
+      <%= f.label :p14e, "Si", for: "radio-1-p14e"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14e, "no" , id:"radio-2-p14e"%>
+      <%= f.label :p14e, "No", for: "radio-2-p14e"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14e">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14e">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14e_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14f_p14e_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14d_p14e_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14d_p14e_boton").addEventListener("click", fun_p14e_dev);
+  function fun_p14e_dev() {
+      $('#div_p14d').slideDown();
+      $('#div_p14d').removeClass('hidden');
+      $('#pregunta_p14d_footer').removeClass('hidden');
+      $('#div_p14e').slideUp();
+      $('#div_p14e').addClass('hidden');
+      $('#pregunta_p14e_footer').addClass('hidden');
+      $('#div_error_p14e').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14f_p14e_boton").addEventListener("click", fun_p14e);
+  document.getElementById("radio-1-p14e").addEventListener("click", fun_p14e);
+  document.getElementById("radio-2-p14e").addEventListener("click", fun_p14e);
+  function fun_p14e() {
+    setTimeout(function(){
+      $('#div_p14e').slideUp();
+      $('#div_p14e').addClass('hidden');
+      $('#pregunta_p14e_footer').addClass('hidden');
+      $('#div_p14f').slideDown();
+      $('#div_p14f').removeClass('hidden');
+      $('#pregunta_p14f_footer').removeClass('hidden');
+      $('#div_error_p14f').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14f">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14f. Falta mayor seguimiento y acompañamiento de mis padres o acudientes en mi desempeño académico  </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14f, "si" , id:"radio-1-p14f"%>
+      <%= f.label :p14f, "Si", for: "radio-1-p14f"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14f, "no" , id:"radio-2-p14f"%>
+      <%= f.label :p14f, "No", for: "radio-2-p14f"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14f">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14f">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14f_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14g_p14f_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14e_p14f_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14e_p14f_boton").addEventListener("click", fun_p14f_dev);
+  function fun_p14f_dev() {
+      $('#div_p14e').slideDown();
+      $('#div_p14e').removeClass('hidden');
+      $('#pregunta_p14e_footer').removeClass('hidden');
+      $('#div_p14f').slideUp();
+      $('#div_p14f').addClass('hidden');
+      $('#pregunta_p14f_footer').addClass('hidden');
+      $('#div_error_p14f').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14g_p14f_boton").addEventListener("click", fun_p14f);
+  document.getElementById("radio-1-p14f").addEventListener("click", fun_p14f);
+  document.getElementById("radio-2-p14f").addEventListener("click", fun_p14f);
+  function fun_p14f() {
+    setTimeout(function(){
+      $('#div_p14f').slideUp();
+      $('#div_p14f').addClass('hidden');
+      $('#pregunta_p14f_footer').addClass('hidden');
+      $('#div_p14g').slideDown();
+      $('#div_p14g').removeClass('hidden');
+      $('#pregunta_p14g_footer').removeClass('hidden');
+      $('#div_error_p14g').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14g">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14g. Mi comportamiento no es adecuado durante el desarrollo de las clases</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14g, "si" , id:"radio-1-p14g"%>
+      <%= f.label :p14g, "Si", for: "radio-1-p14g"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14g, "no" , id:"radio-2-p14g"%>
+      <%= f.label :p14g, "No", for: "radio-2-p14g"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14g">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14g">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14g_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14h_p14g_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14f_p14g_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14f_p14g_boton").addEventListener("click", fun_p14g_dev);
+  function fun_p14g_dev() {
+      $('#div_p14f').slideDown();
+      $('#div_p14f').removeClass('hidden');
+      $('#pregunta_p14f_footer').removeClass('hidden');
+      $('#div_p14g').slideUp();
+      $('#div_p14g').addClass('hidden');
+      $('#pregunta_p14g_footer').addClass('hidden');
+      $('#div_error_p14g').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14h_p14g_boton").addEventListener("click", fun_p14g);
+  document.getElementById("radio-1-p14g").addEventListener("click", fun_p14g);
+  document.getElementById("radio-2-p14g").addEventListener("click", fun_p14g);
+  function fun_p14g() {
+    setTimeout(function(){
+      $('#div_p14g').slideUp();
+      $('#div_p14g').addClass('hidden');
+      $('#pregunta_p14g_footer').addClass('hidden');
+      $('#div_p14h').slideDown();
+      $('#div_p14h').removeClass('hidden');
+      $('#pregunta_p14h_footer').removeClass('hidden');
+      $('#div_error_p14h').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14h">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14h. Falta de apoyo de docentes, coordinadores y orientadores del colegio</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14h, "si" , id:"radio-1-p14h"%>
+      <%= f.label :p14h, "Si", for: "radio-1-p14h"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14h, "no" , id:"radio-2-p14h"%>
+      <%= f.label :p14h, "No", for: "radio-2-p14h"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14h">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14h">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14h_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14i_p14h_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14g_p14h_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14g_p14h_boton").addEventListener("click", fun_p14h_dev);
+  function fun_p14h_dev() {
+      $('#div_p14g').slideDown();
+      $('#div_p14g').removeClass('hidden');
+      $('#pregunta_p14g_footer').removeClass('hidden');
+      $('#div_p14h').slideUp();
+      $('#div_p14h').addClass('hidden');
+      $('#pregunta_p14h_footer').addClass('hidden');
+      $('#div_error_p14h').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14i_p14h_boton").addEventListener("click", fun_p14h);
+  document.getElementById("radio-1-p14h").addEventListener("click", fun_p14h);
+  document.getElementById("radio-2-p14h").addEventListener("click", fun_p14h);
+  function fun_p14h() {
+    setTimeout(function(){
+      $('#div_p14h').slideUp();
+      $('#div_p14h').addClass('hidden');
+      $('#pregunta_p14h_footer').addClass('hidden');
+      $('#div_p14i').slideDown();
+      $('#div_p14i').removeClass('hidden');
+      $('#pregunta_p14i_footer').removeClass('hidden');
+      $('#div_error_p14i').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p14i">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14i. Las clases son aburridas y poco motivp14h</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p14i, "si" , id:"radio-1-p14i"%>
+      <%= f.label :p14i, "Si", for: "radio-1-p14i"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p14i, "no" , id:"radio-2-p14i"%>
+      <%= f.label :p14i, "No", for: "radio-2-p14i"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14i">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14i">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14i_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15a_p14i_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14h_p14i_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14h_p14i_boton").addEventListener("click", fun_p14i_dev);
+  function fun_p14i_dev() {
+      $('#div_p14h').slideDown();
+      $('#div_p14h').removeClass('hidden');
+      $('#pregunta_p14h_footer').removeClass('hidden');
+      $('#div_p14i').slideUp();
+      $('#div_p14i').addClass('hidden');
+      $('#pregunta_p14i_footer').addClass('hidden');
+      $('#div_error_p14i').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15a_p14i_boton").addEventListener("click", fun_p14i);
+  document.getElementById("radio-1-p14i").addEventListener("click", fun_p14i);
+  document.getElementById("radio-2-p14i").addEventListener("click", fun_p14i);
+  function fun_p14i() {
+    setTimeout(function(){
+      $('#div_p14i').slideUp();
+      $('#div_p14i').addClass('hidden');
+      $('#pregunta_p14i_footer').addClass('hidden');
+      $('#div_p15a').slideDown();
+      $('#div_p15a').removeClass('hidden');
+      $('#pregunta_p15a_footer').removeClass('hidden');
+      $('#div_error_p15a').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15a. Tus padres o acudientes</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15a, "si" , id:"radio-1-p15a"%>
+      <%= f.label :p15a, "Si", for: "radio-1-p15a"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15a, "no" , id:"radio-2-p15a"%>
+      <%= f.label :p15a, "No", for: "radio-2-p15a"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15a_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15b_p15a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14i_p15a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14i_p15a_boton").addEventListener("click", fun_p15a_dev);
+  function fun_p15a_dev() {
+      $('#div_p14i').slideDown();
+      $('#div_p14i').removeClass('hidden');
+      $('#pregunta_p14i_footer').removeClass('hidden');
+      $('#div_p15a').slideUp();
+      $('#div_p15a').addClass('hidden');
+      $('#pregunta_p15a_footer').addClass('hidden');
+      $('#div_error_p15a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15b_p15a_boton").addEventListener("click", fun_p15a);
+  document.getElementById("radio-1-p15a").addEventListener("click", fun_p15a);
+  document.getElementById("radio-2-p15a").addEventListener("click", fun_p15a);
+  function fun_p15a() {
+    setTimeout(function(){
+      $('#div_p15a').slideUp();
+      $('#div_p15a').addClass('hidden');
+      $('#pregunta_p15a_footer').addClass('hidden');
+      $('#div_p15b').slideDown();
+      $('#div_p15b').removeClass('hidden');
+      $('#pregunta_p15b_footer').removeClass('hidden');
+      $('#div_error_p15b').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15b. Tus docentes</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15b, "si" , id:"radio-1-p15b"%>
+      <%= f.label :p15b, "Si", for: "radio-1-p15b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15b, "no" , id:"radio-2-p15b"%>
+      <%= f.label :p15b, "No", for: "radio-2-p15b"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15b">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15b_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15c_p15b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15a_p15b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p15a_p15b_boton").addEventListener("click", fun_p15b_dev);
+  function fun_p15b_dev() {
+      $('#div_p15a').slideDown();
+      $('#div_p15a').removeClass('hidden');
+      $('#pregunta_p15a_footer').removeClass('hidden');
+      $('#div_p15b').slideUp();
+      $('#div_p15b').addClass('hidden');
+      $('#pregunta_p15b_footer').addClass('hidden');
+      $('#div_error_p15b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15c_p15b_boton").addEventListener("click", fun_p15b);
+  document.getElementById("radio-1-p15b").addEventListener("click", fun_p15b);
+  document.getElementById("radio-2-p15b").addEventListener("click", fun_p15b);
+  function fun_p15b() {
+    setTimeout(function(){
+      $('#div_p15b').slideUp();
+      $('#div_p15b').addClass('hidden');
+      $('#pregunta_p15b_footer').addClass('hidden');
+      $('#div_p15c').slideDown();
+      $('#div_p15c').removeClass('hidden');
+      $('#pregunta_p15c_footer').removeClass('hidden');
+      $('#div_error_p15c').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15c">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15c. Tus coordinadores o el rector</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15c, "si" , id:"radio-1-p15c"%>
+      <%= f.label :p15c, "Si", for: "radio-1-p15c"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15c, "no" , id:"radio-2-p15c"%>
+      <%= f.label :p15c, "No", for: "radio-2-p15c"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15c">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15c">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15c_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15d_p15c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15b_p15c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p15b_p15c_boton").addEventListener("click", fun_p15c_dev);
+  function fun_p15c_dev() {
+      $('#div_p15b').slideDown();
+      $('#div_p15b').removeClass('hidden');
+      $('#pregunta_p15b_footer').removeClass('hidden');
+      $('#div_p15c').slideUp();
+      $('#div_p15c').addClass('hidden');
+      $('#pregunta_p15c_footer').addClass('hidden');
+      $('#div_error_p15c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15d_p15c_boton").addEventListener("click", fun_p15c);
+  document.getElementById("radio-1-p15c").addEventListener("click", fun_p15c);
+  document.getElementById("radio-2-p15c").addEventListener("click", fun_p15c);
+  function fun_p15c() {
+    setTimeout(function(){
+      $('#div_p15c').slideUp();
+      $('#div_p15c').addClass('hidden');
+      $('#pregunta_p15c_footer').addClass('hidden');
+      $('#div_p15d').slideDown();
+      $('#div_p15d').removeClass('hidden');
+      $('#pregunta_p15d_footer').removeClass('hidden');
+      $('#div_error_p15d').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15d">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15d. Tus orientadores</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15d, "si" , id:"radio-1-p15d"%>
+      <%= f.label :p15d, "Si", for: "radio-1-p15d"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15d, "no" , id:"radio-2-p15d"%>
+      <%= f.label :p15d, "No", for: "radio-2-p15d"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15d">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15d">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15d_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15e_p15d_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15c_p15d_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p15c_p15d_boton").addEventListener("click", fun_p15d_dev);
+  function fun_p15d_dev() {
+      $('#div_p15c').slideDown();
+      $('#div_p15c').removeClass('hidden');
+      $('#pregunta_p15c_footer').removeClass('hidden');
+      $('#div_p15d').slideUp();
+      $('#div_p15d').addClass('hidden');
+      $('#pregunta_p15d_footer').addClass('hidden');
+      $('#div_error_p15d').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15e_p15d_boton").addEventListener("click", fun_p15d);
+  document.getElementById("radio-1-p15d").addEventListener("click", fun_p15d);
+  document.getElementById("radio-2-p15d").addEventListener("click", fun_p15d);
+  function fun_p15d() {
+    setTimeout(function(){
+      $('#div_p15d').slideUp();
+      $('#div_p15d').addClass('hidden');
+      $('#pregunta_p15d_footer').addClass('hidden');
+      $('#div_p15e').slideDown();
+      $('#div_p15e').removeClass('hidden');
+      $('#pregunta_p15e_footer').removeClass('hidden');
+      $('#div_error_p15e').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15e">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15e. Tus compañeros de curso</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15e, "si" , id:"radio-1-p15e"%>
+      <%= f.label :p15e, "Si", for: "radio-1-p15e"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15e, "no" , id:"radio-2-p15e"%>
+      <%= f.label :p15e, "No", for: "radio-2-p15e"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15e">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15e">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15e_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15f_p15e_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15d_p15e_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p15d_p15e_boton").addEventListener("click", fun_p15e_dev);
+  function fun_p15e_dev() {
+      $('#div_p15d').slideDown();
+      $('#div_p15d').removeClass('hidden');
+      $('#pregunta_p15d_footer').removeClass('hidden');
+      $('#div_p15e').slideUp();
+      $('#div_p15e').addClass('hidden');
+      $('#pregunta_p15e_footer').addClass('hidden');
+      $('#div_error_p15e').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15f_p15e_boton").addEventListener("click", fun_p15e);
+  document.getElementById("radio-1-p15e").addEventListener("click", fun_p15e);
+  document.getElementById("radio-2-p15e").addEventListener("click", fun_p15e);
+  function fun_p15e() {
+    setTimeout(function(){
+      $('#div_p15e').slideUp();
+      $('#div_p15e').addClass('hidden');
+      $('#pregunta_p15e_footer').addClass('hidden');
+      $('#div_p15f').slideDown();
+      $('#div_p15f').removeClass('hidden');
+      $('#pregunta_p15f_footer').removeClass('hidden');
+      $('#div_error_p15f').addClass('hidden');
+  } , 500);
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p15f">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15f. De otras personas; amigos o conocidos</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p15f, "si" , id:"radio-1-p15f"%>
+      <%= f.label :p15f, "Si", for: "radio-1-p15f"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15f, "no" , id:"radio-2-p15f"%>
+      <%= f.label :p15f, "No", for: "radio-2-p15f"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15f">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15f">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15f_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p16a_p15f_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15e_p15f_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p15e_p15f_boton").addEventListener("click", fun_p15f_dev);
+  function fun_p15f_dev() {
+      $('#div_p15e').slideDown();
+      $('#div_p15e').removeClass('hidden');
+      $('#pregunta_p15e_footer').removeClass('hidden');
+      $('#div_p15f').slideUp();
+      $('#div_p15f').addClass('hidden');
+      $('#pregunta_p15f_footer').addClass('hidden');
+      $('#div_error_p15f').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p16a_p15f_boton").addEventListener("click", fun_p15f);
+  document.getElementById("radio-1-p15f").addEventListener("click", fun_p15f);
+  document.getElementById("radio-2-p15f").addEventListener("click", fun_p15f);
+  function fun_p15f() {
+    setTimeout(function(){
+      $('#div_p15f').slideUp();
+      $('#div_p15f').addClass('hidden');
+      $('#pregunta_p15f_footer').addClass('hidden');
+      $('#div_p16a').slideDown();
+      $('#div_p16a').removeClass('hidden');
+      $('#pregunta_p16a_footer').removeClass('hidden');
+      $('#div_error_p16a').addClass('hidden');
+  } , 500);
+  }
+</script>
 
 
 
