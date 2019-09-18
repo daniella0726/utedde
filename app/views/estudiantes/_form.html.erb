@@ -538,56 +538,57 @@
   <br>
   <div class="field qts">
     <div class="inputGroup">
-      <%= f.radio_button :p4_1, "Papá" , id:"radio-1-p4"%>
-      <%= f.label :p4_1, "Papá", for: "radio-1-p4"%>
+      
+      <%= f.check_box :p4_1, "Papá" , id:"radio-1-p4_1"%>
+      <%= f.label :p4_1, "Papá", for: "radio-1-p4_1"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_2, "Padrastro" , id:"radio-2-p4"%>
-      <%= f.label :p4_2, "Padrastro", for: "radio-2-p4"%>
+      <%= f.radio_button :p4_2, "Padrastro" , id:"radio-2-p4_2"%>
+      <%= f.label :p4_2, "Padrastro", for: "radio-2-p4_2"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_3, "Mamá" , id:"radio-3-p4"%>
-      <%= f.label :p4_3, "Mamá", for: "radio-3-p4"%>
+      <%= f.radio_button :p4_3, "Mamá" , id:"radio-3-p4_3"%>
+      <%= f.label :p4_3, "Mamá", for: "radio-3-p4_3"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_4, "Madrastra" , id:"radio-4-p4"%>
-      <%= f.label :p4_4, "Madrastra", for: "radio-4-p4"%>
+      <%= f.radio_button :p4_4, "Madrastra" , id:"radio-4-p4_4"%>
+      <%= f.label :p4_4, "Madrastra", for: "radio-4-p4_4"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_5, "Hermanos(as)" , id:"radio-5-p4"%>
-      <%= f.label :p4_5, "Hermanos(as)", for: "radio-5-p4"%>
+      <%= f.radio_button :p4_5, "Hermanos(as)" , id:"radio-5-p4_5"%>
+      <%= f.label :p4_5, "Hermanos(as)", for: "radio-5-p4_5"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_6, "Primos(as)" , id:"radio-6-p4"%>
-      <%= f.label :p4_6, "Primos(as)", for: "radio-6-p4"%>
+      <%= f.radio_button :p4_6, "Primos(as)" , id:"radio-6-p4_6"%>
+      <%= f.label :p4_6, "Primos(as)", for: "radio-6-p4_6"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_7, "Tíos - Tías" , id:"radio-7-p4"%>
-      <%= f.label :p4_7, "Tíos - Tías", for: "radio-7-p4"%>
+      <%= f.radio_button :p4_7, "Tíos - Tías" , id:"radio-7-p4_7"%>
+      <%= f.label :p4_7, "Tíos - Tías", for: "radio-7-p4_7"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_8, "Abuelos - Abuelas" , id:"radio-8-p4"%>
-      <%= f.label :p4_8, "Abuelos - Abuelas", for: "radio-8-p4"%>
+      <%= f.radio_button :p4_8, "Abuelos - Abuelas" , id:"radio-8-p4_8"%>
+      <%= f.label :p4_8, "Abuelos - Abuelas", for: "radio-8-p4_8"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_9, "Tu Esposo(sa)" , id:"radio-9-p4"%>
-      <%= f.label :p4_9, "Tu Esposo(sa)", for: "radio-9-p4"%>
+      <%= f.radio_button :p4_9, "Tu Esposo(sa)" , id:"radio-9-p4_9"%>
+      <%= f.label :p4_9, "Tu Esposo(sa)", for: "radio-9-p4_9"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_10, "Tus hijos(as)" , id:"radio-10-p4"%>
-      <%= f.label :p4_10, "Tus hijos(as)", for: "radio-10-p4"%>
+      <%= f.radio_button :p4_10, "Tus hijos(as)" , id:"radio-10-p4_10"%>
+      <%= f.label :p4_10, "Tus hijos(as)", for: "radio-10-p4_10"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_11, "Otros familiares" , id:"radio-11-p4"%>
-      <%= f.label :p4_11, "Otros familiares", for: "radio-11-p4"%>
+      <%= f.radio_button :p4_11, "Otros familiares" , id:"radio-11-p4_11"%>
+      <%= f.label :p4_11, "Otros familiares", for: "radio-11-p4_11"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_12, "Otros no parientes" , id:"radio-12-p4"%>
-      <%= f.label :p4_12, "Otros no parientes", for: "radio-12-p4"%>
+      <%= f.radio_button :p4_12, "Otros no parientes" , id:"radio-12-p4_12"%>
+      <%= f.label :p4_12, "Otros no parientes", for: "radio-12-p4_12"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p4_13, "Sólo(a)" , id:"radio-13-p4"%>
-      <%= f.label :p4_13, "Sólo(a)", for: "radio-13-p4"%>
+      <%= f.radio_button :p4_13, "Sólo(a)" , id:"radio-13-p4_13"%>
+      <%= f.label :p4_13, "Sólo(a)", for: "radio-13-p4_13"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4">Por favor, <strong>escoger al menos uno.</strong></div>
@@ -647,19 +648,19 @@
       $('#div_error_p5a').addClass('hidden');
   }
 
-  document.getElementById("radio-1-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-2-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-3-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-4-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-5-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-6-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-7-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-8-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-9-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-10-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-11-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-12-p4").addEventListener("click", fun_multi);
-  document.getElementById("radio-13-p4").addEventListener("click", fun_multi);
+  document.getElementById("radio-1-p4_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p4_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p4_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p4_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p4_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p4_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p4_7").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-p4_8").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-p4_9").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-p4_10").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-p4_11").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-p4_12").addEventListener("click", fun_multi);
+  document.getElementById("radio-13-p4_13").addEventListener("click", fun_multi);
   
   function fun_multi() {
       $('#but_res_p4').removeClass('hidden');
