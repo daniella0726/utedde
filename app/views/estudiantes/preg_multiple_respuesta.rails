@@ -3,56 +3,56 @@
   <br>
   <div class="field qts">
     <div class="inputGroup">
-      <%= f.radio_button :estoy_1, "1" , id:"radio-1-estoy"%>
-      <%= f.label :estoy_1, "1", for: "radio-1-estoy"%>
+      <%= f.check_box :estoy_1, checked: "1", id:"radio-1-estoy_1"%>
+      <%= f.label :estoy_1, "1", for: "radio-1-estoy_1"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_2, "2" , id:"radio-2-estoy"%>
-      <%= f.label :estoy_2, "2", for: "radio-2-estoy"%>
+      <%= f.check_box :estoy_2, checked: "2", id:"radio-2-estoy_2"%>
+      <%= f.label :estoy_2, "2", for: "radio-2-estoy_2"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_3, "3" , id:"radio-3-estoy"%>
-      <%= f.label :estoy_3, "3", for: "radio-3-estoy"%>
+      <%= f.check_box :estoy_3, checked: "3", id:"radio-3-estoy_3"%>
+      <%= f.label :estoy_3, "3", for: "radio-3-estoy_3"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_4, "4" , id:"radio-4-estoy"%>
-      <%= f.label :estoy_4, "4", for: "radio-4-estoy"%>
+      <%= f.check_box :estoy_4, checked: "4", id:"radio-4-estoy_4"%>
+      <%= f.label :estoy_4, "4", for: "radio-4-estoy_4"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_5, "5" , id:"radio-5-estoy"%>
-      <%= f.label :estoy_5, "5", for: "radio-5-estoy"%>
+      <%= f.check_box :estoy_5, checked: "5", id:"radio-5-estoy_5"%>
+      <%= f.label :estoy_5, "5", for: "radio-5-estoy_5"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_6, "6" , id:"radio-6-estoy"%>
-      <%= f.label :estoy_6, "6", for: "radio-6-estoy"%>
+      <%= f.check_box :estoy_6, checked: "6", id:"radio-6-estoy_6"%>
+      <%= f.label :estoy_6, "6", for: "radio-6-estoy_6"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_7, "7" , id:"radio-7-estoy"%>
-      <%= f.label :estoy_7, "7", for: "radio-7-estoy"%>
+      <%= f.check_box :estoy_7, checked: "7", id:"radio-7-estoy_7"%>
+      <%= f.label :estoy_7, "7", for: "radio-7-estoy_7"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_8, "8" , id:"radio-8-estoy"%>
-      <%= f.label :estoy_8, "8", for: "radio-8-estoy"%>
+      <%= f.check_box :estoy_8, checked: "8", id:"radio-8-estoy_8"%>
+      <%= f.label :estoy_8, "8", for: "radio-8-estoy_8"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_9, "9" , id:"radio-9-estoy"%>
-      <%= f.label :estoy_9, "9", for: "radio-9-estoy"%>
+      <%= f.check_box :estoy_9, checked: "9", id:"radio-9-estoy_9"%>
+      <%= f.label :estoy_9, "9", for: "radio-9-estoy_9"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_10, "10" , id:"radio-10-estoy"%>
-      <%= f.label :estoy_10, "10", for: "radio-10-estoy"%>
+      <%= f.check_box :estoy_10, checked: "10", id:"radio-10-estoy_10"%>
+      <%= f.label :estoy_10, "10", for: "radio-10-estoy_10"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_11, "11" , id:"radio-11-estoy"%>
-      <%= f.label :estoy_11, "11", for: "radio-11-estoy"%>
+      <%= f.check_box :estoy_11, checked: "11", id:"radio-11-estoy_11"%>
+      <%= f.label :estoy_11, "11", for: "radio-11-estoy_11"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_12, "12" , id:"radio-12-estoy"%>
-      <%= f.label :estoy_12, "12", for: "radio-12-estoy"%>
+      <%= f.check_box :estoy_12, checked: "12", id:"radio-12-estoy_12"%>
+      <%= f.label :estoy_12, "12", for: "radio-12-estoy_12"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy_13, "13" , id:"radio-13-estoy"%>
-      <%= f.label :estoy_13, "13", for: "radio-13-estoy"%>
+      <%= f.check_box :estoy_13, checked: "13", id:"radio-13-estoy_13"%>
+      <%= f.label :estoy_13, "13", for: "radio-13-estoy_13"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_estoy">Por favor, <strong>escoger al menos uno.</strong></div>
@@ -76,7 +76,7 @@
           <a class="boton1" id="pregunta_voy_estoy_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_voy_estoy_boton">
+          <a class="boton1" id="pregunta_antes_estoy_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -103,6 +103,20 @@
   document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
 
   function fun_estoy() {
+    if ($("#radio-1-estoy_1").is(':checked') == true || 
+        $("#radio-2-estoy_2").is(':checked') == true || 
+        $("#radio-3-estoy_3").is(':checked') == true || 
+        $("#radio-4-estoy_4").is(':checked') == true || 
+        $("#radio-5-estoy_5").is(':checked') == true || 
+        $("#radio-6-estoy_6").is(':checked') == true || 
+        $("#radio-7-estoy_7").is(':checked') == true ||
+        $("#radio-8-estoy_8").is(':checked') == true ||
+        $("#radio-9-estoy_9").is(':checked') == true ||
+        $("#radio-10-estoy_10").is(':checked') == true ||
+        $("#radio-11-estoy_11").is(':checked') == true ||
+        $("#radio-12-estoy_12").is(':checked') == true || 
+        $("#radio-13-estoy_13").is(':checked') == true) {
+    setTimeout(function(){
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
       $('#pregunta_estoy_footer').addClass('hidden');
@@ -110,23 +124,27 @@
       $('#div_voy').removeClass('hidden');
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
-  }
-
-  document.getElementById("radio-1-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-2-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-3-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-4-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-5-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-6-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-7-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-8-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-9-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-10-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-11-estoy").addEventListener("click", fun_multi);
-  document.getElementById("radio-12-estoy").addEventListener("click", fun_multi);
-  
+      } , 500);
+  } else {
+      $('#div_error_estoy').removeClass('hidden');
+    }
+    }
+  document.getElementById("radio-1-estoy_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-estoy_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-estoy_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-estoy_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-estoy_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-estoy_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-estoy_7").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-estoy_8").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-estoy_9").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-estoy_10").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-estoy_11").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-estoy_12").addEventListener("click", fun_multi);
+  document.getElementById("radio-13-estoy_13").addEventListener("click", fun_multi);
   function fun_multi() {
       $('#but_res_estoy').removeClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
 
   }
 </script>

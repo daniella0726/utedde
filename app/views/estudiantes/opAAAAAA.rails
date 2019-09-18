@@ -59,6 +59,8 @@
   document.getElementById("radio-1-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-2-estoy").addEventListener("click", fun_estoy);
   function fun_estoy() {
+    if ($("#radio-1-estoy").is(':checked') == true || 
+        $("#radio-2-estoy").is(':checked') == true) {
     setTimeout(function(){
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
@@ -68,5 +70,8 @@
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_estoy').removeClass('hidden');
+    }
+    } 
 </script>

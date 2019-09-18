@@ -69,6 +69,6 @@ class EstudiantesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estudiante_params
-      params.require(:estudiante).permit(:p1, :p2, :p3, :p4)
+      params.require(:estudiante).permit(:p1, :p2, :p3, :p4_1, :p4_2, :p4_3, :p4_4, :p4_5, :p4_6, :p4_7, :p4_8, :p4_9, :p4_10, :p4_11, :p4_12, :p4_13, :p5a, :p5b, :p5c, :p5cn, :p5cp, :p6_1, :p6_2, :p6_3, :p6_4, :p6_5, :p6_6, :p7, :p7a, :p7b, :p7c, :p8, :p8a, :p8b, :p8c, :p8d, :p8e, :p8f, :p9, :p10, :p10a, :p11, :p12)
     end
 end

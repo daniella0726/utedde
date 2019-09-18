@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_204954) do
+ActiveRecord::Schema.define(version: 2019_09_18_211727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,28 @@ ActiveRecord::Schema.define(version: 2019_09_05_204954) do
     t.string "p5c"
     t.string "p5cn"
     t.string "p5cp"
+    t.string "p6_1"
+    t.string "p6_2"
+    t.string "p6_3"
+    t.string "p6_4"
+    t.string "p6_5"
+    t.string "p6_6"
+    t.string "p7"
+    t.string "p7a"
+    t.string "p7b"
+    t.string "p7c"
+    t.string "p8"
+    t.string "p8a"
+    t.string "p8b"
+    t.string "p8c"
+    t.string "p8d"
+    t.string "p8e"
+    t.string "p8f"
+    t.string "p9"
+    t.string "p10"
+    t.string "p10a"
+    t.string "p11"
+    t.string "p12"
   end
 
 end

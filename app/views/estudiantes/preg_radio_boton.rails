@@ -104,7 +104,22 @@
   document.getElementById("radio-10-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-11-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-12-estoy").addEventListener("click", fun_estoy);
+  document.getElementById("radio-13-estoy").addEventListener("click", fun_estoy);
   function fun_estoy() {
+    if ($("#radio-1-estoy").is(':checked') == true || 
+        $("#radio-2-estoy").is(':checked') == true || 
+        $("#radio-3-estoy").is(':checked') == true || 
+        $("#radio-4-estoy").is(':checked') == true || 
+        $("#radio-5-estoy").is(':checked') == true || 
+        $("#radio-6-estoy").is(':checked') == true || 
+        $("#radio-7-estoy").is(':checked') == true ||
+        $("#radio-8-estoy").is(':checked') == true ||
+        $("#radio-9-estoy").is(':checked') == true ||
+        $("#radio-10-estoy").is(':checked') == true ||
+        $("#radio-11-estoy").is(':checked') == true ||
+        $("#radio-12-estoy").is(':checked') == true || 
+        $("#radio-13-estoy").is(':checked') == true) {
+
     setTimeout(function(){
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
@@ -114,5 +129,8 @@
       $('#pregunta_voy_footer').removeClass('hidden');
       $('#div_error_voy').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_estoy').removeClass('hidden');
+    }
+    }
 </script>
