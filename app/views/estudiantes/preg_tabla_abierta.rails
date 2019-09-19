@@ -1,0 +1,185 @@
+<div class="centrado hidden" style="width: 90%;" id="div_estoy">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">estoy. Si has perdido algún curso (año)</h2>
+  <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. ¿Hace cuántos años vives aquí?</h3>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka1", placeholder: "Cuantas veces opción 1"}%></td>
+        </tr>
+        <tr>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka2", placeholder: "Cuantas veces opción 2"}%></td>
+        </tr>
+        <tr>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka3", placeholder: "Cuantas veces opción 3"}%></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_estoy"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_estoy">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_estoy">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_estoy_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">10 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 10%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_voy_estoy_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_antes_estoy_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_kaka1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_kaka2").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_kaka2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_kaka3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_kaka3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_estoy").focus();
+      }
+    });
+
+  document.getElementById("pregunta_antes_estoy_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_antes').slideDown();
+      $('#div_antes').removeClass('hidden');
+      $('#pregunta_antes_footer').removeClass('hidden');
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
+  document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
+    function fun_estoy() {
+    var frase = document.getElementById("res_kaka1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_kaka1").value = frase;
+    var frase1 = document.getElementById("res_kaka2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_kaka2").value = frase1;
+    var frase2 = document.getElementById("res_kaka3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_kaka3").value = frase2;
+    if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+    } else {
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_voy').slideDown();
+      $('#div_voy').removeClass('hidden');
+      $('#pregunta_voy_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_kaka1').on('input', function() { 
+      var frase = document.getElementById("res_kaka1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_kaka1").value = frase;
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+      } else {
+       $('#but_res_estoy').removeClass('hidden');
+       $('#p_estoy').removeClass('hidden');
+       $('#div_error_estoy').addClass('hidden');
+      }
+    }); 
+
+    $('#res_kaka2').on('input', function() { 
+      var frase = document.getElementById("res_kaka2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_kaka2").value = frase;
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+      } else {
+       $('#but_res_estoy').removeClass('hidden');
+       $('#p_estoy').removeClass('hidden');
+       $('#div_error_estoy').addClass('hidden');
+      }
+    }); 
+
+    $('#res_kaka3').on('input', function() { 
+      var frase = document.getElementById("res_kaka3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_kaka3").value = frase;
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+      } else {
+       $('#but_res_estoy').removeClass('hidden');
+       $('#p_estoy').removeClass('hidden');
+       $('#div_error_estoy').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>

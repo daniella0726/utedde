@@ -1,0 +1,342 @@
+<div class="centrado hidden" style="width: 90%;" id="div_estoy">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿ Has perdido algún curso (año)?</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. XXXXXXX </h3>
+  <br>
+  <div class="field qts">
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="12">¿Qué curso? (Marca el número que corresponda)</th>
+        </tr>
+      <tbody>
+        <tr>
+          <td>OP1</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "1" , id:"radio-1-estoy"%>
+              <%= f.label :kaka1, "1", for: "radio-1-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "2" , id:"radio-2-estoy"%>
+              <%= f.label :kaka1, "2", for: "radio-2-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "3" , id:"radio-3-estoy"%>
+              <%= f.label :kaka1, "3", for: "radio-3-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "4" , id:"radio-4-estoy"%>
+              <%= f.label :kaka1, "4", for: "radio-4-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "5" , id:"radio-5-estoy"%>
+              <%= f.label :kaka1, "5", for: "radio-5-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "6" , id:"radio-6-estoy"%>
+              <%= f.label :kaka1, "6", for: "radio-6-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "7" , id:"radio-7-estoy"%>
+              <%= f.label :kaka1, "7", for: "radio-7-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "8" , id:"radio-8-estoy"%>
+              <%= f.label :kaka1, "8", for: "radio-8-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "9" , id:"radio-9-estoy"%>
+              <%= f.label :kaka1, "9", for: "radio-9-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "10" , id:"radio-10-estoy"%>
+              <%= f.label :kaka1, "10", for: "radio-10-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka1, "11" , id:"radio-11-estoy"%>
+              <%= f.label :kaka1, "11", for: "radio-11-estoy"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OP2</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "1" , id:"radio-12-estoy"%>
+              <%= f.label :kaka2, "1", for: "radio-12-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "2" , id:"radio-13-estoy"%>
+              <%= f.label :kaka2, "2", for: "radio-13-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "3" , id:"radio-14-estoy"%>
+              <%= f.label :kaka2, "3", for: "radio-14-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "4" , id:"radio-15-estoy"%>
+              <%= f.label :kaka2, "4", for: "radio-15-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "5" , id:"radio-16-estoy"%>
+              <%= f.label :kaka2, "5", for: "radio-16-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "6" , id:"radio-17-estoy"%>
+              <%= f.label :kaka2, "6", for: "radio-18-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "7" , id:"radio-19-estoy"%>
+              <%= f.label :kaka2, "7", for: "radio-19-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "8" , id:"radio-20-estoy"%>
+              <%= f.label :kaka2, "8", for: "radio-20-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "9" , id:"radio-21-estoy"%>
+              <%= f.label :kaka2, "9", for: "radio-22-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "10" , id:"radio-23-estoy"%>
+              <%= f.label :kaka2, "10", for: "radio-24-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka2, "11" , id:"radio-25-estoy"%>
+              <%= f.label :kaka2, "11", for: "radio-25-estoy"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>OP3</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "1" , id:"radio-26-estoy"%>
+              <%= f.label :kaka3, "1", for: "radio-26-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "2" , id:"radio-27-estoy"%>
+              <%= f.label :kaka3, "2", for: "radio-27-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "3" , id:"radio-28-estoy"%>
+              <%= f.label :kaka3, "3", for: "radio-28-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "4" , id:"radio-29-estoy"%>
+              <%= f.label :kaka3, "4", for: "radio-29-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "5" , id:"radio-30-estoy"%>
+              <%= f.label :kaka3, "5", for: "radio-30-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "6" , id:"radio-31-estoy"%>
+              <%= f.label :kaka3, "6", for: "radio-31-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "7" , id:"radio-32-estoy"%>
+              <%= f.label :kaka3, "7", for: "radio-32-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "8" , id:"radio-33-estoy"%>
+              <%= f.label :kaka3, "8", for: "radio-33-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "9" , id:"radio-34-estoy"%>
+              <%= f.label :kaka3, "9", for: "radio-34-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "10" , id:"radio-35-estoy"%>
+              <%= f.label :kaka3, "10", for: "radio-36-estoy"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :kaka3, "11" , id:"radio-37-estoy"%>
+              <%= f.label :kaka3, "11", for: "radio-38-estoy"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+        
+      </thead>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_estoy">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_estoy">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_estoy">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_estoy_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_voy_estoy_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_antes_estoy_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_antes_estoy_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_antes').slideDown();
+      $('#div_antes').removeClass('hidden');
+      $('#pregunta_antes_footer').removeClass('hidden');
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
+  document.getElementById("but_res_p12a").addEventListener("click", fun_estoy);
+
+
+  document.getElementById("radio-1-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-13-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-14-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-15-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-16-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-17-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-18-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-19-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-20-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-21-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-22-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-23-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-24-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-25-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-26-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-27-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-28-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-29-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-30-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-31-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-32-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-33-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-34-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-35-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-36-estoy").addEventListener("click", fun_multi);
+  document.getElementById("radio-37-estoy").addEventListener("click", fun_multi);
+
+  function fun_multi() {
+      $('#but_res_estoy').removeClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+
+  }
+
+  function fun_estoy() {
+    if ($("#radio-1-estoy").is(':checked') == true || 
+        $("#radio-2-estoy").is(':checked') == true || 
+        $("#radio-3-estoy").is(':checked') == true || 
+        $("#radio-4-estoy").is(':checked') == true || 
+        $("#radio-5-estoy").is(':checked') == true || 
+        $("#radio-6-estoy").is(':checked') == true || 
+        $("#radio-7-estoy").is(':checked') == true ||
+        $("#radio-8-estoy").is(':checked') == true ||
+        $("#radio-9-estoy").is(':checked') == true ||
+        $("#radio-10-estoy").is(':checked') == true ||
+        $("#radio-11-estoy").is(':checked') == true) {
+
+    setTimeout(function(){
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_voy').slideDown();
+      $('#div_voy').removeClass('hidden');
+      $('#pregunta_voy_footer').removeClass('hidden');
+      $('#div_error_voy').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_estoy').removeClass('hidden');
+    }
+    }
+</script>

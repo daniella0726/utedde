@@ -48,7 +48,7 @@
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_estoy">Por favor, <strong>escoge una respuesta</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+  <button type="button" class="boton3 hidden" id="but_res_estoy">
     <i class="fas fa-check-circle";></i>
       OK
   </button>
