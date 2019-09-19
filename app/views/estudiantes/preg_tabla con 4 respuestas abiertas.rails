@@ -7,15 +7,20 @@
     <table class="table">
       <tbody>
         <tr>
-          <td><h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. La primera vez que dejaste de estudiar…</h4></td>
+          <td><h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">La primera vez que dejaste de estudiar…</h4></td>
           <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka1", placeholder: "Cuantas veces opción 1"}%></td>
         </tr>
         <tr>
-          
+          <td><h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">La segunda vez que dejaste de estudiar…</h4></td>
           <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka2", placeholder: "Cuantas veces opción 2"}%></td>
         </tr>
         <tr>
+          <td><h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">La tercera vez que dejaste de estudiar…</h4></td>
           <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka3", placeholder: "Cuantas veces opción 3"}%></td>
+        </tr>
+        <tr>
+          <td><h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">La cuarta vez que dejaste de estudiar…</h4></td>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :kaka4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka4", placeholder: "Cuantas veces opción 3"}%></td>
         </tr>
       </tbody>
     </table>
@@ -76,6 +81,14 @@
       }
     });
 
+  var input3 = document.getElementById("res_kaka4");
+      input3.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_estoy").focus();
+      }
+    });
+
   document.getElementById("pregunta_antes_estoy_boton").addEventListener("click", fun_estoy_dev);
   function fun_estoy_dev() {
       $('#div_antes').slideDown();
@@ -97,6 +110,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_kaka1").value = frase;
+
     var frase1 = document.getElementById("res_kaka2").value; 
       frase1 = frase1.replace("#"," ");
       frase1 = frase1.replace("%"," ");
@@ -104,6 +118,7 @@
       frase1 = frase1.replace("$"," ");
       frase1 = frase1.replace("  "," ");
       document.getElementById("res_kaka2").value = frase1;
+
     var frase2 = document.getElementById("res_kaka3").value; 
       frase2 = frase2.replace("#"," ");
       frase2 = frase2.replace("%"," ");
@@ -111,7 +126,16 @@
       frase2 = frase2.replace("$"," ");
       frase2 = frase2.replace("  "," ");
       document.getElementById("res_kaka3").value = frase2;
-    if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+
+    var frase3 = document.getElementById("res_kaka4").value; 
+      frase3 = frase3.replace("#"," ");
+      frase3 = frase3.replace("%"," ");
+      frase3 = frase3.replace("&"," ");
+      frase3 = frase3.replace("$"," ");
+      frase3 = frase3.replace("  "," ");
+      document.getElementById("res_kaka4").value = frase3;
+
+    if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" || document.getElementById("res_kaka3").value == "" || document.getElementById("res_kaka4").value == "") {
       $('#but_res_estoy').addClass('hidden');
       $('#p_estoy').addClass('hidden');
       $('#div_error_estoy').removeClass('hidden');
@@ -135,7 +159,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_kaka1").value = frase;
-      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "" || document.getElementById("res_kaka4").value == "") {
       $('#but_res_estoy').addClass('hidden');
       $('#p_estoy').addClass('hidden');
       $('#div_error_estoy').removeClass('hidden');
@@ -154,7 +178,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_kaka2").value = frase;
-      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "" || document.getElementById("res_kaka4").value == "") {
       $('#but_res_estoy').addClass('hidden');
       $('#p_estoy').addClass('hidden');
       $('#div_error_estoy').removeClass('hidden');
@@ -173,7 +197,26 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_kaka3").value = frase;
-      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "") {
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "" || document.getElementById("res_kaka4").value == "") {
+      $('#but_res_estoy').addClass('hidden');
+      $('#p_estoy').addClass('hidden');
+      $('#div_error_estoy').removeClass('hidden');
+      } else {
+       $('#but_res_estoy').removeClass('hidden');
+       $('#p_estoy').removeClass('hidden');
+       $('#div_error_estoy').addClass('hidden');
+      }
+    }); 
+
+    $('#res_kaka4').on('input', function() { 
+      var frase = document.getElementById("res_kaka4").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_kaka4").value = frase;
+      if (document.getElementById("res_kaka1").value == "" || document.getElementById("res_kaka2").value == "" ||document.getElementById("res_kaka3").value == "" || document.getElementById("res_kaka4").value == "") {
       $('#but_res_estoy').addClass('hidden');
       $('#p_estoy').addClass('hidden');
       $('#div_error_estoy').removeClass('hidden');

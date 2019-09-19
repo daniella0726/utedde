@@ -4160,6 +4160,40 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
   </div> 
 </div>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p12f_p12g_boton").addEventListener("click", fun_p12g_dev);
+  function fun_p12g_dev() {
+      $('#div_p12f').slideDown();
+      $('#div_p12f').removeClass('hidden');
+      $('#pregunta_p12f_footer').removeClass('hidden');
+      $('#div_p12g').slideUp();
+      $('#div_p12g').addClass('hidden');
+      $('#pregunta_p12g_footer').addClass('hidden');
+      $('#div_error_p12g').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p12h_p12g_boton").addEventListener("click", fun_p12g);
+  document.getElementById("radio-1-p12g").addEventListener("click", fun_p12g);
+  document.getElementById("radio-2-p12g").addEventListener("click", fun_p12g);
+  function fun_p12g() {
+    if ($("#radio-1-p12g").is(':checked') == true || 
+        $("#radio-2-p12g").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p12g').slideUp();
+      $('#div_p12g').addClass('hidden');
+      $('#pregunta_p12g_footer').addClass('hidden');
+      $('#div_p12h').slideDown();
+      $('#div_p12h').removeClass('hidden');
+      $('#pregunta_p12h_footer').removeClass('hidden');
+      $('#div_error_p12h').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p12g').removeClass('hidden');
+    }
+    } 
+</script>
+
 <div class="centrado hidden" style="width: 90%;" id="div_p12h">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿El último curso que perdiste fue por alguna de las siguientes razones?: <br>  (Marca un recuadro en cada caso)</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p12h. Por problemas de plata en la familia o tuya</h3>
@@ -5367,41 +5401,6 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
 
 <script type="text/javascript">
 
-  document.getElementById("pregunta_p12f_p12g_boton").addEventListener("click", fun_p12g_dev);
-  function fun_p12g_dev() {
-      $('#div_p12f').slideDown();
-      $('#div_p12f').removeClass('hidden');
-      $('#pregunta_p12f_footer').removeClass('hidden');
-      $('#div_p12g').slideUp();
-      $('#div_p12g').addClass('hidden');
-      $('#pregunta_p12g_footer').addClass('hidden');
-      $('#div_error_p12g').addClass('hidden');
-  }
-
-  document.getElementById("pregunta_p12h_p12g_boton").addEventListener("click", fun_p12g);
-  document.getElementById("radio-1-p12g").addEventListener("click", fun_p12g);
-  document.getElementById("radio-2-p12g").addEventListener("click", fun_p12g);
-  function fun_p12g() {
-    if ($("#radio-1-p12g").is(':checked') == true || 
-        $("#radio-2-p12g").is(':checked') == true) {
-    setTimeout(function(){
-      $('#div_p12g').slideUp();
-      $('#div_p12g').addClass('hidden');
-      $('#pregunta_p12g_footer').addClass('hidden');
-      $('#div_p12h').slideDown();
-      $('#div_p12h').removeClass('hidden');
-      $('#pregunta_p12h_footer').removeClass('hidden');
-      $('#div_error_p12h').addClass('hidden');
-  } , 500);
-  } else {
-      $('#div_error_p12g').removeClass('hidden');
-    }
-    } 
-</script>
-
-
-<script type="text/javascript">
-
   document.getElementById("pregunta_p12_p13a_boton").addEventListener("click", fun_p13a_dev);
   function fun_p13a_dev() {
       $('#div_p12').slideDown();
@@ -5417,6 +5416,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13a").addEventListener("click", fun_p13a);
   document.getElementById("radio-2-p13a").addEventListener("click", fun_p13a);
   function fun_p13a() {
+    if ($("#radio-1-p13a").is(':checked') == true || 
+        $("#radio-2-p13a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13a').slideUp();
       $('#div_p13a').addClass('hidden');
@@ -5426,7 +5427,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13b_footer').removeClass('hidden');
       $('#div_error_p13b').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13a').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13b">
@@ -5490,6 +5494,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13b").addEventListener("click", fun_p13b);
   document.getElementById("radio-2-p13b").addEventListener("click", fun_p13b);
   function fun_p13b() {
+    if ($("#radio-1-p13b").is(':checked') == true || 
+        $("#radio-2-p13b").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13b').slideUp();
       $('#div_p13b').addClass('hidden');
@@ -5499,7 +5505,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13c_footer').removeClass('hidden');
       $('#div_error_p13c').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13b').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13c">
@@ -5563,6 +5572,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13c").addEventListener("click", fun_p13c);
   document.getElementById("radio-2-p13c").addEventListener("click", fun_p13c);
   function fun_p13c() {
+    if ($("#radio-1-p13c").is(':checked') == true || 
+        $("#radio-2-p13c").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13c').slideUp();
       $('#div_p13c').addClass('hidden');
@@ -5572,7 +5583,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13d_footer').removeClass('hidden');
       $('#div_error_p13d').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13c').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13d">
@@ -5636,6 +5650,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13d").addEventListener("click", fun_p13d);
   document.getElementById("radio-2-p13d").addEventListener("click", fun_p13d);
   function fun_p13d() {
+    if ($("#radio-1-p13d").is(':checked') == true || 
+        $("#radio-2-p13d").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13d').slideUp();
       $('#div_p13d').addClass('hidden');
@@ -5645,7 +5661,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13e_footer').removeClass('hidden');
       $('#div_error_p13e').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13d').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13e">
@@ -5709,6 +5728,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13e").addEventListener("click", fun_p13e);
   document.getElementById("radio-2-p13e").addEventListener("click", fun_p13e);
   function fun_p13e() {
+    if ($("#radio-1-p13e").is(':checked') == true || 
+        $("#radio-2-p13e").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13e').slideUp();
       $('#div_p13e').addClass('hidden');
@@ -5718,7 +5739,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13f_footer').removeClass('hidden');
       $('#div_error_p13f').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13e').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13f">
@@ -5782,6 +5806,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13f").addEventListener("click", fun_p13f);
   document.getElementById("radio-2-p13f").addEventListener("click", fun_p13f);
   function fun_p13f() {
+    if ($("#radio-1-p13f").is(':checked') == true || 
+        $("#radio-2-p13f").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13f').slideUp();
       $('#div_p13f').addClass('hidden');
@@ -5791,7 +5817,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p13g_footer').removeClass('hidden');
       $('#div_error_p13g').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13f').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p13g">
@@ -5855,6 +5884,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p13g").addEventListener("click", fun_p13g);
   document.getElementById("radio-2-p13g").addEventListener("click", fun_p13g);
   function fun_p13g() {
+    if ($("#radio-1-p13g").is(':checked') == true || 
+        $("#radio-2-p13g").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p13g').slideUp();
       $('#div_p13g').addClass('hidden');
@@ -5864,7 +5895,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14a_footer').removeClass('hidden');
       $('#div_error_p14a').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p13g').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14a">
@@ -5928,6 +5962,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14a").addEventListener("click", fun_p14a);
   document.getElementById("radio-2-p14a").addEventListener("click", fun_p14a);
   function fun_p14a() {
+    if ($("#radio-1-p14a").is(':checked') == true || 
+        $("#radio-2-p14a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14a').slideUp();
       $('#div_p14a').addClass('hidden');
@@ -5937,7 +5973,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14b_footer').removeClass('hidden');
       $('#div_error_p14b').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14a').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14b">
@@ -6001,6 +6040,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14b").addEventListener("click", fun_p14b);
   document.getElementById("radio-2-p14b").addEventListener("click", fun_p14b);
   function fun_p14b() {
+    if ($("#radio-1-p14b").is(':checked') == true || 
+        $("#radio-2-p14b").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14b').slideUp();
       $('#div_p14b').addClass('hidden');
@@ -6010,7 +6051,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14c_footer').removeClass('hidden');
       $('#div_error_p14c').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14b').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14c">
@@ -6074,6 +6118,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14c").addEventListener("click", fun_p14c);
   document.getElementById("radio-2-p14c").addEventListener("click", fun_p14c);
   function fun_p14c() {
+    if ($("#radio-1-p14c").is(':checked') == true || 
+        $("#radio-2-p14c").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14c').slideUp();
       $('#div_p14c').addClass('hidden');
@@ -6083,7 +6129,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14d_footer').removeClass('hidden');
       $('#div_error_p14d').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14c').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14d">
@@ -6147,6 +6196,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14d").addEventListener("click", fun_p14d);
   document.getElementById("radio-2-p14d").addEventListener("click", fun_p14d);
   function fun_p14d() {
+    if ($("#radio-1-p14d").is(':checked') == true || 
+        $("#radio-2-p14d").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14d').slideUp();
       $('#div_p14d').addClass('hidden');
@@ -6156,7 +6207,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14e_footer').removeClass('hidden');
       $('#div_error_p14e').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14d').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14e">
@@ -6220,6 +6274,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14e").addEventListener("click", fun_p14e);
   document.getElementById("radio-2-p14e").addEventListener("click", fun_p14e);
   function fun_p14e() {
+    if ($("#radio-1-p14e").is(':checked') == true || 
+        $("#radio-2-p14e").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14e').slideUp();
       $('#div_p14e').addClass('hidden');
@@ -6229,7 +6285,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14f_footer').removeClass('hidden');
       $('#div_error_p14f').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14e').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14f">
@@ -6293,6 +6352,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14f").addEventListener("click", fun_p14f);
   document.getElementById("radio-2-p14f").addEventListener("click", fun_p14f);
   function fun_p14f() {
+    if ($("#radio-1-p14f").is(':checked') == true || 
+        $("#radio-2-p14f").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14f').slideUp();
       $('#div_p14f').addClass('hidden');
@@ -6302,7 +6363,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14g_footer').removeClass('hidden');
       $('#div_error_p14g').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14f').removeClass('hidden');
+    }
+    } 
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14g">
@@ -6366,6 +6430,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14g").addEventListener("click", fun_p14g);
   document.getElementById("radio-2-p14g").addEventListener("click", fun_p14g);
   function fun_p14g() {
+    if ($("#radio-1-p14g").is(':checked') == true || 
+        $("#radio-2-p14g").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14g').slideUp();
       $('#div_p14g').addClass('hidden');
@@ -6375,7 +6441,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14h_footer').removeClass('hidden');
       $('#div_error_p14h').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14g').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14h">
@@ -6439,6 +6508,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14h").addEventListener("click", fun_p14h);
   document.getElementById("radio-2-p14h").addEventListener("click", fun_p14h);
   function fun_p14h() {
+    if ($("#radio-1-p14h").is(':checked') == true || 
+        $("#radio-2-p14h").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14h').slideUp();
       $('#div_p14h').addClass('hidden');
@@ -6448,7 +6519,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p14i_footer').removeClass('hidden');
       $('#div_error_p14i').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14h').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14i">
@@ -6512,6 +6586,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p14i").addEventListener("click", fun_p14i);
   document.getElementById("radio-2-p14i").addEventListener("click", fun_p14i);
   function fun_p14i() {
+    if ($("#radio-1-p14i").is(':checked') == true || 
+        $("#radio-2-p14i").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p14i').slideUp();
       $('#div_p14i').addClass('hidden');
@@ -6521,7 +6597,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15a_footer').removeClass('hidden');
       $('#div_error_p15a').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p14i').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15a">
@@ -6585,6 +6664,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15a").addEventListener("click", fun_p15a);
   document.getElementById("radio-2-p15a").addEventListener("click", fun_p15a);
   function fun_p15a() {
+    if ($("#radio-1-p15a").is(':checked') == true || 
+        $("#radio-2-p15a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15a').slideUp();
       $('#div_p15a').addClass('hidden');
@@ -6594,7 +6675,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15b_footer').removeClass('hidden');
       $('#div_error_p15b').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15a').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15b">
@@ -6658,6 +6742,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15b").addEventListener("click", fun_p15b);
   document.getElementById("radio-2-p15b").addEventListener("click", fun_p15b);
   function fun_p15b() {
+    if ($("#radio-1-p15b").is(':checked') == true || 
+        $("#radio-2-p15b").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15b').slideUp();
       $('#div_p15b').addClass('hidden');
@@ -6667,7 +6753,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15c_footer').removeClass('hidden');
       $('#div_error_p15c').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15b').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15c">
@@ -6731,6 +6820,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15c").addEventListener("click", fun_p15c);
   document.getElementById("radio-2-p15c").addEventListener("click", fun_p15c);
   function fun_p15c() {
+    if ($("#radio-1-p15c").is(':checked') == true || 
+        $("#radio-2-p15c").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15c').slideUp();
       $('#div_p15c').addClass('hidden');
@@ -6740,7 +6831,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15d_footer').removeClass('hidden');
       $('#div_error_p15d').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15c').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15d">
@@ -6804,6 +6898,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15d").addEventListener("click", fun_p15d);
   document.getElementById("radio-2-p15d").addEventListener("click", fun_p15d);
   function fun_p15d() {
+    if ($("#radio-1-p15d").is(':checked') == true || 
+        $("#radio-2-p15d").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15d').slideUp();
       $('#div_p15d').addClass('hidden');
@@ -6813,7 +6909,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15e_footer').removeClass('hidden');
       $('#div_error_p15e').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15d').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15e">
@@ -6877,6 +6976,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15e").addEventListener("click", fun_p15e);
   document.getElementById("radio-2-p15e").addEventListener("click", fun_p15e);
   function fun_p15e() {
+    if ($("#radio-1-p15e").is(':checked') == true || 
+        $("#radio-2-p15e").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15e').slideUp();
       $('#div_p15e').addClass('hidden');
@@ -6886,7 +6987,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p15f_footer').removeClass('hidden');
       $('#div_error_p15f').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15e').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p15f">
@@ -6950,6 +7054,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p15f").addEventListener("click", fun_p15f);
   document.getElementById("radio-2-p15f").addEventListener("click", fun_p15f);
   function fun_p15f() {
+    if ($("#radio-1-p15f").is(':checked') == true || 
+        $("#radio-2-p15f").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p15f').slideUp();
       $('#div_p15f').addClass('hidden');
@@ -6959,7 +7065,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16a_footer').removeClass('hidden');
       $('#div_error_p16a').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p15f').removeClass('hidden');
+    }
+    }
 </script>
 
 
@@ -7025,6 +7134,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16a").addEventListener("click", fun_p16a);
   document.getElementById("radio-2-p16a").addEventListener("click", fun_p16a);
   function fun_p16a() {
+    if ($("#radio-1-p16a").is(':checked') == true || 
+        $("#radio-2-p16a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16a').slideUp();
       $('#div_p16a').addClass('hidden');
@@ -7034,7 +7145,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16b_footer').removeClass('hidden');
       $('#div_error_p16b').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16a').removeClass('hidden');
+    }
+    }
 </script>
 
 
@@ -7099,6 +7213,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16b").addEventListener("click", fun_p16b);
   document.getElementById("radio-2-p16b").addEventListener("click", fun_p16b);
   function fun_p16b() {
+    if ($("#radio-1-p16b").is(':checked') == true || 
+        $("#radio-2-p16b").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16b').slideUp();
       $('#div_p16b').addClass('hidden');
@@ -7108,7 +7224,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16c_footer').removeClass('hidden');
       $('#div_error_p16c').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16b').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p16c">
@@ -7172,6 +7291,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16c").addEventListener("click", fun_p16c);
   document.getElementById("radio-2-p16c").addEventListener("click", fun_p16c);
   function fun_p16c() {
+    if ($("#radio-1-p16c").is(':checked') == true || 
+        $("#radio-2-p16c").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16c').slideUp();
       $('#div_p16c').addClass('hidden');
@@ -7181,7 +7302,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16d_footer').removeClass('hidden');
       $('#div_error_p16d').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16c').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p16d">
@@ -7245,6 +7369,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16d").addEventListener("click", fun_p16d);
   document.getElementById("radio-2-p16d").addEventListener("click", fun_p16d);
   function fun_p16d() {
+    if ($("#radio-1-p16d").is(':checked') == true || 
+        $("#radio-2-p16d").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16d').slideUp();
       $('#div_p16d').addClass('hidden');
@@ -7254,7 +7380,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16e_footer').removeClass('hidden');
       $('#div_error_p16e').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16d').removeClass('hidden');
+    }
+    } 
 </script>
 
 
@@ -7319,6 +7448,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16e").addEventListener("click", fun_p16e);
   document.getElementById("radio-2-p16e").addEventListener("click", fun_p16e);
   function fun_p16e() {
+    if ($("#radio-1-p16e").is(':checked') == true || 
+        $("#radio-2-p16e").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16e').slideUp();
       $('#div_p16e').addClass('hidden');
@@ -7328,7 +7459,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16f_footer').removeClass('hidden');
       $('#div_error_p16f').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16e').removeClass('hidden');
+    }
+    } 
 </script>
 
 
@@ -7393,6 +7527,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16f").addEventListener("click", fun_p16f);
   document.getElementById("radio-2-p16f").addEventListener("click", fun_p16f);
   function fun_p16f() {
+    if ($("#radio-1-p16f").is(':checked') == true || 
+        $("#radio-2-p16f").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16f').slideUp();
       $('#div_p16f').addClass('hidden');
@@ -7402,7 +7538,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p16g_footer').removeClass('hidden');
       $('#div_error_p16g').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16f').removeClass('hidden');
+    }
+    }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p16g">
@@ -7466,6 +7605,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   document.getElementById("radio-1-p16g").addEventListener("click", fun_p16g);
   document.getElementById("radio-2-p16g").addEventListener("click", fun_p16g);
   function fun_p16g() {
+    if ($("#radio-1-p16g").is(':checked') == true || 
+        $("#radio-2-p16g").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p16g').slideUp();
       $('#div_p16g').addClass('hidden');
@@ -7475,12 +7616,14 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p17_footer').removeClass('hidden');
       $('#div_error_p17').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p16g').removeClass('hidden');
+    }
+    }
 </script>
 
-<div class="centrado hidden" style="width: 90%;" id="div_p17">
+<div class="centrado hidden" style="width: 90%" id="div_p17">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p17. ¿Alguna vez te has retirado de estudiar?  (Sin contar el tiempo de vacaciones)</h2>
-  
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -7493,14 +7636,14 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17">Por favor, <strong>escoge una respuesta</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+  <button type="button" class="boton3 hidden" id="but_res_p17">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
   <p  class="hidden" style="color: #254064;" id="p_p17">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p17_footer">
-  <div class="centrado-abajo" style="">
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">2 de 54 respuestas</span>
@@ -7525,6 +7668,7 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
 <script type="text/javascript">
 
   document.getElementById("pregunta_p16g_p17_boton").addEventListener("click", fun_p17_dev);
+
   function fun_p17_dev() {
       $('#div_p16g').slideDown();
       $('#div_p16g').removeClass('hidden');
@@ -7536,9 +7680,10 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
   }
 
   document.getElementById("pregunta_p29_p17_boton").addEventListener("click", fun_p17);
-  document.getElementById("radio-1-p17").addEventListener("click", fun_p17);
   document.getElementById("radio-2-p17").addEventListener("click", fun_p17);
   function fun_p17() {
+    if ($("#radio-2-p17").is(':checked') == true) {
+
     setTimeout(function(){
       $('#div_p17').slideUp();
       $('#div_p17').addClass('hidden');
@@ -7548,8 +7693,1152 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
       $('#pregunta_p29_footer').removeClass('hidden');
       $('#div_error_p29').addClass('hidden');
   } , 500);
-  }
+  } else {
+      $('#div_error_p17').removeClass('hidden');
+    }
+    } 
+
+document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
+  function fun_op1() {
+    if ($("#radio-1-p17").is(':checked') == true) {
+      
+    setTimeout(function(){
+      $('#div_p17').slideUp();
+      $('#div_p17').addClass('hidden');
+      $('#pregunta_p17_footer').addClass('hidden');
+      $('#div_p17a').slideDown();
+      $('#div_p17a').removeClass('hidden');
+      $('#pregunta_p17a_footer').removeClass('hidden');
+      $('#div_error_p17a').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p17').removeClass('hidden');
+    }
+    }
+
 </script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p17a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p17a. ¿Qué curso (grado) estabas haciendo? </h2>
+
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td style="border-color: transparent; color: #254064; vertical-align: middle;"><h4 style="font-family: 'Heebo', sans-serif; color: #254064;">La primera vez que dejaste de estudiar…</h4></td>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :p17a_1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17a_1", placeholder: "Año vez 1"}%></td>
+        </tr>
+        <tr>
+          <td style="border-color: transparent; color: #254064; vertical-align: middle;"><h4 style="font-family: 'Heebo', sans-serif; color: #254064;">La segunda vez que dejaste de estudiar…</h4></td>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :p17a_2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17a_2", placeholder: "Año vez 2"}%></td>
+        </tr>
+        <tr>
+          <td style="border-color: transparent; color: #254064; vertical-align: middle;"><h4 style="font-family: 'Heebo', sans-serif; color: #254064;">La tercera vez que dejaste de estudiar…</h4></td>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :p17a_3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17a_3", placeholder: "Año vez 3"}%></td>
+        </tr>
+        <tr>
+          <td style="border-color: transparent; color: #254064; vertical-align: middle;"><h4 style="font-family: 'Heebo', sans-serif; color: #254064;">La cuarta vez que dejaste de estudiar…</h4></td>
+          <td style="border-color: transparent; color: #254064;"><%= f.text_field :p17a_4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17a_4", placeholder: "Año vez 4"}%></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p17a"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p17a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p17a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p17a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">10 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 10%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p17b_p17a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p17_p17a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p17a_1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p17a_2").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_p17a_2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p17a_3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_p17a_3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p17a").focus();
+      }
+    });
+
+  var input3 = document.getElementById("res_p17a_4");
+      input3.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p17a").focus();
+      }
+    });
+
+  document.getElementById("pregunta_p17_p17a_boton").addEventListener("click", fun_p17a_dev);
+  function fun_p17a_dev() {
+      $('#div_p17').slideDown();
+      $('#div_p17').removeClass('hidden');
+      $('#pregunta_p17_footer').removeClass('hidden');
+      $('#div_p17a').slideUp();
+      $('#div_p17a').addClass('hidden');
+      $('#pregunta_p17a_footer').addClass('hidden');
+      $('#div_error_p17a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p17b_p17a_boton").addEventListener("click", fun_p17a);
+  document.getElementById("but_res_p17a").addEventListener("click", fun_p17a);
+    function fun_p17a() {
+    var frase = document.getElementById("res_p17a_1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a_1").value = frase;
+
+    var frase1 = document.getElementById("res_p17a_2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_p17a_2").value = frase1;
+
+    var frase2 = document.getElementById("res_p17a_3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_p17a_3").value = frase2;
+
+    var frase3 = document.getElementById("res_p17a_4").value; 
+      frase3 = frase3.replace("#"," ");
+      frase3 = frase3.replace("%"," ");
+      frase3 = frase3.replace("&"," ");
+      frase3 = frase3.replace("$"," ");
+      frase3 = frase3.replace("  "," ");
+      document.getElementById("res_p17a_4").value = frase3;
+
+    if (document.getElementById("res_p17a_1").value == "" || document.getElementById("res_p17a_2").value == "" || document.getElementById("res_p17a_3").value == "" || document.getElementById("res_p17a_4").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+    } else {
+      $('#div_p17a').slideUp();
+      $('#div_p17a').addClass('hidden');
+      $('#pregunta_p17a_footer').addClass('hidden');
+      $('#div_p17b').slideDown();
+      $('#div_p17b').removeClass('hidden');
+      $('#pregunta_p17b_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p17a_1').on('input', function() { 
+      var frase = document.getElementById("res_p17a_1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a_1").value = frase;
+      if (document.getElementById("res_p17a_1").value == "" || document.getElementById("res_p17a_2").value == "" ||document.getElementById("res_p17a_3").value == "" || document.getElementById("res_p17a_4").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+      } else {
+       $('#but_res_p17a').removeClass('hidden');
+       $('#p_p17a').removeClass('hidden');
+       $('#div_error_p17a').addClass('hidden');
+      }
+    }); 
+
+    $('#res_p17a_2').on('input', function() { 
+      var frase = document.getElementById("res_p17a_2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a_2").value = frase;
+      if (document.getElementById("res_p17a_1").value == "" || document.getElementById("res_p17a_2").value == "" ||document.getElementById("res_p17a_3").value == "" || document.getElementById("res_p17a_4").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+      } else {
+       $('#but_res_p17a').removeClass('hidden');
+       $('#p_p17a').removeClass('hidden');
+       $('#div_error_p17a').addClass('hidden');
+      }
+    }); 
+
+    $('#res_p17a_3').on('input', function() { 
+      var frase = document.getElementById("res_p17a_3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a_3").value = frase;
+      if (document.getElementById("res_p17a_1").value == "" || document.getElementById("res_p17a_2").value == "" ||document.getElementById("res_p17a_3").value == "" || document.getElementById("res_p17a_4").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+      } else {
+       $('#but_res_p17a').removeClass('hidden');
+       $('#p_p17a').removeClass('hidden');
+       $('#div_error_p17a').addClass('hidden');
+      }
+    }); 
+
+    $('#res_p17a_4').on('input', function() { 
+      var frase = document.getElementById("res_p17a_4").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a_4").value = frase;
+      if (document.getElementById("res_p17a_1").value == "" || document.getElementById("res_p17a_2").value == "" ||document.getElementById("res_p17a_3").value == "" || document.getElementById("res_p17a_4").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+      } else {
+       $('#but_res_p17a').removeClass('hidden');
+       $('#p_p17a').removeClass('hidden');
+       $('#div_error_p17a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p17b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p17b. Esa vez te retiraste….. (Marca una sola opción)</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <tbody style="color: #254064;">
+        <tr>
+          <th style="vertical-align: middle;">La primera vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_1, "1" , id:"radio-1-p17b"%>
+              <%= f.label :p17b_1, "Antes de terminar el curso", for: "radio-1-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_1, "2" , id:"radio-2-p17b"%>
+              <%= f.label :p17b_1, "Después de finalizar el curso", for: "radio-2-p17b"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La segunda vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_2, "1" , id:"radio-3-p17b"%>
+              <%= f.label :p17b_2, "Antes de terminar el curso", for: "radio-3-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_2, "2" , id:"radio-4-p17b"%>
+              <%= f.label :p17b_2, "Después de finalizar el curso", for: "radio-4-p17b"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La tercera vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_3, "1" , id:"radio-5-p17b"%>
+              <%= f.label :p17b_3, "Antes de terminar el curso", for: "radio-5-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_3, "2" , id:"radio-6-p17b"%>
+              <%= f.label :p17b_3, "Después de finalizar el curso", for: "radio-6-p17b"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La cuarta vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_4, "1" , id:"radio-7-p17b"%>
+              <%= f.label :p17b_4, "Antes de terminar el curso", for: "radio-7-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_4, "2" , id:"radio-8-p17b"%>
+              <%= f.label :p17b_4, "Después de finalizar el curso", for: "radio-8-p17b"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17b">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p17b">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p17b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p17b_footer">
+  <div class="centrado-abajo" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p17c_p17b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p17a_p17b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p17a_p17b_boton").addEventListener("click", fun_p17b_dev);
+  function fun_p17b_dev() {
+      $('#div_p17a').slideDown();
+      $('#div_p17a').removeClass('hidden');
+      $('#pregunta_p17a_footer').removeClass('hidden');
+      $('#div_p17b').slideUp();
+      $('#div_p17b').addClass('hidden');
+      $('#pregunta_p17b_footer').addClass('hidden');
+      $('#div_error_p17b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p17c_p17b_boton").addEventListener("click", fun_p17b);
+  document.getElementById("but_res_p17b").addEventListener("click", fun_p17b);
+
+
+  document.getElementById("radio-1-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-p17b").addEventListener("click", fun_multi);
+
+  function fun_multi() {
+      $('#but_res_p17b').removeClass('hidden');
+      $('#div_error_p17b').addClass('hidden');
+
+  }
+
+  function fun_p17b() {
+    if ($("#radio-1-p17b").is(':checked') == true || 
+        $("#radio-2-p17b").is(':checked') == true) {
+
+    setTimeout(function(){
+      $('#div_p17b').slideUp();
+      $('#div_p17b').addClass('hidden');
+      $('#pregunta_p17b_footer').addClass('hidden');
+      $('#div_p17c').slideDown();
+      $('#div_p17c').removeClass('hidden');
+      $('#pregunta_p17c_footer').removeClass('hidden');
+      $('#div_error_p17c').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p17b').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p17c">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p17c. ¿Cuánto tiempo dejaste de estudiar esa vez? (Marca una sola opción)</h2>
+  <br>
+  <div class="field qts">
+
+    <table class="table">
+      <tbody style="color: #254064;">
+        <tr>
+          <th style="vertical-align: middle;">La primera vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_1, "1" , id:"radio-1-p17c"%>
+              <%= f.label :p17c_1, "Menos de un año", for: "radio-1-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_1, "2" , id:"radio-2-p17c"%>
+              <%= f.label :p17c_1, "Un año o más", for: "radio-2-p17c"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La segunda vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_2, "1" , id:"radio-3-p17c"%>
+              <%= f.label :p17c_2, "Menos de un año", for: "radio-3-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_2, "2" , id:"radio-4-p17c"%>
+              <%= f.label :p17c_2, "Un año o más", for: "radio-4-p17c"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La tercera vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_3, "1" , id:"radio-5-p17c"%>
+              <%= f.label :p17c_3, "Menos de un año", for: "radio-5-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_3, "2" , id:"radio-6-p17c"%>
+              <%= f.label :p17c_3, "Un año o más", for: "radio-6-p17c"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align: middle;">La cuarta vez que dejaste de estudiar…</th>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_4, "1" , id:"radio-7-p17c"%>
+              <%= f.label :p17c_4, "Menos de un año", for: "radio-7-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_4, "2" , id:"radio-8-p17c"%>
+              <%= f.label :p17c_4, "Un año o más", for: "radio-8-p17c"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17c">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p17c">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p17c">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p17c_footer">
+  <div class="centrado-abajo" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p18_p17c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p17b_p17c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p17b_p17c_boton").addEventListener("click", fun_p17c_dev);
+  function fun_p17c_dev() {
+      $('#div_p17b').slideDown();
+      $('#div_p17b').removeClass('hidden');
+      $('#pregunta_p17b_footer').removeClass('hidden');
+      $('#div_p17c').slideUp();
+      $('#div_p17c').addClass('hidden');
+      $('#pregunta_p17c_footer').addClass('hidden');
+      $('#div_error_p17c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p18_p17c_boton").addEventListener("click", fun_p17c);
+  document.getElementById("but_res_p17c").addEventListener("click", fun_p17c);
+
+
+  document.getElementById("radio-1-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-p17c").addEventListener("click", fun_multi);
+
+  function fun_multi() {
+      $('#but_res_p17c').removeClass('hidden');
+      $('#div_error_p17c').addClass('hidden');
+
+  }
+
+  function fun_p17c() {
+    if ($("#radio-1-p17c").is(':checked') == true || 
+        $("#radio-2-p17c").is(':checked') == true) {
+
+    setTimeout(function(){
+      $('#div_p17c').slideUp();
+      $('#div_p17c').addClass('hidden');
+      $('#pregunta_p17c_footer').addClass('hidden');
+      $('#div_p18').slideDown();
+      $('#div_p18').removeClass('hidden');
+      $('#pregunta_p18_footer').removeClass('hidden');
+      $('#div_error_p18').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p17c').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p18">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p18. La última vez que te retiraste de estudiar, ¿en qué mes te retiraste?: </h2>
+  <br>
+  <div class="field qts">
+    <div class="col-sm-6">
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "1" , id:"radio-1-p18"%>
+        <%= f.label :p18, "Enero", for: "radio-1-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "2" , id:"radio-2-p18"%>
+        <%= f.label :p18, "Febrero", for: "radio-2-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "3" , id:"radio-3-p18"%>
+        <%= f.label :p18, "Marzo", for: "radio-3-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "4" , id:"radio-4-p18"%>
+        <%= f.label :p18, "Abril", for: "radio-4-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "5" , id:"radio-5-p18"%>
+        <%= f.label :p18, "Mayo", for: "radio-5-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "6" , id:"radio-6-p18"%>
+        <%= f.label :p18, "Junio", for: "radio-6-p18"%>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "7" , id:"radio-7-p18"%>
+        <%= f.label :p18, "Julio", for: "radio-7-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "8" , id:"radio-8-p18"%>
+        <%= f.label :p18, "Agosto", for: "radio-8-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "9" , id:"radio-9-p18"%>
+        <%= f.label :p18, "Septiembre", for: "radio-9-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "10" , id:"radio-10-p18"%>
+        <%= f.label :p18, "Octubre", for: "radio-10-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "11" , id:"radio-11-p18"%>
+        <%= f.label :p18, "Noviembre", for: "radio-11-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "12" , id:"radio-12-p18"%>
+        <%= f.label :p18, "Diciembre", for: "radio-12-p18"%>
+      </div>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p18">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p18">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p18_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p19_p18_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p17_p18_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p17_p18_boton").addEventListener("click", fun_p18_dev);
+  function fun_p18_dev() {
+      $('#div_p17').slideDown();
+      $('#div_p17').removeClass('hidden');
+      $('#pregunta_p17_footer').removeClass('hidden');
+      $('#div_p18').slideUp();
+      $('#div_p18').addClass('hidden');
+      $('#pregunta_p18_footer').addClass('hidden');
+      $('#div_error_p18').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p19_p18_boton").addEventListener("click", fun_p18);
+  document.getElementById("radio-1-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-2-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-3-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-4-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-5-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-6-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-7-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-8-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-9-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-10-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-11-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-12-p18").addEventListener("click", fun_p18);
+  function fun_p18() {
+    if ($("#radio-1-p18").is(':checked') == true || 
+        $("#radio-2-p18").is(':checked') == true || 
+        $("#radio-3-p18").is(':checked') == true || 
+        $("#radio-4-p18").is(':checked') == true || 
+        $("#radio-5-p18").is(':checked') == true || 
+        $("#radio-6-p18").is(':checked') == true || 
+        $("#radio-7-p18").is(':checked') == true ||
+        $("#radio-8-p18").is(':checked') == true ||
+        $("#radio-9-p18").is(':checked') == true ||
+        $("#radio-10-p18").is(':checked') == true ||
+        $("#radio-11-p18").is(':checked') == true ||
+        $("#radio-12-p18").is(':checked') == true) {
+
+    setTimeout(function(){
+      $('#div_p18').slideUp();
+      $('#div_p18').addClass('hidden');
+      $('#pregunta_p18_footer').addClass('hidden');
+      $('#div_p19').slideDown();
+      $('#div_p19').removeClass('hidden');
+      $('#pregunta_p19_footer').removeClass('hidden');
+      $('#div_error_p19').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p18').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p19">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p19. La última vez que te retiraste de estudiar, ¿cuántos años cumplidos tenías?:</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p19, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p19", placeholder: "Años cumplidos"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p19"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p19">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p19">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p19_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p20a_p19_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p18_p19_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p19");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p19").click();
+      }
+    });
+
+  document.getElementById("pregunta_p18_p19_boton").addEventListener("click", fun_p19_dev);
+  function fun_p19_dev() {
+      $('#div_p18').slideDown();
+      $('#div_p18').removeClass('hidden');
+      $('#pregunta_p18_footer').removeClass('hidden');
+      $('#div_p19').slideUp();
+      $('#div_p19').addClass('hidden');
+      $('#pregunta_p19_footer').addClass('hidden');
+      $('#div_error_p19').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p20a_p19_boton").addEventListener("click", fun_p19);
+  document.getElementById("but_res_p19").addEventListener("click", fun_p19);
+    function fun_p19() {
+    var frase = document.getElementById("res_p19").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p19").value = frase;
+    if (document.getElementById("res_p19").value == "") {
+      $('#but_res_p19').addClass('hidden');
+      $('#p_p19').addClass('hidden');
+      $('#div_error_p19').removeClass('hidden');
+    } else {
+      $('#div_p19').slideUp();
+      $('#div_p19').addClass('hidden');
+      $('#pregunta_p19_footer').addClass('hidden');
+      $('#div_p20a').slideDown();
+      $('#div_p20a').removeClass('hidden');
+      $('#pregunta_p20a_footer').removeClass('hidden');
+      $('#div_error_p20a').addClass('hidden');
+      document.getElementById("res_p20a").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p19').on('input', function() { 
+      var frase = document.getElementById("res_p19").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p19").value = frase;
+      if (document.getElementById("res_p19").value == "") {
+      $('#but_res_p19').addClass('hidden');
+      $('#p_p19').addClass('hidden');
+      $('#div_error_p19').removeClass('hidden');
+      } else {
+       $('#but_res_p19').removeClass('hidden');
+       $('#p_p19').removeClass('hidden');
+       $('#div_error_p19').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p20a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">La última vez que te retiraste de estudiar: <br>  (Marca un recuadro en cada caso)</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p20a. …pasaste el año pero no te matriculaste en el siguiente </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p20a, "si" , id:"radio-1-p20a"%>
+      <%= f.label :p20a, "Si", for: "radio-1-p20a"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20a, "no" , id:"radio-2-p20a"%>
+      <%= f.label :p20a, "No", for: "radio-2-p20a"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p20a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p20a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p20a_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p20b_p20a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p19_p20a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p19_p20a_boton").addEventListener("click", fun_p20a_dev);
+  function fun_p20a_dev() {
+      $('#div_p19').slideDown();
+      $('#div_p19').removeClass('hidden');
+      $('#pregunta_p19_footer').removeClass('hidden');
+      $('#div_p20a').slideUp();
+      $('#div_p20a').addClass('hidden');
+      $('#pregunta_p20a_footer').addClass('hidden');
+      $('#div_error_p20a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p20b_p20a_boton").addEventListener("click", fun_p20a);
+  document.getElementById("radio-1-p20a").addEventListener("click", fun_p20a);
+  document.getElementById("radio-2-p20a").addEventListener("click", fun_p20a);
+  function fun_p20a() {
+    if ($("#radio-1-p20a").is(':checked') == true || 
+        $("#radio-2-p20a").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p20a').slideUp();
+      $('#div_p20a').addClass('hidden');
+      $('#pregunta_p20a_footer').addClass('hidden');
+      $('#div_p20b').slideDown();
+      $('#div_p20b').removeClass('hidden');
+      $('#pregunta_p20b_footer').removeClass('hidden');
+      $('#div_error_p20b').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p20a').removeClass('hidden');
+    }
+    } 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p20b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">La última vez que te retiraste de estudiar: <br>  (Marca un recuadro en cada caso)</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p20b. …perdiste el año y no te matriculaste al siguiente año</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p20b, "si" , id:"radio-1-p20b"%>
+      <%= f.label :p20b, "Si", for: "radio-1-p20b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20b, "no" , id:"radio-2-p20b"%>
+      <%= f.label :p20b, "No", for: "radio-2-p20b"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20b">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p20b">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p20b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p20b_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p20c_p20b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p20a_p20b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p20a_p20b_boton").addEventListener("click", fun_p20b_dev);
+  function fun_p20b_dev() {
+      $('#div_p20a').slideDown();
+      $('#div_p20a').removeClass('hidden');
+      $('#pregunta_p20a_footer').removeClass('hidden');
+      $('#div_p20b').slideUp();
+      $('#div_p20b').addClass('hidden');
+      $('#pregunta_p20b_footer').addClass('hidden');
+      $('#div_error_p20b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p20c_p20b_boton").addEventListener("click", fun_p20b);
+  document.getElementById("radio-1-p20b").addEventListener("click", fun_p20b);
+  document.getElementById("radio-2-p20b").addEventListener("click", fun_p20b);
+  function fun_p20b() {
+    if ($("#radio-1-p20b").is(':checked') == true || 
+        $("#radio-2-p20b").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p20b').slideUp();
+      $('#div_p20b').addClass('hidden');
+      $('#pregunta_p20b_footer').addClass('hidden');
+      $('#div_p20c').slideDown();
+      $('#div_p20c').removeClass('hidden');
+      $('#pregunta_p20c_footer').removeClass('hidden');
+      $('#div_error_p20c').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p20b').removeClass('hidden');
+    }
+    } 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p20c">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">La última vez que te retiraste de estudiar: <br>  (Marca un recuadro en cada caso)</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p20c. …dejaste de estudiar p20b de terminar el año </h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p20c, "si" , id:"radio-1-p20c"%>
+      <%= f.label :p20c, "Si", for: "radio-1-p20c"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20c, "no" , id:"radio-2-p20c"%>
+      <%= f.label :p20c, "No", for: "radio-2-p20c"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20c">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p20c">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p20c">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p20c_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p21_p20c_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p20b_p20c_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p20b_p20c_boton").addEventListener("click", fun_p20c_dev);
+  function fun_p20c_dev() {
+      $('#div_p20b').slideDown();
+      $('#div_p20b').removeClass('hidden');
+      $('#pregunta_p20b_footer').removeClass('hidden');
+      $('#div_p20c').slideUp();
+      $('#div_p20c').addClass('hidden');
+      $('#pregunta_p20c_footer').addClass('hidden');
+      $('#div_error_p20c').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p21_p20c_boton").addEventListener("click", fun_p20c);
+  document.getElementById("radio-1-p20c").addEventListener("click", fun_p20c);
+  document.getElementById("radio-2-p20c").addEventListener("click", fun_p20c);
+  function fun_p20c() {
+    if ($("#radio-1-p20c").is(':checked') == true || 
+        $("#radio-2-p20c").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p20c').slideUp();
+      $('#div_p20c').addClass('hidden');
+      $('#pregunta_p20c_footer').addClass('hidden');
+      $('#div_p21').slideDown();
+      $('#div_p21').removeClass('hidden');
+      $('#pregunta_p21_footer').removeClass('hidden');
+      $('#div_error_p21').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p20c').removeClass('hidden');
+    }
+    } 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p21">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p21. ¿Cómo se llama el colegio del que te retiraste esa vez?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p21, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p21", placeholder: "Nombre del colegio"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p21"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p21">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p21">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p21_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p22_p21_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p20c_p21_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p21");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p21").click();
+      }
+    });
+
+  document.getElementById("pregunta_p20c_p21_boton").addEventListener("click", fun_p21_dev);
+  function fun_p21_dev() {
+      $('#div_p20c').slideDown();
+      $('#div_p20c').removeClass('hidden');
+      $('#pregunta_p20c_footer').removeClass('hidden');
+      $('#div_p21').slideUp();
+      $('#div_p21').addClass('hidden');
+      $('#pregunta_p21_footer').addClass('hidden');
+      $('#div_error_p21').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p22_p21_boton").addEventListener("click", fun_p21);
+  document.getElementById("but_res_p21").addEventListener("click", fun_p21);
+    function fun_p21() {
+    var frase = document.getElementById("res_p21").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p21").value = frase;
+    if (document.getElementById("res_p21").value == "") {
+      $('#but_res_p21').addClass('hidden');
+      $('#p_p21').addClass('hidden');
+      $('#div_error_p21').removeClass('hidden');
+    } else {
+      $('#div_p21').slideUp();
+      $('#div_p21').addClass('hidden');
+      $('#pregunta_p21_footer').addClass('hidden');
+      $('#div_p22').slideDown();
+      $('#div_p22').removeClass('hidden');
+      $('#pregunta_p22_footer').removeClass('hidden');
+      $('#div_error_p22').addClass('hidden');
+      document.getElementById("res_p22").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p21').on('input', function() { 
+      var frase = document.getElementById("res_p21").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p21").value = frase;
+      if (document.getElementById("res_p21").value == "") {
+      $('#but_res_p21').addClass('hidden');
+      $('#p_p21').addClass('hidden');
+      $('#div_error_p21').removeClass('hidden');
+      } else {
+       $('#but_res_p21').removeClass('hidden');
+       $('#p_p21').removeClass('hidden');
+       $('#div_error_p21').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
 
 <div class="centrado hidden" style="width: 90%" id="div_p29">
   <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p29. ¿En cuántos colegios  has estudiado ...?</h2>
@@ -7656,6 +8945,8 @@ document.getElementById("radio-1-p12q").addEventListener("click", fun_op1);
     }); 
   }); 
 </script>
+
+
 
 
 <div class="centrado hidden" style="width: 90%;" id="div_p30">

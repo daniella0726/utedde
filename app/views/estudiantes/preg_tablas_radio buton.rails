@@ -266,7 +266,7 @@
   }
 
   document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
-  document.getElementById("but_res_p12a").addEventListener("click", fun_estoy);
+  document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
 
 
   document.getElementById("radio-1-estoy").addEventListener("click", fun_multi);
