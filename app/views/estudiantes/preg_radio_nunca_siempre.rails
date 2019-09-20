@@ -1,15 +1,27 @@
 <div class="centrado hidden" style="width: 90%;" id="div_estoy">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿El último curso que perdiste fue por alguna de las siguientes razones?: <br>  (Marca un recuadro en cada caso)</h2>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. XXXXXX </h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Con qué frecuencia en este último año se presentaron las siguientes situaciones: <br>  (Marca un recuadro en cada caso)</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. </h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
-      <%= f.radio_button :estoy, "si" , id:"radio-1-estoy"%>
-      <%= f.label :estoy, "Si", for: "radio-1-estoy"%>
+      <%= f.radio_button :estoy, "1" , id:"radio-1-estoy"%>
+      <%= f.label :estoy, "Nunca", for: "radio-1-estoy"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :estoy, "no" , id:"radio-2-estoy"%>
-      <%= f.label :estoy, "No", for: "radio-2-estoy"%>
+      <%= f.radio_button :estoy, "2" , id:"radio-2-estoy"%>
+      <%= f.label :estoy, "Casi Nunca", for: "radio-2-estoy"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoy, "3" , id:"radio-3-estoy"%>
+      <%= f.label :estoy, "A veces", for: "radio-3-estoy"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoy, "4" , id:"radio-4-estoy"%>
+      <%= f.label :estoy, "Casi siempre", for: "radio-4-estoy"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoy, "5" , id:"radio-5-estoy"%>
+      <%= f.label :estoy, "Siempre", for: "radio-5-estoy"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_estoy">Por favor, <strong>escoge una respuesta</strong></div>
@@ -58,9 +70,15 @@
   document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
   document.getElementById("radio-1-estoy").addEventListener("click", fun_estoy);
   document.getElementById("radio-2-estoy").addEventListener("click", fun_estoy);
+  document.getElementById("radio-3-estoy").addEventListener("click", fun_estoy);
+  document.getElementById("radio-4-estoy").addEventListener("click", fun_estoy);
+  document.getElementById("radio-5-estoy").addEventListener("click", fun_estoy);
   function fun_estoy() {
-    if ($("#radio-1-estoy").is(':checked') == true || 
-        $("#radio-2-estoy").is(':checked') == true) {
+    if ($("#radio-1-estoy").is(':checked') == true ||
+        $("#radio-2-estoy").is(':checked') == true ||
+        $("#radio-3-estoy").is(':checked') == true ||
+        $("#radio-4-estoy").is(':checked') == true || 
+        $("#radio-5-estoy").is(':checked') == true) {
     setTimeout(function(){
       $('#div_estoy').slideUp();
       $('#div_estoy').addClass('hidden');
