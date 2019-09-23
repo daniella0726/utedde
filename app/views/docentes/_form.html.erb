@@ -1,4 +1,211 @@
-<%= form_with(model: docente, local: true) do |form| %>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+.hidden {
+  display: none !important;}
+  .centrado{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  }
+
+  .centrado-abajo{
+  position: absolute;
+  top: 90%; 
+  width: 80%;
+  }
+  .qts{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    -webkit-appearance: none;
+    transform: translateZ(0px);
+    font-size: 18px;
+    line-height: 38px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 0px 8px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0px;
+    transition: box-shadow 0.2s ease 0s;
+    background: none;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4c2f48;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #43a2d2;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  select:hover {
+  background-color: dodgerblue;
+  }
+  .no-focus-outline button:focus {
+    outline: none;
+  }
+  
+
+  .boton3 {
+  color: #254064 !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-radius: 50px;
+  border-color: #254064;
+  transition: all 1s ease;
+  position: relative;
+  }
+  .boton3:hover {
+  background: #254064;
+  color: #fff !important;
+  }
+  .boton1 {
+    cursor: pointer;
+  transition: all 1s ease;
+  }
+  .boton1:hover {
+  color: white !important;
+  }
+  
+
+.inputGroup {
+  background-color: transparent;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  width: 80%
+}
+.inputGroup label {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  font-family: 'Heebo';
+  border: 1px solid #43a2d2;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+.inputGroup label:before {
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  content: '';
+  background-color: #254064;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: '';
+  border: 1px solid #254064;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+  background-color: #43a2d2;
+  border-color: #43a2d2;
+}
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+  .form {
+  padding: 0 16px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  }
+
+  body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+    color: #4c2f48;
+    background: url('/assets/grayscale/form_quipu.png') no-repeat center center fixed;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  code {
+    background-color: #9AA3AC;
+    padding: 0 8px;
+  }
+</style>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+<%= form_with(model: docente, local: true) do |f| %>
   <% if docente.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(docente.errors.count, "error") %> prohibited this docente from being saved:</h2>
@@ -11,27 +218,874 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :p1 %>
-    <%= form.text_field :p1 %>
-  </div>
+<div class="container" style="text-align: center; max-width: 1400px;">
 
-  <div class="field">
-    <%= form.label :p2a %>
-    <%= form.text_field :p2a %>
-  </div>
+<div class="centrado" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_0">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Empezar nueva encuesta docentes</h2>
+  <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+    <i class="fas fa-check-circle"; id="but_pregunta_0"></i>
+    Empieza!
+  </button>
+</div>
 
-  <div class="field">
-    <%= form.label :p2b %>
-    <%= form.text_field :p2b %>
-  </div>
+<script type="text/javascript">
+  $('form').on('keypress', e => {
+    if (e.keyCode == 13) {
+        return false;
+    }
+  });
+  var input = document.getElementById("but_res_pregunta_0");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pregunta_0").click();
+      }
+    });
+  document.getElementById("but_res_pregunta_0").addEventListener("click", fun_pregunta_0);
+  function fun_pregunta_0() {
+      $('#div_pregunta_0').slideUp();
+      $('#div_pregunta_0').addClass('hidden');
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_1_footer').removeClass('hidden');
+      $('#div_error_1').addClass('hidden');
+  }
 
-  <div class="field">
-    <%= form.label :p3 %>
-    <%= form.text_field :p3 %>
-  </div>
+</script>
 
-  <div class="actions">
-    <%= form.submit %>
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p1">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P1. ¿Eres hombre o mujer? </h2>
+  <br>
+  <div class="field qts" >
+    <div class="inputGroup">
+      <%= f.radio_button :p1, "1" , id:"radio-1-p1"%>
+      <%= f.label :p1, "Hombre", for: "radio-1-p1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p1, "2" , id:"radio-2-p1"%>
+      <%= f.label :p1, "Mujer", for: "radio-2-p1"%>
+    </div>
   </div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_1">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_1">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #4c2f48;" id="p_p1">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p1_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="color: #254064">1 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 3%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p2_p1_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_0_p1_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_0_p1_boton").addEventListener("click", fun_p1_dev);
+  function fun_p1_dev() {
+      $('#div_pregunta_0').slideDown();
+      $('#div_pregunta_0').removeClass('hidden');
+      $('#pregunta_0_footer').removeClass('hidden');
+      $('#div_p1').slideUp();
+      $('#div_p1').addClass('hidden');
+      $('#pregunta_p1_footer').addClass('hidden');
+      $('#div_error_p1').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p2_p1_boton").addEventListener("click", fun_p1);
+  document.getElementById("radio-1-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-2-p1").addEventListener("click", fun_p1);
+  function fun_p1() {
+    if ($("#radio-1-p1").is(':checked') == true || 
+        $("#radio-2-p1").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p1').slideUp();
+      $('#div_p1').addClass('hidden');
+      $('#pregunta_p1_footer').addClass('hidden');
+      $('#div_p2').slideDown();
+      $('#div_p2').removeClass('hidden');
+      $('#pregunta_p2_footer').removeClass('hidden');
+      $('#div_error_p2').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p1').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p2">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P2. ¿Departamento y Ciudad? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.select :p2a, [], {:prompt => 'Seleccioná el depatamento'}, {class: "", style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2a" , autocomplete: "off"}%>
+    </div>
+    <div class="inputGroup">
+      <%= f.select :p2b, [], {:prompt => 'Seleccioná la ciudad'}, {class: "", style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b" , autocomplete: "off"}%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p2">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p2">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p2_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 6%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p3_p2_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p1_p2_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  var stateObject = {
+  "Amazonas": ["El Encanto","La Chorrera","La Pedrera","La Victoria","Leticia","Miriti Paraná","Puerto Alegría","Puerto Arica","Puerto Nariño","Puerto Santander","Tarapacá"],
+  "Antioquia": ["Abejorral","Abriaquí","Alejandría","Amagá","Amalfi","Andes","Angelópolis","Angostura","Anorí","Anza","Apartadó","Arboletes","Argelia","Armenia","Barbosa","Bello","Belmira","Betania","Betulia","Briceño","Buriticá","Cáceres","Caicedo","Caldas","Campamento","Cañasgordas","Caracolí","Caramanta","Carepa","Carolina","Caucasia","Chigorodó","Cisneros","Ciudad Bolívar","Cocorná","Concepción","Concordia","Copacabana","Dabeiba","Don Matías","Ebéjico","El Bagre","El Carmen de Viboral","El Santuario","Entrerrios","Envigado","Fredonia","Frontino","Giraldo","Girardota","Gómez Plata","Granada","Guadalupe","Guarne","Guatapé","Heliconia","Hispania","Itagui","Ituango","Jardín","Jericó","La Ceja","La Estrella","La Pintada","La Unión","Liborina","Maceo","Marinilla","Medellín","Montebello","Murindó","Mutatá","Nariño","Nechí","Necoclí","Olaya","Peñol","Peque","Pueblorrico","Puerto Berrío","Puerto Nare","Puerto Triunfo","Remedios","Retiro","Rionegro","Sabanalarga","Sabaneta","Salgar","San Andrés de Cuerquía","San Carlos","San Francisco","San Jerónimo","San José de La Montaña","San Juan de Urabá","San Luis","San Pedro","San Pedro de Uraba","San Rafael","San Roque","San Vicente","Santa Bárbara","Santa Rosa de Osos","Santafé de Antioquia","Santo Domingo","Segovia","Sonsón","Sopetrán","Támesis","Tarazá","Tarso","Titiribí","Toledo","Turbo","Uramita","Urrao","Valdivia","Valparaíso","Vegachí","Venecia","Vigía del Fuerte","Yalí","Yarumal","Yolombó","Yondó","Zaragoza"], 
+  "Arauca": [ "Arauca","Arauquita","Cravo Norte","Fortul","Puerto Rondón","Saravena","Tame" ],
+  "Archipiélago de San Andrés - Providencia y Santa Catalina": [ "Providencia","San Andrés" ],
+  "Atlántico": [ "Baranoa","Barranquilla","Campo de La Cruz","Candelaria","Galapa","Juan de Acosta","Luruaco","Malambo","Manatí","Palmar de Varela","Piojó","Polonuevo","Ponedera","Puerto Colombia","Repelón","Sabanagrande","Sabanalarga","Santa Lucía","Santo Tomás","Soledad","Suan","Tubará","Usiacurí" ],
+  "Bogotá D.C.": [ "Bogotá D.C." ],
+  "Bolívar": [ "Achí","Altos del Rosario","Arenal","Arjona","Arroyohondo","Barranco de Loba","Calamar","Cantagallo","Cartagena","Cicuco","Clemencia","Córdoba","El Carmen de Bolívar","El Guamo","El Peñón","Hatillo de Loba","Magangué","Mahates","Margarita","María la Baja","Mompós","Montecristo","Morales","Norosí","Pinillos","Regidor","Río Viejo","San Cristóbal","San Estanislao","San Fernando","San Jacinto","San Jacinto del Cauca","San Juan Nepomuceno","San Martín de Loba","San Pablo de Borbur","Santa Catalina","Santa Rosa","Santa Rosa del Sur","Simití","Soplaviento","Talaigua Nuevo","Tiquisio","Turbaco","Turbaná","Villanueva","Zambrano" ],
+  "Boyacá": [ "Almeida","Aquitania","Arcabuco","Belén","Berbeo","Betéitiva","Boavita","Boyacá","Briceño","Buena Vista","Busbanzá","Caldas","Campohermoso","Cerinza","Chinavita","Chiquinquirá","Chíquiza","Chiscas","Chita","Chitaraque","Chivatá","Chivor","Ciénega","Cómbita","Coper","Corrales","Covarachía","Cubará","Cucaita","Cuítiva","Duitama","El Cocuy","El Espino","Firavitoba","Floresta","Gachantivá","Gameza","Garagoa","Guacamayas","Guateque","Guayatá","Güicán","Iza","Jenesano","Jericó","La Capilla","La Uvita","La Victoria","Labranzagrande","Macanal","Maripí","Miraflores","Mongua","Monguí","Moniquirá","Motavita","Muzo","Nobsa","Nuevo Colón","Oicatá","Otanche","Pachavita","Páez","Paipa","Pajarito","Panqueba","Pauna","Paya","Paz de Río","Pesca","Pisba","Puerto Boyacá","Quípama","Ramiriquí","Ráquira","Rondón","Saboyá","Sáchica","Samacá","San Eduardo","San José de Pare","San Luis de Gaceno","San Mateo","San Miguel de Sema","San Pablo de Borbur","Santa María","Santa Rosa de Viterbo","Santa Sofía","Santana","Sativanorte","Sativasur","Siachoque","Soatá","Socha","Socotá","Sogamoso","Somondoco","Sora","Soracá","Sotaquirá","Susacón","Sutamarchán","Sutatenza","Tasco","Tenza","Tibaná","Tibasosa","Tinjacá","Tipacoque","Toca","Togüí","Tópaga","Tota","Tunja","Tununguá","Turmequé","Tuta","Tutazá","Umbita","Ventaquemada","Villa de Leyva","Viracachá","Zetaquira" ],
+  "Caldas": [ "Aguadas","Anserma","Aranzazu","Belalcázar","Chinchiná","Filadelfia","La Dorada","La Merced","Manizales","Manzanares","Marmato","Marquetalia","Marulanda","Neira","Norcasia","Pácora","Palestina","Pensilvania","Riosucio","Risaralda","Salamina","Samaná","San José","Supía","Victoria","Villamaría","Viterbo" ],
+  "Caquetá": [ "Albania","Belén de Los Andaquies","Cartagena del Chairá","Curillo","El Doncello","El Paujil","Florencia","La Montañita","Milán","Morelia","Puerto Rico","San José del Fragua","San Vicente del Caguán","Solano","Solita","Valparaíso" ],
+  "Casanare": [ "Aguazul","Chámeza","Hato Corozal","La Salina","Maní","Monterrey","Nunchía","Orocué","Paz de Ariporo","Pore","Recetor","Sabanalarga","Sácama","San Luis de Gaceno","Támara","Tauramena","Trinidad","Villanueva","Yopal" ],
+  "Cauca": [ "Almaguer","Argelia","Balboa","Bolívar","Buenos Aires","Cajibío","Caldono","Caloto","Corinto","El Tambo","Florencia","Guachené","Guapi","Inzá","Jambaló","La Sierra","La Vega","López","Mercaderes","Miranda","Morales","Padilla","Páez","Patía","Piamonte","Piendamó","Popayán","Puerto Tejada","Puracé","Rosas","San Sebastián","Santa Rosa","Santander de Quilichao","Silvia","Sotara","Suárez","Sucre","Timbío","Timbiquí","Toribio","Totoró","Villa Rica" ],
+  "Cesar": [ "Aguachica","Agustín Codazzi","Astrea","Becerril","Bosconia","Chimichagua","Chiriguaná","Curumaní","El Copey","El Paso","Gamarra","González","La Gloria","La Jagua de Ibirico","La Paz","Manaure","Pailitas","Pelaya","Pueblo Bello","Río de Oro","San Alberto","San Diego","San Martín","Tamalameque","Valledupar" ],
+  "Chocó": [ "Acandí","Alto Baudo","Atrato","Bagadó","Bahía Solano","Bajo Baudó","Belén de Bajira","Bojaya","Carmen del Darien","Cértegui","Condoto","El Cantón del San Pablo","El Carmen de Atrato","El Litoral del San Juan","Istmina","Juradó","Lloró","Medio Atrato","Medio Baudó","Medio San Juan","Nóvita","Nuquí","Quibdó","Río Iro","Río Quito","Riosucio","San José del Palmar","Sipí","Tadó","Unguía","Unión Panamericana" ],
+  "Córdoba": [ "Ayapel","Buenavista","Canalete","Cereté","Chimá","Chinú","Ciénaga de Oro","Cotorra","La Apartada","Lorica","Los Córdobas","Momil","Montelíbano","Montería","Moñitos","Planeta Rica","Pueblo Nuevo","Puerto Escondido","Puerto Libertador","Purísima","Sahagún","San Andrés Sotavento","San Antero","San Bernardo del Viento","San Carlos","San José de Uré","San Pelayo","Tierralta","Tuchín","Valencia" ],
+  "Cundinamarca": [ "Agua de Dios","Albán","Anapoima","Anolaima","Apulo","Arbeláez","Beltrán","Bituima","Bojacá","Cabrera","Cachipay","Cajicá","Caparrapí","Caqueza","Carmen de Carupa","Chaguaní","Chía","Chipaque","Choachí","Chocontá","Cogua","Cota","Cucunubá","El Colegio","El Peñón","El Rosal","Facatativá","Fomeque","Fosca","Funza","Fúquene","Fusagasugá","Gachala","Gachancipá","Gachetá","Gama","Girardot","Granada","Guachetá","Guaduas","Guasca","Guataquí","Guatavita","Guayabal de Siquima","Guayabetal","Gutiérrez","Jerusalén","Junín","La Calera","La Mesa","La Palma","La Peña","La Vega","Lenguazaque","Macheta","Madrid","Manta","Medina","Mosquera","Nariño","Nemocón","Nilo","Nimaima","Nocaima","Pacho","Paime","Pandi","Paratebueno","Pasca","Puerto Salgar","Pulí","Quebradanegra","Quetame","Quipile","Ricaurte","San Antonio del Tequendama","San Bernardo","San Cayetano","San Francisco","San Juan de Río Seco","Sasaima","Sesquilé","Sibaté","Silvania","Simijaca","Soacha","Sopó","Subachoque","Suesca","Supatá","Susa","Sutatausa","Tabio","Tausa","Tena","Tenjo","Tibacuy","Tibirita","Tocaima","Tocancipá","Topaipí","Ubalá","Ubaque","Une","Útica","Venecia","Vergara","Vianí","Villa de San Diego de Ubate","Villagómez","Villapinzón","Villeta","Viotá","Yacopí","Zipacón","Zipaquirá" ],
+  "Guainía": [ "Barranco Minas","Cacahual","Inírida","La Guadalupe","Mapiripana","Morichal","Pana Pana","Puerto Colombia","San Felipe" ],
+  "Guaviare": [ "Calamar","El Retorno","Miraflores","San José del Guaviare" ],
+  "Huila": [ "Acevedo","Agrado","Aipe","Algeciras","Altamira","Baraya","Campoalegre","Colombia","Elías","Garzón","Gigante","Guadalupe","Hobo","Iquira","Isnos","La Argentina","La Plata","Nátaga","Neiva","Oporapa","Paicol","Palermo","Palestina","Pital","Pitalito","Rivera","Saladoblanco","San Agustín","Santa María","Suaza","Tarqui","Tello","Teruel","Tesalia","Timaná","Villavieja","Yaguará" ],
+  "La Guajira": [ "Albania","Barrancas","Dibula","Distracción","El Molino","Fonseca","Hatonuevo","La Jagua del Pilar","Maicao","Manaure","Riohacha","San Juan del Cesar","Uribia","Urumita","Villanueva" ],
+  "Magdalena": [ "Algarrobo","Aracataca","Ariguaní","Cerro San Antonio","Chivolo","Ciénaga","Concordia","El Banco","El Piñon","El Retén","Fundación","Guamal","Nueva Granada","Pedraza","Pijiño del Carmen","Pivijay","Plato","Pueblo Viejo","Remolino","Sabanas de San Angel","Salamina","San Sebastián de Buenavista","San Zenón","Santa Ana","Santa Bárbara de Pinto","Santa Marta","Sitionuevo","Tenerife","Zapayán","Zona Bananera" ],
+  "Meta": [ "Acacias","Barranca de Upía","Cabuyaro","Castilla la Nueva","Cubarral","Cumaral","El Calvario","El Castillo","El Dorado","Fuente de Oro","Granada","Guamal","La Macarena","Lejanías","Mapiripán","Mesetas","Puerto Concordia","Puerto Gaitán","Puerto Lleras","Puerto López","Puerto Rico","Restrepo","San Carlos de Guaroa","San Juan de Arama","San Juanito","San Martín","Uribe","Villavicencio","Vista Hermosa" ],
+  "Nariño": [ "Albán","Aldana","Ancuyá","Arboleda","Barbacoas","Belén","Buesaco","Chachagüí","Colón","Consaca","Contadero","Córdoba","Cuaspud","Cumbal","Cumbitara","El Charco","El Peñol","El Rosario","El Tablón de Gómez","El Tambo","Francisco Pizarro","Funes","Guachucal","Guaitarilla","Gualmatán","Iles","Imués","Ipiales","La Cruz","La Florida","La Llanada","La Tola","La Unión","Leiva","Linares","Los Andes","Magüí","Mallama","Mosquera","Nariño","Olaya Herrera","Ospina","Pasto","Policarpa","Potosí","Providencia","Puerres","Pupiales","Ricaurte","Roberto Payán","Samaniego","San Andrés de Tumaco","San Bernardo","San Lorenzo","San Pablo","San Pedro de Cartago","Sandoná","Santa Bárbara","Santacruz","Sapuyes","Taminango","Tangua","Túquerres","Yacuanquer" ],
+  "Norte de Santander": [ "Abrego","Arboledas","Bochalema","Bucarasica","Cachirá","Cácota","Chinácota","Chitagá","Convención","Cúcuta","Cucutilla","Durania","El Carmen","El Tarra","El Zulia","Gramalote","Hacarí","Herrán","La Esperanza","La Playa","Labateca","Los Patios","Lourdes","Mutiscua","Ocaña","Pamplona","Pamplonita","Puerto Santander","Ragonvalia","Salazar","San Calixto","San Cayetano","Santiago","Sardinata","Silos","Teorama","Tibú","Toledo","Villa Caro","Villa del Rosario" ],
+  "Putumayo": [ "Colón","Leguízamo","Mocoa","Orito","Puerto Asís","Puerto Caicedo","Puerto Guzmán","San Francisco","San Miguel","Santiago","Sibundoy","Valle de Guamez","Villagarzón" ],
+  "Quindío": [ "Armenia","Buenavista","Calarcá","Circasia","Córdoba","Filandia","Génova","La Tebaida","Montenegro","Pijao","Quimbaya","Salento" ],
+  "Risaralda": [ "Apía","Balboa","Belén de Umbría","Dosquebradas","Guática","La Celia","La Virginia","Marsella","Mistrató","Pereira","Pueblo Rico","Quinchía","Santa Rosa de Cabal","Santuario" ],
+  "Santander": [ "Aguada","Albania","Aratoca","Barbosa","Barichara","Barrancabermeja","Betulia","Bolívar","Bucaramanga","Cabrera","California","Capitanejo","Carcasí","Cepitá","Cerrito","Charalá","Charta","Chimá","Chipatá","Cimitarra","Concepción","Confines","Contratación","Coromoro","Curití","El Carmen de Chucurí","El Guacamayo","El Peñón","El Playón","Encino","Enciso","Florián","Floridablanca","Galán","Gambita","Girón","Guaca","Guadalupe","Guapotá","Guavatá","Güepsa","Hato","Jesús María","Jordán","La Belleza","La Paz","Landázuri","Lebríja","Los Santos","Macaravita","Málaga","Matanza","Mogotes","Molagavita","Ocamonte","Oiba","Onzaga","Palmar","Palmas del Socorro","Páramo","Piedecuesta","Pinchote","Puente Nacional","Puerto Parra","Puerto Wilches","Rionegro","Sabana de Torres","San Andrés","San Benito","San Gil","San Joaquín","San José de Miranda","San Miguel","San Vicente de Chucurí","Santa Bárbara","Santa Helena del Opón","Simacota","Socorro","Suaita","Sucre","Suratá","Tona","Valle de San José","Vélez","Vetas","Villanueva","Zapatoca" ],
+  "Sucre": [ "Buenavista","Caimito","Chalán","Coloso","Corozal","Coveñas","El Roble","Galeras","Guaranda","La Unión","Los Palmitos","Majagual","Morroa","Ovejas","Palmito","Sampués","San Benito Abad","San Juan de Betulia","San Luis de Sincé","San Marcos","San Onofre","San Pedro","Santiago de Tolú","Sincelejo","Sucre","Tolú Viejo" ],
+  "Tolima": [ "Alpujarra","Alvarado","Ambalema","Anzoátegui","Armero","Ataco","Cajamarca","Carmen de Apicala","Casabianca","Chaparral","Coello","Coyaima","Cunday","Dolores","Espinal","Falan","Flandes","Fresno","Guamo","Herveo","Honda","Ibagué","Icononzo","Lérida","Líbano","Mariquita","Melgar","Murillo","Natagaima","Ortega","Palocabildo","Piedras","Planadas","Prado","Purificación","Rio Blanco","Roncesvalles","Rovira","Saldaña","San Antonio","San Luis","Santa Isabel","Suárez","Valle de San Juan","Venadillo","Villahermosa","Villarrica" ],
+  "Valle del Cauca": [ "Alcalá","Andalucía","Ansermanuevo","Argelia","Bolívar","Buenaventura","Bugalagrande","Caicedonia","Cali","Calima","Candelaria","Cartago","Dagua","El Águila","El Cairo","El Cerrito","El Dovio","Florida","Ginebra","Guacarí","Guadalajara de Buga","Jamundí","La Cumbre","La Unión","La Victoria","Obando","Palmira","Pradera","Restrepo","Riofrío","Roldanillo","San Pedro","Sevilla","Toro","Trujillo","Tuluá","Ulloa","Versalles","Vijes","Yotoco","Yumbo","Zarzal" ],
+  "Vaupés": [ "Caruru","Mitú","Pacoa","Papunaua","Taraira","Yavaraté" ],
+  "Vichada": [ "Cumaribo","La Primavera","Puerto Carreño","Santa Rosalía" ]
+  }
+
+window.onload = function () {
+var departamentSel = document.getElementById("res_p2a"),
+citySel = document.getElementById("res_p2b");
+for (var departament in stateObject) {
+departamentSel.options[departamentSel.options.length] = new Option(departament, departament);
+}
+departamentSel.onchange = function () {
+citySel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done
+for (var city1 in stateObject[this.value]) {
+citySel.options[citySel.options.length] = new Option(city1, city1);
+}
+}
+}
+
+
+  var input = document.getElementById("res_p2a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p2b").focus();
+      }
+    });
+
+  var input = document.getElementById("res_p2a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p2b").focus();
+      }
+    });
+
+  document.getElementById("pregunta_p1_p2_boton").addEventListener("click", fun_p2_dev);
+  function fun_p2_dev() {
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_p2').slideUp();
+      $('#div_p2').addClass('hidden');
+      $('#pregunta_p2_footer').addClass('hidden');
+      $('#div_error_p2').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p3_p2_boton").addEventListener("click", fun_p2);
+  document.getElementById("but_res_pregunta_2").addEventListener("click", fun_p2);
+  function fun_p2() {
+    if (document.getElementById("res_p2a").value == "" || document.getElementById("res_p2b").value == "") {
+      $('#but_res_pregunta_2').addClass('hidden');
+      $('#p_p2').addClass('hidden');
+      $('#div_error_p2').removeClass('hidden');
+    } else {
+      $('#div_p2').slideUp();
+      $('#div_p2').addClass('hidden');
+      $('#pregunta_p2_footer').addClass('hidden');
+      $('#div_p3').slideDown();
+      $('#div_p3').removeClass('hidden');
+      $('#pregunta_p3_footer').removeClass('hidden');
+      $('#div_error_p3').addClass('hidden');
+    }
+    }
+
+  $(document).ready(function(){ 
+    $('#res_p2b').change(function() { 
+      if (document.getElementById("res_p2b").value == "") {
+      $('#but_res_pregunta_2').addClass('hidden');
+      $('#p_p2').addClass('hidden');
+      $('#div_error_p2').removeClass('hidden');
+      } else {
+       $('#but_res_pregunta_2').removeClass('hidden');
+       $('#p_p2').removeClass('hidden');
+       $('#div_error_p2').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p3">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P3. ¿Edad? </h2>
+  <br>
+  <div class="field qts" >
+    <div class="inputGroup">
+      <%= f.radio_button :p3, "Menos de 30 años" , id:"radio-1-p3"%>
+      <%= f.label :p3, "Menos de 30 años", for: "radio-1-p3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p3, "30 a 39 años" , id:"radio-2-p3"%>
+      <%= f.label :p3, "30 a 39 años", for: "radio-2-p3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p3, "40 a 49 años" , id:"radio-3-p3"%>
+      <%= f.label :p3, "40 a 49 años", for: "radio-3-p3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p3, "50 a 59 años" , id:"radio-4-p3"%>
+      <%= f.label :p3, "50 a 59 años", for: "radio-4-p3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p3, "50 a 59 años" , id:"radio-5-p3"%>
+      <%= f.label :p3, "50 a 59 años", for: "radio-5-p3"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_3">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_3">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #4c2f48;" id="p_p3">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p3_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="color: #254064">3 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 9%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p4_p3_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p2_p3_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p2_p3_boton").addEventListener("click", fun_p3_dev);
+  function fun_p3_dev() {
+      $('#div_p2').slideDown();
+      $('#div_p2').removeClass('hidden');
+      $('#pregunta_p2_footer').removeClass('hidden');
+      $('#div_p3').slideUp();
+      $('#div_p3').addClass('hidden');
+      $('#pregunta_p3_footer').addClass('hidden');
+      $('#div_error_p3').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p4_p3_boton").addEventListener("click", fun_p3);
+  document.getElementById("radio-1-p3").addEventListener("click", fun_p3);
+  document.getElementById("radio-2-p3").addEventListener("click", fun_p3);
+  document.getElementById("radio-3-p3").addEventListener("click", fun_p3);
+  document.getElementById("radio-4-p3").addEventListener("click", fun_p3);
+  document.getElementById("radio-5-p3").addEventListener("click", fun_p3);
+  function fun_p3() {
+    if ($("#radio-1-p3").is(':checked') == true || 
+        $("#radio-2-p3").is(':checked') == true ||
+        $("#radio-3-p3").is(':checked') == true ||
+        $("#radio-4-p3").is(':checked') == true ||
+        $("#radio-5-p3").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p3').slideUp();
+      $('#div_p3').addClass('hidden');
+      $('#pregunta_p3_footer').addClass('hidden');
+      $('#div_p4').slideDown();
+      $('#div_p4').removeClass('hidden');
+      $('#pregunta_p4_footer').removeClass('hidden');
+      $('#div_error_p4').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p3').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P4. ¿Cuáles de los siguientes estudios ha realizado? (Puedes marcar varias respuestas) </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.check_box :p4_1, checked: "Bachillerato pedagógico", id:"radio-1-p4_1"%>
+      <%= f.label :p4_1, "Bachillerato pedagógico", for: "radio-1-p4_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_2, checked: "Normalista superior", id:"radio-2-p4_2"%>
+      <%= f.label :p4_2, "Normalista superior", for: "radio-2-p4_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_3, checked: "Otro tipo de bachillerato", id:"radio-3-p4_3"%>
+      <%= f.label :p4_3, "Otro tipo de bachillerato", for: "radio-3-p4_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_4, checked: "Técnico o tecnológico en educación" , id:"radio-4-p4_4"%>
+      <%= f.label :p4_4, "Técnico o tecnológico en educación", for: "radio-4-p4_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_5, checked: "Técnico o tecnológico en otras áreas", id:"radio-5-p4_5"%>
+      <%= f.label :p4_5, "Técnico o tecnológico en otras áreas", for: "radio-5-p4_5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_6, checked: "Profesional en educación", id:"radio-6-p4_6"%>
+      <%= f.label :p4_6, "Profesional en educación", for: "radio-6-p4_6"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_7, checked: "Profesional en otras áreas", id:"radio-7-p4_7"%>
+      <%= f.label :p4_7, "Profesional en otras áreas", for: "radio-7-p4_7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_8, checked: "Postgrado en educación", id:"radio-8-p4_8"%>
+      <%= f.label :p4_8, "Postgrado en educación", for: "radio-8-p4_8"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_9, checked: "Postgrado en otras áreas", id:"radio-9-p4_9"%>
+      <%= f.label :p4_9, "Postgrado en otras áreas", for: "radio-9-p4_9"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p4_10, checked: "Otro, ¿cuál?", id:"radio-10-p4_10"%>
+      <%= f.label :p4_10, "Otro, ¿cuál?", for: "radio-10-p4_10"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p4">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p4">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p4_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">4 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p4a_p4_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p3_p4_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p3_p4_boton").addEventListener("click", fun_p4_dev);
+  function fun_p4_dev() {
+      $('#div_p3').slideDown();
+      $('#div_p3').removeClass('hidden');
+      $('#pregunta_p3_footer').removeClass('hidden');
+      $('#div_p4').slideUp();
+      $('#div_p4').addClass('hidden');
+      $('#pregunta_p4_footer').addClass('hidden');
+      $('#div_error_p4').addClass('hidden');
+  }
+
+  document.getElementById("but_res_p4").addEventListener("click", fun_p4);
+  function fun_p4() {
+    if ($("#radio-13-p4_13").is(':checked') == true) {
+      setTimeout(function(){
+      $('#div_p4').slideUp();
+      $('#div_p4').addClass('hidden');
+      $('#pregunta_p4_footer').addClass('hidden');
+      $('#div_p4a').slideDown();
+      $('#div_p4a').removeClass('hidden');
+      $('#pregunta_p4a_footer').removeClass('hidden');
+      $('#div_error_p4a').addClass('hidden');
+      document.getElementById("res_p4a").focus();
+      } , 500);
+    } else if ($("#radio-1-p4_1").is(':checked') == true || 
+        $("#radio-2-p4_2").is(':checked') == true || 
+        $("#radio-3-p4_3").is(':checked') == true || 
+        $("#radio-4-p4_4").is(':checked') == true || 
+        $("#radio-5-p4_5").is(':checked') == true || 
+        $("#radio-6-p4_6").is(':checked') == true || 
+        $("#radio-7-p4_7").is(':checked') == true ||
+        $("#radio-8-p4_8").is(':checked') == true ||
+        $("#radio-9-p4_9").is(':checked') == true ||
+        $("#radio-10-p4_10").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p4').slideUp();
+      $('#div_p4').addClass('hidden');
+      $('#pregunta_p4_footer').addClass('hidden');
+      $('#div_p5').slideDown();
+      $('#div_p5').removeClass('hidden');
+      $('#pregunta_p5_footer').removeClass('hidden');
+      $('#div_error_p5').addClass('hidden');
+      } , 500);
+  } else {
+      $('#div_error_p4').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p4_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p4_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p4_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p4_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p4_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p4_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p4_7").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-p4_8").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-p4_9").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-p4_10").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p4').removeClass('hidden');
+      $('#div_error_p4').addClass('hidden');
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p4a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P4A. ¿Otro, cúal? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.text_field :p4a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4a", placeholder: "Nombre de la persona"}%>
+    <br>
+    </div> 
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4a">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p4a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p4a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p4a_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">4 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p5_p4a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p4_p4a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  var input = document.getElementById("res_p4a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p4a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p4_p4a_boton").addEventListener("click", fun_p4a_dev);
+  function fun_p4a_dev() {
+      $('#div_p4').slideDown();
+      $('#div_p4').removeClass('hidden');
+      $('#pregunta_p4_footer').removeClass('hidden');
+      $('#div_p4a').slideUp();
+      $('#div_p4a').addClass('hidden');
+      $('#pregunta_p4a_footer').addClass('hidden');
+      $('#div_error_p4a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p5_p4a_boton").addEventListener("click", fun_p4a);
+  document.getElementById("but_res_p4a").addEventListener("click", fun_p4a);
+    function fun_p4a() {
+    var frase = document.getElementById("res_p4a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p4a").value = frase;
+    if (document.getElementById("res_p4a").value == "") {
+      $('#but_res_p4a').addClass('hidden');
+      $('#p_p4a').addClass('hidden');
+      $('#div_error_p4a').removeClass('hidden');
+    } else {
+      $('#div_p4a').slideUp();
+      $('#div_p4a').addClass('hidden');
+      $('#pregunta_p4a_footer').addClass('hidden');
+      $('#div_p5').slideDown();
+      $('#div_p5').removeClass('hidden');
+      $('#pregunta_p5_footer').removeClass('hidden');
+      $('#div_error_p5').addClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+    $('#res_p4a').on('input', function() { 
+      var frase = document.getElementById("res_p4a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p4a").value = frase;
+      if (document.getElementById("res_p4a").value == "") {
+      $('#but_res_p4a').addClass('hidden');
+      $('#p_p4a').addClass('hidden');
+      $('#div_error_p4a').removeClass('hidden');
+      } else {
+       $('#but_res_p4a').removeClass('hidden');
+       $('#p_p4a').removeClass('hidden');
+       $('#div_error_p4a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p5">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P5. ¿Cuál es su tipo de vinculación? </h2>
+  <br>
+  <div class="field qts" >
+    <div class="inputGroup">
+      <%= f.radio_button :p5, "Nombramiento en propiedad" , id:"radio-1-p5"%>
+      <%= f.label :p5, "Nombramiento en propiedad", for: "radio-1-p5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p5, "Provisional" , id:"radio-2-p5"%>
+      <%= f.label :p5, "Provisional", for: "radio-2-p5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p5, "Periodo de prueba" , id:"radio-3-p5"%>
+      <%= f.label :p5, "Periodo de prueba", for: "radio-3-p5"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_5">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_5">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #4c2f48;" id="p_p5">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p5_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="color: #254064">5 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 15%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p6_p5_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p4_p5_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p4_p5_boton").addEventListener("click", fun_p5_dev);
+  function fun_p5_dev() {
+      $('#div_p4').slideDown();
+      $('#div_p4').removeClass('hidden');
+      $('#pregunta_p4_footer').removeClass('hidden');
+      $('#div_p5').slideUp();
+      $('#div_p5').addClass('hidden');
+      $('#pregunta_p5_footer').addClass('hidden');
+      $('#div_error_p5').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p4_p5_boton").addEventListener("click", fun_p5);
+  document.getElementById("radio-1-p5").addEventListener("click", fun_p5);
+  document.getElementById("radio-2-p5").addEventListener("click", fun_p5);
+  document.getElementById("radio-3-p5").addEventListener("click", fun_p5);
+  function fun_p5() {
+    if ($("#radio-1-p5").is(':checked') == true || 
+        $("#radio-2-p5").is(':checked') == true ||
+        $("#radio-3-p5").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p5').slideUp();
+      $('#div_p5').addClass('hidden');
+      $('#pregunta_p5_footer').addClass('hidden');
+      $('#div_p6').slideDown();
+      $('#div_p6').removeClass('hidden');
+      $('#pregunta_p6_footer').removeClass('hidden');
+      $('#div_error_p6').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p5').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p6">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p6. Cuántos años lleva como? </h2>
+  <br>
+  <div class="field qts" >
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Docente" , id:"radio-1-p6"%>
+      <%= f.label :p6, "Docente", for: "radio-1-p6"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Directivo escolar" , id:"radio-2-p6"%>
+      <%= f.label :p6, "Directivo escolar", for: "radio-2-p6"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p6, "Directivo de esta institución educativa" , id:"radio-3-p6"%>
+      <%= f.label :p6, "Directivo de esta institución educativa", for: "radio-3-p6"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_6">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_6">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #4c2f48;" id="p_p6">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p6_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="color: #254064">6 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 18%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p7_p6_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p5_p6_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p5_p6_boton").addEventListener("click", fun_p6_dev);
+  function fun_p6_dev() {
+      $('#div_p5').slideDown();
+      $('#div_p5').removeClass('hidden');
+      $('#pregunta_p5_footer').removeClass('hidden');
+      $('#div_p6').slideUp();
+      $('#div_p6').addClass('hidden');
+      $('#pregunta_p6_footer').addClass('hidden');
+      $('#div_error_p6').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p7_p6_boton").addEventListener("click", fun_p6);
+  document.getElementById("radio-1-p6").addEventListener("click", fun_p6);
+  document.getElementById("radio-2-p6").addEventListener("click", fun_p6);
+  document.getElementById("radio-3-p6").addEventListener("click", fun_p6);
+  function fun_p6() {
+    if ($("#radio-1-p6").is(':checked') == true || 
+        $("#radio-2-p6").is(':checked') == true ||
+        $("#radio-3-p6").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p6').slideUp();
+      $('#div_p6').addClass('hidden');
+      $('#pregunta_p6_footer').addClass('hidden');
+      $('#div_p7').slideDown();
+      $('#div_p7').removeClass('hidden');
+      $('#pregunta_p7_footer').removeClass('hidden');
+      $('#div_error_p7').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p6').removeClass('hidden');
+    }
+    }
+</script>
+
+<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p7">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p7. Cuántos años lleva como? </h2>
+  <br>
+  <div class="field qts" >
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Mañana" , id:"radio-1-p7"%>
+      <%= f.label :p7, "Mañana", for: "radio-1-p7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Tarde" , id:"radio-2-p7"%>
+      <%= f.label :p7, "Tarde", for: "radio-2-p7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Nocturna" , id:"radio-3-p7"%>
+      <%= f.label :p7, "Nocturna", for: "radio-3-p7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Completa" , id:"radio-4-p7"%>
+      <%= f.label :p7, "Completa", for: "radio-4-p7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Fin de semana" , id:"radio-5-p7"%>
+      <%= f.label :p7, "Fin de semana", for: "radio-5-p7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p7, "Única" , id:"radio-6-p7"%>
+      <%= f.label :p7, "Única", for: "radio-6-p7"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_7">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_7">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #4c2f48;" id="p_p7">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p7_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-4">
+        <span style="color: #254064">7 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 21%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p8_p7_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p6_p7_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p6_p7_boton").addEventListener("click", fun_p7_dev);
+  function fun_p7_dev() {
+      $('#div_p6').slideDown();
+      $('#div_p6').removeClass('hidden');
+      $('#pregunta_p6_footer').removeClass('hidden');
+      $('#div_p7').slideUp();
+      $('#div_p7').addClass('hidden');
+      $('#pregunta_p7_footer').addClass('hidden');
+      $('#div_error_p7').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p8_p7_boton").addEventListener("click", fun_p7);
+  document.getElementById("radio-1-p7").addEventListener("click", fun_p7);
+  document.getElementById("radio-2-p7").addEventListener("click", fun_p7);
+  document.getElementById("radio-3-p7").addEventListener("click", fun_p7);
+  function fun_p7() {
+    if ($("#radio-1-p7").is(':checked') == true || 
+        $("#radio-2-p7").is(':checked') == true ||
+        $("#radio-3-p7").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p7').slideUp();
+      $('#div_p7').addClass('hidden');
+      $('#pregunta_p7_footer').addClass('hidden');
+      $('#div_p8').slideDown();
+      $('#div_p8').removeClass('hidden');
+      $('#pregunta_p8_footer').removeClass('hidden');
+      $('#div_error_p8').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p7').removeClass('hidden');
+    }
+    }
+</script>
+
 <% end %>
