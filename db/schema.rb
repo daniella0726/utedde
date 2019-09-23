@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_170915) do
+ActiveRecord::Schema.define(version: 2019_09_23_202809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -319,6 +319,46 @@ ActiveRecord::Schema.define(version: 2019_09_23_170915) do
     t.string "p48a"
     t.string "p48b"
     t.string "p49"
+    t.string "p3a_1"
+    t.string "p3a_2"
+    t.string "p3a_3"
+    t.string "p50"
+    t.string "p51"
+    t.string "p52"
+    t.string "p53_1"
+    t.string "p53_2"
+    t.string "p53_3"
+    t.string "p53_4"
+    t.string "p53_5"
+    t.string "p53_6"
+    t.string "p53_7"
+    t.string "p53_8"
+    t.string "p53a"
+    t.string "p54_1"
+    t.string "p54_2"
+    t.string "p54_3"
+    t.string "p54_4"
+    t.string "p54_5"
+    t.string "p54_6"
+    t.string "p54_7"
+    t.string "p55_1"
+    t.string "p55_2"
+    t.string "p55_3"
+    t.string "p56a"
+    t.string "p56b"
+    t.string "p57a"
+    t.string "p57b"
+    t.string "p57c"
+    t.string "p57d"
+    t.string "p58a"
+    t.string "p58b"
+    t.string "p58c"
+    t.string "p58d"
+    t.string "p59"
+    t.string "p59a"
+    t.string "p60"
+    t.string "p61"
+    t.string "p62"
   end
 
 end
