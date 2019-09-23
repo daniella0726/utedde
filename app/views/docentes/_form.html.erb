@@ -221,7 +221,7 @@
 <div class="container" style="text-align: center; max-width: 1400px;">
 
 <div class="centrado" style="width: 90%; text-align: center; position: absolute;" id="div_pregunta_0">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Empezar nueva encuesta estudiantes</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Empezar nueva encuesta docentes</h2>
   <button type="button" class="boton3" style="" id="but_res_pregunta_0">
     <i class="fas fa-check-circle"; id="but_pregunta_0"></i>
     Empieza!
@@ -424,6 +424,15 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 }
 }
 
+
+  var input = document.getElementById("res_p2a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p2b").focus();
+      }
+    });
+
   var input = document.getElementById("res_p2a");
       input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
@@ -446,14 +455,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   document.getElementById("pregunta_p3_p2_boton").addEventListener("click", fun_p2);
   document.getElementById("but_res_pregunta_2").addEventListener("click", fun_p2);
   function fun_p2() {
-    var frase = document.getElementById("res_p2").value; 
-      frase = frase.replace("#"," ");
-      frase = frase.replace("%"," ");
-      frase = frase.replace("&"," ");
-      frase = frase.replace("$"," ");
-      frase = frase.replace("  "," ");
-      document.getElementById("res_p2").value = frase;
-    if (document.getElementById("res_p2").value == "") {
+    if (document.getElementById("res_p2a").value == "" || document.getElementById("res_p2b").value == "") {
       $('#but_res_pregunta_2').addClass('hidden');
       $('#p_p2').addClass('hidden');
       $('#div_error_p2').removeClass('hidden');
@@ -467,6 +469,20 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p3').addClass('hidden');
     }
     }
+
+  $(document).ready(function(){ 
+    $('#res_p2b').change(function() { 
+      if (document.getElementById("res_p2b").value == "") {
+      $('#but_res_pregunta_2').addClass('hidden');
+      $('#p_p2').addClass('hidden');
+      $('#div_error_p2').removeClass('hidden');
+      } else {
+       $('#but_res_pregunta_2').removeClass('hidden');
+       $('#p_p2').removeClass('hidden');
+       $('#div_error_p2').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
 
 <div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p3">
@@ -674,9 +690,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
         $("#radio-7-p4_7").is(':checked') == true ||
         $("#radio-8-p4_8").is(':checked') == true ||
         $("#radio-9-p4_9").is(':checked') == true ||
-        $("#radio-10-p4_10").is(':checked') == true ||
-        $("#radio-11-p4_11").is(':checked') == true ||
-        $("#radio-12-p4_12").is(':checked') == true ) {
+        $("#radio-10-p4_10").is(':checked') == true ) {
     setTimeout(function(){
       $('#div_p4').slideUp();
       $('#div_p4').addClass('hidden');
@@ -701,9 +715,6 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   document.getElementById("radio-8-p4_8").addEventListener("click", fun_multi);
   document.getElementById("radio-9-p4_9").addEventListener("click", fun_multi);
   document.getElementById("radio-10-p4_10").addEventListener("click", fun_multi);
-  document.getElementById("radio-11-p4_11").addEventListener("click", fun_multi);
-  document.getElementById("radio-12-p4_12").addEventListener("click", fun_multi);
-  document.getElementById("radio-13-p4_13").addEventListener("click", fun_multi);
   function fun_multi() {
       $('#but_res_p4').removeClass('hidden');
       $('#div_error_p4').addClass('hidden');
@@ -715,7 +726,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <br>
   <div class="field qts">
     <div class="inputGroup">
-      <%= f.text_field :p5cn, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4a", placeholder: "Nombre de la persona"}%>
+      <%= f.text_field :p4a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4a", placeholder: "Nombre de la persona"}%>
     <br>
     </div> 
   </div>
@@ -737,10 +748,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p4_p4a_boton">
+          <a class="boton1" id="pregunta_p5_p4a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p5_p4a_boton">
+          <a class="boton1" id="pregunta_p4_p4a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -760,7 +771,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     });
 
   document.getElementById("pregunta_p4_p4a_boton").addEventListener("click", fun_p4a_dev);
-  function fun_p4_dev() {
+  function fun_p4a_dev() {
       $('#div_p4').slideDown();
       $('#div_p4').removeClass('hidden');
       $('#pregunta_p4_footer').removeClass('hidden');
@@ -833,8 +844,8 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p5, "Periodo de prueba", for: "radio-3-p5"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_3">Por favor, <strong>escogé un curso!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_3">
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_5">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_5">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
@@ -851,10 +862,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p4_p5_boton">
+          <a class="boton1" id="pregunta_p6_p5_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p6_p5_boton">
+          <a class="boton1" id="pregunta_p4_p5_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -934,10 +945,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p5_p6_boton">
+          <a class="boton1" id="pregunta_p7_p6_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p7_p6_boton">
+          <a class="boton1" id="pregunta_p5_p6_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -959,7 +970,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p6').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p4_p6_boton").addEventListener("click", fun_p6);
+  document.getElementById("pregunta_p7_p6_boton").addEventListener("click", fun_p6);
   document.getElementById("radio-1-p6").addEventListener("click", fun_p6);
   document.getElementById("radio-2-p6").addEventListener("click", fun_p6);
   document.getElementById("radio-3-p6").addEventListener("click", fun_p6);
@@ -1029,10 +1040,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p6_p7_boton">
+          <a class="boton1" id="pregunta_p8_p7_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p8_p7_boton">
+          <a class="boton1" id="pregunta_p6_p7_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -1054,7 +1065,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p7').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p4_p7_boton").addEventListener("click", fun_p7);
+  document.getElementById("pregunta_p8_p7_boton").addEventListener("click", fun_p7);
   document.getElementById("radio-1-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-2-p7").addEventListener("click", fun_p7);
   document.getElementById("radio-3-p7").addEventListener("click", fun_p7);
