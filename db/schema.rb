@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_170915) do
+ActiveRecord::Schema.define(version: 2019_09_23_212312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 2019_09_23_170915) do
     t.string "p3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "p4_1"
+    t.string "p4_2"
+    t.string "p4_3"
+    t.string "p4_4"
+    t.string "p4_5"
+    t.string "p4_6"
+    t.string "p4_7"
+    t.string "p4_8"
+    t.string "p4_9"
+    t.string "p4_10"
+    t.string "p4_a"
+    t.string "p5"
+    t.string "p6"
+    t.string "p7"
   end
 
   create_table "docentes", force: :cascade do |t|
@@ -31,6 +45,20 @@ ActiveRecord::Schema.define(version: 2019_09_23_170915) do
     t.string "p3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "p4_1"
+    t.string "p4_2"
+    t.string "p4_3"
+    t.string "p4_4"
+    t.string "p4_5"
+    t.string "p4_6"
+    t.string "p4_7"
+    t.string "p4_8"
+    t.string "p4_9"
+    t.string "p4_10"
+    t.string "p4_a"
+    t.string "p5"
+    t.string "p6"
+    t.string "p7"
   end
 
   create_table "estudiantes", force: :cascade do |t|
