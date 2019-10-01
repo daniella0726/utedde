@@ -247,13 +247,13 @@
       $('#div_pregunta_0').addClass('hidden');
       $('#div_p1').slideDown();
       $('#div_p1').removeClass('hidden');
-      $('#pregunta_1_footer').removeClass('hidden');
-      $('#div_error_1').addClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_error_p1').addClass('hidden');
   }
 
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p1">
+<div class="centrado hidden" style="width: 90%" id="div_p1">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P1. ¿Eres hombre o mujer? </h2>
   <br>
   <div class="field qts" >
@@ -266,7 +266,7 @@
       <%= f.label :p1, "Mujer", for: "radio-2-p1"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_1">Por favor, <strong>escogé un curso!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p1">Por favor, <strong>escogé un género!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_1">
     <i class="fas fa-check-circle"></i>
       OK
@@ -341,7 +341,7 @@
       <%= f.select :p2b, [], {:prompt => 'Seleccioná la ciudad'}, {class: "", style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #222d5a;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b" , autocomplete: "off"}%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p2">Por favor, <strong>escoge una respuesta</strong></div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p2">Por favor, <strong>escoge un departamento y ciudad</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
     <i class="fas fa-check-circle";></i>
       OK
@@ -485,7 +485,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p3">
+<div class="centrado hidden" style="width: 90%" id="div_p3">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P3. ¿Edad? </h2>
   <br>
   <div class="field qts" >
@@ -510,7 +510,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p3, "50 a 59 años", for: "radio-5-p3"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_3">Por favor, <strong>escogé un curso!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p3">Por favor, <strong>escogé la edad!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_3">
     <i class="fas fa-check-circle"></i>
       OK
@@ -668,9 +668,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p4').addClass('hidden');
   }
 
+  document.getElementById("pregunta_p4a_p4_boton").addEventListener("click", fun_p4);
   document.getElementById("but_res_p4").addEventListener("click", fun_p4);
   function fun_p4() {
-    if ($("#radio-13-p4_13").is(':checked') == true) {
+    if ($("#radio-10-p4_10").is(':checked') == true) {
       setTimeout(function(){
       $('#div_p4').slideUp();
       $('#div_p4').addClass('hidden');
@@ -689,8 +690,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
         $("#radio-6-p4_6").is(':checked') == true || 
         $("#radio-7-p4_7").is(':checked') == true ||
         $("#radio-8-p4_8").is(':checked') == true ||
-        $("#radio-9-p4_9").is(':checked') == true ||
-        $("#radio-10-p4_10").is(':checked') == true ) {
+        $("#radio-9-p4_9").is(':checked') == true ) {
     setTimeout(function(){
       $('#div_p4').slideUp();
       $('#div_p4').addClass('hidden');
@@ -827,7 +827,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p5">
+<div class="centrado hidden" style="width: 90%" id="div_p5">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P5. ¿Cuál es su tipo de vinculación? </h2>
   <br>
   <div class="field qts" >
@@ -844,7 +844,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p5, "Periodo de prueba", for: "radio-3-p5"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_5">Por favor, <strong>escogé un curso!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p5">Por favor, <strong>escogé una opción!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_5">
     <i class="fas fa-check-circle"></i>
       OK
@@ -887,7 +887,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p5').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p4_p5_boton").addEventListener("click", fun_p5);
+  document.getElementById("pregunta_p6_p5_boton").addEventListener("click", fun_p5);
   document.getElementById("radio-1-p5").addEventListener("click", fun_p5);
   document.getElementById("radio-2-p5").addEventListener("click", fun_p5);
   document.getElementById("radio-3-p5").addEventListener("click", fun_p5);
@@ -910,7 +910,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     }
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p6">
+<div class="centrado hidden" style="width: 90%" id="div_p6">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p6. Cuántos años lleva como? </h2>
   <br>
   <div class="field qts" >
@@ -927,7 +927,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p6, "Directivo de esta institución educativa", for: "radio-3-p6"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_6">Por favor, <strong>escogé un curso!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p6">Por favor, <strong>escogé una opción!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_6">
     <i class="fas fa-check-circle"></i>
       OK
@@ -993,7 +993,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     }
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p7">
+<div class="centrado hidden" style="width: 90%" id="div_p7">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p7. Cuántos años lleva como? </h2>
   <br>
   <div class="field qts" >
@@ -1022,7 +1022,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p7, "Única", for: "radio-6-p7"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_7">Por favor, <strong>escogé un curso!</strong></div>
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p7">Por favor, <strong>escogé un curso!</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_7">
     <i class="fas fa-check-circle"></i>
       OK
@@ -1077,10 +1077,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
       $('#pregunta_p7_footer').addClass('hidden');
-      $('#div_p8').slideDown();
-      $('#div_p8').removeClass('hidden');
-      $('#pregunta_p8_footer').removeClass('hidden');
-      $('#div_error_p8').addClass('hidden');
+      $('#div_p8_1').slideDown();
+      $('#div_p8_1').removeClass('hidden');
+      $('#pregunta_p8_1_footer').removeClass('hidden');
+      $('#div_error_p8_1').addClass('hidden');
   } , 500);
   } else {
       $('#div_error_p7').removeClass('hidden');
@@ -1089,8 +1089,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_1">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">p8_1. ¿Logren acceder al Sistema Educativo?</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  p8 A. ¿Logren acceder al Sistema Educativo?</h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1127,7 +1128,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1191,8 +1192,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_2">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 B. ¿Permanezcan en el Sistema Educativo hasta su graduación de educación media? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 B. ¿Permanezcan en el Sistema Educativo hasta su graduación de educación media? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1229,7 +1231,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1293,8 +1295,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_3">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 C. ¿Tengan buen rendimiento académico? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 C. ¿Tengan buen rendimiento académico? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1331,7 +1334,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1395,8 +1398,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_4">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 D. ¿Tengan una educación de calidad? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 D. ¿Tengan una educación de calidad? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1433,7 +1437,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1497,8 +1501,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_5">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 E. ¿Participen en las decisiones de su futuro educativo? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 E. ¿Tengan una buena formación como personas, ciudadanos y miembros de la comunidad? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1535,7 +1540,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1599,8 +1604,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_6">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 F. ¿Tengan una vida saludable? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 F. ¿Participen en las decisiones de su futuro educativo? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1637,7 +1643,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1701,8 +1707,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_7">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 F. ¿Tengan una vida saludable? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 G. ¿Tengan una vida saludable? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1739,7 +1746,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1803,8 +1810,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_8">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 F. ¿Reciban buen trato? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 H. ¿Reciban buen trato? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1841,7 +1849,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1905,8 +1913,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_9">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 I. ¿No se vean obligados a trabajar? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 I. ¿No se vean obligados a trabajar? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1943,7 +1952,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2007,8 +2016,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_10">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 J. ¿Sean respetados en su cultura y en su forma de ser? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 J. ¿Sean respetados en su cultura y en su forma de ser? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2045,15 +2055,15 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p8_10_p8_10_boton">
+          <a class="boton1" id="pregunta_p8_11_p8_10_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p8_8_p8_10_boton">
+          <a class="boton1" id="pregunta_p8_9_p8_10_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -2109,8 +2119,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_11">
-  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas) </h4>
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P8 K. ¿Tengan oportunidades de jugar y asistir a eventos recreativos y culturales? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
+    <br>
+  P8 K. ¿Tengan oportunidades de jugar y asistir a eventos recreativos y culturales? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2147,7 +2158,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 24%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2155,7 +2166,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           <a class="boton1" id="pregunta_p9_p8_11_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p8_8_p8_11_boton">
+          <a class="boton1" id="pregunta_p8_10_p8_11_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -2210,7 +2221,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p9">
+<div class="centrado hidden" style="width: 90%" id="div_p9">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p9. Califique de 1 a 5 el nivel de confianza que le tiene a las siguientes entidades relacionadas con el sector educativo, donde 1 = No confía y 5 = Total confianza </h2>
   <br>
   <div class="field qts" >
@@ -2231,8 +2242,8 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p9, "El Ministerio de Educación Nacional", for: "radio-4-p9"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_7">Por favor, <strong>escogé un curso!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_7">
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p9">Por favor, <strong>escogé una opción!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_9">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
@@ -2242,9 +2253,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-4">
-        <span style="color: #254064">7 de 32 respuestas</span>
+        <span style="color: #254064">9 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 21%; background-color: #254064;"></div>
+            <div class="bar" style="width: 27%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2299,7 +2310,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     }
 </script>
 
-<div class="centrado hidden" style="width: 90% position: absolute!important;" id="div_p10">
+<div class="centrado hidden" style="width: 90%" id="div_p10">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p10. ¿En el último año has escuchado o visto alguna campaña de comunicación para promover que los estudiantes permanezcan en el colegio hasta su graduación? </h2>
   <br>
   <div class="field qts" >
@@ -2312,8 +2323,8 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       <%= f.label :p10, "No", for: "radio-2-p10"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_pregunta_7">Por favor, <strong>escogé un curso!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_7">
+  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p10">Por favor, <strong>escogé un curso!</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p10">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
@@ -2323,9 +2334,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-4">
-        <span style="color: #254064">7 de 32 respuestas</span>
+        <span style="color: #254064">10 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 21%; background-color: #254064;"></div>
+            <div class="bar" style="width: 30%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2364,10 +2375,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
-      $('#div_p10a').slideDown();
-      $('#div_p10a').removeClass('hidden');
-      $('#pregunta_p10a_footer').removeClass('hidden');
-      $('#div_error_p10a').addClass('hidden');
+      $('#div_p10_a').slideDown();
+      $('#div_p10_a').removeClass('hidden');
+      $('#pregunta_p10_a_footer').removeClass('hidden');
+      $('#div_error_p10_a').addClass('hidden');
   } , 500);
   } else if ($("#radio-2-p10").is(':checked') == true) {
     setTimeout(function(){
@@ -2422,9 +2433,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo" style="margin-top: 270px;" >
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">8 de 32 respuestas</span>
+        <span style="color: #254064">10 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 30%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2457,11 +2468,20 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   document.getElementById("pregunta_p11_p10_a_boton").addEventListener("click", fun_p10_a);
   document.getElementById("but_res_p10_a").addEventListener("click", fun_p10_a);
   function fun_p10_a() {
-    if ($("#radio-1-p10_a_1").is(':checked') == true || 
+    if ($("#radio-5-p10_a_5").is(':checked') == true) {
+      setTimeout(function(){
+      $('#div_p10_a').slideUp();
+      $('#div_p10_a').addClass('hidden');
+      $('#pregunta_p10_a_footer').addClass('hidden');
+      $('#div_p10_a_otra').slideDown();
+      $('#div_p10_a_otra').removeClass('hidden');
+      $('#pregunta_p10_a_otra_footer').removeClass('hidden');
+      $('#div_error_p10_a_otra').addClass('hidden');
+      } , 500);
+  } else if ($("#radio-1-p10_a_1").is(':checked') == true || 
         $("#radio-2-p10_a_2").is(':checked') == true || 
         $("#radio-3-p10_a_3").is(':checked') == true || 
-        $("#radio-4-p10_a_4").is(':checked') == true || 
-        $("#radio-5-p10_a_5").is(':checked') == true ) {
+        $("#radio-4-p10_a_4").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p10_a').slideUp();
       $('#div_p10_a').addClass('hidden');
@@ -2485,6 +2505,212 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#but_res_p10_a').removeClass('hidden');
       $('#div_error_p10_a').addClass('hidden');
   }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p10_a_otra">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P10 A Otra, cúal? </h2>
+  <br>
+  <div class="field qts">
+    <%= f.text_field :p10a_otra, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_a_otra", placeholder: "Nombre de la persona"}%>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p10_a_otra">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p10_a_otra">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p10_a_otra">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p10_a_otra_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">10 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 30%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p10_b_p10_a_otra_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_a_p10_a_otra_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  var input = document.getElementById("res_p10_a_otra");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p10_a_otra").click();
+      }
+    });
+
+  document.getElementById("pregunta_p10_a_p10_a_otra_boton").addEventListener("click", fun_p10_a_otra_dev);
+  function fun_p10_a_otra_dev() {
+      $('#div_p10_a').slideDown();
+      $('#div_p10_a').removeClass('hidden');
+      $('#pregunta_p10_a_footer').removeClass('hidden');
+      $('#div_p10_a_otra').slideUp();
+      $('#div_p10_a_otra').addClass('hidden');
+      $('#pregunta_p10_a_otra_footer').addClass('hidden');
+      $('#div_error_p10_a_otra').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p10_b_p10_a_otra_boton").addEventListener("click", fun_p10_a_otra);
+  document.getElementById("but_res_p10_a_otra").addEventListener("click", fun_p10_a_otra);
+    function fun_p10_a_otra() {
+    var frase = document.getElementById("res_p10_a_otra").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p10_a_otra").value = frase;
+    if (document.getElementById("res_p10_a_otra").value == "") {
+      $('#but_res_p10_a_otra').addClass('hidden');
+      $('#p_p10_a_otra').addClass('hidden');
+      $('#div_error_p10_a_otra').removeClass('hidden');
+    } else {
+      $('#div_p10_a_otra').slideUp();
+      $('#div_p10_a_otra').addClass('hidden');
+      $('#pregunta_p10_a_otra_footer').addClass('hidden');
+      $('#div_p10_b').slideDown();
+      $('#div_p10_b').removeClass('hidden');
+      $('#pregunta_p10_b_footer').removeClass('hidden');
+      $('#div_error_p10_b').addClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+    $('#res_p10_a_otra').on('input', function() { 
+      var frase = document.getElementById("res_p10_a_otra").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p10_a_otra").value = frase;
+      if (document.getElementById("res_p10_a_otra").value == "") {
+      $('#but_res_p10_a_otra').addClass('hidden');
+      $('#p_p10_a_otra').addClass('hidden');
+      $('#div_error_p10_a_otra').removeClass('hidden');
+      } else {
+       $('#but_res_p10_a_otra').removeClass('hidden');
+       $('#p_p10_a_otra').removeClass('hidden');
+       $('#div_error_p10_a_otra').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p10_b">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P10 B ¿En que consistía la campaña? </h2>
+  <br>
+  <div class="field qts">
+    <%= f.text_field :p10b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_b", placeholder: "Nombre de la persona"}%>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p10_b">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p10_b">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p10_b">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p10_b_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">10 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 30%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p11_p10_b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_a_p10_b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  var input = document.getElementById("res_p10_b");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p10_b").click();
+      }
+    });
+
+  document.getElementById("pregunta_p10_a_p10_b_boton").addEventListener("click", fun_p10_b_dev);
+  function fun_p10_b_dev() {
+      $('#div_p10_a').slideDown();
+      $('#div_p10_a').removeClass('hidden');
+      $('#pregunta_p10_a_footer').removeClass('hidden');
+      $('#div_p10_b').slideUp();
+      $('#div_p10_b').addClass('hidden');
+      $('#pregunta_p10_b_footer').addClass('hidden');
+      $('#div_error_p10_b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p11_p10_b_boton").addEventListener("click", fun_p10_b);
+  document.getElementById("but_res_p10_b").addEventListener("click", fun_p10_b);
+    function fun_p10_b() {
+    var frase = document.getElementById("res_p10_b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p10_b").value = frase;
+    if (document.getElementById("res_p10_b").value == "") {
+      $('#but_res_p10_b').addClass('hidden');
+      $('#p_p10_b').addClass('hidden');
+      $('#div_error_p10_b').removeClass('hidden');
+    } else {
+      $('#div_p10_b').slideUp();
+      $('#div_p10_b').addClass('hidden');
+      $('#pregunta_p10_b_footer').addClass('hidden');
+      $('#div_p11').slideDown();
+      $('#div_p11').removeClass('hidden');
+      $('#pregunta_p11_footer').removeClass('hidden');
+      $('#div_error_p11').addClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+    $('#res_p10_b').on('input', function() { 
+      var frase = document.getElementById("res_p10_b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p10_b").value = frase;
+      if (document.getElementById("res_p10_b").value == "") {
+      $('#but_res_p10_b').addClass('hidden');
+      $('#p_p10_b').addClass('hidden');
+      $('#div_error_p10_b').removeClass('hidden');
+      } else {
+       $('#but_res_p10_b').removeClass('hidden');
+       $('#p_p10_b').removeClass('hidden');
+       $('#div_error_p10_b').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
 
 <% end %>
