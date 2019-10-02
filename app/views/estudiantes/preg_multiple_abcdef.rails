@@ -1,0 +1,110 @@
+<div class="centrado hidden" style="width: 90%;" id="div_estoy">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">estoy. Durante el ÚLTIMO AÑO, ¿de los siguientes problemas, cuales se han presentado en tu hogar?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca una respuesta en cada caso)</span>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :estoya, "1" , id:"radio-1-estoya"%>
+      <%= f.label :estoya, "1", for: "radio-1-estoya"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoyb, "2" , id:"radio-2-estoyb"%>
+      <%= f.label :estoyb, "2", for: "radio-2-estoyb"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoyc, "3" , id:"radio-3-estoyc"%>
+      <%= f.label :estoyc, "3", for: "radio-3-estoyc"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoyd, "4" , id:"radio-4-estoyd"%>
+      <%= f.label :estoyd, "4", for: "radio-4-estoyd"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoye, "5" , id:"radio-5-estoye"%>
+      <%= f.label :estoye, "5", for: "radio-5-estoye"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :estoyf, "6" , id:"radio-6-estoyf"%>
+      <%= f.label :estoyf, "6a", for: "radio-6-estoyf"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_estoy">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_estoy">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_estoy">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_estoy_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">8 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 13%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_voy_estoy_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_antes_estoy_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_antes_estoy_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_antes').slideDown();
+      $('#div_antes').removeClass('hidden');
+      $('#pregunta_antes_footer').removeClass('hidden');
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_voy_estoy_boton").addEventListener("click", fun_estoy);
+  document.getElementById("but_res_estoy").addEventListener("click", fun_estoy);
+  
+  function fun_estoy() {
+    if ($("#radio-1-estoya").is(':checked') == true || 
+        $("#radio-2-estoyb").is(':checked') == true || 
+        $("#radio-3-estoyc").is(':checked') == true || 
+        $("#radio-4-estoyd").is(':checked') == true || 
+        $("#radio-5-estoye").is(':checked') == true || 
+        $("#radio-6-estoyf").is(':checked') == true) {
+
+    setTimeout(function(){
+      $('#div_estoy').slideUp();
+      $('#div_estoy').addClass('hidden');
+      $('#pregunta_estoy_footer').addClass('hidden');
+      $('#div_voy').slideDown();
+      $('#div_voy').removeClass('hidden');
+      $('#pregunta_voy_footer').removeClass('hidden');
+      $('#div_error_voy').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_estoy').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-estoya").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-estoyb").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-estoyc").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-estoyd").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-estoye").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-estoyf").addEventListener("click", fun_multi);
+
+  function fun_multi() {
+      $('#but_res_estoy').removeClass('hidden');
+      $('#div_error_estoy').addClass('hidden');
+}
+</script>
