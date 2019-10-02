@@ -2341,7 +2341,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p11_p10_boton">
+          <a class="boton1" id="pregunta_p11_1_p10_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p9_p10_boton">
@@ -2366,7 +2366,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p10').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p11_p10_boton").addEventListener("click", fun_p10);
+  document.getElementById("pregunta_p11_1_p10_boton").addEventListener("click", fun_p10);
   document.getElementById("radio-1-p10").addEventListener("click", fun_p10);
   document.getElementById("radio-2-p10").addEventListener("click", fun_p10);
   function fun_p10() {
@@ -2385,10 +2385,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_p10').slideUp();
       $('#div_p10').addClass('hidden');
       $('#pregunta_p10_footer').addClass('hidden');
-      $('#div_p11').slideDown();
-      $('#div_p11').removeClass('hidden');
-      $('#pregunta_p11_footer').removeClass('hidden');
-      $('#div_error_p11').addClass('hidden');
+      $('#div_p11_1').slideDown();
+      $('#div_p11_1').removeClass('hidden');
+      $('#pregunta_p11_1_footer').removeClass('hidden');
+      $('#div_error_p11_1').addClass('hidden');
   } , 500);
 
   } else {
@@ -2634,7 +2634,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p11_p10_b_boton">
+          <a class="boton1" id="pregunta_p11_1_p10_b_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p10_a_p10_b_boton">
@@ -2667,7 +2667,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p10_b').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p11_p10_b_boton").addEventListener("click", fun_p10_b);
+  document.getElementById("pregunta_p11_1_p10_b_boton").addEventListener("click", fun_p10_b);
   document.getElementById("but_res_p10_b").addEventListener("click", fun_p10_b);
     function fun_p10_b() {
     var frase = document.getElementById("res_p10_b").value; 
@@ -2685,10 +2685,10 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_p10_b').slideUp();
       $('#div_p10_b').addClass('hidden');
       $('#pregunta_p10_b_footer').addClass('hidden');
-      $('#div_p11').slideDown();
-      $('#div_p11').removeClass('hidden');
-      $('#pregunta_p11_footer').removeClass('hidden');
-      $('#div_error_p11').addClass('hidden');
+      $('#div_p11_1').slideDown();
+      $('#div_p11_1').removeClass('hidden');
+      $('#pregunta_p11_1_footer').removeClass('hidden');
+      $('#div_error_p11_1').addClass('hidden');
     }
   }
 
@@ -2711,6 +2711,422 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       }
     }); 
   }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p11_1">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones:
+    <br>
+    <br>
+  P11 A. ¿Porque esta zona es muy insegura? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.check_box :p11_1_1, checked: "Nunca", id:"radio-1-p11_1_1"%>
+      <%= f.label :p11_1_1, "Nunca", for: "radio-1-p11_1_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_1_2, checked: "Casi nunca", id:"radio-2-p11_1_2"%>
+      <%= f.label :p11_1_2, "Casi nunca", for: "radio-2-p11_1_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_1_3, checked: "Algunas veces", id:"radio-3-p11_1_3"%>
+      <%= f.label :p11_1_3, "Algunas veces", for: "radio-3-p11_1_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_1_4, checked: "Casi siempre" , id:"radio-4-p11_1_4"%>
+      <%= f.label :p11_1_4, "Casi siempre", for: "radio-4-p11_1_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_1_5, checked: "Siempre", id:"radio-5-p11_1_5"%>
+      <%= f.label :p11_1_5, "Siempre", for: "radio-5-p11_1_5"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p11_1">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11_1">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11_1">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_1_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">11 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p11_2_p11_1_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_p11_1_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p10_p11_1_boton").addEventListener("click", fun_p11_1_dev);
+  function fun_p11_1_dev() {
+      $('#div_p10').slideDown();
+      $('#div_p10').removeClass('hidden');
+      $('#pregunta_p10_footer').removeClass('hidden');
+      $('#div_p11_1').slideUp();
+      $('#div_p11_1').addClass('hidden');
+      $('#pregunta_p11_1_footer').addClass('hidden');
+      $('#div_error_p11_1').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p11_2_p11_1_boton").addEventListener("click", fun_p11_1);
+  document.getElementById("but_res_p11_1").addEventListener("click", fun_p11_1);
+  function fun_p11_1() {
+    if ($("#radio-1-p11_1_1").is(':checked') == true || 
+        $("#radio-2-p11_1_2").is(':checked') == true || 
+        $("#radio-3-p11_1_3").is(':checked') == true || 
+        $("#radio-4-p11_1_4").is(':checked') == true || 
+        $("#radio-5-p11_1_5").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p11_1').slideUp();
+      $('#div_p11_1').addClass('hidden');
+      $('#pregunta_p11_1_footer').addClass('hidden');
+      $('#div_p11_2').slideDown();
+      $('#div_p11_2').removeClass('hidden');
+      $('#pregunta_p11_2_footer').removeClass('hidden');
+      $('#div_error_p11_2').addClass('hidden');
+      } , 500);
+  } else {
+      $('#div_error_p11_1').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p11_1_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p11_1_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p11_1_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p11_1_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p11_1_5").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p11_1').removeClass('hidden');
+      $('#div_error_p11_1').addClass('hidden');
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p11_2">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones:
+    <br>
+    <br>
+  P11 A. ¿Porque esta zona es muy insegura? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.check_box :p11_2_1, checked: "Nunca", id:"radio-1-p11_2_1"%>
+      <%= f.label :p11_2_1, "Nunca", for: "radio-1-p11_2_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_2_2, checked: "Casi nunca", id:"radio-2-p11_2_2"%>
+      <%= f.label :p11_2_2, "Casi nunca", for: "radio-2-p11_2_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_2_3, checked: "Algunas veces", id:"radio-3-p11_2_3"%>
+      <%= f.label :p11_2_3, "Algunas veces", for: "radio-3-p11_2_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_2_4, checked: "Casi siempre" , id:"radio-4-p11_2_4"%>
+      <%= f.label :p11_2_4, "Casi siempre", for: "radio-4-p11_2_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_2_5, checked: "Siempre", id:"radio-5-p11_2_5"%>
+      <%= f.label :p11_2_5, "Siempre", for: "radio-5-p11_2_5"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p11_2">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11_2">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11_2">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_2_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">11 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p11_3_p11_2_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_1_p11_2_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p11_1_p11_2_boton").addEventListener("click", fun_p11_2_dev);
+  function fun_p11_2_dev() {
+      $('#div_p11_1').slideDown();
+      $('#div_p11_1').removeClass('hidden');
+      $('#pregunta_p11_1_footer').removeClass('hidden');
+      $('#div_p11_2').slideUp();
+      $('#div_p11_2').addClass('hidden');
+      $('#pregunta_p11_2_footer').addClass('hidden');
+      $('#div_error_p11_2').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p11_3_p11_2_boton").addEventListener("click", fun_p11_2);
+  document.getElementById("but_res_p11_2").addEventListener("click", fun_p11_2);
+  function fun_p11_2() {
+    if ($("#radio-1-p11_2_1").is(':checked') == true || 
+        $("#radio-2-p11_2_2").is(':checked') == true || 
+        $("#radio-3-p11_2_3").is(':checked') == true || 
+        $("#radio-4-p11_2_4").is(':checked') == true || 
+        $("#radio-5-p11_2_5").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p11_2').slideUp();
+      $('#div_p11_2').addClass('hidden');
+      $('#pregunta_p11_2_footer').addClass('hidden');
+      $('#div_p11_3').slideDown();
+      $('#div_p11_3').removeClass('hidden');
+      $('#pregunta_p11_3_footer').removeClass('hidden');
+      $('#div_error_p11_3').addClass('hidden');
+      } , 500);
+  } else {
+      $('#div_error_p11_2').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p11_2_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p11_2_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p11_2_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p11_2_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p11_2_5").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p11_2').removeClass('hidden');
+      $('#div_error_p11_2').addClass('hidden');
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p11_3">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones:
+    <br>
+    <br>
+  P11 A. ¿Porque esta zona es muy insegura? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.check_box :p11_3_1, checked: "Nunca", id:"radio-1-p11_3_1"%>
+      <%= f.label :p11_3_1, "Nunca", for: "radio-1-p11_3_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_3_2, checked: "Casi nunca", id:"radio-2-p11_3_2"%>
+      <%= f.label :p11_3_2, "Casi nunca", for: "radio-2-p11_3_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_3_3, checked: "Algunas veces", id:"radio-3-p11_3_3"%>
+      <%= f.label :p11_3_3, "Algunas veces", for: "radio-3-p11_3_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_3_4, checked: "Casi siempre" , id:"radio-4-p11_3_4"%>
+      <%= f.label :p11_3_4, "Casi siempre", for: "radio-4-p11_3_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_3_5, checked: "Siempre", id:"radio-5-p11_3_5"%>
+      <%= f.label :p11_3_5, "Siempre", for: "radio-5-p11_3_5"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p11_3">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11_3">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11_3">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_3_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">11 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p11_4_p11_3_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_2_p11_3_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p11_2_p11_3_boton").addEventListener("click", fun_p11_3_dev);
+  function fun_p11_3_dev() {
+      $('#div_p11_2').slideDown();
+      $('#div_p11_2').removeClass('hidden');
+      $('#pregunta_p11_2_footer').removeClass('hidden');
+      $('#div_p11_3').slideUp();
+      $('#div_p11_3').addClass('hidden');
+      $('#pregunta_p11_3_footer').addClass('hidden');
+      $('#div_error_p11_3').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p11_4_p11_3_boton").addEventListener("click", fun_p11_3);
+  document.getElementById("but_res_p11_3").addEventListener("click", fun_p11_3);
+  function fun_p11_3() {
+    if ($("#radio-1-p11_3_1").is(':checked') == true || 
+        $("#radio-2-p11_3_2").is(':checked') == true || 
+        $("#radio-3-p11_3_3").is(':checked') == true || 
+        $("#radio-4-p11_3_4").is(':checked') == true || 
+        $("#radio-5-p11_3_5").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p11_3').slideUp();
+      $('#div_p11_3').addClass('hidden');
+      $('#pregunta_p11_3_footer').addClass('hidden');
+      $('#div_p11_4').slideDown();
+      $('#div_p11_4').removeClass('hidden');
+      $('#pregunta_p11_4_footer').removeClass('hidden');
+      $('#div_error_p11_4').addClass('hidden');
+      } , 500);
+  } else {
+      $('#div_error_p11_3').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p11_3_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p11_3_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p11_3_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p11_3_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p11_3_5").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p11_3').removeClass('hidden');
+      $('#div_error_p11_3').addClass('hidden');
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p11_4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones:
+    <br>
+    <br>
+  P11 A. ¿Porque esta zona es muy insegura? </h2>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.check_box :p11_4_1, checked: "Nunca", id:"radio-1-p11_4_1"%>
+      <%= f.label :p11_4_1, "Nunca", for: "radio-1-p11_4_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_4_2, checked: "Casi nunca", id:"radio-2-p11_4_2"%>
+      <%= f.label :p11_4_2, "Casi nunca", for: "radio-2-p11_4_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_4_3, checked: "Algunas veces", id:"radio-3-p11_4_3"%>
+      <%= f.label :p11_4_3, "Algunas veces", for: "radio-3-p11_4_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_4_4, checked: "Casi siempre" , id:"radio-4-p11_4_4"%>
+      <%= f.label :p11_4_4, "Casi siempre", for: "radio-4-p11_4_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p11_4_5, checked: "Siempre", id:"radio-5-p11_4_5"%>
+      <%= f.label :p11_4_5, "Siempre", for: "radio-5-p11_4_5"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p11_4">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11_4">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11_4">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_4_footer">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">11 de 32 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p11_5_p11_4_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_3_p11_4_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p11_3_p11_4_boton").addEventListener("click", fun_p11_4_dev);
+  function fun_p11_4_dev() {
+      $('#div_p11_3').slideDown();
+      $('#div_p11_3').removeClass('hidden');
+      $('#pregunta_p11_3_footer').removeClass('hidden');
+      $('#div_p11_4').slideUp();
+      $('#div_p11_4').addClass('hidden');
+      $('#pregunta_p11_4_footer').addClass('hidden');
+      $('#div_error_p11_4').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p11_5_p11_4_boton").addEventListener("click", fun_p11_4);
+  document.getElementById("but_res_p11_4").addEventListener("click", fun_p11_4);
+  function fun_p11_4() {
+    if ($("#radio-1-p11_4_1").is(':checked') == true || 
+        $("#radio-2-p11_4_2").is(':checked') == true || 
+        $("#radio-3-p11_4_3").is(':checked') == true || 
+        $("#radio-4-p11_4_4").is(':checked') == true || 
+        $("#radio-5-p11_4_5").is(':checked') == true ) {
+    setTimeout(function(){
+      $('#div_p11_4').slideUp();
+      $('#div_p11_4').addClass('hidden');
+      $('#pregunta_p11_4_footer').addClass('hidden');
+      $('#div_p11_5').slideDown();
+      $('#div_p11_5').removeClass('hidden');
+      $('#pregunta_p11_5_footer').removeClass('hidden');
+      $('#div_error_p11_5').addClass('hidden');
+      } , 500);
+  } else {
+      $('#div_error_p11_4').removeClass('hidden');
+    }
+    }
+
+  document.getElementById("radio-1-p11_4_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p11_4_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p11_4_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p11_4_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p11_4_5").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p11_4').removeClass('hidden');
+      $('#div_error_p11_4').addClass('hidden');
+  }
 </script>
 
 <% end %>
