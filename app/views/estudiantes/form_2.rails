@@ -338,6 +338,11 @@
   document.getElementById("radio-5-p1").addEventListener("click", fun_p1);
   document.getElementById("radio-6-p1").addEventListener("click", fun_p1);
   document.getElementById("radio-7-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-8-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-9-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-10-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-11-p1").addEventListener("click", fun_p1);
+  document.getElementById("radio-12-p1").addEventListener("click", fun_p1);
   function fun_p1() {
     if ($("#radio-1-p1").is(':checked') == true || 
         $("#radio-2-p1").is(':checked') == true || 
@@ -345,7 +350,13 @@
         $("#radio-4-p1").is(':checked') == true || 
         $("#radio-5-p1").is(':checked') == true || 
         $("#radio-6-p1").is(':checked') == true || 
-        $("#radio-7-p1").is(':checked') == true ) {
+        $("#radio-7-p1").is(':checked') == true ||
+        $("#radio-8-p1").is(':checked') == true ||
+        $("#radio-9-p1").is(':checked') == true ||
+        $("#radio-10-p1").is(':checked') == true ||
+        $("#radio-11-p1").is(':checked') == true ||
+        $("#radio-12-p1").is(':checked') == true || 
+        $("#radio-13-p1").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
@@ -1002,6 +1013,7 @@
   document.getElementById("radio-9-p5a").addEventListener("click", fun_p5a);
   document.getElementById("radio-10-p5a").addEventListener("click", fun_p5a);
   document.getElementById("radio-11-p5a").addEventListener("click", fun_p5a);
+  document.getElementById("radio-12-p5a").addEventListener("click", fun_p5a);
   function fun_p5a() {
     if ($("#radio-1-p5a").is(':checked') == true || 
         $("#radio-2-p5a").is(':checked') == true || 
@@ -1013,7 +1025,9 @@
         $("#radio-8-p5a").is(':checked') == true ||
         $("#radio-9-p5a").is(':checked') == true ||
         $("#radio-10-p5a").is(':checked') == true ||
-        $("#radio-11-p5a").is(':checked') == true ) {
+        $("#radio-11-p5a").is(':checked') == true ||
+        $("#radio-12-p5a").is(':checked') == true || 
+        $("#radio-13-p5a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p5a').slideUp();
       $('#div_p5a').addClass('hidden');
@@ -1156,6 +1170,7 @@
   document.getElementById("radio-9-p5b").addEventListener("click", fun_p5b);
   document.getElementById("radio-10-p5b").addEventListener("click", fun_p5b);
   document.getElementById("radio-11-p5b").addEventListener("click", fun_p5b);
+  document.getElementById("radio-12-p5b").addEventListener("click", fun_p5b);
   function fun_p5b() {
     if ($("#radio-1-p5b").is(':checked') == true || 
         $("#radio-2-p5b").is(':checked') == true || 
@@ -1167,7 +1182,9 @@
         $("#radio-8-p5b").is(':checked') == true ||
         $("#radio-9-p5b").is(':checked') == true ||
         $("#radio-10-p5b").is(':checked') == true ||
-        $("#radio-11-p5b").is(':checked') == true ) {
+        $("#radio-11-p5b").is(':checked') == true ||
+        $("#radio-12-p5b").is(':checked') == true || 
+        $("#radio-13-p5b").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p5b').slideUp();
       $('#div_p5b').addClass('hidden');
@@ -1311,6 +1328,7 @@
   document.getElementById("radio-9-p5c").addEventListener("click", fun_p5c);
   document.getElementById("radio-10-p5c").addEventListener("click", fun_p5c);
   document.getElementById("radio-11-p5c").addEventListener("click", fun_p5c);
+  document.getElementById("radio-12-p5c").addEventListener("click", fun_p5c);
   function fun_p5c() {
     if ($("#radio-1-p5c").is(':checked') == true || 
         $("#radio-2-p5c").is(':checked') == true || 
@@ -1322,7 +1340,9 @@
         $("#radio-8-p5c").is(':checked') == true ||
         $("#radio-9-p5c").is(':checked') == true ||
         $("#radio-10-p5c").is(':checked') == true ||
-        $("#radio-11-p5c").is(':checked') == true ) {
+        $("#radio-11-p5c").is(':checked') == true ||
+        $("#radio-12-p5c").is(':checked') == true || 
+        $("#radio-13-p5c").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p5c').slideUp();
       $('#div_p5c').addClass('hidden');
@@ -3136,38 +3156,38 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "6" , id:"radio-39-p12a"%>
-              <%= f.label :p12a_4, "6", for: "radio-39-p12a"%>
+              <%= f.radio_button :p12a_4, "6" , id:"radio-40-p12a"%>
+              <%= f.label :p12a_4, "6", for: "radio-40-p12a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "7" , id:"radio-40-p12a"%>
-              <%= f.label :p12a_4, "7", for: "radio-40-p12a"%>
+              <%= f.radio_button :p12a_4, "7" , id:"radio-41-p12a"%>
+              <%= f.label :p12a_4, "7", for: "radio-41-p12a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "8" , id:"radio-41-p12a"%>
-              <%= f.label :p12a_4, "8", for: "radio-41-p12a"%>
+              <%= f.radio_button :p12a_4, "8" , id:"radio-42-p12a"%>
+              <%= f.label :p12a_4, "8", for: "radio-42-p12a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "9" , id:"radio-42-p12a"%>
-              <%= f.label :p12a_4, "9", for: "radio-42-p12a"%>
+              <%= f.radio_button :p12a_4, "9" , id:"radio-43-p12a"%>
+              <%= f.label :p12a_4, "9", for: "radio-43-p12a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "10" , id:"radio-43-p12a"%>
-              <%= f.label :p12a_4, "10", for: "radio-43-p12a"%>
+              <%= f.radio_button :p12a_4, "10" , id:"radio-44-p12a"%>
+              <%= f.label :p12a_4, "10", for: "radio-44-p12a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_4, "11" , id:"radio-44-p12a"%>
-              <%= f.label :p12a_4, "11", for: "radio-44-p12a"%>
+              <%= f.radio_button :p12a_4, "11" , id:"radio-45-p12a"%>
+              <%= f.label :p12a_4, "11", for: "radio-45-p12a"%>
             </div>
           </td>
         </tr>
@@ -3265,6 +3285,7 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
   document.getElementById("radio-42-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-43-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-44-p12a").addEventListener("click", fun_multi);
+  document.getElementById("radio-45-p12a").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p12a').removeClass('hidden');
@@ -17545,6 +17566,46 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
     } 
 </script>
 
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p36a_p37a_boton").addEventListener("click", fun_p37a_dev);
+  function fun_p37a_dev() {
+      $('#div_p36a').slideDown();
+      $('#div_p36a').removeClass('hidden');
+      $('#pregunta_p36a_footer').removeClass('hidden');
+      $('#div_p37a').slideUp();
+      $('#div_p37a').addClass('hidden');
+      $('#pregunta_p37a_footer').addClass('hidden');
+      $('#div_error_p37a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p37b_p37a_boton").addEventListener("click", fun_p37a);
+  document.getElementById("radio-1-p37a").addEventListener("click", fun_p37a);
+  document.getElementById("radio-2-p37a").addEventListener("click", fun_p37a);
+  document.getElementById("radio-3-p37a").addEventListener("click", fun_p37a);
+  document.getElementById("radio-4-p37a").addEventListener("click", fun_p37a);
+  document.getElementById("radio-5-p37a").addEventListener("click", fun_p37a);
+  function fun_p37a() {
+    if ($("#radio-1-p37a").is(':checked') == true ||
+        $("#radio-2-p37a").is(':checked') == true ||
+        $("#radio-3-p37a").is(':checked') == true ||
+        $("#radio-4-p37a").is(':checked') == true || 
+        $("#radio-5-p37a").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p37a').slideUp();
+      $('#div_p37a').addClass('hidden');
+      $('#pregunta_p37a_footer').addClass('hidden');
+      $('#div_p37b').slideDown();
+      $('#div_p37b').removeClass('hidden');
+      $('#pregunta_p37b_footer').removeClass('hidden');
+      $('#div_error_p37b').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p37a').removeClass('hidden');
+    }
+    } 
+</script>
+
 <div class="centrado hidden" style="width: 90%;" id="div_p38c">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Señala con qué frecuencia en este año:</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
@@ -20436,7 +20497,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_1, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_1", placeholder: "Horas" , :disabled => true}%>
+            <%= f.text_field :p48b_1, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_1", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20447,7 +20508,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_2, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_2", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_2, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_2", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20458,7 +20519,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_3, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_3", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_3, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_3", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20469,7 +20530,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_4, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_4", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_4, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_4", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20480,7 +20541,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_5, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_5", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_5, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_5", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20491,7 +20552,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_6, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_6", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_6, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_6", placeholder: "Horas"}%>
             </td>
         </tr>
         <tr>
@@ -20502,7 +20563,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           </div>
           </td>
           <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p48b_7, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_7", placeholder: "Horas", :disabled => true}%>
+            <%= f.text_field :p48b_7, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p48b_7", placeholder: "Horas"}%>
             </td>
         </tr>
       </tbody>
@@ -20566,43 +20627,9 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("radio-7-p48a_7").addEventListener("click", fun_multi);
 
   function fun_multi() {
-    if ($("#radio-1-p48a_1").is(':checked') == true) {
-      document.getElementById("res_p48b_1").disabled = false;
-    } else {
-      document.getElementById("res_p48b_1").disabled = true;
-    }
-    if ($("#radio-2-p48a_2").is(':checked') == true) {
-      document.getElementById("res_p48b_2").disabled = false;
-    } else {
-      document.getElementById("res_p48b_2").disabled = true;
-    } 
-    if ($("#radio-3-p48a_3").is(':checked') == true) {
-      document.getElementById("res_p48b_3").disabled = false;
-    } else {
-      document.getElementById("res_p48b_3").disabled = true;
-    }
-    if ($("#radio-4-p48a_4").is(':checked') == true) {
-      document.getElementById("res_p48b_4").disabled = false;
-    } else {
-      document.getElementById("res_p48b_4").disabled = true;
-    }
-    if ($("#radio-5-p48a_5").is(':checked') == true) {
-      document.getElementById("res_p48b_5").disabled = false;
-    } else {
-      document.getElementById("res_p48b_5").disabled = true;
-    }
-    if ($("#radio-6-p48a_6").is(':checked') == true) {
-      document.getElementById("res_p48b_6").disabled = false;
-    } else {
-      document.getElementById("res_p48b_6").disabled = true;
-    }
-    if ($("#radio-7-p48a_7").is(':checked') == true) {
-      document.getElementById("res_p48b_7").disabled = false;
-    } else {
-      document.getElementById("res_p48b_7").disabled = true;
-    }
       $('#but_res_p48a').removeClass('hidden');
       $('#div_error_p48a').addClass('hidden');
+
   }
 
   function fun_p48a() {
@@ -20662,20 +20689,20 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       frase6 = frase6.replace("  "," ");
       document.getElementById("res_p48b_7").value = frase6;
 
-    if ((document.getElementById("res_p48b_1").value != "" ||
-      document.getElementById("res_p48b_2").value != "" ||
-      document.getElementById("res_p48b_3").value != "" ||
-      document.getElementById("res_p48b_4").value != "" ||
-      document.getElementById("res_p48b_5").value != "" ||
-      document.getElementById("res_p48b_6").value != "" ||
-      document.getElementById("res_p48b_7").value != "") &&
-      ($("#radio-1-p48a_1").is(':checked') == true || 
+    if (document.getElementById("res_p48b_1").value == "" ||
+      document.getElementById("res_p48b_2").value == "" ||
+      document.getElementById("res_p48b_3").value == "" ||
+      document.getElementById("res_p48b_4").value == "" ||
+      document.getElementById("res_p48b_5").value == "" ||
+      document.getElementById("res_p48b_6").value == "" ||
+      document.getElementById("res_p48b_7").value == "" ||
+      $("#radio-1-p48a_1").is(':checked') == true || 
         $("#radio-2-p48a_2").is(':checked') == true || 
         $("#radio-3-p48a_3").is(':checked') == true || 
         $("#radio-4-p48a_4").is(':checked') == true || 
         $("#radio-5-p48a_5").is(':checked') == true || 
         $("#radio-6-p48a_6").is(':checked') == true || 
-        $("#radio-7-p48a_7").is(':checked') == true)) {
+        $("#radio-7-p48a_7").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p48a').slideUp();
@@ -20688,7 +20715,6 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   } , 500);
   } else {
       $('#div_error_p48a').removeClass('hidden');
-      $('#but_res_p48a').addClass('hidden');
     }
     }
 
@@ -20833,10 +20859,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         $('#div_p49').slideUp();
         $('#div_p49').addClass('hidden');
         $('#pregunta_p49_footer').addClass('hidden');
-        $('#div_p59').slideDown();
-        $('#div_p59').removeClass('hidden');
-        $('#pregunta_p59_footer').removeClass('hidden');
-        $('#div_error_p59').addClass('hidden');
+        $('#div_p60').slideDown();
+        $('#div_p60').removeClass('hidden');
+        $('#pregunta_p60_footer').removeClass('hidden');
+        $('#div_error_p60').addClass('hidden');
     } , 500);
     } else {
         $('#div_error_p49').removeClass('hidden');
@@ -21404,101 +21430,40 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   }); 
 </script>
 
-<div class="centrado " style="width: 90%; margin-top: 50px;" id="div_p54">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p54. ¿Que días a la semana realizas este trabajo?</h2>
+<div class="centrado hidden" style="width: 90%;" id="div_p54">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">p54. ¿Qué días de la semana realizas este trabajo?   (Puedes marcar más de una opción)</h2>
   <br>
   <div class="field qts">
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Días</th>
-          <th style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Horas al Día</th>
-        </tr>
-      <tbody>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_1, checked: "1", id:"radio-1-p54_1"%>
-            <%= f.label :p54_1, "LUNES", for: "radio-1-p54_1"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_1, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_1", placeholder: "Horas" , :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_2, checked: "2", id:"radio-2-p54_2"%>
-            <%= f.label :p54_2, "MARTES", for: "radio-2-p54_2"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_2, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_2", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_3, checked: "3", id:"radio-3-p54_3"%>
-            <%= f.label :p54_3, "MIERCOLES", for: "radio-3-p54_3"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_3, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_3", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_4, checked: "4", id:"radio-4-p54_4"%>
-            <%= f.label :p54_4, "JUEVES", for: "radio-4-p54_4"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_4, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_4", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_5, checked: "5", id:"radio-5-p54_5"%>
-            <%= f.label :p54_5, "VIERNES", for: "radio-5-p54_5"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_5, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_5", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_6, checked: "6", id:"radio-6-p54_6"%>
-            <%= f.label :p54_6, "SÁBADO", for: "radio-6-p54_6"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_6, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_6", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-        <tr>
-          <td>
-          <div class="inputGroup">
-            <%= f.check_box :p54_7, checked: "7", id:"radio-7-p54_7"%>
-            <%= f.label :p54_7, "DOMINGO", for: "radio-7-p54_7"%>
-          </div>
-          </td>
-          <td style="border-color: transparent; color: #254064;">
-            <%= f.text_field :p54a_7, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p54a_7", placeholder: "Horas", :disabled => true}%>
-            </td>
-        </tr>
-      </tbody>
-        
-      </thead>
-    </table>
+    <div class="inputGroup">
+      <%= f.check_box :p54_1, checked: "1", id:"radio-1-p54_1"%>
+      <%= f.label :p54_1, "Lunes", for: "radio-1-p54_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_2, checked: "2", id:"radio-2-p54_2"%>
+      <%= f.label :p54_2, "Martes", for: "radio-2-p54_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_3, checked: "3", id:"radio-3-p54_3"%>
+      <%= f.label :p54_3, "Miércoles", for: "radio-3-p54_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_4, checked: "4", id:"radio-4-p54_4"%>
+      <%= f.label :p54_4, "Jueves", for: "radio-4-p54_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_5, checked: "5", id:"radio-5-p54_5"%>
+      <%= f.label :p54_5, "Viernes", for: "radio-5-p54_5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_6, checked: "6", id:"radio-6-p54_6"%>
+      <%= f.label :p54_6, "Sábado", for: "radio-6-p54_6"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p54_7, checked: "7", id:"radio-7-p54_7"%>
+      <%= f.label :p54_7, "Domingo", for: "radio-7-p54_7"%>
+    </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p54">Por favor, <strong>escoge una respuesta</strong></div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p54">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p54">
     <i class="fas fa-check-circle"></i>
       OK
@@ -21506,12 +21471,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   <p  class="hidden" style="color: #254064;" id="p_p54">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p54_footer">
-  <div class="centrado-abajo" style="margin-top: 150px;">
+  <div class="centrado-abajo" style="margin-top: 270px;" >
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">54 de 62 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 87%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -21542,129 +21507,17 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   }
 
   document.getElementById("pregunta_p55_p54_boton").addEventListener("click", fun_p54);
+
   document.getElementById("but_res_p54").addEventListener("click", fun_p54);
 
-
-  document.getElementById("radio-1-p54_1").addEventListener("click", fun_multi);
-  document.getElementById("radio-2-p54_2").addEventListener("click", fun_multi);
-  document.getElementById("radio-3-p54_3").addEventListener("click", fun_multi);
-  document.getElementById("radio-4-p54_4").addEventListener("click", fun_multi);
-  document.getElementById("radio-5-p54_5").addEventListener("click", fun_multi);
-  document.getElementById("radio-6-p54_6").addEventListener("click", fun_multi);
-  document.getElementById("radio-7-p54_7").addEventListener("click", fun_multi);
-
-  function fun_multi() {
-    if ($("#radio-1-p54_1").is(':checked') == true) {
-      document.getElementById("res_p54a_1").disabled = false;
-    } else {
-      document.getElementById("res_p54a_1").disabled = true;
-    }
-    if ($("#radio-2-p54_2").is(':checked') == true) {
-      document.getElementById("res_p54a_2").disabled = false;
-    } else {
-      document.getElementById("res_p54a_2").disabled = true;
-    } 
-    if ($("#radio-3-p54_3").is(':checked') == true) {
-      document.getElementById("res_p54a_3").disabled = false;
-    } else {
-      document.getElementById("res_p54a_3").disabled = true;
-    }
-    if ($("#radio-4-p54_4").is(':checked') == true) {
-      document.getElementById("res_p54a_4").disabled = false;
-    } else {
-      document.getElementById("res_p54a_4").disabled = true;
-    }
-    if ($("#radio-5-p54_5").is(':checked') == true) {
-      document.getElementById("res_p54a_5").disabled = false;
-    } else {
-      document.getElementById("res_p54a_5").disabled = true;
-    }
-    if ($("#radio-6-p54_6").is(':checked') == true) {
-      document.getElementById("res_p54a_6").disabled = false;
-    } else {
-      document.getElementById("res_p54a_6").disabled = true;
-    }
-    if ($("#radio-7-p54_7").is(':checked') == true) {
-      document.getElementById("res_p54a_7").disabled = false;
-    } else {
-      document.getElementById("res_p54a_7").disabled = true;
-    }
-      $('#but_res_p54').removeClass('hidden');
-      $('#div_error_p54').addClass('hidden');
-  }
-
   function fun_p54() {
-    var frase = document.getElementById("res_p54a_1").value; 
-      frase = frase.replace("#"," ");
-      frase = frase.replace("%"," ");
-      frase = frase.replace("&"," ");
-      frase = frase.replace("$"," ");
-      frase = frase.replace("  "," ");
-      document.getElementById("res_p54a_1").value = frase;
-
-    var frase1 = document.getElementById("res_p54a_2").value; 
-      frase1 = frase1.replace("#"," ");
-      frase1 = frase1.replace("%"," ");
-      frase1 = frase1.replace("&"," ");
-      frase1 = frase1.replace("$"," ");
-      frase1 = frase1.replace("  "," ");
-      document.getElementById("res_p54a_2").value = frase1;
-
-    var frase2 = document.getElementById("res_p54a_3").value; 
-      frase2 = frase2.replace("#"," ");
-      frase2 = frase2.replace("%"," ");
-      frase2 = frase2.replace("&"," ");
-      frase2 = frase2.replace("$"," ");
-      frase2 = frase2.replace("  "," ");
-      document.getElementById("res_p54a_3").value = frase2;
-
-    var frase3 = document.getElementById("res_p54a_4").value; 
-      frase3 = frase3.replace("#"," ");
-      frase3 = frase3.replace("%"," ");
-      frase3 = frase3.replace("&"," ");
-      frase3 = frase3.replace("$"," ");
-      frase3 = frase3.replace("  "," ");
-      document.getElementById("res_p54a_4").value = frase3;
-
-    var frase4 = document.getElementById("res_p54a_5").value; 
-      frase4 = frase4.replace("#"," ");
-      frase4 = frase4.replace("%"," ");
-      frase4 = frase4.replace("&"," ");
-      frase4 = frase4.replace("$"," ");
-      frase4 = frase4.replace("  "," ");
-      document.getElementById("res_p54a_5").value = frase4;
-
-    var frase5 = document.getElementById("res_p54a_6").value; 
-      frase5 = frase5.replace("#"," ");
-      frase5 = frase5.replace("%"," ");
-      frase5 = frase5.replace("&"," ");
-      frase5 = frase5.replace("$"," ");
-      frase5 = frase5.replace("  "," ");
-      document.getElementById("res_p54a_6").value = frase5;
-
-    var frase6 = document.getElementById("res_p54a_7").value; 
-      frase6 = frase6.replace("#"," ");
-      frase6 = frase6.replace("%"," ");
-      frase6 = frase6.replace("&"," ");
-      frase6 = frase6.replace("$"," ");
-      frase6 = frase6.replace("  "," ");
-      document.getElementById("res_p54a_7").value = frase6;
-
-    if ((document.getElementById("res_p54a_1").value != "" ||
-      document.getElementById("res_p54a_2").value != "" ||
-      document.getElementById("res_p54a_3").value != "" ||
-      document.getElementById("res_p54a_4").value != "" ||
-      document.getElementById("res_p54a_5").value != "" ||
-      document.getElementById("res_p54a_6").value != "" ||
-      document.getElementById("res_p54a_7").value != "") &&
-      ($("#radio-1-p54_1").is(':checked') == true || 
+    if ($("#radio-1-p54_1").is(':checked') == true || 
         $("#radio-2-p54_2").is(':checked') == true || 
         $("#radio-3-p54_3").is(':checked') == true || 
         $("#radio-4-p54_4").is(':checked') == true || 
         $("#radio-5-p54_5").is(':checked') == true || 
         $("#radio-6-p54_6").is(':checked') == true || 
-        $("#radio-7-p54_7").is(':checked') == true)) {
-
+        $("#radio-7-p54_7").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p54').slideUp();
       $('#div_p54').addClass('hidden');
@@ -21673,69 +21526,23 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       $('#div_p55').removeClass('hidden');
       $('#pregunta_p55_footer').removeClass('hidden');
       $('#div_error_p55').addClass('hidden');
-  } , 500);
+      } , 500);
   } else {
       $('#div_error_p54').removeClass('hidden');
-      $('#but_res_p54').addClass('hidden');
     }
     }
+  document.getElementById("radio-1-p54_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p54_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p54_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p54_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p54_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p54_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p54_7").addEventListener("click", fun_multi);
+  function fun_multi() {
+      $('#but_res_p54').removeClass('hidden');
+      $('#div_error_p54').addClass('hidden');
 
-  var input = document.getElementById("res_p54a_1");
-      input.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_2").focus();
-      }
-    });
-
-  var input1 = document.getElementById("res_p54a_2");
-      input1.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_3").focus();
-      }
-    });
-
-  var input1 = document.getElementById("res_p54a_3");
-      input1.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_4").focus();
-      }
-    });
-
-  var input1 = document.getElementById("res_p54a_4");
-      input1.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_5").focus();
-      }
-    });
-
-  var input1 = document.getElementById("res_p54a_5");
-      input1.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_6").focus();
-      }
-    });
-
-  var input1 = document.getElementById("res_p54a_6");
-      input1.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("res_p54a_7").focus();
-      }
-    });
-
-  var input2 = document.getElementById("res_p54a_7");
-      input2.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("but_res_p54").focus();
-      }
-    });
-
+  }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p55">
@@ -21774,7 +21581,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p57a_p55_boton">
+          <a class="boton1" id="pregunta_p56a_p55_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p54_p55_boton">
@@ -21799,7 +21606,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       $('#div_error_p55').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p57a_p55_boton").addEventListener("click", fun_p55);
+  document.getElementById("pregunta_p56a_p55_boton").addEventListener("click", fun_p55);
 
   document.getElementById("but_res_p55").addEventListener("click", fun_p55);
 
@@ -21811,10 +21618,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       $('#div_p55').slideUp();
       $('#div_p55').addClass('hidden');
       $('#pregunta_p55_footer').addClass('hidden');
-      $('#div_p57a').slideDown();
-      $('#div_p57a').removeClass('hidden');
-      $('#pregunta_p57a_footer').removeClass('hidden');
-      $('#div_error_p57a').addClass('hidden');
+      $('#div_p56a').slideDown();
+      $('#div_p56a').removeClass('hidden');
+      $('#pregunta_p56a_footer').removeClass('hidden');
+      $('#div_error_p56a').addClass('hidden');
       } , 500);
   } else {
       $('#div_error_p55').removeClass('hidden');
@@ -21830,10 +21637,224 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   }
 </script>
 
+<div class="centrado hidden" style="width: 90%" id="div_p56a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p56. ¿Cuánto tiempo trabajas a la semana?</h2>
+  <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56a. Horas al día</h3>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p56a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p56a", placeholder: "Horas al día"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p56a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p56a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p56a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p56a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">56 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 90%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p56b_p56a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p55_p56a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p56a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p56a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p55_p56a_boton").addEventListener("click", fun_p56a_dev);
+  function fun_p56a_dev() {
+      $('#div_p55').slideDown();
+      $('#div_p55').removeClass('hidden');
+      $('#pregunta_p55_footer').removeClass('hidden');
+      $('#div_p56a').slideUp();
+      $('#div_p56a').addClass('hidden');
+      $('#pregunta_p56a_footer').addClass('hidden');
+      $('#div_error_p56a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p56b_p56a_boton").addEventListener("click", fun_p56a);
+  document.getElementById("but_res_p56a").addEventListener("click", fun_p56a);
+    function fun_p56a() {
+    var frase = document.getElementById("res_p56a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p56a").value = frase;
+    if (document.getElementById("res_p56a").value == "") {
+      $('#but_res_p56a').addClass('hidden');
+      $('#p_p56a').addClass('hidden');
+      $('#div_error_p56a').removeClass('hidden');
+    } else {
+      $('#div_p56a').slideUp();
+      $('#div_p56a').addClass('hidden');
+      $('#pregunta_p56a_footer').addClass('hidden');
+      $('#div_p56b').slideDown();
+      $('#div_p56b').removeClass('hidden');
+      $('#pregunta_p56b_footer').removeClass('hidden');
+      $('#div_error_p56b').addClass('hidden');
+      document.getElementById("res_p56b").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p56a').on('input', function() { 
+      var frase = document.getElementById("res_p56a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p56a").value = frase;
+      if (document.getElementById("res_p56a").value == "") {
+      $('#but_res_p56a').addClass('hidden');
+      $('#p_p56a').addClass('hidden');
+      $('#div_error_p56a').removeClass('hidden');
+      } else {
+       $('#but_res_p56a').removeClass('hidden');
+       $('#p_p56a').removeClass('hidden');
+       $('#div_error_p56a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p56b">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p56. ¿Cuánto tiempo trabajas a la semana?</h2>
+  <h3 style="font-family: 'Heebo', sans-serif; color: #254064;">p56b. Total horas a la semana</h3>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p56b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p56b", placeholder: "Horas a la semana"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p56b"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p56b">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p56b">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p56b_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">56 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 90%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p57a_p56b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p56a_p56b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p56b");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p56b").click();
+      }
+    });
+
+  document.getElementById("pregunta_p56a_p56b_boton").addEventListener("click", fun_p56b_dev);
+  function fun_p56b_dev() {
+      $('#div_p56a').slideDown();
+      $('#div_p56a').removeClass('hidden');
+      $('#pregunta_p56a_footer').removeClass('hidden');
+      $('#div_p56b').slideUp();
+      $('#div_p56b').addClass('hidden');
+      $('#pregunta_p56b_footer').addClass('hidden');
+      $('#div_error_p56b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p57a_p56b_boton").addEventListener("click", fun_p56b);
+  document.getElementById("but_res_p56b").addEventListener("click", fun_p56b);
+    function fun_p56b() {
+    var frase = document.getElementById("res_p56b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p56b").value = frase;
+    if (document.getElementById("res_p56b").value == "") {
+      $('#but_res_p56b').addClass('hidden');
+      $('#p_p56b').addClass('hidden');
+      $('#div_error_p56b').removeClass('hidden');
+    } else {
+      $('#div_p56b').slideUp();
+      $('#div_p56b').addClass('hidden');
+      $('#pregunta_p56b_footer').addClass('hidden');
+      $('#div_p57a').slideDown();
+      $('#div_p57a').removeClass('hidden');
+      $('#pregunta_p57a_footer').removeClass('hidden');
+      $('#div_error_p57a').addClass('hidden');
+      document.getElementById("res_p57a").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p56b').on('input', function() { 
+      var frase = document.getElementById("res_p56b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p56b").value = frase;
+      if (document.getElementById("res_p56b").value == "") {
+      $('#but_res_p56b').addClass('hidden');
+      $('#p_p56b').addClass('hidden');
+      $('#div_error_p56b').removeClass('hidden');
+      } else {
+       $('#but_res_p56b').removeClass('hidden');
+       $('#p_p56b').removeClass('hidden');
+       $('#div_error_p56b').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
 <div class="centrado hidden" style="width: 90%;" id="div_p57a">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56a. …en temporadas (vacaciones, temporadas de fiestas, cosecha, etc.)?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57a. …en temporadas (vacaciones, temporadas de fiestas, cosecha, etc.)?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -21866,7 +21887,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           <a class="boton1" id="pregunta_p57b_p57a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p55_p57a_boton">
+          <a class="boton1" id="pregunta_p56b_p57a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -21877,11 +21898,11 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 
 <script type="text/javascript">
 
-  document.getElementById("pregunta_p55_p57a_boton").addEventListener("click", fun_p57a_dev);
+  document.getElementById("pregunta_p56b_p57a_boton").addEventListener("click", fun_p57a_dev);
   function fun_p57a_dev() {
-      $('#div_p55').slideDown();
-      $('#div_p55').removeClass('hidden');
-      $('#pregunta_p55_footer').removeClass('hidden');
+      $('#div_p56b').slideDown();
+      $('#div_p56b').removeClass('hidden');
+      $('#pregunta_p56b_footer').removeClass('hidden');
       $('#div_p57a').slideUp();
       $('#div_p57a').addClass('hidden');
       $('#pregunta_p57a_footer').addClass('hidden');
@@ -21910,9 +21931,9 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p57b">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
+  <<h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56b. ...de manera permanente</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57b. ...de manera permanente</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -21991,7 +22012,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p57c">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56c. …en el último año?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57c. …en el último año?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -22070,7 +22091,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p57d">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56d. …a cambio de algún pago?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57d. …a cambio de algún pago?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -22149,7 +22170,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p58a">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">En qué medida el hecho de trabajar te ha afectado en…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57a. …tener tiempo para hacer tareas</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p58a. …tener tiempo para hacer tareas</h3>
   <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Me ha afectado…</h4>
   <br>
   <div class="field qts">
@@ -22247,7 +22268,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p58b">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">En qué medida el hecho de trabajar te ha afectado en…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57b. …obtener buenas notas</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p58b. …obtener buenas notas</h3>
   <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Me ha afectado…</h4>
   <br>
   <div class="field qts">
@@ -22345,7 +22366,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p58c">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">En qué medida el hecho de trabajar te ha afectado en…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57c. ...ir al colegio todos los días</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p58c. ...ir al colegio todos los días</h3>
   <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Me ha afectado…</h4>
   <br>
   <div class="field qts">
@@ -22443,7 +22464,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 <div class="centrado hidden" style="width: 90%;" id="div_p58d">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">En qué medida el hecho de trabajar te ha afectado en…</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p57d. …participar en actividades académicas o culturales</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p58d. …participar en actividades académicas o culturales</h3>
   <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Me ha afectado…</h4>
   <br>
   <div class="field qts">
@@ -22633,7 +22654,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p59a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p58. Si quieres comentar algo relacionado con esta encuesta, escríbelo a continuación:</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p59a. Si quieres comentar algo relacionado con esta encuesta, escríbelo a continuación:</h2>
   <br>
   <div class="field qts">
 

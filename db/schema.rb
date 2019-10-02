@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_09_23_212312) do
-=======
-ActiveRecord::Schema.define(version: 2019_09_25_001157) do
->>>>>>> 76c55794728f1b7aa64d42be53ed01bb75f21a50
+ActiveRecord::Schema.define(version: 2019_10_02_170845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -476,8 +472,6 @@ ActiveRecord::Schema.define(version: 2019_09_25_001157) do
     t.string "p47a"
     t.string "p47b"
     t.string "p48"
-    t.string "p48a"
-    t.string "p48b"
     t.string "p49"
     t.string "p3a_1"
     t.string "p3a_2"
@@ -504,8 +498,6 @@ ActiveRecord::Schema.define(version: 2019_09_25_001157) do
     t.string "p55_1"
     t.string "p55_2"
     t.string "p55_3"
-    t.string "p56a"
-    t.string "p56b"
     t.string "p57a"
     t.string "p57b"
     t.string "p57c"
@@ -519,6 +511,27 @@ ActiveRecord::Schema.define(version: 2019_09_25_001157) do
     t.string "p60"
     t.string "p61"
     t.string "p62"
+    t.string "p48a_1"
+    t.string "p48a_2"
+    t.string "p48a_3"
+    t.string "p48a_4"
+    t.string "p48a_5"
+    t.string "p48a_6"
+    t.string "p48a_7"
+    t.string "p48b_1"
+    t.string "p48b_2"
+    t.string "p48b_3"
+    t.string "p48b_4"
+    t.string "p48b_5"
+    t.string "p48b_6"
+    t.string "p48b_7"
+    t.string "p54a_1"
+    t.string "p54a_2"
+    t.string "p54a_3"
+    t.string "p54a_4"
+    t.string "p54a_5"
+    t.string "p54a_6"
+    t.string "p54a_7"
   end
 
 end

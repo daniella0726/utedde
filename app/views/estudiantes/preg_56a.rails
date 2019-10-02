@@ -1,0 +1,78 @@
+<div class="centrado hidden" style="width: 90%;" id="div_p56a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Las veces que has trabajado, lo has hecho…</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p56a. …en temporadas (vacaciones, temporadas de fiestas, cosecha, etc.)?</h3>
+  <br>
+  <div class="field qts">
+    <div class="inputGroup">
+      <%= f.radio_button :p56a, "si" , id:"radio-1-p56a"%>
+      <%= f.label :p56a, "Si", for: "radio-1-p56a"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p56a, "no" , id:"radio-2-p56a"%>
+      <%= f.label :p56a, "No", for: "radio-2-p56a"%>
+    </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p56a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p56a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p56a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p56a_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">57 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 92%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p56b_p56a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p55_p56a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p55_p56a_boton").addEventListener("click", fun_p56a_dev);
+  function fun_p56a_dev() {
+      $('#div_p55').slideDown();
+      $('#div_p55').removeClass('hidden');
+      $('#pregunta_p55_footer').removeClass('hidden');
+      $('#div_p56a').slideUp();
+      $('#div_p56a').addClass('hidden');
+      $('#pregunta_p56a_footer').addClass('hidden');
+      $('#div_error_p56a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p56b_p56a_boton").addEventListener("click", fun_p56a);
+  document.getElementById("radio-1-p56a").addEventListener("click", fun_p56a);
+  document.getElementById("radio-2-p56a").addEventListener("click", fun_p56a);
+  function fun_p56a() {
+    if ($("#radio-1-p56a").is(':checked') == true || 
+        $("#radio-2-p56a").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p56a').slideUp();
+      $('#div_p56a').addClass('hidden');
+      $('#pregunta_p56a_footer').addClass('hidden');
+      $('#div_p56b').slideDown();
+      $('#div_p56b').removeClass('hidden');
+      $('#pregunta_p56b_footer').removeClass('hidden');
+      $('#div_error_p56b').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p56a').removeClass('hidden');
+    }
+    } 
+</script>
