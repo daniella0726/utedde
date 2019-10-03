@@ -714,7 +714,7 @@
       input2.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
         event.preventDefault();
-        document.getElementById("but_res_p3a").focus();
+        document.getElementById("but_res_p3a").click();
       }
     });
 
@@ -829,11 +829,12 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p4">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P4. ¿Con quién vives? (Puedes marcar varias respuestas) </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P4. ¿Con quién vives? (Puedes marcar varias respuestas) </h2>
   <br>
+
+  <div class="col-sm-6">
   <div class="field qts">
     <div class="inputGroup">
-
       <%= f.check_box :p4_1, checked: "Papá", id:"radio-1-p4_1"%>
       <%= f.label :p4_1, "Papá", for: "radio-1-p4_1"%>
     </div>
@@ -861,6 +862,11 @@
       <%= f.check_box :p4_7, checked: "Tíos - Tías", id:"radio-7-p4_7"%>
       <%= f.label :p4_7, "Tíos - Tías", for: "radio-7-p4_7"%>
     </div>
+  </div>
+  </div>
+
+  <div class="col-sm-6">
+  <div class="field qts">
     <div class="inputGroup">
       <%= f.check_box :p4_8, checked: "Abuelos - Abuelas", id:"radio-8-p4_8"%>
       <%= f.label :p4_8, "Abuelos - Abuelas", for: "radio-8-p4_8"%>
@@ -886,6 +892,8 @@
       <%= f.label :p4_13, "Sólo(a)", for: "radio-13-p4_13"%>
     </div>
   </div>
+  </div>
+
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p4">
     <i class="fas fa-check-circle"></i>
@@ -894,7 +902,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p4">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p4_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo" style="" >
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">4 de 62 respuestas</span>
@@ -1447,7 +1455,7 @@
 
 
 <div class="centrado hidden" style="width: 90%;" id="div_p6">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">p6. ¿Te reconoces como… (Puedes marcar varias casillas)</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">p6. ¿Te reconoces como… (Puedes marcar varias casillas)</h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1483,7 +1491,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p6">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p6_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">6 de 62 respuestas</span>
@@ -4965,7 +4973,7 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p12pm">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">p12pm. Marca las materias por las que perdiste año</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">p12pm. Marca las materias por las que perdiste año</h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -5017,7 +5025,7 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
   <p  class="hidden" style="color: #254064;" id="p_p12pm">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p12pm_footer">
-  <div class="centrado-abajo" style="margin-top: 230px;" >
+  <div class="centrado-abajo" style="margin-top: 70px;">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">12 de 62 respuestas</span>
@@ -15969,161 +15977,361 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   
 </script>
 
-<div class="centrado hidden" style="width: 90%; margin-top: 150px;" id="div_p36a">
-    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p36a. ¿Por qué motivo(s) sientes que has sido discriminado?</h2>
-    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">(Marca SOLO los que hayan respondido que SÍ)</span>
-    <br>
+<div class="centrado hidden" style="width: 90%; margin-top: 30px;" id="div_p36a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Por qué motivo(s) sientes que has sido discriminado?</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <br>
+  <div class="field qts">
+  <div class="col-sm-6">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th></th>
+          <th style="text-align: center;">SI</th>
+          <th style="text-align: center;">NO</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a.  Por ser poco femenina o poco masculino</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_1, "si" , id:"radio-1-p36a_1"%>
+              <%= f.label :p36a_1, "Si", for: "radio-1-p36a_1"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_1, "no" , id:"radio-2-p36a_1"%>
+              <%= f.label :p36a_1, "No", for: "radio-2-p36a_1"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b.  Por ser hombre o por ser mujer</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_2, "si" , id:"radio-3-p36a_2"%>
+              <%= f.label :p36a_2, "Si", for: "radio-3-p36a_2"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_2, "no" , id:"radio-4-p36a_2"%>
+              <%= f.label :p36a_2, "No", for: "radio-4-p36a_2"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Por ser hombre y manifestar que te gustan otros hombres o ser mujer y manifestar que te gustan otras mujeres</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_3, "si" , id:"radio-5-p36a_3"%>
+              <%= f.label :p36a_3, "Si", for: "radio-5-p36a_3"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_3, "no" , id:"radio-6-p36a_3"%>
+              <%= f.label :p36a_3, "No", for: "radio-6-p36a_3"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Por pertenecer a un grupo étnico (Rrom, afro, indígena) </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_4, "si" , id:"radio-7-p36a_4"%>
+              <%= f.label :p36a_4, "Si", for: "radio-7-p36a_4"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_4, "no" , id:"radio-8-p36a_4"%>
+              <%= f.label :p36a_4, "No", for: "radio-8-p36a_4"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e. Porque tienes alguna condición de discapacidad</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_5, "si" , id:"radio-9-p36a_5"%>
+              <%= f.label :p36a_5, "Si", for: "radio-9-p36a_5"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_5, "no" , id:"radio-10-p36a_5"%>
+              <%= f.label :p36a_5, "No", for: "radio-10-p36a_5"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>f.  Por tus rasgos físicos (estatura, peso, color de piel)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_6, "si" , id:"radio-11-p36a_6"%>
+              <%= f.label :p36a_6, "Si", for: "radio-11-p36a_6"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_6, "no" , id:"radio-12-p36a_6"%>
+              <%= f.label :p36a_6, "No", for: "radio-12-p36a_6"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>g.  Por tu apariencia <span>(forma de vestir, modificaciones corporales, tu cabello)</span></td> 
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_7, "si" , id:"radio-13-p36a_7"%>
+              <%= f.label :p36a_7, "Si", for: "radio-13-p36a_7"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_7, "no" , id:"radio-14-p36a_7"%>
+              <%= f.label :p36a_7, "No", for: "radio-14-p36a_7"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+
     <div class="field qts">
-      <div class="inputGroup">
-      <%= f.check_box :p36a_1, checked: "1", id:"radio-1-p36a_1"%>
-      <%= f.label :p36a_1, "Por ser poco femenina o poco masculino", for: "radio-1-p36a_1"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_2, checked: "2", id:"radio-2-p36a_2"%>
-      <%= f.label :p36a_2, "Por ser hombre o por ser mujer", for: "radio-2-p36a_2"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_3, checked: "3", id:"radio-3-p36a_3"%>
-      <%= f.label :p36a_3, "Por ser hombre y manifestar que te gustan otros hombres o ser mujer y manifestar que te gustan otras mujeres", for: "radio-3-p36a_3"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_4, checked: "4", id:"radio-4-p36a_4"%>
-      <%= f.label :p36a_4, "Por pertenecer a un grupo étnico (Rrom, afro, indígena)", for: "radio-4-p36a_4"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_5, checked: "5", id:"radio-5-p36a_5"%>
-      <%= f.label :p36a_5, "Porque tienes alguna condición de discapacidad", for: "radio-5-p36a_5"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_6, checked: "6", id:"radio-6-p36a_6"%>
-      <%= f.label :p36a_6, "Por tus rasgos físicos (estatura, peso, color de piel)", for: "radio-6-p36a_6"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_7, checked: "7", id:"radio-7-p36a_7"%>
-      <%= f.label :p36a_7, " Por tu apariencia (forma de vestir, modificaciones corporales, tu cabello)", for: "radio-7-p36a_7"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_8, checked: "8", id:"radio-8-p36a_8"%>
-      <%= f.label :p36a_8, "Por tus ideas políticas o filosóficas", for: "radio-8-p36a_8"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_9, checked: "9", id:"radio-9-p36a_9"%>
-      <%= f.label :p36a_9, "Por tu nacionallidad", for: "radio-9-p36a_9"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_10, checked: "10", id:"radio-10-p36a_10"%>
-      <%= f.label :p36a_10, "Por tus creencias religiosas", for: "radio-10-p36a_10"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_11, checked: "11", id:"radio-11-p36a_11"%>
-      <%= f.label :p36a_11, "Por tu condición económica", for: "radio-11-p36a_11"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_12, checked: "12", id:"radio-12-p36a_12"%>
-      <%= f.label :p36a_12, "Por ser víctima del conflicto armado", for: "radio-12-p36a_12"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.check_box :p36a_13, checked: "13", id:"radio-13-p36a_13"%>
-      <%= f.label :p36a_13, "Otro motivo.  ¿Cuál?", for: "radio-13-p36a_13"%>
-    </div>
-    </div>
-    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p36a">Por favor, <strong>escoge una respuesta</strong></div>
-    <button type="button" class="boton3 hidden" id="but_res_p36a">
-      <i class="fas fa-check-circle"></i>
-        OK
-    </button>
-    <p  class="hidden" style="color: #254064;" id="p_p36a">presioná <strong>ENTER</strong></p>
-  </div>  
-  <div class="container hidden" id="pregunta_p36a_footer">
-    <div class="centrado-abajo" style="margin-top: 370px;">
-      <div class="row">
-        <div class="col-md-8">
-        <span style="color: #254064">36 de 62 respuestas</span>
+    <div class="col-sm-6">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th></th>
+          <th style="text-align: center;">SI</th>
+          <th style="text-align: center;">NO</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>h.  Por tus ideas políticas o filosóficas</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_8, "si" , id:"radio-15-p36a_8"%>
+              <%= f.label :p36a_8, "Si", for: "radio-15-p36a_8"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_8, "no" , id:"radio-16-p36a_8"%>
+              <%= f.label :p36a_8, "No", for: "radio-16-p36a_8"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>i.  Por tu nacionallidad</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_9, "si" , id:"radio-17-p36a_9"%>
+              <%= f.label :p36a_9, "Si", for: "radio-17-p36a_9"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_9, "no" , id:"radio-18-p36a_9"%>
+              <%= f.label :p36a_9, "No", for: "radio-18-p36a_9"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>j.  Por tus creencias religiosas</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_10, "si" , id:"radio-19-p36a_10"%>
+              <%= f.label :p36a_10, "Si", for: "radio-19-p36a_10"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_10, "no" , id:"radio-20-p36a_10"%>
+              <%= f.label :p36a_10, "No", for: "radio-20-p36a_10"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>k.  Por tu condición económica</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_11, "si" , id:"radio-21-p36a_11"%>
+              <%= f.label :p36a_11, "Si", for: "radio-21-p36a_11"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_11, "no" , id:"radio-22-p36a_11"%>
+              <%= f.label :p36a_11, "No", for: "radio-22-p36a_11"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>l.  Por ser víctima del conflicto armado</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_12, "si" , id:"radio-23-p36a_12"%>
+              <%= f.label :p36a_12, "Si", for: "radio-23-p36a_12"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_12, "no" , id:"radio-24-p36a_12"%>
+              <%= f.label :p36a_12, "No", for: "radio-24-p36a_12"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>m.  Otro motivo.  ¿Cuál?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_13, "si" , id:"radio-25-p36a_13"%>
+              <%= f.label :p36a_13, "Si", for: "radio-25-p36a_13"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p36a_13, "no" , id:"radio-26-p36a_13"%>
+              <%= f.label :p36a_13, "No", for: "radio-26-p36a_13"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p36a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p36a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p36a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p36a_footer">
+  <div class="centrado-abajo" style="margin-top: 100px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 58%; background-color: #254064;"></div>
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
           </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p37a_p36a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p36_p36a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="row">
-            <a class="boton1" id="pregunta_p37a_p36a_boton">
-              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
-            </a>
-            <a class="boton1" id="pregunta_p36_p36a_boton">
-              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
-            </a>
-          </div>
       </div>  
     </div>
   </div> 
 </div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p36_p36a_boton").addEventListener("click", fun_p36a_dev);
+  function fun_p36a_dev() {
+      $('#div_p36').slideDown();
+      $('#div_p36').removeClass('hidden');
+      $('#pregunta_p36_footer').removeClass('hidden');
+      $('#div_p36a').slideUp();
+      $('#div_p36a').addClass('hidden');
+      $('#pregunta_p36a_footer').addClass('hidden');
+      $('#div_error_p36a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p37a_p36a_boton").addEventListener("click", fun_p36a);
   
-  <script type="text/javascript">
-  
-    document.getElementById("pregunta_p36_p36a_boton").addEventListener("click", fun_p36a_dev);
-    function fun_p36a_dev() {
-        $('#div_p36').slideDown();
-        $('#div_p36').removeClass('hidden');
-        $('#pregunta_p36_footer').removeClass('hidden');
-        $('#div_p36a').slideUp();
-        $('#div_p36a').addClass('hidden');
-        $('#pregunta_p36a_footer').addClass('hidden');
-        $('#div_error_p36a').addClass('hidden');
+  document.getElementById("but_res_p36a").addEventListener("click", fun_p36a);
+
+  function fun_p36a() {
+    if ($("#radio-1-p36a_1").is(':checked') == true ||
+        $("#radio-2-p36a_1").is(':checked') == true ||
+        $("#radio-3-p36a_2").is(':checked') == true ||
+        $("#radio-4-p36a_2").is(':checked') == true ||
+        $("#radio-5-p36a_3").is(':checked') == true ||
+        $("#radio-6-p36a_3").is(':checked') == true ||
+        $("#radio-7-p36a_4").is(':checked') == true ||
+        $("#radio-8-p36a_4").is(':checked') == true ||
+        $("#radio-9-p36a_5").is(':checked') == true ||
+        $("#radio-10-p36a_5").is(':checked') == true ||
+        $("#radio-11-p36a_6").is(':checked') == true ||
+        $("#radio-12-p36a_6").is(':checked') == true ||
+        $("#radio-13-p36a_7").is(':checked') == true ||
+        $("#radio-14-p36a_7").is(':checked') == true ||
+        $("#radio-15-p36a_8").is(':checked') == true ||
+        $("#radio-16-p36a_8").is(':checked') == true ||
+        $("#radio-17-p36a_9").is(':checked') == true ||
+        $("#radio-18-p36a_9").is(':checked') == true ||
+        $("#radio-19-p36a_10").is(':checked') == true ||
+        $("#radio-20-p36a_10").is(':checked') == true ||
+        $("#radio-21-p36a_11").is(':checked') == true ||
+        $("#radio-22-p36a_11").is(':checked') == true ||
+        $("#radio-23-p36a_12").is(':checked') == true ||
+        $("#radio-24-p36a_12").is(':checked') == true ||
+        $("#radio-25-p36a_13").is(':checked') == true ||
+        $("#radio-26-p36a_13").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p36a').slideUp();
+      $('#div_p36a').addClass('hidden');
+      $('#pregunta_p36a_footer').addClass('hidden');
+      $('#div_p37a').slideDown();
+      $('#div_p37a').removeClass('hidden');
+      $('#pregunta_p37a_footer').removeClass('hidden');
+      $('#div_error_p37a').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p36a').removeClass('hidden');
     }
-  
-    document.getElementById("pregunta_p37a_p36a_boton").addEventListener("click", fun_p36a);
-
-    document.getElementById("but_res_p36a").addEventListener("click", fun_p36a);
-
-    function fun_p36a() {
-      if ($("#radio-1-p36a_1").is(':checked') == true || 
-        $("#radio-2-p36a_2").is(':checked') == true || 
-        $("#radio-3-p36a_3").is(':checked') == true || 
-        $("#radio-4-p36a_4").is(':checked') == true ||
-        $("#radio-5-p36a_5").is(':checked') == true ||
-        $("#radio-6-p36a_6").is(':checked') == true ||
-        $("#radio-7-p36a_7").is(':checked') == true ||
-        $("#radio-8-p36a_8").is(':checked') == true || 
-        $("#radio-9-p36a_9").is(':checked') == true ||
-        $("#radio-10-p36a_10").is(':checked') == true ||
-        $("#radio-11-p36a_11").is(':checked') == true ||
-        $("#radio-12-p36a_12").is(':checked') == true) {
-  
-      setTimeout(function(){
-        $('#div_p36a').slideUp();
-        $('#div_p36a').addClass('hidden');
-        $('#pregunta_p36a_footer').addClass('hidden');
-        $('#div_p37a').slideDown();
-        $('#div_p37a').removeClass('hidden');
-        $('#pregunta_p37a_footer').removeClass('hidden');
-        $('#div_error_p37a').addClass('hidden');
-    } , 500);
-    } else {
-        $('#div_error_p36a').removeClass('hidden');
-      }
-      } 
+    } 
 
     document.getElementById("radio-1-p36a_1").addEventListener("click", fun_multi);
-    document.getElementById("radio-2-p36a_2").addEventListener("click", fun_multi);
-    document.getElementById("radio-3-p36a_3").addEventListener("click", fun_multi);
-    document.getElementById("radio-4-p36a_4").addEventListener("click", fun_multi);
-    document.getElementById("radio-5-p36a_5").addEventListener("click", fun_multi);
-    document.getElementById("radio-6-p36a_6").addEventListener("click", fun_multi);
-    document.getElementById("radio-7-p36a_7").addEventListener("click", fun_multi);
-    document.getElementById("radio-8-p36a_8").addEventListener("click", fun_multi);
-    document.getElementById("radio-9-p36a_9").addEventListener("click", fun_multi);
-    document.getElementById("radio-10-p36a_10").addEventListener("click", fun_multi);
-    document.getElementById("radio-11-p36a_11").addEventListener("click", fun_multi);
-    document.getElementById("radio-12-p36a_12").addEventListener("click", fun_multi);
-
+    document.getElementById("radio-2-p36a_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p36a_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p36a_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p36a_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-6-p36a_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-7-p36a_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-8-p36a_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-9-p36a_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-10-p36a_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-11-p36a_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-12-p36a_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-13-p36a_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-14-p36a_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-15-p36a_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-16-p36a_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-17-p36a_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-18-p36a_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-19-p36a_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-20-p36a_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-21-p36a_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-22-p36a_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-23-p36a_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-24-p36a_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-26-p36a_13").addEventListener("click", fun_multi);
+    
     function fun_multi() {
       $('#but_res_p36a').removeClass('hidden');
       $('#div_error_p36a').addClass('hidden');
 
   }
   
-  document.getElementById("radio-13-p36a_13").addEventListener("click", fun_op1);
+    document.getElementById("radio-25-p36a_13").addEventListener("click", fun_op1);
+
     function fun_op1() {
-      if ($("#radio-13-p36a_13").is(':checked') == true) {
+      if ($("#radio-25-p36a_13").is(':checked') == true ||
+          $("#radio-26-p36a_13").is(':checked') == true) {
       setTimeout(function(){
         $('#div_p36a').slideUp();
         $('#div_p36a').addClass('hidden');
@@ -16137,8 +16345,8 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         $('#div_error_p36a').removeClass('hidden');
       }
       }
-  
 </script>
+
 
 <div class="centrado hidden" style="width: 90%" id="div_p36ab">
   <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p36ab. ¿Otro motivo que te hace sentir discriminado(a)?</h2>
@@ -17262,7 +17470,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p40">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">p40. ¿Generalmente cómo te corrigen o reprenden en tu hogar cuando te portas mal?</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">p40. ¿Generalmente cómo te corrigen o reprenden en tu hogar cuando te portas mal?</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar más de una respuesta)</span>
   <br>
   <div class="field qts">
@@ -17303,7 +17511,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   <p  class="hidden" style="color: #254064;" id="p_p40">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p40_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo" style="margin-top: 10px;" >
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">40 de 62 respuestas</span>
@@ -19153,7 +19361,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 </script>
 
 <div class="centrado hidden" style="width: 90%; margin-top: 50px;" id="div_p46">
-    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p46. Por fuera de tu colegio ¿has tomado alguno de los siguientes cursos en este último año?:</h2>
+    <h2 style="font-weight: bold; font-family: 'Heebo', sans-serif; color: #254064;">p46. Por fuera de tu colegio ¿has tomado alguno de los siguientes cursos en este último año?:</h2>
     <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar más de una respuesta)</span>
     <br>
     <div class="field qts">
@@ -21950,7 +22158,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         </div>
         <div class="col-md-4">
           <div class="row">
-            <a class="boton1" id="pregunta_p60_p59_boton">
+            <a class="boton1" id="pregunta_p62_p59_boton">
               <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
             </a>
             <a class="boton1" id="pregunta_p58d_p59_boton">
@@ -21975,7 +22183,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         $('#div_error_p59').addClass('hidden');
     }
   
-    document.getElementById("pregunta_p60_p59_boton").addEventListener("click", fun_p59);
+    document.getElementById("pregunta_p62_p59_boton").addEventListener("click", fun_p59);
     document.getElementById("radio-2-p59").addEventListener("click", fun_p59);
     function fun_p59() {
       if ($("#radio-2-p59").is(':checked') == true) {
@@ -21984,10 +22192,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         $('#div_p59').slideUp();
         $('#div_p59').addClass('hidden');
         $('#pregunta_p59_footer').addClass('hidden');
-        $('#div_p60').slideDown();
-        $('#div_p60').removeClass('hidden');
-        $('#pregunta_p60_footer').removeClass('hidden');
-        $('#div_error_p60').addClass('hidden');
+        $('#div_p62').slideDown();
+        $('#div_p62').removeClass('hidden');
+        $('#pregunta_p62_footer').removeClass('hidden');
+        $('#div_error_p62').addClass('hidden');
     } , 500);
     } else {
         $('#div_error_p59').removeClass('hidden');
@@ -22039,7 +22247,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p60_p59a_boton">
+          <a class="boton1" id="pregunta_p62_p59a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p59_p59a_boton">
@@ -22071,7 +22279,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       $('#div_error_p59a').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p60_p59a_boton").addEventListener("click", fun_p59a);
+  document.getElementById("pregunta_p62_p59a_boton").addEventListener("click", fun_p59a);
   document.getElementById("but_res_p59a").addEventListener("click", fun_p59a);
     function fun_p59a() {
     var frase = document.getElementById("res_p59a").value; 
@@ -22089,11 +22297,11 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       $('#div_p59a').slideUp();
       $('#div_p59a').addClass('hidden');
       $('#pregunta_p59a_footer').addClass('hidden');
-      $('#div_p60').slideDown();
-      $('#div_p60').removeClass('hidden');
-      $('#pregunta_p60_footer').removeClass('hidden');
-      $('#div_error_p60').addClass('hidden');
-      document.getElementById("res_p60").focus();
+      $('#div_p62').slideDown();
+      $('#div_p62').removeClass('hidden');
+      $('#pregunta_p62_footer').removeClass('hidden');
+      $('#div_error_p62').addClass('hidden');
+      document.getElementById("res_p62").focus();
     }
   }
 
@@ -22149,7 +22357,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
           <a class="boton1" id="pregunta_ultima_p62_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p61_p62_boton">
+          <a class="boton1" id="pregunta_p59_p62_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>          
         </div>
@@ -22167,11 +22375,11 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       }
     });
 
-  document.getElementById("pregunta_p61_p62_boton").addEventListener("click", fun_p62_dev);
+  document.getElementById("pregunta_p59_p62_boton").addEventListener("click", fun_p62_dev);
   function fun_p62_dev() {
-      $('#div_p61').slideDown();
-      $('#div_p61').removeClass('hidden');
-      $('#pregunta_p61_footer').removeClass('hidden');
+      $('#div_p59').slideDown();
+      $('#div_p59').removeClass('hidden');
+      $('#pregunta_p59_footer').removeClass('hidden');
       $('#div_p62').slideUp();
       $('#div_p62').addClass('hidden');
       $('#pregunta_p62_footer').addClass('hidden');
