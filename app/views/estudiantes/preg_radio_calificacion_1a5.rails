@@ -1,5 +1,6 @@
 <div class="centrado hidden" style="width: 90%;" id="div_estoy">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Califica de 1 a 5, qué tan satisfecho te sientes con los siguientes aspectos del colegio, siendo 5 la mejor calificación: <br>  (Marca un recuadro en cada caso)</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Califica de 1 a 5, qué tan satisfecho te sientes con los siguientes aspectos del colegio, siendo 5 la mejor calificación:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">(Marca un recuadro en cada caso)</span>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. </h3>
   <br>
   <div class="field qts">

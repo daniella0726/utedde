@@ -1,0 +1,107 @@
+
+
+<div class="centrado hidden" style="width: 90%" id="div_p61">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p61. Nombre del encuestador</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p61, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p61", placeholder: "Nombre del encuestador"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p61"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p61">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p61">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p61_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">61 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 98%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p62_p61_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p60_p61_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p61");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p61").click();
+      }
+    });
+
+  document.getElementById("pregunta_p60_p61_boton").addEventListener("click", fun_p61_dev);
+  function fun_p61_dev() {
+      $('#div_p60').slideDown();
+      $('#div_p60').removeClass('hidden');
+      $('#pregunta_p60_footer').removeClass('hidden');
+      $('#div_p61').slideUp();
+      $('#div_p61').addClass('hidden');
+      $('#pregunta_p61_footer').addClass('hidden');
+      $('#div_error_p61').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p62_p61_boton").addEventListener("click", fun_p61);
+  document.getElementById("but_res_p61").addEventListener("click", fun_p61);
+    function fun_p61() {
+    var frase = document.getElementById("res_p61").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p61").value = frase;
+    if (document.getElementById("res_p61").value == "") {
+      $('#but_res_p61').addClass('hidden');
+      $('#p_p61').addClass('hidden');
+      $('#div_error_p61').removeClass('hidden');
+    } else {
+      $('#div_p61').slideUp();
+      $('#div_p61').addClass('hidden');
+      $('#pregunta_p61_footer').addClass('hidden');
+      $('#div_p62').slideDown();
+      $('#div_p62').removeClass('hidden');
+      $('#pregunta_p62_footer').removeClass('hidden');
+      $('#div_error_p62').addClass('hidden');
+      document.getElementById("res_p62").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p61').on('input', function() { 
+      var frase = document.getElementById("res_p61").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p61").value = frase;
+      if (document.getElementById("res_p61").value == "") {
+      $('#but_res_p61').addClass('hidden');
+      $('#p_p61').addClass('hidden');
+      $('#div_error_p61').removeClass('hidden');
+      } else {
+       $('#but_res_p61').removeClass('hidden');
+       $('#p_p61').removeClass('hidden');
+       $('#div_error_p61').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>

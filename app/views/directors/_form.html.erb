@@ -2713,4 +2713,3159 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
+<div class="centrado hidden" style="width: 90%;" id="div_p11">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p11. ¿Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th></th>
+          <th>Nunca</th>
+          <th>Casi nunca</th>
+          <th>Algunas veces</th>
+          <th>Casi siempre</th>
+          <th>Siempre</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. Porque esta zona es muy insegura</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_1, "1" , id:"radio-1-p11_1"%>
+              <%= f.label :p11_1, "", for: "radio-1-p11_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_1, "2" , id:"radio-2-p11_1"%>
+              <%= f.label :p11_1, "", for: "radio-2-p11_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_1, "3" , id:"radio-3-p11_1"%>
+              <%= f.label :p11_1, "", for: "radio-3-p11_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_1, "4" , id:"radio-4-p11_1"%>
+              <%= f.label :p11_1, "", for: "radio-4-p11_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_1, "5" , id:"radio-5-p11_1"%>
+              <%= f.label :p11_1, "", for: "radio-5-p11_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Porque el colegio está en una zona muy apartada</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_2, "1" , id:"radio-1-p11_2"%>
+              <%= f.label :p11_2, "", for: "radio-1-p11_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_2, "2" , id:"radio-2-p11_2"%>
+              <%= f.label :p11_2, "", for: "radio-2-p11_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_2, "3" , id:"radio-3-p11_2"%>
+              <%= f.label :p11_2, "", for: "radio-3-p11_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_2, "4" , id:"radio-4-p11_2"%>
+              <%= f.label :p11_2, "", for: "radio-4-p11_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_2, "5" , id:"radio-5-p11_2"%>
+              <%= f.label :p11_2, "", for: "radio-5-p11_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Porque esta zona sufre con frecuencia desastres naturales (inundaciones, derrumbes, etc.)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_3, "1" , id:"radio-1-p11_3"%>
+              <%= f.label :p11_3, "", for: "radio-1-p11_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_3, "2" , id:"radio-2-p11_3"%>
+              <%= f.label :p11_3, "", for: "radio-2-p11_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_3, "3" , id:"radio-3-p11_3"%>
+              <%= f.label :p11_3, "", for: "radio-3-p11_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_3, "4" , id:"radio-4-p11_3"%>
+              <%= f.label :p11_3, "", for: "radio-4-p11_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p11_3, "5" , id:"radio-5-p11_3"%>
+              <%= f.label :p11_3, "", for: "radio-5-p11_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Por otra razón relacionada con la zona donde está ubicado el colegio.</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p11_4, "otro" , id:"radio-1-p11_4"%>
+              <%= f.label :p11_4, "Otra. ¿Cuál?", for: "radio-1-p11_4"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p11">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_footer">
+  <div class="centrado-abajo" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">11 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 31%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p12_p11_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_p11_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p10_p11_boton").addEventListener("click", fun_p11_dev);
+  function fun_p11_dev() {
+      $('#div_p10').slideDown();
+      $('#div_p10').removeClass('hidden');
+      $('#pregunta_p10_footer').removeClass('hidden');
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_error_p11').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
+  
+  document.getElementById("but_res_p11").addEventListener("click", fun_p11);
+
+  function fun_p11() {
+    if ($("#radio-1-p11_1").is(':checked') == true ||
+        $("#radio-2-p11_1").is(':checked') == true ||
+        $("#radio-3-p11_1").is(':checked') == true ||
+        $("#radio-4-p11_1").is(':checked') == true ||
+        $("#radio-5-p11_1").is(':checked') == true ||
+        $("#radio-1-p11_2").is(':checked') == true ||
+        $("#radio-2-p11_2").is(':checked') == true ||
+        $("#radio-3-p11_2").is(':checked') == true ||
+        $("#radio-4-p11_2").is(':checked') == true ||
+        $("#radio-5-p11_2").is(':checked') == true ||
+        $("#radio-1-p11_3").is(':checked') == true ||
+        $("#radio-2-p11_3").is(':checked') == true ||
+        $("#radio-3-p11_3").is(':checked') == true ||
+        $("#radio-4-p11_3").is(':checked') == true ||
+        $("#radio-5-p11_3").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p11').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p11_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p11_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p11_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p11_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p11_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p11_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p11_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p11_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p11_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p11_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p11_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p11_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p11_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p11_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p11_3").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p11').removeClass('hidden');
+      $('#div_error_p11').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p11_4").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p11_4").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p11').slideUp();
+        $('#div_p11').addClass('hidden');
+        $('#pregunta_p11_footer').addClass('hidden');
+        $('#div_p11a').slideDown();
+        $('#div_p11a').removeClass('hidden');
+        $('#pregunta_p11a_footer').removeClass('hidden');
+        $('#div_error_p11a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p11').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p11a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p11a. ¿Hace cuántos años vives aquí?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p11a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p11a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p11a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p12_p11a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_p11a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p11a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p11a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p11_p11a_boton").addEventListener("click", fun_p11a_dev);
+  function fun_p11a_dev() {
+      $('#div_p11').slideDown();
+      $('#div_p11').removeClass('hidden');
+      $('#pregunta_p11_footer').removeClass('hidden');
+      $('#div_p11a').slideUp();
+      $('#div_p11a').addClass('hidden');
+      $('#pregunta_p11a_footer').addClass('hidden');
+      $('#div_error_p11a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p12_p11a_boton").addEventListener("click", fun_p11a);
+  document.getElementById("but_res_p11a").addEventListener("click", fun_p11a);
+    function fun_p11a() {
+    var frase = document.getElementById("res_p11a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p11a").value = frase;
+    if (document.getElementById("res_p11a").value == "") {
+      $('#but_res_p11a').addClass('hidden');
+      $('#p_p11a').addClass('hidden');
+      $('#div_error_p11a').removeClass('hidden');
+    } else {
+      $('#div_p11a').slideUp();
+      $('#div_p11a').addClass('hidden');
+      $('#pregunta_p11a_footer').addClass('hidden');
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+      document.getElementById("res_p12").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p11a').on('input', function() { 
+      var frase = document.getElementById("res_p11a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p11a").value = frase;
+      if (document.getElementById("res_p11a").value == "") {
+      $('#but_res_p11a').addClass('hidden');
+      $('#p_p11a').addClass('hidden');
+      $('#div_error_p11a').removeClass('hidden');
+      } else {
+       $('#but_res_p11a').removeClass('hidden');
+       $('#p_p11a').removeClass('hidden');
+       $('#div_error_p11a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 700px;" id="div_p12">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p12. ¿Con qué frecuencia las siguientes condiciones de esta institución educativa afectan para que los(las) niños(as) o jóvenes abandonen sus estudios?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th></th>
+          <th style="text-align: center;">Nunca</th>
+          <th style="text-align: center;">Casi nunca</th>
+          <th style="text-align: center;">Algunas veces</th>
+          <th style="text-align: center;">Casi siempre</th>
+          <th style="text-align: center;">Siempre</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. Porque este establecimiento educativo no tiene todos los niveles de formación</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_1, "1" , id:"radio-1-p12_1"%>
+              <%= f.label :p12_1, "", for: "radio-1-p12_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_1, "2" , id:"radio-2-p12_1"%>
+              <%= f.label :p12_1, "", for: "radio-2-p12_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_1, "3" , id:"radio-3-p12_1"%>
+              <%= f.label :p12_1, "", for: "radio-3-p12_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_1, "4" , id:"radio-4-p12_1"%>
+              <%= f.label :p12_1, "", for: "radio-4-p12_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_1, "5" , id:"radio-5-p12_1"%>
+              <%= f.label :p12_1, "", for: "radio-5-p12_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Porque le faltan docentes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_2, "1" , id:"radio-1-p12_2"%>
+              <%= f.label :p12_2, "", for: "radio-1-p12_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_2, "2" , id:"radio-2-p12_2"%>
+              <%= f.label :p12_2, "", for: "radio-2-p12_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_2, "3" , id:"radio-3-p12_2"%>
+              <%= f.label :p12_2, "", for: "radio-3-p12_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_2, "4" , id:"radio-4-p12_2"%>
+              <%= f.label :p12_2, "", for: "radio-4-p12_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_2, "5" , id:"radio-5-p12_2"%>
+              <%= f.label :p12_2, "", for: "radio-5-p12_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Por las estrategias pedagógicas de los docentes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_3, "1" , id:"radio-1-p12_3"%>
+              <%= f.label :p12_3, "", for: "radio-1-p12_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_3, "2" , id:"radio-2-p12_3"%>
+              <%= f.label :p12_3, "", for: "radio-2-p12_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_3, "3" , id:"radio-3-p12_3"%>
+              <%= f.label :p12_3, "", for: "radio-3-p12_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_3, "4" , id:"radio-4-p12_3"%>
+              <%= f.label :p12_3, "", for: "radio-4-p12_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_3, "5" , id:"radio-5-p12_3"%>
+              <%= f.label :p12_3, "", for: "radio-5-p12_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Porque las instalaciones de esta institución educativa son desagradables</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_4, "1" , id:"radio-1-p12_4"%>
+              <%= f.label :p12_4, "", for: "radio-1-p12_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_4, "2" , id:"radio-2-p12_4"%>
+              <%= f.label :p12_4, "", for: "radio-2-p12_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_4, "3" , id:"radio-3-p12_4"%>
+              <%= f.label :p12_4, "", for: "radio-3-p12_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_4, "4" , id:"radio-4-p12_4"%>
+              <%= f.label :p12_4, "", for: "radio-4-p12_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_4, "5" , id:"radio-5-p12_4"%>
+              <%= f.label :p12_4, "", for: "radio-5-p12_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e. Porque hay muchos conflictos y violencia escolar (presencia de pandillas, bullying, matoneo, acoso escolar, abuso, etc.)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_5, "1" , id:"radio-1-p12_5"%>
+              <%= f.label :p12_5, "", for: "radio-1-p12_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_5, "2" , id:"radio-2-p12_5"%>
+              <%= f.label :p12_5, "", for: "radio-2-p12_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_5, "3" , id:"radio-3-p12_5"%>
+              <%= f.label :p12_5, "", for: "radio-3-p12_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_5, "4" , id:"radio-4-p12_5"%>
+              <%= f.label :p12_5, "", for: "radio-4-p12_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_5, "5" , id:"radio-5-p12_5"%>
+              <%= f.label :p12_5, "", for: "radio-5-p12_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>f. Porque hay mucho consumo de alcohol y otras sustancias psicoactivas </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_6, "1" , id:"radio-1-p12_6"%>
+              <%= f.label :p12_6, "", for: "radio-1-p12_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_6, "2" , id:"radio-2-p12_6"%>
+              <%= f.label :p12_6, "", for: "radio-2-p12_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_6, "3" , id:"radio-3-p12_6"%>
+              <%= f.label :p12_6, "", for: "radio-3-p12_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_6, "4" , id:"radio-4-p12_6"%>
+              <%= f.label :p12_6, "", for: "radio-4-p12_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_6, "5" , id:"radio-5-p12_6"%>
+              <%= f.label :p12_6, "", for: "radio-5-p12_6", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>g. Porque hay conflictos entre estudiantes, docentes y directivos</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_7, "1" , id:"radio-1-p12_7"%>
+              <%= f.label :p12_7, "", for: "radio-1-p12_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_7, "2" , id:"radio-2-p12_7"%>
+              <%= f.label :p12_7, "", for: "radio-2-p12_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_7, "3" , id:"radio-3-p12_7"%>
+              <%= f.label :p12_7, "", for: "radio-3-p12_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_7, "4" , id:"radio-4-p12_7"%>
+              <%= f.label :p12_7, "", for: "radio-4-p12_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_7, "5" , id:"radio-5-p12_7"%>
+              <%= f.label :p12_7, "", for: "radio-5-p12_7", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>h. Porque el trato entre compañeros es inadecuado</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_8, "1" , id:"radio-1-p12_8"%>
+              <%= f.label :p12_8, "", for: "radio-1-p12_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_8, "2" , id:"radio-2-p12_8"%>
+              <%= f.label :p12_8, "", for: "radio-2-p12_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_8, "3" , id:"radio-3-p12_8"%>
+              <%= f.label :p12_8, "", for: "radio-3-p12_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_8, "4" , id:"radio-4-p12_8"%>
+              <%= f.label :p12_8, "", for: "radio-4-p12_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_8, "5" , id:"radio-5-p12_8"%>
+              <%= f.label :p12_8, "", for: "radio-5-p12_8", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>i. Porque le falta ayuda a esta institucion educativa en transporte</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_9, "1" , id:"radio-1-p12_9"%>
+              <%= f.label :p12_9, "", for: "radio-1-p12_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_9, "2" , id:"radio-2-p12_9"%>
+              <%= f.label :p12_9, "", for: "radio-2-p12_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_9, "3" , id:"radio-3-p12_9"%>
+              <%= f.label :p12_9, "", for: "radio-3-p12_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_9, "4" , id:"radio-4-p12_9"%>
+              <%= f.label :p12_9, "", for: "radio-4-p12_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_9, "5" , id:"radio-5-p12_9"%>
+              <%= f.label :p12_9, "", for: "radio-5-p12_9", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>j. Porque le falta ayuda a esta institucion educativa en alimentación</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_10, "1" , id:"radio-1-p12_10"%>
+              <%= f.label :p12_10, "", for: "radio-1-p12_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_10, "2" , id:"radio-2-p12_10"%>
+              <%= f.label :p12_10, "", for: "radio-2-p12_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_10, "3" , id:"radio-3-p12_10"%>
+              <%= f.label :p12_10, "", for: "radio-3-p12_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_10, "4" , id:"radio-4-p12_10"%>
+              <%= f.label :p12_10, "", for: "radio-4-p12_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_10, "5" , id:"radio-5-p12_10"%>
+              <%= f.label :p12_10, "", for: "radio-5-p12_10", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>k. Porque le falta ayuda a esta institucion educativa en uniformes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_11, "1" , id:"radio-1-p12_11"%>
+              <%= f.label :p12_11, "", for: "radio-1-p12_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_11, "2" , id:"radio-2-p12_11"%>
+              <%= f.label :p12_11, "", for: "radio-2-p12_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_11, "3" , id:"radio-3-p12_11"%>
+              <%= f.label :p12_11, "", for: "radio-3-p12_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_11, "4" , id:"radio-4-p12_11"%>
+              <%= f.label :p12_11, "", for: "radio-4-p12_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_11, "5" , id:"radio-5-p12_11"%>
+              <%= f.label :p12_11, "", for: "radio-5-p12_11", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>l. Porque le falta ayuda a esta institucion educativa en kits escolares</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_12, "1" , id:"radio-1-p12_12"%>
+              <%= f.label :p12_12, "", for: "radio-1-p12_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_12, "2" , id:"radio-2-p12_12"%>
+              <%= f.label :p12_12, "", for: "radio-2-p12_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_12, "3" , id:"radio-3-p12_12"%>
+              <%= f.label :p12_12, "", for: "radio-3-p12_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_12, "4" , id:"radio-4-p12_12"%>
+              <%= f.label :p12_12, "", for: "radio-4-p12_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_12, "5" , id:"radio-5-p12_12"%>
+              <%= f.label :p12_12, "", for: "radio-5-p12_12", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>m. Porque falta ayuda para el pago de los costos educativos</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_13, "1" , id:"radio-1-p12_13"%>
+              <%= f.label :p12_13, "", for: "radio-1-p12_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_13, "2" , id:"radio-2-p12_13"%>
+              <%= f.label :p12_13, "", for: "radio-2-p12_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_13, "3" , id:"radio-3-p12_13"%>
+              <%= f.label :p12_13, "", for: "radio-3-p12_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_13, "4" , id:"radio-4-p12_13"%>
+              <%= f.label :p12_13, "", for: "radio-4-p12_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_13, "5" , id:"radio-5-p12_13"%>
+              <%= f.label :p12_13, "", for: "radio-5-p12_13", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>n. Porque no hay jornadas eductivas adecuadas para los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_14, "1" , id:"radio-1-p12_14"%>
+              <%= f.label :p12_14, "", for: "radio-1-p12_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_14, "2" , id:"radio-2-p12_14"%>
+              <%= f.label :p12_14, "", for: "radio-2-p12_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_14, "3" , id:"radio-3-p12_14"%>
+              <%= f.label :p12_14, "", for: "radio-3-p12_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_14, "4" , id:"radio-4-p12_14"%>
+              <%= f.label :p12_14, "", for: "radio-4-p12_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_14, "5" , id:"radio-5-p12_14"%>
+              <%= f.label :p12_14, "", for: "radio-5-p12_14", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>o. Porque la educación que reciben es inadecuada a las necesidades o problemas del contexto</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_15, "1" , id:"radio-1-p12_15"%>
+              <%= f.label :p12_15, "", for: "radio-1-p12_15", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_15, "2" , id:"radio-2-p12_15"%>
+              <%= f.label :p12_15, "", for: "radio-2-p12_15", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_15, "3" , id:"radio-3-p12_15"%>
+              <%= f.label :p12_15, "", for: "radio-3-p12_15", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_15, "4" , id:"radio-4-p12_15"%>
+              <%= f.label :p12_15, "", for: "radio-4-p12_15", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_15, "5" , id:"radio-5-p12_15"%>
+              <%= f.label :p12_15, "", for: "radio-5-p12_15", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>p. Porque las estrategias pedagógicas de la Institución Educativa son inadecuadas a las necesidades de los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_16, "1" , id:"radio-1-p12_16"%>
+              <%= f.label :p12_16, "", for: "radio-1-p12_16", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_16, "2" , id:"radio-2-p12_16"%>
+              <%= f.label :p12_16, "", for: "radio-2-p12_16", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_16, "3" , id:"radio-3-p12_16"%>
+              <%= f.label :p12_16, "", for: "radio-3-p12_16", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_16, "4" , id:"radio-4-p12_16"%>
+              <%= f.label :p12_16, "", for: "radio-4-p12_16", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_16, "5" , id:"radio-5-p12_16"%>
+              <%= f.label :p12_16, "", for: "radio-5-p12_16", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>q. Porque expulsa a los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_17, "1" , id:"radio-1-p12_17"%>
+              <%= f.label :p12_17, "", for: "radio-1-p12_17", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_17, "2" , id:"radio-2-p12_17"%>
+              <%= f.label :p12_17, "", for: "radio-2-p12_17", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_17, "3" , id:"radio-3-p12_17"%>
+              <%= f.label :p12_17, "", for: "radio-3-p12_17", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_17, "4" , id:"radio-4-p12_17"%>
+              <%= f.label :p12_17, "", for: "radio-4-p12_17", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12_17, "5" , id:"radio-5-p12_17"%>
+              <%= f.label :p12_17, "", for: "radio-5-p12_17", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>r. Por otra razón.</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p12_18, "otra" , id:"radio-1-p12_18"%>
+              <%= f.label :p12_18, "Otra. ¿Cuál?", for: "radio-1-p12_18"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p12">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p12">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p12">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p12_footer">
+  <div class="centrado-abajo" style="margin-top: 1500px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">12 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p13_p12_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_p12_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p11_p12_boton").addEventListener("click", fun_p12_dev);
+  function fun_p12_dev() {
+      $('#div_p11').slideDown();
+      $('#div_p11').removeClass('hidden');
+      $('#pregunta_p11_footer').removeClass('hidden');
+      $('#div_p12').slideUp();
+      $('#div_p12').addClass('hidden');
+      $('#pregunta_p12_footer').addClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p13_p12_boton").addEventListener("click", fun_p12);
+  
+  document.getElementById("but_res_p12").addEventListener("click", fun_p12);
+
+  function fun_p12() {
+    if ($("#radio-1-p12_1").is(':checked') == true ||
+        $("#radio-2-p12_1").is(':checked') == true ||
+        $("#radio-3-p12_1").is(':checked') == true ||
+        $("#radio-4-p12_1").is(':checked') == true ||
+        $("#radio-5-p12_1").is(':checked') == true ||
+        $("#radio-1-p12_2").is(':checked') == true ||
+        $("#radio-2-p12_2").is(':checked') == true ||
+        $("#radio-3-p12_2").is(':checked') == true ||
+        $("#radio-4-p12_2").is(':checked') == true ||
+        $("#radio-5-p12_2").is(':checked') == true ||
+        $("#radio-1-p12_3").is(':checked') == true ||
+        $("#radio-2-p12_3").is(':checked') == true ||
+        $("#radio-3-p12_3").is(':checked') == true ||
+        $("#radio-4-p12_3").is(':checked') == true ||
+        $("#radio-5-p12_3").is(':checked') == true ||
+        $("#radio-1-p12_4").is(':checked') == true ||
+        $("#radio-2-p12_4").is(':checked') == true ||
+        $("#radio-3-p12_4").is(':checked') == true ||
+        $("#radio-4-p12_4").is(':checked') == true ||
+        $("#radio-5-p12_4").is(':checked') == true ||
+        $("#radio-1-p12_5").is(':checked') == true ||
+        $("#radio-2-p12_5").is(':checked') == true ||
+        $("#radio-3-p12_5").is(':checked') == true ||
+        $("#radio-4-p12_5").is(':checked') == true ||
+        $("#radio-5-p12_5").is(':checked') == true ||
+        $("#radio-1-p12_6").is(':checked') == true ||
+        $("#radio-2-p12_6").is(':checked') == true ||
+        $("#radio-3-p12_6").is(':checked') == true ||
+        $("#radio-4-p12_6").is(':checked') == true ||
+        $("#radio-5-p12_6").is(':checked') == true ||
+        $("#radio-1-p12_7").is(':checked') == true ||
+        $("#radio-2-p12_7").is(':checked') == true ||
+        $("#radio-3-p12_7").is(':checked') == true ||
+        $("#radio-4-p12_7").is(':checked') == true ||
+        $("#radio-5-p12_7").is(':checked') == true ||
+        $("#radio-1-p12_8").is(':checked') == true ||
+        $("#radio-2-p12_8").is(':checked') == true ||
+        $("#radio-3-p12_8").is(':checked') == true ||
+        $("#radio-4-p12_8").is(':checked') == true ||
+        $("#radio-5-p12_8").is(':checked') == true ||
+        $("#radio-1-p12_9").is(':checked') == true ||
+        $("#radio-2-p12_9").is(':checked') == true ||
+        $("#radio-3-p12_9").is(':checked') == true ||
+        $("#radio-4-p12_9").is(':checked') == true ||
+        $("#radio-5-p12_9").is(':checked') == true ||
+        $("#radio-1-p12_10").is(':checked') == true ||
+        $("#radio-2-p12_10").is(':checked') == true ||
+        $("#radio-3-p12_10").is(':checked') == true ||
+        $("#radio-4-p12_10").is(':checked') == true ||
+        $("#radio-5-p12_10").is(':checked') == true ||
+        $("#radio-1-p12_11").is(':checked') == true ||
+        $("#radio-2-p12_11").is(':checked') == true ||
+        $("#radio-3-p12_11").is(':checked') == true ||
+        $("#radio-4-p12_11").is(':checked') == true ||
+        $("#radio-5-p12_11").is(':checked') == true ||
+        $("#radio-1-p12_12").is(':checked') == true ||
+        $("#radio-2-p12_12").is(':checked') == true ||
+        $("#radio-3-p12_12").is(':checked') == true ||
+        $("#radio-4-p12_12").is(':checked') == true ||
+        $("#radio-5-p12_12").is(':checked') == true ||
+        $("#radio-1-p12_13").is(':checked') == true ||
+        $("#radio-2-p12_13").is(':checked') == true ||
+        $("#radio-3-p12_13").is(':checked') == true ||
+        $("#radio-4-p12_13").is(':checked') == true ||
+        $("#radio-5-p12_13").is(':checked') == true ||
+        $("#radio-1-p12_14").is(':checked') == true ||
+        $("#radio-2-p12_14").is(':checked') == true ||
+        $("#radio-3-p12_14").is(':checked') == true ||
+        $("#radio-4-p12_14").is(':checked') == true ||
+        $("#radio-5-p12_14").is(':checked') == true ||
+        $("#radio-1-p12_15").is(':checked') == true ||
+        $("#radio-2-p12_15").is(':checked') == true ||
+        $("#radio-3-p12_15").is(':checked') == true ||
+        $("#radio-4-p12_15").is(':checked') == true ||
+        $("#radio-5-p12_15").is(':checked') == true ||
+        $("#radio-1-p12_16").is(':checked') == true ||
+        $("#radio-2-p12_16").is(':checked') == true ||
+        $("#radio-3-p12_16").is(':checked') == true ||
+        $("#radio-4-p12_16").is(':checked') == true ||
+        $("#radio-5-p12_16").is(':checked') == true ||
+        $("#radio-1-p12_17").is(':checked') == true ||
+        $("#radio-2-p12_17").is(':checked') == true ||
+        $("#radio-3-p12_17").is(':checked') == true ||
+        $("#radio-4-p12_17").is(':checked') == true ||
+        $("#radio-5-p12_17").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p12').slideUp();
+      $('#div_p12').addClass('hidden');
+      $('#pregunta_p12_footer').addClass('hidden');
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p12').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p12_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p12_17").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p12_17").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p12_17").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p12_17").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p12_17").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p12').removeClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p12_18").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p12_18").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p12').slideUp();
+        $('#div_p12').addClass('hidden');
+        $('#pregunta_p12_footer').addClass('hidden');
+        $('#div_p12a').slideDown();
+        $('#div_p12a').removeClass('hidden');
+        $('#pregunta_p12a_footer').removeClass('hidden');
+        $('#div_error_p12a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p12').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p12a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p12a. ¿Cuál otra razón?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p12a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p12a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p12a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p12a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p12a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p12a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p13_p12a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p12_p12a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p12a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p12a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p12_p12a_boton").addEventListener("click", fun_p12a_dev);
+  function fun_p12a_dev() {
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_p12a').slideUp();
+      $('#div_p12a').addClass('hidden');
+      $('#pregunta_p12a_footer').addClass('hidden');
+      $('#div_error_p12a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p13_p12a_boton").addEventListener("click", fun_p12a);
+  document.getElementById("but_res_p12a").addEventListener("click", fun_p12a);
+    function fun_p12a() {
+    var frase = document.getElementById("res_p12a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p12a").value = frase;
+    if (document.getElementById("res_p12a").value == "") {
+      $('#but_res_p12a').addClass('hidden');
+      $('#p_p12a').addClass('hidden');
+      $('#div_error_p12a').removeClass('hidden');
+    } else {
+      $('#div_p12a').slideUp();
+      $('#div_p12a').addClass('hidden');
+      $('#pregunta_p12a_footer').addClass('hidden');
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+      document.getElementById("res_p13").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p12a').on('input', function() { 
+      var frase = document.getElementById("res_p12a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p12a").value = frase;
+      if (document.getElementById("res_p12a").value == "") {
+      $('#but_res_p12a').addClass('hidden');
+      $('#p_p12a').addClass('hidden');
+      $('#div_error_p12a').removeClass('hidden');
+      } else {
+       $('#but_res_p12a').removeClass('hidden');
+       $('#p_p12a').removeClass('hidden');
+       $('#div_error_p12a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 290px;" id="div_p13">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p13. ¿Con qué frecuencia las siguientes condiciones de las FAMILIAS O ACUDIENTES de los estudiantes inciden para que ellos terminen abandonando esta institución educativa?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Nunca</th>
+          <th style="text-align: center;">Casi nunca</th>
+          <th style="text-align: center;">Algunas veces</th>
+          <th style="text-align: center;">Casi siempre</th>
+          <th style="text-align: center;">Siempre</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a.  Los problemas económicos o los gastos educativos elevados</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_1, "1" , id:"radio-1-p13_1"%>
+              <%= f.label :p13_1, "", for: "radio-1-p13_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_1, "2" , id:"radio-2-p13_1"%>
+              <%= f.label :p13_1, "", for: "radio-2-p13_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_1, "3" , id:"radio-3-p13_1"%>
+              <%= f.label :p13_1, "", for: "radio-3-p13_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_1, "4" , id:"radio-4-p13_1"%>
+              <%= f.label :p13_1, "", for: "radio-4-p13_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_1, "5" , id:"radio-5-p13_1"%>
+              <%= f.label :p13_1, "", for: "radio-5-p13_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Las responsabilidades que les ponen a los niños (oficios del hogar, trabajo infantil, cuidado de miembros de hogar, etc.)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_2, "1" , id:"radio-1-p13_2"%>
+              <%= f.label :p13_2, "", for: "radio-1-p13_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_2, "2" , id:"radio-2-p13_2"%>
+              <%= f.label :p13_2, "", for: "radio-2-p13_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_2, "3" , id:"radio-3-p13_2"%>
+              <%= f.label :p13_2, "", for: "radio-3-p13_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_2, "4" , id:"radio-4-p13_2"%>
+              <%= f.label :p13_2, "", for: "radio-4-p13_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_2, "5" , id:"radio-5-p13_2"%>
+              <%= f.label :p13_2, "", for: "radio-5-p13_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Los conflictos de las  familias con la institución educativa</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_3, "1" , id:"radio-1-p13_3"%>
+              <%= f.label :p13_3, "", for: "radio-1-p13_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_3, "2" , id:"radio-2-p13_3"%>
+              <%= f.label :p13_3, "", for: "radio-2-p13_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_3, "3" , id:"radio-3-p13_3"%>
+              <%= f.label :p13_3, "", for: "radio-3-p13_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_3, "4" , id:"radio-4-p13_3"%>
+              <%= f.label :p13_3, "", for: "radio-4-p13_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_3, "5" , id:"radio-5-p13_3"%>
+              <%= f.label :p13_3, "", for: "radio-5-p13_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Conflictos al interior de la familia (divorcio, violencia intrafamiliar, etc.)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_4, "1" , id:"radio-1-p13_4"%>
+              <%= f.label :p13_4, "", for: "radio-1-p13_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_4, "2" , id:"radio-2-p13_4"%>
+              <%= f.label :p13_4, "", for: "radio-2-p13_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_4, "3" , id:"radio-3-p13_4"%>
+              <%= f.label :p13_4, "", for: "radio-3-p13_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_4, "4" , id:"radio-4-p13_4"%>
+              <%= f.label :p13_4, "", for: "radio-4-p13_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_4, "5" , id:"radio-5-p13_4"%>
+              <%= f.label :p13_4, "", for: "radio-5-p13_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e.  Los cambios de domicilio de los hogares </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_5, "1" , id:"radio-1-p13_5"%>
+              <%= f.label :p13_5, "", for: "radio-1-p13_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_5, "2" , id:"radio-2-p13_5"%>
+              <%= f.label :p13_5, "", for: "radio-2-p13_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_5, "3" , id:"radio-3-p13_5"%>
+              <%= f.label :p13_5, "", for: "radio-3-p13_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_5, "4" , id:"radio-4-p13_5"%>
+              <%= f.label :p13_5, "", for: "radio-4-p13_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_5, "5" , id:"radio-5-p13_5"%>
+              <%= f.label :p13_5, "", for: "radio-5-p13_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>f.  Algunas familias son desplazadas o víctimas del conflicto armado interno</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_6, "1" , id:"radio-1-p13_6"%>
+              <%= f.label :p13_6, "", for: "radio-1-p13_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_6, "2" , id:"radio-2-p13_6"%>
+              <%= f.label :p13_6, "", for: "radio-2-p13_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_6, "3" , id:"radio-3-p13_6"%>
+              <%= f.label :p13_6, "", for: "radio-3-p13_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_6, "4" , id:"radio-4-p13_6"%>
+              <%= f.label :p13_6, "", for: "radio-4-p13_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_6, "5" , id:"radio-5-p13_6"%>
+              <%= f.label :p13_6, "", for: "radio-5-p13_6", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>g. La muerte de alguno de sus miembros</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_7, "1" , id:"radio-1-p13_7"%>
+              <%= f.label :p13_7, "", for: "radio-1-p13_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_7, "2" , id:"radio-2-p13_7"%>
+              <%= f.label :p13_7, "", for: "radio-2-p13_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_7, "3" , id:"radio-3-p13_7"%>
+              <%= f.label :p13_7, "", for: "radio-3-p13_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_7, "4" , id:"radio-4-p13_7"%>
+              <%= f.label :p13_7, "", for: "radio-4-p13_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_7, "5" , id:"radio-5-p13_7"%>
+              <%= f.label :p13_7, "", for: "radio-5-p13_7", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>h. El que los padres o acudientes motiven a estudiar poco a sus hijos</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_8, "1" , id:"radio-1-p13_8"%>
+              <%= f.label :p13_8, "", for: "radio-1-p13_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_8, "2" , id:"radio-2-p13_8"%>
+              <%= f.label :p13_8, "", for: "radio-2-p13_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_8, "3" , id:"radio-3-p13_8"%>
+              <%= f.label :p13_8, "", for: "radio-3-p13_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_8, "4" , id:"radio-4-p13_8"%>
+              <%= f.label :p13_8, "", for: "radio-4-p13_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_8, "5" , id:"radio-5-p13_8"%>
+              <%= f.label :p13_8, "", for: "radio-5-p13_8", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>i. Familias migrantes del exterior</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_9, "1" , id:"radio-1-p13_9"%>
+              <%= f.label :p13_9, "", for: "radio-1-p13_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_9, "2" , id:"radio-2-p13_9"%>
+              <%= f.label :p13_9, "", for: "radio-2-p13_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_9, "3" , id:"radio-3-p13_9"%>
+              <%= f.label :p13_9, "", for: "radio-3-p13_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_9, "4" , id:"radio-4-p13_9"%>
+              <%= f.label :p13_9, "", for: "radio-4-p13_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p13_9, "5" , id:"radio-5-p13_9"%>
+              <%= f.label :p13_9, "", for: "radio-5-p13_9", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>j. Por otra razón relacionada con las familias de los estudiantes.</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p13_10, "otra" , id:"radio-1-p13_10"%>
+              <%= f.label :p13_10, "Otra. ¿Cuál?", for: "radio-1-p13_10"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p13">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p13">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p13">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p13_footer">
+  <div class="centrado-abajo" style="margin-top: 680px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">13 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 36%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14_p13_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p12_p13_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p12_p13_boton").addEventListener("click", fun_p13_dev);
+  function fun_p13_dev() {
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_p13').slideUp();
+      $('#div_p13').addClass('hidden');
+      $('#pregunta_p13_footer').addClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14_p13_boton").addEventListener("click", fun_p13);
+  
+  document.getElementById("but_res_p13").addEventListener("click", fun_p13);
+
+  function fun_p13() {
+    if ($("#radio-1-p13_1").is(':checked') == true ||
+        $("#radio-2-p13_1").is(':checked') == true ||
+        $("#radio-3-p13_1").is(':checked') == true ||
+        $("#radio-4-p13_1").is(':checked') == true ||
+        $("#radio-5-p13_1").is(':checked') == true ||
+        $("#radio-1-p13_2").is(':checked') == true ||
+        $("#radio-2-p13_2").is(':checked') == true ||
+        $("#radio-3-p13_2").is(':checked') == true ||
+        $("#radio-4-p13_2").is(':checked') == true ||
+        $("#radio-5-p13_2").is(':checked') == true ||
+        $("#radio-1-p13_3").is(':checked') == true ||
+        $("#radio-2-p13_3").is(':checked') == true ||
+        $("#radio-3-p13_3").is(':checked') == true ||
+        $("#radio-4-p13_3").is(':checked') == true ||
+        $("#radio-5-p13_3").is(':checked') == true ||
+        $("#radio-1-p13_4").is(':checked') == true ||
+        $("#radio-2-p13_4").is(':checked') == true ||
+        $("#radio-3-p13_4").is(':checked') == true ||
+        $("#radio-4-p13_4").is(':checked') == true ||
+        $("#radio-5-p13_4").is(':checked') == true ||
+        $("#radio-1-p13_5").is(':checked') == true ||
+        $("#radio-2-p13_5").is(':checked') == true ||
+        $("#radio-3-p13_5").is(':checked') == true ||
+        $("#radio-4-p13_5").is(':checked') == true ||
+        $("#radio-5-p13_5").is(':checked') == true ||
+        $("#radio-1-p13_6").is(':checked') == true ||
+        $("#radio-2-p13_6").is(':checked') == true ||
+        $("#radio-3-p13_6").is(':checked') == true ||
+        $("#radio-4-p13_6").is(':checked') == true ||
+        $("#radio-5-p13_6").is(':checked') == true ||
+        $("#radio-1-p13_7").is(':checked') == true ||
+        $("#radio-2-p13_7").is(':checked') == true ||
+        $("#radio-3-p13_7").is(':checked') == true ||
+        $("#radio-4-p13_7").is(':checked') == true ||
+        $("#radio-5-p13_7").is(':checked') == true ||
+        $("#radio-1-p13_8").is(':checked') == true ||
+        $("#radio-2-p13_8").is(':checked') == true ||
+        $("#radio-3-p13_8").is(':checked') == true ||
+        $("#radio-4-p13_8").is(':checked') == true ||
+        $("#radio-5-p13_8").is(':checked') == true ||
+        $("#radio-1-p13_9").is(':checked') == true ||
+        $("#radio-2-p13_9").is(':checked') == true ||
+        $("#radio-3-p13_9").is(':checked') == true ||
+        $("#radio-4-p13_9").is(':checked') == true ||
+        $("#radio-5-p13_9").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p13').slideUp();
+      $('#div_p13').addClass('hidden');
+      $('#pregunta_p13_footer').addClass('hidden');
+      $('#div_p14').slideDown();
+      $('#div_p14').removeClass('hidden');
+      $('#pregunta_p14_footer').removeClass('hidden');
+      $('#div_error_p14').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p13').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p13_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p13_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p13_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p13_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p13_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p13_9").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p13').removeClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p13_10").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p13_10").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p13').slideUp();
+        $('#div_p13').addClass('hidden');
+        $('#pregunta_p13_footer').addClass('hidden');
+        $('#div_p13a').slideDown();
+        $('#div_p13a').removeClass('hidden');
+        $('#pregunta_p13a_footer').removeClass('hidden');
+        $('#div_error_p13a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p13').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p13a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p13a. Por otra razón relacionada con las familias de los estudiantes.  ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p13a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p13a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p13a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p13a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p13a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p13a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">13 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 33%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14_p13a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p13_p13a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p13a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p13a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p13_p13a_boton").addEventListener("click", fun_p13a_dev);
+  function fun_p13a_dev() {
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_p13a').slideUp();
+      $('#div_p13a').addClass('hidden');
+      $('#pregunta_p13a_footer').addClass('hidden');
+      $('#div_error_p13a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14_p13a_boton").addEventListener("click", fun_p13a);
+  document.getElementById("but_res_p13a").addEventListener("click", fun_p13a);
+    function fun_p13a() {
+    var frase = document.getElementById("res_p13a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p13a").value = frase;
+    if (document.getElementById("res_p13a").value == "") {
+      $('#but_res_p13a').addClass('hidden');
+      $('#p_p13a').addClass('hidden');
+      $('#div_error_p13a').removeClass('hidden');
+    } else {
+      $('#div_p13a').slideUp();
+      $('#div_p13a').addClass('hidden');
+      $('#pregunta_p13a_footer').addClass('hidden');
+      $('#div_p14').slideDown();
+      $('#div_p14').removeClass('hidden');
+      $('#pregunta_p14_footer').removeClass('hidden');
+      $('#div_error_p14').addClass('hidden');
+      document.getElementById("res_p14").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p13a').on('input', function() { 
+      var frase = document.getElementById("res_p13a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p13a").value = frase;
+      if (document.getElementById("res_p13a").value == "") {
+      $('#but_res_p13a').addClass('hidden');
+      $('#p_p13a').addClass('hidden');
+      $('#div_error_p13a').removeClass('hidden');
+      } else {
+       $('#but_res_p13a').removeClass('hidden');
+       $('#p_p13a').removeClass('hidden');
+       $('#div_error_p13a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 290px;" id="div_p14">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p14. ¿Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Nunca</th>
+          <th style="text-align: center;">Casi nunca</th>
+          <th style="text-align: center;">Algunas veces</th>
+          <th style="text-align: center;">Casi siempre</th>
+          <th style="text-align: center;">Siempre</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. Por maternidad o paternidad a temprana edad</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_1, "1" , id:"radio-1-p14_1"%>
+              <%= f.label :p14_1, "", for: "radio-1-p14_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_1, "2" , id:"radio-2-p14_1"%>
+              <%= f.label :p14_1, "", for: "radio-2-p14_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_1, "3" , id:"radio-3-p14_1"%>
+              <%= f.label :p14_1, "", for: "radio-3-p14_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_1, "4" , id:"radio-4-p14_1"%>
+              <%= f.label :p14_1, "", for: "radio-4-p14_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_1, "5" , id:"radio-5-p14_1"%>
+              <%= f.label :p14_1, "", for: "radio-5-p14_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Por enfermedad</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_2, "1" , id:"radio-1-p14_2"%>
+              <%= f.label :p14_2, "", for: "radio-1-p14_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_2, "2" , id:"radio-2-p14_2"%>
+              <%= f.label :p14_2, "", for: "radio-2-p14_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_2, "3" , id:"radio-3-p14_2"%>
+              <%= f.label :p14_2, "", for: "radio-3-p14_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_2, "4" , id:"radio-4-p14_2"%>
+              <%= f.label :p14_2, "", for: "radio-4-p14_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_2, "5" , id:"radio-5-p14_2"%>
+              <%= f.label :p14_2, "", for: "radio-5-p14_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Por la extra-edad que tienen</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_3, "1" , id:"radio-1-p14_3"%>
+              <%= f.label :p14_3, "", for: "radio-1-p14_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_3, "2" , id:"radio-2-p14_3"%>
+              <%= f.label :p14_3, "", for: "radio-2-p14_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_3, "3" , id:"radio-3-p14_3"%>
+              <%= f.label :p14_3, "", for: "radio-3-p14_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_3, "4" , id:"radio-4-p14_3"%>
+              <%= f.label :p14_3, "", for: "radio-4-p14_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_3, "5" , id:"radio-5-p14_3"%>
+              <%= f.label :p14_3, "", for: "radio-5-p14_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Porque necesitan educación inclusiva para la atención educativa de poblacion con discapacidad o con capacidades o con talentos excepcionales (DCT)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_4, "1" , id:"radio-1-p14_4"%>
+              <%= f.label :p14_4, "", for: "radio-1-p14_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_4, "2" , id:"radio-2-p14_4"%>
+              <%= f.label :p14_4, "", for: "radio-2-p14_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_4, "3" , id:"radio-3-p14_4"%>
+              <%= f.label :p14_4, "", for: "radio-3-p14_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_4, "4" , id:"radio-4-p14_4"%>
+              <%= f.label :p14_4, "", for: "radio-4-p14_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_4, "5" , id:"radio-5-p14_4"%>
+              <%= f.label :p14_4, "", for: "radio-5-p14_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e.  Porque no les gusta el estudio</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_5, "1" , id:"radio-1-p14_5"%>
+              <%= f.label :p14_5, "", for: "radio-1-p14_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_5, "2" , id:"radio-2-p14_5"%>
+              <%= f.label :p14_5, "", for: "radio-2-p14_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_5, "3" , id:"radio-3-p14_5"%>
+              <%= f.label :p14_5, "", for: "radio-3-p14_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_5, "4" , id:"radio-4-p14_5"%>
+              <%= f.label :p14_5, "", for: "radio-4-p14_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_5, "5" , id:"radio-5-p14_5"%>
+              <%= f.label :p14_5, "", for: "radio-5-p14_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>f. Porque consideran que ya terminaron sus estudios</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_6, "1" , id:"radio-1-p14_6"%>
+              <%= f.label :p14_6, "", for: "radio-1-p14_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_6, "2" , id:"radio-2-p14_6"%>
+              <%= f.label :p14_6, "", for: "radio-2-p14_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_6, "3" , id:"radio-3-p14_6"%>
+              <%= f.label :p14_6, "", for: "radio-3-p14_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_6, "4" , id:"radio-4-p14_6"%>
+              <%= f.label :p14_6, "", for: "radio-4-p14_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_6, "5" , id:"radio-5-p14_6"%>
+              <%= f.label :p14_6, "", for: "radio-5-p14_6", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>g. Porque no consideran que la educación sea útil para su vida</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_7, "1" , id:"radio-1-p14_7"%>
+              <%= f.label :p14_7, "", for: "radio-1-p14_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_7, "2" , id:"radio-2-p14_7"%>
+              <%= f.label :p14_7, "", for: "radio-2-p14_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_7, "3" , id:"radio-3-p14_7"%>
+              <%= f.label :p14_7, "", for: "radio-3-p14_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_7, "4" , id:"radio-4-p14_7"%>
+              <%= f.label :p14_7, "", for: "radio-4-p14_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_7, "5" , id:"radio-5-p14_7"%>
+              <%= f.label :p14_7, "", for: "radio-5-p14_7", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>h. Porque tienen dificultades académicas (Perdida de cursos o logros, dificultades para aprender, etc.)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_8, "1" , id:"radio-1-p14_8"%>
+              <%= f.label :p14_8, "", for: "radio-1-p14_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_8, "2" , id:"radio-2-p14_8"%>
+              <%= f.label :p14_8, "", for: "radio-2-p14_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_8, "3" , id:"radio-3-p14_8"%>
+              <%= f.label :p14_8, "", for: "radio-3-p14_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_8, "4" , id:"radio-4-p14_8"%>
+              <%= f.label :p14_8, "", for: "radio-4-p14_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_8, "5" , id:"radio-5-p14_8"%>
+              <%= f.label :p14_8, "", for: "radio-5-p14_8", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>i. Porque están interesados en ingresar al SENA, tener educación no formal o formación para el trabajo</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_9, "1" , id:"radio-1-p14_9"%>
+              <%= f.label :p14_9, "", for: "radio-1-p14_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_9, "2" , id:"radio-2-p14_9"%>
+              <%= f.label :p14_9, "", for: "radio-2-p14_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_9, "3" , id:"radio-3-p14_9"%>
+              <%= f.label :p14_9, "", for: "radio-3-p14_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_9, "4" , id:"radio-4-p14_9"%>
+              <%= f.label :p14_9, "", for: "radio-4-p14_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p14_9, "5" , id:"radio-5-p14_9"%>
+              <%= f.label :p14_9, "", for: "radio-5-p14_9", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>j. Por otra razón.</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p14_10, "otra" , id:"radio-1-p14_10"%>
+              <%= f.label :p14_10, "¿Cuál?", for: "radio-1-p14_10"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p14">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14_footer">
+  <div class="centrado-abajo" style="margin-top: 680px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">14 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 38%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15_p14_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p13_p14_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p13_p14_boton").addEventListener("click", fun_p14_dev);
+  function fun_p14_dev() {
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_p14').slideUp();
+      $('#div_p14').addClass('hidden');
+      $('#pregunta_p14_footer').addClass('hidden');
+      $('#div_error_p14').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15_p14_boton").addEventListener("click", fun_p14);
+  
+  document.getElementById("but_res_p14").addEventListener("click", fun_p14);
+
+  function fun_p14() {
+    if ($("#radio-1-p14_1").is(':checked') == true ||
+        $("#radio-2-p14_1").is(':checked') == true ||
+        $("#radio-3-p14_1").is(':checked') == true ||
+        $("#radio-4-p14_1").is(':checked') == true ||
+        $("#radio-5-p14_1").is(':checked') == true ||
+        $("#radio-1-p14_2").is(':checked') == true ||
+        $("#radio-2-p14_2").is(':checked') == true ||
+        $("#radio-3-p14_2").is(':checked') == true ||
+        $("#radio-4-p14_2").is(':checked') == true ||
+        $("#radio-5-p14_2").is(':checked') == true ||
+        $("#radio-1-p14_3").is(':checked') == true ||
+        $("#radio-2-p14_3").is(':checked') == true ||
+        $("#radio-3-p14_3").is(':checked') == true ||
+        $("#radio-4-p14_3").is(':checked') == true ||
+        $("#radio-5-p14_3").is(':checked') == true ||
+        $("#radio-1-p14_4").is(':checked') == true ||
+        $("#radio-2-p14_4").is(':checked') == true ||
+        $("#radio-3-p14_4").is(':checked') == true ||
+        $("#radio-4-p14_4").is(':checked') == true ||
+        $("#radio-5-p14_4").is(':checked') == true ||
+        $("#radio-1-p14_5").is(':checked') == true ||
+        $("#radio-2-p14_5").is(':checked') == true ||
+        $("#radio-3-p14_5").is(':checked') == true ||
+        $("#radio-4-p14_5").is(':checked') == true ||
+        $("#radio-5-p14_5").is(':checked') == true ||
+        $("#radio-1-p14_6").is(':checked') == true ||
+        $("#radio-2-p14_6").is(':checked') == true ||
+        $("#radio-3-p14_6").is(':checked') == true ||
+        $("#radio-4-p14_6").is(':checked') == true ||
+        $("#radio-5-p14_6").is(':checked') == true ||
+        $("#radio-1-p14_7").is(':checked') == true ||
+        $("#radio-2-p14_7").is(':checked') == true ||
+        $("#radio-3-p14_7").is(':checked') == true ||
+        $("#radio-4-p14_7").is(':checked') == true ||
+        $("#radio-5-p14_7").is(':checked') == true ||
+        $("#radio-1-p14_8").is(':checked') == true ||
+        $("#radio-2-p14_8").is(':checked') == true ||
+        $("#radio-3-p14_8").is(':checked') == true ||
+        $("#radio-4-p14_8").is(':checked') == true ||
+        $("#radio-5-p14_8").is(':checked') == true ||
+        $("#radio-1-p14_9").is(':checked') == true ||
+        $("#radio-2-p14_9").is(':checked') == true ||
+        $("#radio-3-p14_9").is(':checked') == true ||
+        $("#radio-4-p14_9").is(':checked') == true ||
+        $("#radio-5-p14_9").is(':checked') == true ||
+        $("#radio-1-p14_10").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p14').slideUp();
+      $('#div_p14').addClass('hidden');
+      $('#pregunta_p14_footer').addClass('hidden');
+      $('#div_p15').slideDown();
+      $('#div_p15').removeClass('hidden');
+      $('#pregunta_p15_footer').removeClass('hidden');
+      $('#div_error_p15').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p14').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p14_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p14_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p14_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p14_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p14_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p14_9").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p14').removeClass('hidden');
+      $('#div_error_p14').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p14_10").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p14_10").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p14').slideUp();
+        $('#div_p14').addClass('hidden');
+        $('#pregunta_p14_footer').addClass('hidden');
+        $('#div_p14a').slideDown();
+        $('#div_p14a').removeClass('hidden');
+        $('#pregunta_p14a_footer').removeClass('hidden');
+        $('#div_error_p14a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p14a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p14a. j. Por otra razón.   ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p14a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p14a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p14a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p14a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p14a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p14a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">14 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 38%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p15_p14a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14_p14a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p14a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p14a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p14_p14a_boton").addEventListener("click", fun_p14a_dev);
+  function fun_p14a_dev() {
+      $('#div_p14').slideDown();
+      $('#div_p14').removeClass('hidden');
+      $('#pregunta_p14_footer').removeClass('hidden');
+      $('#div_p14a').slideUp();
+      $('#div_p14a').addClass('hidden');
+      $('#pregunta_p14a_footer').addClass('hidden');
+      $('#div_error_p14a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p15_p14a_boton").addEventListener("click", fun_p14a);
+  document.getElementById("but_res_p14a").addEventListener("click", fun_p14a);
+    function fun_p14a() {
+    var frase = document.getElementById("res_p14a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p14a").value = frase;
+    if (document.getElementById("res_p14a").value == "") {
+      $('#but_res_p14a').addClass('hidden');
+      $('#p_p14a').addClass('hidden');
+      $('#div_error_p14a').removeClass('hidden');
+    } else {
+      $('#div_p14a').slideUp();
+      $('#div_p14a').addClass('hidden');
+      $('#pregunta_p14a_footer').addClass('hidden');
+      $('#div_p15').slideDown();
+      $('#div_p15').removeClass('hidden');
+      $('#pregunta_p15_footer').removeClass('hidden');
+      $('#div_error_p15').addClass('hidden');
+      document.getElementById("res_p15").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p14a').on('input', function() { 
+      var frase = document.getElementById("res_p14a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p14a").value = frase;
+      if (document.getElementById("res_p14a").value == "") {
+      $('#but_res_p14a').addClass('hidden');
+      $('#p_p14a').addClass('hidden');
+      $('#div_error_p14a').removeClass('hidden');
+      } else {
+       $('#but_res_p14a').removeClass('hidden');
+       $('#p_p14a').removeClass('hidden');
+       $('#div_error_p14a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 520px;" id="div_p15">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p15. De acuerdo con su percepción, ¿cuál es el grado de incidencia de cada uno de los siguientes factores asociados a la reprobación?</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Baja</th>
+          <th style="text-align: center;">Media</th>
+          <th style="text-align: center;">Alta</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>1. La distancia entre el lugar de residencia y el establecimiento educativo</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_1, "1" , id:"radio-1-p15_1"%>
+              <%= f.label :p15_1, "", for: "radio-1-p15_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_1, "2" , id:"radio-2-p15_1"%>
+              <%= f.label :p15_1, "", for: "radio-2-p15_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_1, "3" , id:"radio-3-p15_1"%>
+              <%= f.label :p15_1, "", for: "radio-3-p15_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>2. Las condiciones de la convivencia escolar en la institución</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_2, "1" , id:"radio-1-p15_2"%>
+              <%= f.label :p15_2, "", for: "radio-1-p15_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_2, "2" , id:"radio-2-p15_2"%>
+              <%= f.label :p15_2, "", for: "radio-2-p15_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_2, "3" , id:"radio-3-p15_2"%>
+              <%= f.label :p15_2, "", for: "radio-3-p15_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>3. Las estrategias pedagógicas del establecimiento educativo para atender las necesidades de los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_3, "1" , id:"radio-1-p15_3"%>
+              <%= f.label :p15_3, "", for: "radio-1-p15_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_3, "2" , id:"radio-2-p15_3"%>
+              <%= f.label :p15_3, "", for: "radio-2-p15_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_3, "3" , id:"radio-3-p15_3"%>
+              <%= f.label :p15_3, "", for: "radio-3-p15_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>4. El sistema institucional de evaluación de los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_4, "1" , id:"radio-1-p15_4"%>
+              <%= f.label :p15_4, "", for: "radio-1-p15_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_4, "2" , id:"radio-2-p15_4"%>
+              <%= f.label :p15_4, "", for: "radio-2-p15_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_4, "3" , id:"radio-3-p15_4"%>
+              <%= f.label :p15_4, "", for: "radio-3-p15_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>5. La relación profesores - estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_5, "1" , id:"radio-1-p15_5"%>
+              <%= f.label :p15_5, "", for: "radio-1-p15_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_5, "2" , id:"radio-2-p15_5"%>
+              <%= f.label :p15_5, "", for: "radio-2-p15_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_5, "3" , id:"radio-3-p15_5"%>
+              <%= f.label :p15_5, "", for: "radio-3-p15_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>6. Las situaciones problemáticas a nivel familiar</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_6, "1" , id:"radio-1-p15_6"%>
+              <%= f.label :p15_6, "", for: "radio-1-p15_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_6, "2" , id:"radio-2-p15_6"%>
+              <%= f.label :p15_6, "", for: "radio-2-p15_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_6, "3" , id:"radio-3-p15_6"%>
+              <%= f.label :p15_6, "", for: "radio-3-p15_6", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>7. El trabajo infantil</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_7, "1" , id:"radio-1-p15_7"%>
+              <%= f.label :p15_7, "", for: "radio-1-p15_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_7, "2" , id:"radio-2-p15_7"%>
+              <%= f.label :p15_7, "", for: "radio-2-p15_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_7, "3" , id:"radio-3-p15_7"%>
+              <%= f.label :p15_7, "", for: "radio-3-p15_7", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>8. La desmotivación hacia el estudio</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_8, "1" , id:"radio-1-p15_8"%>
+              <%= f.label :p15_8, "", for: "radio-1-p15_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_8, "2" , id:"radio-2-p15_8"%>
+              <%= f.label :p15_8, "", for: "radio-2-p15_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_8, "3" , id:"radio-3-p15_8"%>
+              <%= f.label :p15_8, "", for: "radio-3-p15_8", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>9. Maternidad o paternidad a temprana edad</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_9, "1" , id:"radio-1-p15_9"%>
+              <%= f.label :p15_9, "", for: "radio-1-p15_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_9, "2" , id:"radio-2-p15_9"%>
+              <%= f.label :p15_9, "", for: "radio-2-p15_9", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_9, "3" , id:"radio-3-p15_9"%>
+              <%= f.label :p15_9, "", for: "radio-3-p15_9", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>10. Dificultades de aprendizaje de los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_10, "1" , id:"radio-1-p15_10"%>
+              <%= f.label :p15_10, "", for: "radio-1-p15_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_10, "2" , id:"radio-2-p15_10"%>
+              <%= f.label :p15_10, "", for: "radio-2-p15_10", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_10, "3" , id:"radio-3-p15_10"%>
+              <%= f.label :p15_10, "", for: "radio-3-p15_10", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>11. Falta de hábitos de estudio y mal uso del tiempo libre</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_11, "1" , id:"radio-1-p15_11"%>
+              <%= f.label :p15_11, "", for: "radio-1-p15_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_11, "2" , id:"radio-2-p15_11"%>
+              <%= f.label :p15_11, "", for: "radio-2-p15_11", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_11, "3" , id:"radio-3-p15_11"%>
+              <%= f.label :p15_11, "", for: "radio-3-p15_11", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>12. Falta de planes y proyectos enfocados a disminuir la reprobación</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_12, "1" , id:"radio-1-p15_12"%>
+              <%= f.label :p15_12, "", for: "radio-1-p15_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_12, "2" , id:"radio-2-p15_12"%>
+              <%= f.label :p15_12, "", for: "radio-2-p15_12", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_12, "3" , id:"radio-3-p15_12"%>
+              <%= f.label :p15_12, "", for: "radio-3-p15_12", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>13. Apoyo y compromiso de la familia en el proceso educativo de su hijo</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_13, "1" , id:"radio-1-p15_13"%>
+              <%= f.label :p15_13, "", for: "radio-1-p15_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_13, "2" , id:"radio-2-p15_13"%>
+              <%= f.label :p15_13, "", for: "radio-2-p15_13", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_13, "3" , id:"radio-3-p15_13"%>
+              <%= f.label :p15_13, "", for: "radio-3-p15_13", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>14. Situaciones de inseguridad del entorno educativo</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_14, "1" , id:"radio-1-p15_14"%>
+              <%= f.label :p15_14, "", for: "radio-1-p15_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_14, "2" , id:"radio-2-p15_14"%>
+              <%= f.label :p15_14, "", for: "radio-2-p15_14", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p15_14, "3" , id:"radio-3-p15_14"%>
+              <%= f.label :p15_14, "", for: "radio-3-p15_14", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>15. Otra; ¿cuál?</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p15_15, "otra" , id:"radio-1-p15_15"%>
+              <%= f.label :p15_15, "¿Cuál?", for: "radio-1-p15_15"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p15">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15_footer">
+  <div class="centrado-abajo" style="margin-top: 1120px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">15 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 42%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p16_p15_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p14_p15_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p14_p15_boton").addEventListener("click", fun_p15_dev);
+  function fun_p15_dev() {
+      $('#div_p14').slideDown();
+      $('#div_p14').removeClass('hidden');
+      $('#pregunta_p14_footer').removeClass('hidden');
+      $('#div_p15').slideUp();
+      $('#div_p15').addClass('hidden');
+      $('#pregunta_p15_footer').addClass('hidden');
+      $('#div_error_p15').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p16_p15_boton").addEventListener("click", fun_p15);
+  
+  document.getElementById("but_res_p15").addEventListener("click", fun_p15);
+
+  function fun_p15() {
+    if ($("#radio-1-p15_1").is(':checked') == true ||
+        $("#radio-2-p15_1").is(':checked') == true ||
+        $("#radio-3-p15_1").is(':checked') == true ||
+        
+        $("#radio-1-p15_2").is(':checked') == true ||
+        $("#radio-2-p15_2").is(':checked') == true ||
+        $("#radio-3-p15_2").is(':checked') == true ||
+        
+        $("#radio-1-p15_3").is(':checked') == true ||
+        $("#radio-2-p15_3").is(':checked') == true ||
+        $("#radio-3-p15_3").is(':checked') == true ||
+        
+        $("#radio-1-p15_4").is(':checked') == true ||
+        $("#radio-2-p15_4").is(':checked') == true ||
+        $("#radio-3-p15_4").is(':checked') == true ||
+        
+        $("#radio-1-p15_5").is(':checked') == true ||
+        $("#radio-2-p15_5").is(':checked') == true ||
+        $("#radio-3-p15_5").is(':checked') == true ||
+        
+        $("#radio-1-p15_6").is(':checked') == true ||
+        $("#radio-2-p15_6").is(':checked') == true ||
+        $("#radio-3-p15_6").is(':checked') == true ||
+        
+        $("#radio-1-p15_7").is(':checked') == true ||
+        $("#radio-2-p15_7").is(':checked') == true ||
+        $("#radio-3-p15_7").is(':checked') == true ||
+        
+        $("#radio-1-p15_8").is(':checked') == true ||
+        $("#radio-2-p15_8").is(':checked') == true ||
+        $("#radio-3-p15_8").is(':checked') == true ||
+        
+        $("#radio-1-p15_9").is(':checked') == true ||
+        $("#radio-2-p15_9").is(':checked') == true ||
+        $("#radio-3-p15_9").is(':checked') == true ||
+        
+        $("#radio-1-p15_10").is(':checked') == true ||
+        $("#radio-2-p15_10").is(':checked') == true ||
+        $("#radio-3-p15_10").is(':checked') == true ||
+        
+        $("#radio-1-p15_11").is(':checked') == true ||
+        $("#radio-2-p15_11").is(':checked') == true ||
+        $("#radio-3-p15_11").is(':checked') == true ||
+        
+        $("#radio-1-p15_12").is(':checked') == true ||
+        $("#radio-2-p15_12").is(':checked') == true ||
+        $("#radio-3-p15_12").is(':checked') == true ||
+        
+        $("#radio-1-p15_13").is(':checked') == true ||
+        $("#radio-2-p15_13").is(':checked') == true ||
+        $("#radio-3-p15_13").is(':checked') == true ||
+        
+        $("#radio-1-p15_14").is(':checked') == true ||
+        $("#radio-2-p15_14").is(':checked') == true ||
+        $("#radio-3-p15_14").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p15').slideUp();
+      $('#div_p15').addClass('hidden');
+      $('#pregunta_p15_footer').addClass('hidden');
+      $('#div_p16').slideDown();
+      $('#div_p16').removeClass('hidden');
+      $('#pregunta_p16_footer').removeClass('hidden');
+      $('#div_error_p16').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p15').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p15_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_1").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_2").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_3").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_4").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_5").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_6").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_7").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_8").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_9").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_9").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_10").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_10").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_11").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_11").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_12").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_12").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_13").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_13").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p15_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p15_14").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p15_14").addEventListener("click", fun_multi);
+    
+    
+    function fun_multi() {
+      $('#but_res_p15').removeClass('hidden');
+      $('#div_error_p15').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p15_15").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p15_15").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p15').slideUp();
+        $('#div_p15').addClass('hidden');
+        $('#pregunta_p15_footer').addClass('hidden');
+        $('#div_p15a').slideDown();
+        $('#div_p15a').removeClass('hidden');
+        $('#pregunta_p15a_footer').removeClass('hidden');
+        $('#div_error_p15a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p15').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p15a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p15a. Otra; ¿cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p15a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p15a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p15a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p15a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p15a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p15a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">15 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 42%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p16_p15a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p15_p15a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p15a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p15a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p15_p15a_boton").addEventListener("click", fun_p15a_dev);
+  function fun_p15a_dev() {
+      $('#div_p15').slideDown();
+      $('#div_p15').removeClass('hidden');
+      $('#pregunta_p15_footer').removeClass('hidden');
+      $('#div_p15a').slideUp();
+      $('#div_p15a').addClass('hidden');
+      $('#pregunta_p15a_footer').addClass('hidden');
+      $('#div_error_p15a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p16_p15a_boton").addEventListener("click", fun_p15a);
+  document.getElementById("but_res_p15a").addEventListener("click", fun_p15a);
+    function fun_p15a() {
+    var frase = document.getElementById("res_p15a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p15a").value = frase;
+    if (document.getElementById("res_p15a").value == "") {
+      $('#but_res_p15a').addClass('hidden');
+      $('#p_p15a').addClass('hidden');
+      $('#div_error_p15a').removeClass('hidden');
+    } else {
+      $('#div_p15a').slideUp();
+      $('#div_p15a').addClass('hidden');
+      $('#pregunta_p15a_footer').addClass('hidden');
+      $('#div_p16').slideDown();
+      $('#div_p16').removeClass('hidden');
+      $('#pregunta_p16_footer').removeClass('hidden');
+      $('#div_error_p16').addClass('hidden');
+      document.getElementById("res_p16").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p15a').on('input', function() { 
+      var frase = document.getElementById("res_p15a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p15a").value = frase;
+      if (document.getElementById("res_p15a").value == "") {
+      $('#but_res_p15a').addClass('hidden');
+      $('#p_p15a').addClass('hidden');
+      $('#div_error_p15a').removeClass('hidden');
+      } else {
+       $('#but_res_p15a').removeClass('hidden');
+       $('#p_p15a').removeClass('hidden');
+       $('#div_error_p15a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+
+
 <% end %>

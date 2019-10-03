@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_170845) do
+ActiveRecord::Schema.define(version: 2019_10_03_040137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,8 +211,6 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p5a"
     t.string "p5b"
     t.string "p5c"
-    t.string "p5cn"
-    t.string "p5cp"
     t.string "p6_1"
     t.string "p6_2"
     t.string "p6_3"
@@ -223,7 +221,6 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p7a"
     t.string "p7b"
     t.string "p7c"
-    t.string "p8"
     t.string "p8a"
     t.string "p8b"
     t.string "p8c"
@@ -282,7 +279,6 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p13d"
     t.string "p13e"
     t.string "p13f"
-    t.string "p13g"
     t.string "p14a"
     t.string "p14b"
     t.string "p14c"
@@ -370,7 +366,6 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p27g"
     t.string "p27h"
     t.string "p27h_1"
-    t.string "p28"
     t.string "p28a"
     t.string "p29"
     t.string "p30"
@@ -509,7 +504,6 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p59"
     t.string "p59a"
     t.string "p60"
-    t.string "p61"
     t.string "p62"
     t.string "p48a_1"
     t.string "p48a_2"
@@ -532,6 +526,14 @@ ActiveRecord::Schema.define(version: 2019_10_02_170845) do
     t.string "p54a_5"
     t.string "p54a_6"
     t.string "p54a_7"
+    t.string "p36"
+    t.string "p44a"
+    t.string "p28_1"
+    t.string "p28_2"
+    t.string "p28_3"
+    t.string "p28_4"
+    t.string "p28_5"
+    t.string "p28_6"
   end
 
 end
