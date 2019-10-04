@@ -2025,32 +2025,32 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   <br>
   <div class="field qts">
     <div class="inputGroup">
-      <%= f.radio_button :p8a, "1" , id:"radio-1-p8a"%>
+      <%= f.check_box :p8a, checked: "1", id:"radio-1-p8a"%>
       <%= f.label :p8a, "Enfermedad grave de algún miembro del hogar", for: "radio-1-p8a"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8b, "2" , id:"radio-2-p8b"%>
+      <%= f.check_box :p8b, checked: "2", id:"radio-2-p8b"%>
       <%= f.label :p8b, "Muerte de alguno de los miembros del hogar", for: "radio-2-p8b"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8c, "3" , id:"radio-3-p8c"%>
+      <%= f.check_box :p8c, checked: "3", id:"radio-3-p8c"%>
       <%= f.label :p8c, "Algún menor de 18 años se fue del hogar", for: "radio-3-p8c"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8d, "4" , id:"radio-4-p8d"%>
+      <%= f.check_box :p8d, checked: "4", id:"radio-4-p8d"%>
       <%= f.label :p8d, "Alguno de los padres tuvo que irse del hogar", for: "radio-4-p8d"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8e, "5" , id:"radio-5-p8e"%>
+      <%= f.check_box :p8e, checked: "5", id:"radio-5-p8e"%>
       <%= f.label :p8e, "Separación de los padres o el cónyuge", for: "radio-5-p8e"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8f, "6" , id:"radio-6-p8f"%>
+      <%= f.check_box :p8f, checked: "6", id:"radio-6-p8f"%>
       <%= f.label :p8f, "Problemas de plata", for: "radio-6-p8f"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p8g, "999" , id:"radio-6-p8f"%>
-      <%= f.label :p8g, "Ninguna de las anteriores", for: "radio-6-p8f"%>
+      <%= f.check_box :p8g, checked: "99", id:"radio-6-p8g"%>
+      <%= f.label :p8g, "Ninguna de las anteriores", for: "radio-6-p8g"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8">Por favor, <strong>escoge una respuesta</strong></div>
@@ -2061,7 +2061,7 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   <p  class="hidden" style="color: #254064;" id="p_p8">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_footer">
-  <div class="centrado-abajo" style="">
+  <div class="centrado-abajo" style="margin-top: 10px;">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 62 respuestas</span>
@@ -2626,7 +2626,7 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
     }
 </script>
 
-<div class="centrado hidden" style="width: 90%;" id="div_p12a">
+<div class="centrado " style="width: 90%;" id="div_p12a">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">Sí has perdido algún curso (año)</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p12a. ¿Qué curso? (Marca el número que corresponda)</h3>
   <br>
@@ -2722,7 +2722,7 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
           <td style="vertical-align: middle;">OP2</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p12a_2, "1" , id:"radio-12-p12a"%>
+              <%= f.radio_button :p12a_2, "1", id:"radio-12-p12a"%>
               <%= f.label :p12a_2, "1", for: "radio-12-p12a"%>
             </div>
           </td>
@@ -2992,7 +2992,7 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
   document.getElementById("radio-15-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-16-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-17-p12a").addEventListener("click", fun_multi);
-  document.getElementById("radio-18-p12a").addEventListener("click", fun_p12a);
+  document.getElementById("radio-18-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-19-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-20-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-21-p12a").addEventListener("click", fun_multi);

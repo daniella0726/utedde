@@ -441,7 +441,7 @@
   <br>
   <div class="field qts">
        <%= f.text_field :p2a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2a", placeholder: "País de origen"}%>
-      <%= f.text_field :p2b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b", placeholder: "¿Departamento de origen"}%>
+      <%= f.text_field :p2b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2b", placeholder: "Departamento de origen"}%>
       <%= f.text_field :p2c, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p2c", placeholder: "Ciudad de origen"}%>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p2">Por favor, <strong>escoge un país, departamento y ciudad</strong></div>
@@ -708,8 +708,10 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p4">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P4. ¿Cuáles de los siguientes estudios ha realizado? (Puedes marcar varias respuestas) </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P4. ¿Cuáles de los siguientes estudios ha realizado?</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
   <br>
+  <div class="col-sm-6">
   <div class="field qts">
     <div class="inputGroup">
       <%= f.check_box :p4_1, checked: "Bachillerato pedagógico", id:"radio-1-p4_1"%>
@@ -731,6 +733,11 @@
       <%= f.check_box :p4_5, checked: "Técnico o tecnológico en otras áreas", id:"radio-5-p4_5"%>
       <%= f.label :p4_5, "Técnico o tecnológico en otras áreas", for: "radio-5-p4_5"%>
     </div>
+  </div>
+  </div>
+
+  <div class="col-sm-6">
+  <div class="field qts">
     <div class="inputGroup">
       <%= f.check_box :p4_6, checked: "Profesional en educación", id:"radio-6-p4_6"%>
       <%= f.label :p4_6, "Profesional en educación", for: "radio-6-p4_6"%>
@@ -752,6 +759,7 @@
       <%= f.label :p4_10, "Otro, ¿cuál?", for: "radio-10-p4_10"%>
     </div>
   </div>
+  </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p4">
     <i class="fas fa-check-circle"></i>
@@ -760,7 +768,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p4">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p4_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo" >
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">4 de 32 respuestas</span>
@@ -1121,7 +1129,8 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p7">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p7. Cuántos años lleva como? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p7.Las jornada en la que trabaja como docente en esta institución educativa es:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puede marcar más de un recuadro)</span>
   <br>
   <div class="field qts" >
     <div class="inputGroup">
@@ -1216,9 +1225,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_1">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  p8 A. ¿Logren acceder al Sistema Educativo?</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">p8 A. ¿Logren acceder al Sistema Educativo?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1250,7 +1259,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_1">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_1_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1319,9 +1328,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_2">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 B. ¿Permanezcan en el Sistema Educativo hasta su graduación de educación media? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 B. ¿Permanezcan en el Sistema Educativo hasta su graduación de educación media?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1353,7 +1362,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_2">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_2_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1422,9 +1431,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_3">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 C. ¿Tengan buen rendimiento académico? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 C. ¿Tengan buen rendimiento académico?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1456,7 +1465,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_3">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_3_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1525,9 +1534,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_4">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 D. ¿Tengan una educación de calidad? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 D. ¿Tengan una educación de calidad?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1559,7 +1568,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_4">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_4_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1628,9 +1637,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_5">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 E. ¿Tengan una buena formación como personas, ciudadanos y miembros de la comunidad? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 E. ¿Tengan una buena formación como personas, ciudadanos y miembros de la comunidad?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1662,7 +1671,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_5">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_5_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1731,9 +1740,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_6">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 F. ¿Participen en las decisiones de su futuro educativo? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 F. ¿Participen en las decisiones de su futuro educativo?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1765,7 +1774,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_6">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_6_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1834,9 +1843,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_7">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 G. ¿Tengan una vida saludable? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 G. ¿Tengan una vida saludable?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1868,7 +1877,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_7">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_7_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -1937,9 +1946,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_8">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 H. ¿Reciban buen trato? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 H. ¿Reciban buen trato?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -1971,7 +1980,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_8">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_8_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -2040,9 +2049,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_9">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 I. ¿No se vean obligados a trabajar? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 I. ¿No se vean obligados a trabajar? </h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2074,7 +2083,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_9">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_9_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -2143,9 +2152,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_10">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 J. ¿Sean respetados en su cultura y en su forma de ser? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 J. ¿Sean respetados en su cultura y en su forma de ser? </h3> 
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2177,7 +2186,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_10">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_10_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -2246,9 +2255,9 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_11">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?: (Puedes marcar varias respuestas)
-    <br>
-  P8 K. ¿Tengan oportunidades de jugar y asistir a eventos recreativos y culturales? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">¿Quiénes cree que son los responsables para que las niñas, los niños y los jóvenes… ?:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puedes marcar varias respuestas)</span>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P8 K. ¿Tengan oportunidades de jugar y asistir a eventos recreativos y culturales?</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2280,7 +2289,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p8_11">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p8_11_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">8 de 32 respuestas</span>
@@ -2525,7 +2534,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p10_a">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P10 A ¿En qué medios?? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">P10 A ¿En qué medios?? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2557,7 +2566,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p10_a">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p10_a_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">10 de 32 respuestas</span>
@@ -2635,7 +2644,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p10_a_otra">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P10 A Otra, cúal? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">P10 A Otra, cúal? </h2>
   <br>
   <div class="field qts">
     <%= f.text_field :p10a_otra, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_a_otra", placeholder: "Nombre de la persona"}%>
@@ -2648,7 +2657,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p10_a_otra">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p10_a_otra_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">10 de 32 respuestas</span>
@@ -4756,7 +4765,7 @@
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%; margin-top: 290px;" id="div_p14">
+<div class="centrado hidden" style="width: 90%; margin-top: 520px;" id="div_p14">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p14. De acuerdo con su percepción, ¿cuál es el grado de incidencia de cada uno de los siguientes factores asociados a la reprobación?</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
   <br>
@@ -5087,7 +5096,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p14">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p14_footer">
-  <div class="centrado-abajo" style="margin-top: 680px;">
+  <div class="centrado-abajo" style="margin-top: 1120px;">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">14 de 36 respuestas</span>
@@ -5863,22 +5872,22 @@
       }
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_15a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">15a. j. Por otra razón.   ¿Cuál?</h2>
+<div class="centrado hidden" style="width: 90%" id="div_p15a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p15a. Por otra razón.   ¿Cuál?</h2>
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p15a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_15a", placeholder: "¿Cuál?"}%> 
+    <%= f.text_field :p15a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p15a", placeholder: "¿Cuál?"}%> 
 
   </div>
-  <div class="hidden" style="color: #254064;" id="div_error_15a"><strong>Por favor, escribe sin signos</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_15a">
+  <div class="hidden" style="color: #254064;" id="div_error_p15a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p15a">
     <i class="fas fa-check-circle"></i>
     OK
   </button>
-  <p  class="hidden" style="color: #254064;" id="p_15a">presiona <strong>ENTER</strong></p>
+  <p  class="hidden" style="color: #254064;" id="p_p15a">presiona <strong>ENTER</strong></p>
 </div>  
-<div class="container hidden" id="pregunta_15a_footer">
+<div class="container hidden" id="pregunta_p15a_footer">
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
@@ -5889,10 +5898,10 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p16_15a_boton">
+          <a class="boton1" id="pregunta_p16_p15a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_15_15a_boton">
+          <a class="boton1" id="pregunta_p15_p15a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>          
         </div>
@@ -5902,6 +5911,7 @@
 </div>
 
 <script type="text/javascript">
+
   var input = document.getElementById("res_p15a");
       input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
@@ -7611,7 +7621,7 @@
 
 </script>
 
- b<div class="centrado hidden" style="width: 90%; margin-top: 30px;" id="div_p23">
+ <div class="centrado hidden" style="width: 90%; margin-top: 30px;" id="div_p23">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p22. Indique con qué frecuencia se dan las siguientes situaciones relacionadas con los acudientes o padres(madres) de familia de la institución educativa:</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las afirmaciones)</span>
   <br>
@@ -12795,7 +12805,7 @@
         $("#radio-2-p33_10").is(':checked') == true ||
         $("#radio-3-p33_10").is(':checked') == true ||
         $("#radio-4-p33_10").is(':checked') == true ||
-        $("#radio-5-p33_10").is(':checked') == true ||) {
+        $("#radio-5-p33_10").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p33').slideUp();
       $('#div_p33').addClass('hidden');
