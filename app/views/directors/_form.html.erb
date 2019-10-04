@@ -245,13 +245,120 @@
   function fun_pregunta_0() {
       $('#div_pregunta_0').slideUp();
       $('#div_pregunta_0').addClass('hidden');
+      $('#div_pen').slideDown();
+      $('#div_pen').removeClass('hidden');
+      $('#pregunta_pen_footer').removeClass('hidden');
+      $('#div_error_pen').addClass('hidden');
+  }
+
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_pen">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Número de la encuesta (PAPEL)</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :pen, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pen", placeholder: "Escribe aqui el número"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_pen"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pen">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_pen">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_pen_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">0 de 62 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p1_pen_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_pregunta_0_pen_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_pen");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pen").click();
+      }
+    });
+
+  document.getElementById("pregunta_pregunta_0_pen_boton").addEventListener("click", fun_pen_dev);
+  function fun_pen_dev() {
+      $('#div_pregunta_0').slideDown();
+      $('#div_pregunta_0').removeClass('hidden');
+      $('#pregunta_pregunta_0_footer').removeClass('hidden');
+      $('#div_pen').slideUp();
+      $('#div_pen').addClass('hidden');
+      $('#pregunta_pen_footer').addClass('hidden');
+      $('#div_error_pen').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p1_pen_boton").addEventListener("click", fun_pen);
+  document.getElementById("but_res_pen").addEventListener("click", fun_pen);
+    function fun_pen() {
+    var frase = document.getElementById("res_pen").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pen").value = frase;
+    if (document.getElementById("res_pen").value == "") {
+      $('#but_res_pen').addClass('hidden');
+      $('#p_pen').addClass('hidden');
+      $('#div_error_pen').removeClass('hidden');
+    } else {
+      $('#div_pen').slideUp();
+      $('#div_pen').addClass('hidden');
+      $('#pregunta_pen_footer').addClass('hidden');
       $('#div_p1').slideDown();
       $('#div_p1').removeClass('hidden');
       $('#pregunta_p1_footer').removeClass('hidden');
       $('#div_error_p1').addClass('hidden');
+      document.getElementById("res_p1").focus();
+    }
   }
 
+  $(document).ready(function(){ 
+
+    $('#res_pen').on('input', function() { 
+      var frase = document.getElementById("res_pen").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_pen").value = frase;
+      if (document.getElementById("res_pen").value == "") {
+      $('#but_res_pen').addClass('hidden');
+      $('#p_pen').addClass('hidden');
+      $('#div_error_pen').removeClass('hidden');
+      } else {
+       $('#but_res_pen').removeClass('hidden');
+       $('#p_pen').removeClass('hidden');
+       $('#div_error_pen').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
+
 
 <div class="centrado hidden" style="width: 90%" id="div_p1">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P1. ¿Eres hombre o mujer? </h2>
@@ -267,7 +374,7 @@
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p1">Por favor, <strong>escogé un género!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_1">
+  <button type="button" class="boton3 hidden" id="but_res_p1">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
@@ -287,7 +394,7 @@
           <a class="boton1" id="pregunta_p2_p1_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_0_p1_boton">
+          <a class="boton1" id="pregunta_pen_p1_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
         </div>
@@ -298,11 +405,11 @@
 
 <script type="text/javascript">
 
-  document.getElementById("pregunta_0_p1_boton").addEventListener("click", fun_p1_dev);
+  document.getElementById("pregunta_pen_p1_boton").addEventListener("click", fun_p1_dev);
   function fun_p1_dev() {
-      $('#div_pregunta_0').slideDown();
-      $('#div_pregunta_0').removeClass('hidden');
-      $('#pregunta_0_footer').removeClass('hidden');
+      $('#div_pen').slideDown();
+      $('#div_pen').removeClass('hidden');
+      $('#pregunta_pen_footer').removeClass('hidden');
       $('#div_p1').slideUp();
       $('#div_p1').addClass('hidden');
       $('#pregunta_p1_footer').addClass('hidden');
@@ -11225,9 +11332,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
 
 </script>
 
-<div class="centrado hidden" style="width: 90%;" id="div_p31">
+<div class="centrado hidden" style="width: 90%; margin-top: 600px;" id="div_p31">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p31. Califique de 1 a 5, qué tan positivos fueron los siguientes  programas para mejorar las condiciones de acceso y la permanencia escolar en su Institución Educativa, siendo 1 la menor calificación y 5 la mayor</h2>
-  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
   <br>
   <div class="field qts">
     <table class="table">
@@ -11244,7 +11351,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
-          <td>1</td>
+          <td>a. SIMPADE - Sistema de Información para el Monitoreo, Prevención y Análisis de la Deserción Escolar</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_1, "1" , id:"radio-1-p31_1"%>
@@ -11283,7 +11390,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>b. Planes Integrales</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_2, "1" , id:"radio-1-p31_2"%>
@@ -11322,7 +11429,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>c. Programa de formación de maestros</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_3, "1" , id:"radio-1-p31_3"%>
@@ -11361,7 +11468,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>d. Atención educativa para población de primera infancia en los colegios oficiales</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_4, "1" , id:"radio-1-p31_4"%>
@@ -11400,7 +11507,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>5</td>
+          <td>e. Dotaciones escolares</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_5, "1" , id:"radio-1-p31_5"%>
@@ -11439,7 +11546,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>6</td>
+          <td>f. Programa de Bilingüismo</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_6, "1" , id:"radio-1-p31_6"%>
@@ -11478,7 +11585,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>7</td>
+          <td>g. Articulación con la educación superior y educación media fortalecida</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_7, "1" , id:"radio-1-p31_7"%>
@@ -11517,7 +11624,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>8</td>
+          <td>h. Programa de alimentación escolar</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_8, "1" , id:"radio-1-p31_8"%>
@@ -11556,7 +11663,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>9</td>
+          <td>i. Estrategia de movilidad escolar. (rutas, subsidios de transporte, Al Colegio en Bici)</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_9, "1" , id:"radio-1-p31_9"%>
@@ -11595,7 +11702,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>10</td>
+          <td>j. Programas de educación flexible (primeras letras, primaria acelerada, secundaria acelerada) o ciclos de adultos.</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_10, "1" , id:"radio-1-p31_10"%>
@@ -11634,7 +11741,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>11</td>
+          <td>k. Atención a estudiantes con discapacidad, o con capacidades o talentos excepcionales en los colegios</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_11, "1" , id:"radio-1-p31_11"%>
@@ -11673,7 +11780,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>12</td>
+          <td>l. Estrategia de mejoramiento de la infraestructura educativa</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_12, "1" , id:"radio-1-p31_12"%>
@@ -11712,7 +11819,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>13</td>
+          <td>m. Gratuidad educativa</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_13, "1" , id:"radio-1-p31_13"%>
@@ -11751,7 +11858,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>14</td>
+          <td>n. Kits escolares para la población</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_14, "1" , id:"radio-1-p31_14"%>
@@ -11790,7 +11897,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>15</td>
+          <td>o. Ruta para el acceso y permanencia escolar ("Francisca la navegante de estrellas")</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_15, "1" , id:"radio-1-p31_15"%>
@@ -11829,11 +11936,11 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           </td>
         </tr>
         <tr>
-          <td>16</td>
-          <td colspan="5">
+          <td>p. Otra. Cuál?</td>
+          <td colspan="6">
             <div class="inputGroup">
               <%= f.radio_button :p31_16, "otra" , id:"radio-1-p31_16"%>
-              <%= f.label :p31_16, "Otra. ¿Cuál?", for: "radio-1-p31_16"%>
+              <%= f.label :p31_16, "¿Cuál?", for: "radio-1-p31_16"%>
             </div>
           </td>
         </tr>
@@ -11848,12 +11955,12 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <p  class="hidden" style="color: #254064;" id="p_p31">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p31_footer">
-  <div class="centrado-abajo" style="">
+  <div class="centrado-abajo" style="margin-top: 1280px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">31 de 33 respuestas</span>
+        <span style="color: #254064">31 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+            <div class="bar" style="width: 86%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12127,9 +12234,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">31 de 33 respuestas</span>
+        <span style="color: #254064;">31 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+            <div class="bar" style="width: 86%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12214,7 +12321,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_p32">
+<div class="centrado hidden" style="width: 90%;" id="div_p32">
     <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p32. De las siguientes estrategias, ¿cuáles sugiere que se implementen para mejorar la cobertura en su institución educativa?</h2>
     <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque la(s) que conoce)</span>
     <br>
@@ -12264,12 +12371,12 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     <p  class="hidden" style="color: #254064;" id="p_p32">presioná <strong>ENTER</strong></p>
   </div>  
   <div class="container hidden" id="pregunta_p32_footer">
-    <div class="centrado-abajo">
+    <div class="centrado-abajo" style="margin-top: 60px;">
       <div class="row">
         <div class="col-md-8">
-        <span style="color: #254064">32 de 33 respuestas</span>
+        <span style="color: #254064">32 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 97%; background-color: #254064;"></div>
+            <div class="bar" style="width: 89%; background-color: #254064;"></div>
           </div>
         </div>
         <div class="col-md-4">
@@ -12382,9 +12489,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">32 de 33 respuestas</span>
+        <span style="color: #254064;">32 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 97%; background-color: #254064;"></div>
+            <div class="bar" style="width: 89%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12469,9 +12576,9 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%;" id="div_p33">
+<div class="centrado hidden" style="width: 90%; margin-top: 320px;" id="div_p33">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p33. Señale qué tan de acuerdo está con las siguientes acciones para mejorar el proceso de matrícula y el servicio al ciudadano</h2>
-  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque una respuesta en cada una de las afirmaciones)</span>
   <br>
   <div class="field qts">
     <table class="table">
@@ -12482,7 +12589,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
           <th style="text-align: center;">Parcialmente en Desacuerdo</th>
           <th style="text-align: center;">Parcialmente en Acuerdo</th>
           <th style="text-align: center;">Totalmente de acuerdo</th>
-          <th style="text-align: center;">No sabe/ No responde</th>
+          <th style="text-align: center;">No sabe / No responde</th>
         </tr>
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
@@ -12836,17 +12943,17 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <p  class="hidden" style="color: #254064;" id="p_p33">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p33_footer">
-  <div class="centrado-abajo" style="">
+  <div class="centrado-abajo" style="margin-top: 720px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">33 de 33 respuestas</span>
+        <span style="color: #254064">33 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 92%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_fin_p33_boton">
+          <a class="boton1" id="pregunta_p34_p33_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p32_p33_boton">
@@ -12871,7 +12978,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p33').addClass('hidden');
   }
 
-  document.getElementById("pregunta_fin_p33_boton").addEventListener("click", fun_p33);
+  document.getElementById("pregunta_p34_p33_boton").addEventListener("click", fun_p33);
   
   document.getElementById("but_res_p33").addEventListener("click", fun_p33);
 
@@ -12925,15 +13032,15 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
         $("#radio-2-p33_10").is(':checked') == true ||
         $("#radio-3-p33_10").is(':checked') == true ||
         $("#radio-4-p33_10").is(':checked') == true ||
-        $("#radio-5-p33_10").is(':checked') == true ||) {
+        $("#radio-5-p33_10").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p33').slideUp();
       $('#div_p33').addClass('hidden');
       $('#pregunta_p33_footer').addClass('hidden');
-      $('#div_fin').slideDown();
-      $('#div_fin').removeClass('hidden');
-      $('#pregunta_fin_footer').removeClass('hidden');
-      $('#div_error_fin').addClass('hidden');
+      $('#div_p34').slideDown();
+      $('#div_p34').removeClass('hidden');
+      $('#pregunta_p34_footer').removeClass('hidden');
+      $('#div_error_p34').addClass('hidden');
   } , 500);
   } else {
       $('#div_error_p33').removeClass('hidden');
@@ -13035,14 +13142,14 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">33 de 33 respuestas</span>
+        <span style="color: #254064;">33 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 92%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_fin_p33a_boton">
+          <a class="boton1" id="pregunta_p34_p33a_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p32_p33a_boton">
@@ -13074,7 +13181,7 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_error_p33a').addClass('hidden');
   }
 
-  document.getElementById("pregunta_fin_p33a_boton").addEventListener("click", fun_p33a);
+  document.getElementById("pregunta_p34_p33a_boton").addEventListener("click", fun_p33a);
   document.getElementById("but_res_p33a").addEventListener("click", fun_p33a);
     function fun_p33a() {
     var frase = document.getElementById("res_p33a").value; 
@@ -13092,11 +13199,11 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
       $('#div_p33a').slideUp();
       $('#div_p33a').addClass('hidden');
       $('#pregunta_p33a_footer').addClass('hidden');
-      $('#div_fin').slideDown();
-      $('#div_fin').removeClass('hidden');
-      $('#pregunta_fin_footer').removeClass('hidden');
-      $('#div_error_fin').addClass('hidden');
-      document.getElementById("res_fin").focus();
+      $('#div_p34').slideDown();
+      $('#div_p34').removeClass('hidden');
+      $('#pregunta_p34_footer').removeClass('hidden');
+      $('#div_error_p34').addClass('hidden');
+      document.getElementById("res_p34").focus();
     }
   }
 
@@ -13121,6 +13228,337 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
     }); 
   }); 
 </script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p34">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Hay comentarios relacionados con esta encuesta?</h2>
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+        <%= f.radio_button :p34, "si" , id:"radio-1-p34"%>
+        <%= f.label :p34, "Si", for: "radio-1-p34"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p34, "no" , id:"radio-2-p34"%>
+        <%= f.label :p34, "No", for: "radio-2-p34"%>
+      </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p34">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p34">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p34">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p34_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">34 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p35_p34_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p33_p34_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p33_p34_boton").addEventListener("click", fun_p34_dev);
+    function fun_p34_dev() {
+        $('#div_p33').slideDown();
+        $('#div_p33').removeClass('hidden');
+        $('#pregunta_p33_footer').removeClass('hidden');
+        $('#div_p34').slideUp();
+        $('#div_p34').addClass('hidden');
+        $('#pregunta_p34_footer').addClass('hidden');
+        $('#div_error_p34').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p35_p34_boton").addEventListener("click", fun_p34);
+    document.getElementById("radio-2-p34").addEventListener("click", fun_p34);
+    function fun_p34() {
+      if ($("#radio-2-p34").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p34').slideUp();
+        $('#div_p34').addClass('hidden');
+        $('#pregunta_p34_footer').addClass('hidden');
+        $('#div_p35').slideDown();
+        $('#div_p35').removeClass('hidden');
+        $('#pregunta_p35_footer').removeClass('hidden');
+        $('#div_error_p35').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p34').removeClass('hidden');
+      }
+      } 
+  
+  document.getElementById("radio-1-p34").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-1-p34").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p34').slideUp();
+        $('#div_p34').addClass('hidden');
+        $('#pregunta_p34_footer').addClass('hidden');
+        $('#div_p34a').slideDown();
+        $('#div_p34a').removeClass('hidden');
+        $('#pregunta_p34a_footer').removeClass('hidden');
+        $('#div_error_p34a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p34').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p34a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p34a. Si quiere comentar algo relacionado con esta encuesta escríbelo a continuación:</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p34a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p34a", placeholder: "Escribe el comentario aquí..."}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p34a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p34a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p34a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p34a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">34 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p35_p34a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p34_p34a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p34a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p34a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p34_p34a_boton").addEventListener("click", fun_p34a_dev);
+  function fun_p34a_dev() {
+      $('#div_p34').slideDown();
+      $('#div_p34').removeClass('hidden');
+      $('#pregunta_p34_footer').removeClass('hidden');
+      $('#div_p34a').slideUp();
+      $('#div_p34a').addClass('hidden');
+      $('#pregunta_p34a_footer').addClass('hidden');
+      $('#div_error_p34a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p35_p34a_boton").addEventListener("click", fun_p34a);
+  document.getElementById("but_res_p34a").addEventListener("click", fun_p34a);
+    function fun_p34a() {
+    var frase = document.getElementById("res_p34a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p34a").value = frase;
+    if (document.getElementById("res_p34a").value == "") {
+      $('#but_res_p34a').addClass('hidden');
+      $('#p_p34a').addClass('hidden');
+      $('#div_error_p34a').removeClass('hidden');
+    } else {
+      $('#div_p34a').slideUp();
+      $('#div_p34a').addClass('hidden');
+      $('#pregunta_p34a_footer').addClass('hidden');
+      $('#div_p35').slideDown();
+      $('#div_p35').removeClass('hidden');
+      $('#pregunta_p35_footer').removeClass('hidden');
+      $('#div_error_p35').addClass('hidden');
+      document.getElementById("res_p35").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p34a').on('input', function() { 
+      var frase = document.getElementById("res_p34a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p34a").value = frase;
+      if (document.getElementById("res_p34a").value == "") {
+      $('#but_res_p34a').addClass('hidden');
+      $('#p_p34a').addClass('hidden');
+      $('#div_error_p34a').removeClass('hidden');
+      } else {
+       $('#but_res_p34a').removeClass('hidden');
+       $('#p_p34a').removeClass('hidden');
+       $('#div_error_p34a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p35">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p35. Nombre del digitador</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p35, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p35", placeholder: "Nombre del digitador"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p35"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p35">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p35">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p35_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">35 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_ultima_p35_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p34_p35_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p35");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p35").click();
+      }
+    });
+
+  document.getElementById("pregunta_p34_p35_boton").addEventListener("click", fun_p35_dev);
+  function fun_p35_dev() {
+      $('#div_p34').slideDown();
+      $('#div_p34').removeClass('hidden');
+      $('#pregunta_p34_footer').removeClass('hidden');
+      $('#div_p35').slideUp();
+      $('#div_p35').addClass('hidden');
+      $('#pregunta_p35_footer').addClass('hidden');
+      $('#div_error_p35').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_ultima_p35_boton").addEventListener("click", fun_p35);
+  document.getElementById("but_res_p35").addEventListener("click", fun_p35);
+    function fun_p35() {
+    var frase = document.getElementById("res_p35").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p35").value = frase;
+    if (document.getElementById("res_p35").value == "") {
+      $('#but_res_p35').addClass('hidden');
+      $('#p_p35').addClass('hidden');
+      $('#div_error_p35').removeClass('hidden');
+    } else {
+      $('#div_p35').slideUp();
+      $('#div_p35').addClass('hidden');
+      $('#pregunta_p35_footer').addClass('hidden');
+      $('#div_ultima').slideDown();
+      $('#div_ultima').removeClass('hidden');
+      $('#pregunta_ultima_footer').removeClass('hidden');
+      $('#div_error_ultima').addClass('hidden');
+      document.getElementById("res_ultima").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p35').on('input', function() { 
+      var frase = document.getElementById("res_p35").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p35").value = frase;
+      if (document.getElementById("res_p35").value == "") {
+      $('#but_res_p35').addClass('hidden');
+      $('#p_p35').addClass('hidden');
+      $('#div_error_p35').removeClass('hidden');
+      } else {
+       $('#but_res_p35').removeClass('hidden');
+       $('#p_p35').removeClass('hidden');
+       $('#div_error_p35').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%; text-align: center;" id="div_ultima">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Terminaste!</h2>
+    <i class="fas fa-check-circle"; id="but_pregunta_ultima"></i>
+    <%= f.submit "Guardar", :class => 'boton3'%>
+</div>  
+<div class="container hidden" id="pregunta_ultima_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">36 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p35_ultima_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div> 
 
 
 
