@@ -5866,6 +5866,702 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
+<div class="centrado hidden" style="width: 90%" id="div_p16">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p16. ¿Conoce las siguientes estrategias que implementa la Secretaría de Educación Distrital para buscar e incorporar a los niños(as) o jóvenes que están por fuera del sistema escolar?:</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo la(s) que conoce)</span>
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+      <%= f.check_box :p16_1, checked: "1", id:"radio-1-p16_1"%>
+      <%= f.label :p16_1, "Jornadas locales de atencion", for: "radio-1-p16_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p16_2, checked: "2", id:"radio-2-p16_2"%>
+      <%= f.label :p16_2, "Matriculatón", for: "radio-2-p16_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p16_3, checked: "3", id:"radio-3-p16_3"%>
+      <%= f.label :p16_3, "Busqueda activa", for: "radio-3-p16_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p16_4, checked: "4", id:"radio-4-p16_4"%>
+      <%= f.label :p16_4, "Modelos Educativos Flexibles", for: "radio-4-p16_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p16_5, checked: "5", id:"radio-5-p16_5"%>
+      <%= f.label :p16_5, "Ninguna", for: "radio-5-p16_5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p16_6, checked: "otra", id:"radio-6-p16_6"%>
+      <%= f.label :p16_6, "Otra. ¿Cuál?", for: "radio-6-p16_6"%>
+    </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16">presiona <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">16 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 44%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_p16_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p15_p16_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p15_p16_boton").addEventListener("click", fun_p16_dev);
+    function fun_p16_dev() {
+        $('#div_p15').slideDown();
+        $('#div_p15').removeClass('hidden');
+        $('#pregunta_p15_footer').removeClass('hidden');
+        $('#div_p16').slideUp();
+        $('#div_p16').addClass('hidden');
+        $('#pregunta_p16_footer').addClass('hidden');
+        $('#div_error_p16').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_p16_boton").addEventListener("click", fun_p16);
+
+    document.getElementById("but_res_p16").addEventListener("click", fun_p16);
+
+    function fun_p16() {
+      if ($("#radio-1-p16_1").is(':checked') == true || 
+        $("#radio-2-p16_2").is(':checked') == true || 
+        $("#radio-3-p16_3").is(':checked') == true || 
+        $("#radio-4-p16_4").is(':checked') == true ||
+        $("#radio-5-p16_5").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p16').slideUp();
+        $('#div_p16').addClass('hidden');
+        $('#pregunta_p16_footer').addClass('hidden');
+        $('#div_p17').slideDown();
+        $('#div_p17').removeClass('hidden');
+        $('#pregunta_p17_footer').removeClass('hidden');
+        $('#div_error_p17').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16').removeClass('hidden');
+      }
+      } 
+
+    document.getElementById("radio-1-p16_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p16_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p16_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p16_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p16_5").addEventListener("click", fun_multi);
+
+    function fun_multi() {
+      $('#but_res_p16').removeClass('hidden');
+      $('#div_error_p16').addClass('hidden');
+
+  }
+  
+  document.getElementById("radio-6-p16_6").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-6-p16_6").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p16').slideUp();
+        $('#div_p16').addClass('hidden');
+        $('#pregunta_p16_footer').addClass('hidden');
+        $('#div_p16a').slideDown();
+        $('#div_p16a').removeClass('hidden');
+        $('#pregunta_p16a_footer').removeClass('hidden');
+        $('#div_error_p16a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p16a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p16a. Otra. ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p16a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p16a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p16a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p16a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p16a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p16a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">16 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 44%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p17_p16a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p16_p16a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p16a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p16a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p16_p16a_boton").addEventListener("click", fun_p16a_dev);
+  function fun_p16a_dev() {
+      $('#div_p16').slideDown();
+      $('#div_p16').removeClass('hidden');
+      $('#pregunta_p16_footer').removeClass('hidden');
+      $('#div_p16a').slideUp();
+      $('#div_p16a').addClass('hidden');
+      $('#pregunta_p16a_footer').addClass('hidden');
+      $('#div_error_p16a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p17_p16a_boton").addEventListener("click", fun_p16a);
+  document.getElementById("but_res_p16a").addEventListener("click", fun_p16a);
+    function fun_p16a() {
+    var frase = document.getElementById("res_p16a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p16a").value = frase;
+    if (document.getElementById("res_p16a").value == "") {
+      $('#but_res_p16a').addClass('hidden');
+      $('#p_p16a').addClass('hidden');
+      $('#div_error_p16a').removeClass('hidden');
+    } else {
+      $('#div_p16a').slideUp();
+      $('#div_p16a').addClass('hidden');
+      $('#pregunta_p16a_footer').addClass('hidden');
+      $('#div_p17').slideDown();
+      $('#div_p17').removeClass('hidden');
+      $('#pregunta_p17_footer').removeClass('hidden');
+      $('#div_error_p17').addClass('hidden');
+      document.getElementById("res_p17").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p16a').on('input', function() { 
+      var frase = document.getElementById("res_p16a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p16a").value = frase;
+      if (document.getElementById("res_p16a").value == "") {
+      $('#but_res_p16a').addClass('hidden');
+      $('#p_p16a').addClass('hidden');
+      $('#div_error_p16a').removeClass('hidden');
+      } else {
+       $('#but_res_p16a').removeClass('hidden');
+       $('#p_p16a').removeClass('hidden');
+       $('#div_error_p16a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p17">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p17. ¿Cuáles de las siguientes estrategias para buscar e incorporar a los niños(as) o jóvenes que están por fuera del sistema escolar desarrolla su institución educativa?</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puede marcar más de un recuadro)</span>
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+      <%= f.check_box :p17_1, checked: "1", id:"radio-1-p17_1"%>
+      <%= f.label :p17_1, "Perifoneo y/o avisos informativos", for: "radio-1-p17_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p17_2, checked: "2", id:"radio-2-p17_2"%>
+      <%= f.label :p17_2, "Busqueda activa", for: "radio-2-p17_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p17_3, checked: "3", id:"radio-3-p17_3"%>
+      <%= f.label :p17_3, "Reuniones informativas (entrega de boletines, JAC)", for: "radio-3-p17_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p17_4, checked: "4", id:"radio-4-p17_4"%>
+      <%= f.label :p17_4, "Otra. ¿Cuál?", for: "radio-4-p17_4"%>
+    </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">17 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 47%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p18_p17_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_p17_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_p17_boton").addEventListener("click", fun_p17_dev);
+    function fun_p17_dev() {
+        $('#div_p16').slideDown();
+        $('#div_p16').removeClass('hidden');
+        $('#pregunta_p16_footer').removeClass('hidden');
+        $('#div_p17').slideUp();
+        $('#div_p17').addClass('hidden');
+        $('#pregunta_p17_footer').addClass('hidden');
+        $('#div_error_p17').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p18_p17_boton").addEventListener("click", fun_p17);
+
+    document.getElementById("but_res_p17").addEventListener("click", fun_p17);
+
+    function fun_p17() {
+      if ($("#radio-1-p17_1").is(':checked') == true || 
+        $("#radio-2-p17_2").is(':checked') == true || 
+        $("#radio-3-p17_3").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p17').slideUp();
+        $('#div_p17').addClass('hidden');
+        $('#pregunta_p17_footer').addClass('hidden');
+        $('#div_p18').slideDown();
+        $('#div_p18').removeClass('hidden');
+        $('#pregunta_p18_footer').removeClass('hidden');
+        $('#div_error_p18').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17').removeClass('hidden');
+      }
+      } 
+
+    document.getElementById("radio-1-p17_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p17_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p17_3").addEventListener("click", fun_multi);
+
+    function fun_multi() {
+      $('#but_res_p17').removeClass('hidden');
+      $('#div_error_p17').addClass('hidden');
+
+  }
+  
+  document.getElementById("radio-4-p17_4").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-4-p17_4").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p17').slideUp();
+        $('#div_p17').addClass('hidden');
+        $('#pregunta_p17_footer').addClass('hidden');
+        $('#div_p17a').slideDown();
+        $('#div_p17a').removeClass('hidden');
+        $('#pregunta_p17a_footer').removeClass('hidden');
+        $('#div_error_p17a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p17a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p17a. Otra. ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p17a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p17a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p17a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p17a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p17a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p17a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">17 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 47%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p18_p17a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p17_p17a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p17a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p17a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p17_p17a_boton").addEventListener("click", fun_p17a_dev);
+  function fun_p17a_dev() {
+      $('#div_p17').slideDown();
+      $('#div_p17').removeClass('hidden');
+      $('#pregunta_p17_footer').removeClass('hidden');
+      $('#div_p17a').slideUp();
+      $('#div_p17a').addClass('hidden');
+      $('#pregunta_p17a_footer').addClass('hidden');
+      $('#div_error_p17a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p18_p17a_boton").addEventListener("click", fun_p17a);
+  document.getElementById("but_res_p17a").addEventListener("click", fun_p17a);
+    function fun_p17a() {
+    var frase = document.getElementById("res_p17a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p17a").value = frase;
+    if (document.getElementById("res_p17a").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+    } else {
+      $('#div_p17a').slideUp();
+      $('#div_p17a').addClass('hidden');
+      $('#pregunta_p17a_footer').addClass('hidden');
+      $('#div_p18').slideDown();
+      $('#div_p18').removeClass('hidden');
+      $('#pregunta_p18_footer').removeClass('hidden');
+      $('#div_error_p18').addClass('hidden');
+      document.getElementById("res_p18").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p17a').on('input', function() { 
+      var frase = document.getElementById("res_p17a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p17a").value = frase;
+      if (document.getElementById("res_p17a").value == "") {
+      $('#but_res_p17a').addClass('hidden');
+      $('#p_p17a').addClass('hidden');
+      $('#div_error_p17a').removeClass('hidden');
+      } else {
+       $('#but_res_p17a').removeClass('hidden');
+       $('#p_p17a').removeClass('hidden');
+       $('#div_error_p17a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p18">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p18. ¿Conoce las siguientes estrategias de la Secretaría de Educación orientadas a que los niños(as) y jóvenes permanezcan estudiando y no deserten?</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo la(s) que conoce)</span>
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+      <%= f.check_box :p18_1, checked: "1", id:"radio-1-p18_1"%>
+      <%= f.label :p18_1, "Kits escolares", for: "radio-1-p18_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p18_2, checked: "2", id:"radio-2-p18_2"%>
+      <%= f.label :p18_2, "Alimentación escolar", for: "radio-2-p18_2"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p18_3, checked: "3", id:"radio-3-p18_3"%>
+      <%= f.label :p18_3, "Gratuidad", for: "radio-3-p18_3"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p18_4, checked: "4", id:"radio-4-p18_4"%>
+      <%= f.label :p18_4, "Planes Integrales", for: "radio-4-p18_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p18_5, checked: "5", id:"radio-5-p18_5"%>
+      <%= f.label :p18_5, "Ninguna", for: "radio-5-p18_5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p18_6, checked: "6", id:"radio-6-p18_6"%>
+      <%= f.label :p18_6, "Otra. ¿Cuál?", for: "radio-6-p18_6"%>
+    </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p18">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p18">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p18">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p18_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">18 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 50%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p19_p18_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_p18_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_p18_boton").addEventListener("click", fun_p18_dev);
+    function fun_p18_dev() {
+        $('#div_p17').slideDown();
+        $('#div_p17').removeClass('hidden');
+        $('#pregunta_p17_footer').removeClass('hidden');
+        $('#div_p18').slideUp();
+        $('#div_p18').addClass('hidden');
+        $('#pregunta_p18_footer').addClass('hidden');
+        $('#div_error_p18').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p19_p18_boton").addEventListener("click", fun_p18);
+
+    document.getElementById("but_res_p18").addEventListener("click", fun_p18);
+
+    function fun_p18() {
+      if ($("#radio-1-p18_1").is(':checked') == true || 
+        $("#radio-2-p18_2").is(':checked') == true || 
+        $("#radio-3-p18_3").is(':checked') == true || 
+        $("#radio-4-p18_4").is(':checked') == true ||
+        $("#radio-5-p18_5").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p18').slideUp();
+        $('#div_p18').addClass('hidden');
+        $('#pregunta_p18_footer').addClass('hidden');
+        $('#div_p19').slideDown();
+        $('#div_p19').removeClass('hidden');
+        $('#pregunta_p19_footer').removeClass('hidden');
+        $('#div_error_p19').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p18').removeClass('hidden');
+      }
+      } 
+
+    document.getElementById("radio-1-p18_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p18_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p18_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p18_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p18_5").addEventListener("click", fun_multi);
+
+    function fun_multi() {
+      $('#but_res_p18').removeClass('hidden');
+      $('#div_error_p18').addClass('hidden');
+
+  }
+  
+  document.getElementById("radio-6-p18_6").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-6-p18_6").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p18').slideUp();
+        $('#div_p18').addClass('hidden');
+        $('#pregunta_p18_footer').addClass('hidden');
+        $('#div_p18a').slideDown();
+        $('#div_p18a').removeClass('hidden');
+        $('#pregunta_p18a_footer').removeClass('hidden');
+        $('#div_error_p18a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p18').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p18a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p18a. Otra. ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p18a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p18a", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p18a"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p18a">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p18a">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p18a_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p19_p18a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p18_p18a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p18a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p18a").click();
+      }
+    });
+
+  document.getElementById("pregunta_p18_p18a_boton").addEventListener("click", fun_p18a_dev);
+  function fun_p18a_dev() {
+      $('#div_p18').slideDown();
+      $('#div_p18').removeClass('hidden');
+      $('#pregunta_p18_footer').removeClass('hidden');
+      $('#div_p18a').slideUp();
+      $('#div_p18a').addClass('hidden');
+      $('#pregunta_p18a_footer').addClass('hidden');
+      $('#div_error_p18a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p19_p18a_boton").addEventListener("click", fun_p18a);
+  document.getElementById("but_res_p18a").addEventListener("click", fun_p18a);
+    function fun_p18a() {
+    var frase = document.getElementById("res_p18a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p18a").value = frase;
+    if (document.getElementById("res_p18a").value == "") {
+      $('#but_res_p18a').addClass('hidden');
+      $('#p_p18a').addClass('hidden');
+      $('#div_error_p18a').removeClass('hidden');
+    } else {
+      $('#div_p18a').slideUp();
+      $('#div_p18a').addClass('hidden');
+      $('#pregunta_p18a_footer').addClass('hidden');
+      $('#div_p19').slideDown();
+      $('#div_p19').removeClass('hidden');
+      $('#pregunta_p19_footer').removeClass('hidden');
+      $('#div_error_p19').addClass('hidden');
+      document.getElementById("res_p19").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p18a').on('input', function() { 
+      var frase = document.getElementById("res_p18a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p18a").value = frase;
+      if (document.getElementById("res_p18a").value == "") {
+      $('#but_res_p18a').addClass('hidden');
+      $('#p_p18a').addClass('hidden');
+      $('#div_error_p18a').removeClass('hidden');
+      } else {
+       $('#but_res_p18a').removeClass('hidden');
+       $('#p_p18a').removeClass('hidden');
+       $('#div_error_p18a').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+
+
+
 
 
 <% end %>

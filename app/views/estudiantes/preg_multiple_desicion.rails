@@ -1,26 +1,27 @@
 <div class="centrado hidden" style="width: 90%" id="div_estoy">
-    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">estoy. ¿Por qué motivo(s) sientes que has sido discriminado? (marca en los que hayan respondido sí)</h2>
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">estoy. </h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo la(s) que conoce)</span>
     <br>
     <div class="field qts">
       <div class="inputGroup">
       <%= f.check_box :estoy_1, checked: "1", id:"radio-1-estoy_1"%>
-      <%= f.label :estoy_1, "Por tu género", for: "radio-1-estoy_1"%>
+      <%= f.label :estoy_1, "1", for: "radio-1-estoy_1"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :estoy_2, checked: "2", id:"radio-2-estoy_2"%>
-      <%= f.label :estoy_2, "Por tu orientación sexual", for: "radio-2-estoy_2"%>
+      <%= f.label :estoy_2, "2", for: "radio-2-estoy_2"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :estoy_3, checked: "3", id:"radio-3-estoy_3"%>
-      <%= f.label :estoy_3, "Por tu expresión de género", for: "radio-3-estoy_3"%>
+      <%= f.label :estoy_3, "3", for: "radio-3-estoy_3"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :estoy_4, checked: "4", id:"radio-4-estoy_4"%>
-      <%= f.label :estoy_4, "Por tu color de piel", for: "radio-4-estoy_4"%>
+      <%= f.label :estoy_4, "4", for: "radio-4-estoy_4"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :estoy_5, checked: "5", id:"radio-5-estoy_5"%>
-      <%= f.label :estoy_5, "Por tu estatura", for: "radio-5-estoy_5"%>
+      <%= f.label :estoy_5, "5", for: "radio-5-estoy_5"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :estoy_6, checked: "6", id:"radio-6-estoy_6"%>
