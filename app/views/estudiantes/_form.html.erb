@@ -2048,6 +2048,10 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
       <%= f.radio_button :p8f, "6" , id:"radio-6-p8f"%>
       <%= f.label :p8f, "Problemas de plata", for: "radio-6-p8f"%>
     </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p8g, "999" , id:"radio-6-p8f"%>
+      <%= f.label :p8g, "Ninguna de las anteriores", for: "radio-6-p8f"%>
+    </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p8">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p8">
@@ -2101,7 +2105,8 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
         $("#radio-3-p8c").is(':checked') == true || 
         $("#radio-4-p8d").is(':checked') == true || 
         $("#radio-5-p8e").is(':checked') == true || 
-        $("#radio-6-p8f").is(':checked') == true) {
+        $("#radio-6-p8f").is(':checked') == true ||
+        $("#radio-5-p8g").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p8').slideUp();
@@ -2123,6 +2128,7 @@ document.getElementById("radio-11-p7b").addEventListener("click", fun_op1);
   document.getElementById("radio-4-p8d").addEventListener("click", fun_multi);
   document.getElementById("radio-5-p8e").addEventListener("click", fun_multi);
   document.getElementById("radio-6-p8f").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p8g").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p8').removeClass('hidden');
@@ -6054,7 +6060,7 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
 
 <div class="centrado hidden" style="width: 90%;" id="div_p14g">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h2>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14g. Mi comportamiento no es adecuado durante el desarrollo de las clases</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14g. Mi comportamiento es adecuado durante el desarrollo de las clases</h3>
   <br>
   <div class="field qts">
     <div class="inputGroup">
