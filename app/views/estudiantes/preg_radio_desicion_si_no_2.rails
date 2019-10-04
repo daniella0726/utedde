@@ -1,6 +1,7 @@
 <div class="centrado hidden" style="width: 90%" id="div_estoy">
-    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">¿La última vez que te retiraste temporalmente de tus estudios fue por alguna de las siguientes razones relacionadas con tu FAMILIA? <br>  (Marca un recuadro en cada caso)</h2>
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">estoy. </h3>
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">estoy. ¿La última vez que te retiraste temporalmente de tus estudios fue por alguna de las siguientes razones relacionadas con tu FAMILIA?</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+
     <br>
     <div class="field qts">
       <div class="inputGroup">
@@ -23,7 +24,7 @@
     <div class="centrado-abajo">
       <div class="row">
         <div class="col-md-8">
-        <span style="color: #254064">2 de 54 respuestas</span>
+        <span style="color: #254064">19 de 54 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 4%; background-color: #254064;"></div>
           </div>

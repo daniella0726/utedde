@@ -6559,7 +6559,1187 @@ citySel.options[citySel.options.length] = new Option(city1, city1);
   }); 
 </script>
 
+<div class="centrado hidden" style="width: 90%" id="div_p19">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p19. ¿En la institución educativa se OFRECE directamente algún tipo de programa o apoyo orientado a que los niños(as) y jóvenes permanezcan en la institución educativa y no deserten?</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
 
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+        <%= f.radio_button :p19, "si" , id:"radio-1-p19"%>
+        <%= f.label :p19, "Si", for: "radio-1-p19"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p19, "no" , id:"radio-2-p19"%>
+        <%= f.label :p19, "No", for: "radio-2-p19"%>
+      </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p19">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p19">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p19">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p19_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">19 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 53%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p20_p19_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p18_p19_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p18_p19_boton").addEventListener("click", fun_p19_dev);
+    function fun_p19_dev() {
+        $('#div_p18').slideDown();
+        $('#div_p18').removeClass('hidden');
+        $('#pregunta_p18_footer').removeClass('hidden');
+        $('#div_p19').slideUp();
+        $('#div_p19').addClass('hidden');
+        $('#pregunta_p19_footer').addClass('hidden');
+        $('#div_error_p19').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p20_p19_boton").addEventListener("click", fun_p19);
+    document.getElementById("radio-2-p19").addEventListener("click", fun_p19);
+    function fun_p19() {
+      if ($("#radio-2-p19").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p19').slideUp();
+        $('#div_p19').addClass('hidden');
+        $('#pregunta_p19_footer').addClass('hidden');
+        $('#div_p20').slideDown();
+        $('#div_p20').removeClass('hidden');
+        $('#pregunta_p20_footer').removeClass('hidden');
+        $('#div_error_p20').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p19').removeClass('hidden');
+      }
+      } 
+  
+  document.getElementById("radio-1-p19").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-1-p19").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p19').slideUp();
+        $('#div_p19').addClass('hidden');
+        $('#pregunta_p19_footer').addClass('hidden');
+        $('#div_p19a').slideDown();
+        $('#div_p19a').removeClass('hidden');
+        $('#pregunta_p19a_footer').removeClass('hidden');
+        $('#div_error_p19a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p19').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p19a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p19a. ¿Cuáles de los siguientes tipos de apoyo se brindan DESDE la Institución Educativa?</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Si</th>
+          <th style="text-align: center;">No</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. Programas extra-escolares de reforzamiento o de formación integral</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_1, "si" , id:"radio-1-p19a_1"%>
+              <%= f.label :p19a_1, "", for: "radio-1-p19a_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_1, "no" , id:"radio-2-p19a_1"%>
+              <%= f.label :p19a_1, "", for: "radio-2-p19a_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Programas de fortalecimiento de la convivencia escolar, integración y manejo de conflictos</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_2, "si" , id:"radio-1-p19a_2"%>
+              <%= f.label :p19a_2, "", for: "radio-1-p19a_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_2, "no" , id:"radio-2-p19a_2"%>
+              <%= f.label :p19a_2, "", for: "radio-2-p19a_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Programas de integración con la comunidad o las familias vecinas al colegio</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_3, "si" , id:"radio-1-p19a_3"%>
+              <%= f.label :p19a_3, "", for: "radio-1-p19a_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_3, "no" , id:"radio-2-p19a_3"%>
+              <%= f.label :p19a_3, "", for: "radio-2-p19a_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Programas de articulación entre la educación media y la superior</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_4, "si" , id:"radio-1-p19a_4"%>
+              <%= f.label :p19a_4, "", for: "radio-1-p19a_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_4, "no" , id:"radio-2-p19a_4"%>
+              <%= f.label :p19a_4, "", for: "radio-2-p19a_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e. Otro.  Cuál?</td>
+          <td colspan="5">
+            <div class="inputGroup">
+              <%= f.radio_button :p19a_5, "otra" , id:"radio-1-p19a_5"%>
+              <%= f.label :p19a_5, "Otra. ¿Cuál?", for: "radio-1-p19a_5"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p19a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p19a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p19a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p19a_footer">
+  <div class="centrado-abajo" style="margin-top: 70px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">19 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 53%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p20_p19a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p19_p19a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p19_p19a_boton").addEventListener("click", fun_p19a_dev);
+  function fun_p19a_dev() {
+      $('#div_p19').slideDown();
+      $('#div_p19').removeClass('hidden');
+      $('#pregunta_p19_footer').removeClass('hidden');
+      $('#div_p19a').slideUp();
+      $('#div_p19a').addClass('hidden');
+      $('#pregunta_p19a_footer').addClass('hidden');
+      $('#div_error_p19a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p20_p19a_boton").addEventListener("click", fun_p19a);
+  
+  document.getElementById("but_res_p19a").addEventListener("click", fun_p19a);
+
+  function fun_p19a() {
+    if ($("#radio-1-p19a_1").is(':checked') == true ||
+        $("#radio-2-p19a_1").is(':checked') == true ||
+        
+        $("#radio-1-p19a_2").is(':checked') == true ||
+        $("#radio-2-p19a_2").is(':checked') == true ||
+        
+        $("#radio-1-p19a_3").is(':checked') == true ||
+        $("#radio-2-p19a_3").is(':checked') == true ||
+        
+        $("#radio-1-p19a_4").is(':checked') == true ||
+        $("#radio-2-p19a_4").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p19a').slideUp();
+      $('#div_p19a').addClass('hidden');
+      $('#pregunta_p19a_footer').addClass('hidden');
+      $('#div_p20').slideDown();
+      $('#div_p20').removeClass('hidden');
+      $('#pregunta_p20_footer').removeClass('hidden');
+      $('#div_error_p20').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p19a').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p19a_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p19a_1").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p19a_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p19a_2").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p19a_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p19a_3").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p19a_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p19a_4").addEventListener("click", fun_multi);
+      
+    
+    function fun_multi() {
+      $('#but_res_p19a').removeClass('hidden');
+      $('#div_error_p19a').addClass('hidden');
+
+  }
+
+    document.getElementById("radio-1-p19a_5").addEventListener("click", fun_op1);
+
+    function fun_op1() {
+      if ($("#radio-1-p19a_5").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p19a').slideUp();
+        $('#div_p19a').addClass('hidden');
+        $('#pregunta_p19a_footer').addClass('hidden');
+        $('#div_p19b').slideDown();
+        $('#div_p19b').removeClass('hidden');
+        $('#pregunta_p19b_footer').removeClass('hidden');
+        $('#div_error_p19b').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p19a').removeClass('hidden');
+      }
+      }
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p19b">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p19b. Otra. ¿Cuál?</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p19b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p19b", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p19b"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p19b">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p19b">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p19b_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p20_p19b_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p19a_p19b_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p19b");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p19b").click();
+      }
+    });
+
+  document.getElementById("pregunta_p19a_p19b_boton").addEventListener("click", fun_p19b_dev);
+  function fun_p19b_dev() {
+      $('#div_p19a').slideDown();
+      $('#div_p19a').removeClass('hidden');
+      $('#pregunta_p19a_footer').removeClass('hidden');
+      $('#div_p19b').slideUp();
+      $('#div_p19b').addClass('hidden');
+      $('#pregunta_p19b_footer').addClass('hidden');
+      $('#div_error_p19b').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p20_p19b_boton").addEventListener("click", fun_p19b);
+  document.getElementById("but_res_p19b").addEventListener("click", fun_p19b);
+    function fun_p19b() {
+    var frase = document.getElementById("res_p19b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p19b").value = frase;
+    if (document.getElementById("res_p19b").value == "") {
+      $('#but_res_p19b').addClass('hidden');
+      $('#p_p19b').addClass('hidden');
+      $('#div_error_p19b').removeClass('hidden');
+    } else {
+      $('#div_p19b').slideUp();
+      $('#div_p19b').addClass('hidden');
+      $('#pregunta_p19b_footer').addClass('hidden');
+      $('#div_p20').slideDown();
+      $('#div_p20').removeClass('hidden');
+      $('#pregunta_p20_footer').removeClass('hidden');
+      $('#div_error_p20').addClass('hidden');
+      document.getElementById("res_p20").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p19b').on('input', function() { 
+      var frase = document.getElementById("res_p19b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p19b").value = frase;
+      if (document.getElementById("res_p19b").value == "") {
+      $('#but_res_p19b').addClass('hidden');
+      $('#p_p19b').addClass('hidden');
+      $('#div_error_p19b').removeClass('hidden');
+      } else {
+       $('#but_res_p19b').removeClass('hidden');
+       $('#p_p19b').removeClass('hidden');
+       $('#div_error_p19b').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_p20">
+    <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p20. ¿En esta institución educativa existen planes y proyectos enfocados a disminuir la reprobación escolar?</h2>
+    <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+
+    <br>
+    <div class="field qts">
+      <div class="inputGroup">
+        <%= f.radio_button :p20, "si" , id:"radio-1-p20"%>
+        <%= f.label :p20, "Si", for: "radio-1-p20"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p20, "no" , id:"radio-2-p20"%>
+        <%= f.label :p20, "No", for: "radio-2-p20"%>
+      </div>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p20">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p20">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p20_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">20 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 55%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p21_p20_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p19_p20_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p19_p20_boton").addEventListener("click", fun_p20_dev);
+    function fun_p20_dev() {
+        $('#div_p19').slideDown();
+        $('#div_p19').removeClass('hidden');
+        $('#pregunta_p19_footer').removeClass('hidden');
+        $('#div_p20').slideUp();
+        $('#div_p20').addClass('hidden');
+        $('#pregunta_p20_footer').addClass('hidden');
+        $('#div_error_p20').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p21_p20_boton").addEventListener("click", fun_p20);
+    document.getElementById("radio-2-p20").addEventListener("click", fun_p20);
+    function fun_p20() {
+      if ($("#radio-2-p20").is(':checked') == true) {
+  
+      setTimeout(function(){
+        $('#div_p20').slideUp();
+        $('#div_p20').addClass('hidden');
+        $('#pregunta_p20_footer').addClass('hidden');
+        $('#div_p21').slideDown();
+        $('#div_p21').removeClass('hidden');
+        $('#pregunta_p21_footer').removeClass('hidden');
+        $('#div_error_p21').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p20').removeClass('hidden');
+      }
+      } 
+  
+  document.getElementById("radio-1-p20").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-1-p20").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p20').slideUp();
+        $('#div_p20').addClass('hidden');
+        $('#pregunta_p20_footer').addClass('hidden');
+        $('#div_p20a').slideDown();
+        $('#div_p20a').removeClass('hidden');
+        $('#pregunta_p20a_footer').removeClass('hidden');
+        $('#div_error_p20a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p20').removeClass('hidden');
+      }
+      }
+  
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_p20a">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p20a. ¿En esta institución educativa existen planes y proyectos enfocados a disminuir la reprobación escolar?</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Si</th>
+          <th style="text-align: center;">No</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a.  ¿Están articulados  entre las diferentes áreas del conocimiento y entre los diferentes niveles educativos?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p20a_1, "si" , id:"radio-1-p20a_1"%>
+              <%= f.label :p20a_1, "", for: "radio-1-p20a_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p20a_1, "no" , id:"radio-2-p20a_1"%>
+              <%= f.label :p20a_1, "", for: "radio-2-p20a_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b.  ¿Se evalúa su impacto en la disminución de la reprobación escolar? </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p20a_2, "si" , id:"radio-1-p20a_2"%>
+              <%= f.label :p20a_2, "", for: "radio-1-p20a_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p20a_2, "no" , id:"radio-2-p20a_2"%>
+              <%= f.label :p20a_2, "", for: "radio-2-p20a_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20a">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p20a">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p20a">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p20a_footer">
+  <div class="centrado-abajo" style="">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p21_p20a_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p20_p20a_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p20_p20a_boton").addEventListener("click", fun_p20a_dev);
+  function fun_p20a_dev() {
+      $('#div_p20').slideDown();
+      $('#div_p20').removeClass('hidden');
+      $('#pregunta_p20_footer').removeClass('hidden');
+      $('#div_p20a').slideUp();
+      $('#div_p20a').addClass('hidden');
+      $('#pregunta_p20a_footer').addClass('hidden');
+      $('#div_error_p20a').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p21_p20a_boton").addEventListener("click", fun_p20a);
+  
+  document.getElementById("but_res_p20a").addEventListener("click", fun_p20a);
+
+  function fun_p20a() {
+    if ($("#radio-1-p20a_1").is(':checked') == true ||
+        $("#radio-2-p20a_1").is(':checked') == true ||
+        
+        $("#radio-1-p20a_2").is(':checked') == true ||
+        $("#radio-2-p20a_2").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p20a').slideUp();
+      $('#div_p20a').addClass('hidden');
+      $('#pregunta_p20a_footer').addClass('hidden');
+      $('#div_p21').slideDown();
+      $('#div_p21').removeClass('hidden');
+      $('#pregunta_p21_footer').removeClass('hidden');
+      $('#div_error_p21').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p20a').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p20a_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p20a_1").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p20a_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p20a_2").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p20a').removeClass('hidden');
+      $('#div_error_p20a').addClass('hidden');
+
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 170px;" id="div_p21">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p21. En relación con el sistema institucional de evaluación de los estudiantes (SIEE)... </h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Si</th>
+          <th style="text-align: center;">No</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a.  ¿En esta institución educativa existe un sistema de evaluación articulado?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_1, "si" , id:"radio-1-p21_1"%>
+              <%= f.label :p21_1, "", for: "radio-1-p21_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_1, "no" , id:"radio-2-p21_1"%>
+              <%= f.label :p21_1, "", for: "radio-2-p21_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b.  ¿Se tienen en cuenta las diferentes formas de evaluar según áreas o disciplinas?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_2, "si" , id:"radio-1-p21_2"%>
+              <%= f.label :p21_2, "", for: "radio-1-p21_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_2, "no" , id:"radio-2-p21_2"%>
+              <%= f.label :p21_2, "", for: "radio-2-p21_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c.  ¿El SIEE es implementado por todos los docentes?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_3, "si" , id:"radio-1-p21_3"%>
+              <%= f.label :p21_3, "", for: "radio-1-p21_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_3, "no" , id:"radio-2-p21_3"%>
+              <%= f.label :p21_3, "", for: "radio-2-p21_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d.  ¿Cada docente evalúa según su visión y parecer? </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_4, "si" , id:"radio-1-p21_4"%>
+              <%= f.label :p21_4, "", for: "radio-1-p21_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_4, "no" , id:"radio-2-p21_4"%>
+              <%= f.label :p21_4, "", for: "radio-2-p21_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e.  ¿Se hace proceso de revisión y ajuste del SIEE cada año, de acuerdo con las discusiones y analisis de resultados de aprobación y reprobación? </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_5, "si" , id:"radio-1-p21_5"%>
+              <%= f.label :p21_5, "", for: "radio-1-p21_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_5, "no" , id:"radio-2-p21_5"%>
+              <%= f.label :p21_5, "", for: "radio-2-p21_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>f.  ¿Se vinculan todos los entes de la comunidad educativa en los procesos de revisión y ajuste del SIEE?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_6, "si" , id:"radio-1-p21_6"%>
+              <%= f.label :p21_6, "", for: "radio-1-p21_6", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_6, "no" , id:"radio-2-p21_6"%>
+              <%= f.label :p21_6, "", for: "radio-2-p21_6", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>g.  ¿Se vinculan todos los entes de la comunidad educativa en los procesos de revisión y ajuste? </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_7, "si" , id:"radio-1-p21_7"%>
+              <%= f.label :p21_7, "", for: "radio-1-p21_7", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_7, "no" , id:"radio-2-p21_7"%>
+              <%= f.label :p21_7, "", for: "radio-2-p21_7", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>h.  ¿Los procesos de revisión y ajuste del SIEE  permitieron mejorar los resultados de aprobación de los estudiantes?</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_8, "si" , id:"radio-1-p21_8"%>
+              <%= f.label :p21_8, "", for: "radio-1-p21_8", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p21_8, "no" , id:"radio-2-p21_8"%>
+              <%= f.label :p21_8, "", for: "radio-2-p21_8", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p21">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p21">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p21">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p21_footer">
+  <div class="centrado-abajo" style="margin-top: 410px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">21 de 36 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 58%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p22_p21_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p20_p21_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p20_p21_boton").addEventListener("click", fun_p21_dev);
+  function fun_p21_dev() {
+      $('#div_p20').slideDown();
+      $('#div_p20').removeClass('hidden');
+      $('#pregunta_p20_footer').removeClass('hidden');
+      $('#div_p21').slideUp();
+      $('#div_p21').addClass('hidden');
+      $('#pregunta_p21_footer').addClass('hidden');
+      $('#div_error_p21').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p22_p21_boton").addEventListener("click", fun_p21);
+  
+  document.getElementById("but_res_p21").addEventListener("click", fun_p21);
+
+  function fun_p21() {
+    if ($("#radio-1-p21_1").is(':checked') == true ||
+        $("#radio-2-p21_1").is(':checked') == true ||
+        
+        $("#radio-1-p21_2").is(':checked') == true ||
+        $("#radio-2-p21_2").is(':checked') == true ||
+        
+        $("#radio-1-p21_3").is(':checked') == true ||
+        $("#radio-2-p21_3").is(':checked') == true ||
+        
+        $("#radio-1-p21_4").is(':checked') == true ||
+        $("#radio-2-p21_4").is(':checked') == true ||
+        
+        $("#radio-1-p21_5").is(':checked') == true ||
+        $("#radio-2-p21_5").is(':checked') == true ||
+        
+        $("#radio-1-p21_6").is(':checked') == true ||
+        $("#radio-2-p21_6").is(':checked') == true ||
+        
+        $("#radio-1-p21_7").is(':checked') == true ||
+        $("#radio-2-p21_7").is(':checked') == true ||
+        
+        $("#radio-1-p21_8").is(':checked') == true ||
+        $("#radio-2-p21_8").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p21').slideUp();
+      $('#div_p21').addClass('hidden');
+      $('#pregunta_p21_footer').addClass('hidden');
+      $('#div_p22').slideDown();
+      $('#div_p22').removeClass('hidden');
+      $('#pregunta_p22_footer').removeClass('hidden');
+      $('#div_error_p22').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p21').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p21_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_1").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_2").addEventListener("click", fun_multi);
+    
+    document.getElementById("radio-1-p21_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_3").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_4").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_5").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_6").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_6").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_7").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_7").addEventListener("click", fun_multi);
+       
+    document.getElementById("radio-1-p21_8").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p21_8").addEventListener("click", fun_multi);
+      
+    
+    function fun_multi() {
+      $('#but_res_p21').removeClass('hidden');
+      $('#div_error_p21').addClass('hidden');
+
+  }
+</script>
+
+<div class="centrado hidden" style="width: 90%; margin-top: 10px;" id="div_p22">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p22. Indique con qué frecuencia en su institución educativa:</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las afirmaciones)</span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">Nunca</th>
+          <th style="text-align: center;">Casi nunca</th>
+          <th style="text-align: center;">Algunas veces</th>
+          <th style="text-align: center;">Casi siempre</th>
+          <th style="text-align: center;">Siempre</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. Se cuenta con instalaciones físicas y espacios (aulas,bibliotecas, laboratorios, etc.) adecuados para desarrollar los procesos de formación.</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_1, "1" , id:"radio-1-p22_1"%>
+              <%= f.label :p22_1, "", for: "radio-1-p22_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_1, "2" , id:"radio-2-p22_1"%>
+              <%= f.label :p22_1, "", for: "radio-2-p22_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_1, "3" , id:"radio-3-p22_1"%>
+              <%= f.label :p22_1, "", for: "radio-3-p22_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_1, "4" , id:"radio-4-p22_1"%>
+              <%= f.label :p22_1, "", for: "radio-4-p22_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_1, "5" , id:"radio-5-p22_1"%>
+              <%= f.label :p22_1, "", for: "radio-5-p22_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. Se fomenta la participación de docentes, estudiantes y padres de familia.</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_2, "1" , id:"radio-1-p22_2"%>
+              <%= f.label :p22_2, "", for: "radio-1-p22_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_2, "2" , id:"radio-2-p22_2"%>
+              <%= f.label :p22_2, "", for: "radio-2-p22_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_2, "3" , id:"radio-3-p22_2"%>
+              <%= f.label :p22_2, "", for: "radio-3-p22_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_2, "4" , id:"radio-4-p22_2"%>
+              <%= f.label :p22_2, "", for: "radio-4-p22_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_2, "5" , id:"radio-5-p22_2"%>
+              <%= f.label :p22_2, "", for: "radio-5-p22_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. Se identifica a la población estudiantil con mayor riesgo de deserción y se realizan acciones preventivas</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_3, "1" , id:"radio-1-p22_3"%>
+              <%= f.label :p22_3, "", for: "radio-1-p22_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_3, "2" , id:"radio-2-p22_3"%>
+              <%= f.label :p22_3, "", for: "radio-2-p22_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_3, "3" , id:"radio-3-p22_3"%>
+              <%= f.label :p22_3, "", for: "radio-3-p22_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_3, "4" , id:"radio-4-p22_3"%>
+              <%= f.label :p22_3, "", for: "radio-4-p22_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_3, "5" , id:"radio-5-p22_3"%>
+              <%= f.label :p22_3, "", for: "radio-5-p22_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. Se discute con la comunidad educativa sobre los motivos por los cuales desertan los estudiantes</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_4, "1" , id:"radio-1-p22_4"%>
+              <%= f.label :p22_4, "", for: "radio-1-p22_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_4, "2" , id:"radio-2-p22_4"%>
+              <%= f.label :p22_4, "", for: "radio-2-p22_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_4, "3" , id:"radio-3-p22_4"%>
+              <%= f.label :p22_4, "", for: "radio-3-p22_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_4, "4" , id:"radio-4-p22_4"%>
+              <%= f.label :p22_4, "", for: "radio-4-p22_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_4, "5" , id:"radio-5-p22_4"%>
+              <%= f.label :p22_4, "", for: "radio-5-p22_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>e. Se hacen estudios o análisis para evaluar factores relacionados con la deserción escolar en la institución</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_5, "1" , id:"radio-1-p22_5"%>
+              <%= f.label :p22_5, "", for: "radio-1-p22_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_5, "2" , id:"radio-2-p22_5"%>
+              <%= f.label :p22_5, "", for: "radio-2-p22_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_5, "3" , id:"radio-3-p22_5"%>
+              <%= f.label :p22_5, "", for: "radio-3-p22_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_5, "4" , id:"radio-4-p22_5"%>
+              <%= f.label :p22_5, "", for: "radio-4-p22_5", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p22_5, "5" , id:"radio-5-p22_5"%>
+              <%= f.label :p22_5, "", for: "radio-5-p22_5", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p22">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p22">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p22">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p22_footer">
+  <div class="centrado-abajo" style="margin-top: 90px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">2 de 54 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p23_p22_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p21_p22_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p21_p22_boton").addEventListener("click", fun_p22_dev);
+  function fun_p22_dev() {
+      $('#div_p21').slideDown();
+      $('#div_p21').removeClass('hidden');
+      $('#pregunta_p21_footer').removeClass('hidden');
+      $('#div_p22').slideUp();
+      $('#div_p22').addClass('hidden');
+      $('#pregunta_p22_footer').addClass('hidden');
+      $('#div_error_p22').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p23_p22_boton").addEventListener("click", fun_p22);
+  
+  document.getElementById("but_res_p22").addEventListener("click", fun_p22);
+
+  function fun_p22() {
+    if ($("#radio-1-p22_1").is(':checked') == true ||
+        $("#radio-2-p22_1").is(':checked') == true ||
+        $("#radio-3-p22_1").is(':checked') == true ||
+        $("#radio-4-p22_1").is(':checked') == true ||
+        $("#radio-5-p22_1").is(':checked') == true ||
+        $("#radio-1-p22_2").is(':checked') == true ||
+        $("#radio-2-p22_2").is(':checked') == true ||
+        $("#radio-3-p22_2").is(':checked') == true ||
+        $("#radio-4-p22_2").is(':checked') == true ||
+        $("#radio-5-p22_2").is(':checked') == true ||
+        $("#radio-1-p22_3").is(':checked') == true ||
+        $("#radio-2-p22_3").is(':checked') == true ||
+        $("#radio-3-p22_3").is(':checked') == true ||
+        $("#radio-4-p22_3").is(':checked') == true ||
+        $("#radio-5-p22_3").is(':checked') == true ||
+        $("#radio-1-p22_4").is(':checked') == true ||
+        $("#radio-2-p22_4").is(':checked') == true ||
+        $("#radio-3-p22_4").is(':checked') == true ||
+        $("#radio-4-p22_4").is(':checked') == true ||
+        $("#radio-5-p22_4").is(':checked') == true ||
+        $("#radio-1-p22_5").is(':checked') == true ||
+        $("#radio-2-p22_5").is(':checked') == true ||
+        $("#radio-3-p22_5").is(':checked') == true ||
+        $("#radio-4-p22_5").is(':checked') == true ||
+        $("#radio-5-p22_5").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p22').slideUp();
+      $('#div_p22').addClass('hidden');
+      $('#pregunta_p22_footer').addClass('hidden');
+      $('#div_p23').slideDown();
+      $('#div_p23').removeClass('hidden');
+      $('#pregunta_p23_footer').removeClass('hidden');
+      $('#div_error_p23').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p22').removeClass('hidden');
+    }
+    } 
+
+    document.getElementById("radio-1-p22_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p22_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p22_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p22_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p22_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p22_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p22_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p22_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p22_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p22_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p22_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p22_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p22_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p22_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p22_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p22_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p22_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p22_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p22_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p22_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p22_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p22_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p22_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p22_5").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p22_5").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p22').removeClass('hidden');
+      $('#div_error_p22').addClass('hidden');
+
+  }
+
+</script>
 
 
 
