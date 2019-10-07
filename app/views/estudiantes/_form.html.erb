@@ -20633,16 +20633,17 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
     document.getElementById("radio-2-p50").addEventListener("click", fun_p50);
     document.getElementById("radio-3-p50").addEventListener("click", fun_p50);
     function fun_p50() {
-      if ($("#radio-2-p50").is(':checked') == true) {
+      if ($("#radio-2-p50").is(':checked') == true ||
+          $("#radio-3-p50").is(':checked') == true) {
   
       setTimeout(function(){
         $('#div_p50').slideUp();
         $('#div_p50').addClass('hidden');
         $('#pregunta_p50_footer').addClass('hidden');
-        $('#div_p57a').slideDown();
-        $('#div_p57a').removeClass('hidden');
-        $('#pregunta_p57a_footer').removeClass('hidden');
-        $('#div_error_p57a').addClass('hidden');
+        $('#div_p58a').slideDown();
+        $('#div_p58a').removeClass('hidden');
+        $('#pregunta_p58a_footer').removeClass('hidden');
+        $('#div_error_p58a').addClass('hidden');
     } , 500);
     } else {
         $('#div_error_p50').removeClass('hidden');
