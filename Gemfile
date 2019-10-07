@@ -33,6 +33,9 @@ gem 'font-awesome-rails'
 gem "bootstrap_form", ">= 4.2.0"
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+# gem 'devise'
+
+# gem 'rails_admin', '~> 2.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
