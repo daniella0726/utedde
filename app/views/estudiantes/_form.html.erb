@@ -2649,6 +2649,7 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
           <th style="text-align: center;">9</th>
           <th style="text-align: center;">10</th>
           <th style="text-align: center;">11</th>
+          <th style="text-align: center;">NS/NR</th>
       </thead>
       <tbody style="color: #254064; text-align: center;">
         <tr>
@@ -2717,6 +2718,12 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p12a_1, "11" , id:"radio-11-p12a"%>
               <%= f.label :p12a_1, "11", for: "radio-11-p12a"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12a_1, "99" , id:"radio-45-p12a"%>
+              <%= f.label :p12a_1, "99", for: "radio-45-p12a"%>
             </div>
           </td>
         </tr>
@@ -2788,6 +2795,12 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
               <%= f.label :p12a_2, "11", for: "radio-22-p12a"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12a_2, "99" , id:"radio-46-p12a"%>
+              <%= f.label :p12a_2, "99", for: "radio-46-p12a"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <td style="vertical-align: middle;">OP3</td>
@@ -2857,6 +2870,12 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
               <%= f.label :p12a_3, "11", for: "radio-33-p12a"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12a_3, "99" , id:"radio-47-p12a"%>
+              <%= f.label :p12a_3, "99", for: "radio-47-p12a"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <td style="vertical-align: middle;">OP4</td>
@@ -2924,6 +2943,12 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p12a_4, "11" , id:"radio-44-p12a"%>
               <%= f.label :p12a_4, "11", for: "radio-44-p12a"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p12a_4, "99" , id:"radio-48-p12a"%>
+              <%= f.label :p12a_4, "99", for: "radio-48-p12a"%>
             </div>
           </td>
         </tr>
@@ -3021,6 +3046,10 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
   document.getElementById("radio-42-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-43-p12a").addEventListener("click", fun_multi);
   document.getElementById("radio-44-p12a").addEventListener("click", fun_multi);
+  document.getElementById("radio-45-p12a").addEventListener("click", fun_multi);
+  document.getElementById("radio-46-p12a").addEventListener("click", fun_multi);
+  document.getElementById("radio-47-p12a").addEventListener("click", fun_multi);
+  document.getElementById("radio-48-p12a").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p12a').removeClass('hidden');
@@ -3039,7 +3068,8 @@ document.getElementById("radio-1-p10").addEventListener("click", fun_op1);
         $("#radio-8-p12a").is(':checked') == true ||
         $("#radio-9-p12a").is(':checked') == true ||
         $("#radio-10-p12a").is(':checked') == true ||
-        $("#radio-11-p12a").is(':checked') == true) {
+        $("#radio-11-p12a").is(':checked') == true ||
+        $("#radio-45-p12a").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p12a').slideUp();
@@ -6323,6 +6353,10 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
       <%= f.radio_button :p15f, "6" , id:"radio-6-p15f"%>
       <%= f.label :p15f, "De otras personas; amigos o conocidos", for: "radio-6-p15f"%>
     </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p15g, "99" , id:"radio-7-p15g"%>
+      <%= f.label :p15g, "NS / NRR", for: "radio-7-p15g"%>
+    </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p15">
@@ -6375,8 +6409,9 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
         $("#radio-2-p15b").is(':checked') == true || 
         $("#radio-3-p15c").is(':checked') == true || 
         $("#radio-4-p15d").is(':checked') == true || 
-        $("#radio-5-p15e").is(':checked') == true || 
-        $("#radio-6-p15f").is(':checked') == true) {
+        $("#radio-5-p15e").is(':checked') == true ||
+        $("#radio-6-p15f").is(':checked') == true || 
+        $("#radio-7-p15g").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p15').slideUp();
@@ -6398,6 +6433,7 @@ document.getElementById("radio-1-p12p").addEventListener("click", fun_op1);
   document.getElementById("radio-4-p15d").addEventListener("click", fun_multi);
   document.getElementById("radio-5-p15e").addEventListener("click", fun_multi);
   document.getElementById("radio-6-p15f").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-p15g").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p15').removeClass('hidden');
@@ -7309,6 +7345,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
               <%= f.label :p17b_1, "Después de finalizar el curso", for: "radio-2-p17b"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_1, "99" , id:"radio-9-p17b"%>
+              <%= f.label :p17b_1, "NS / NR", for: "radio-9-p17b"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <th style="vertical-align: middle;">La segunda vez que dejaste de estudiar…</th>
@@ -7322,6 +7364,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p17b_2, "2" , id:"radio-4-p17b"%>
               <%= f.label :p17b_2, "Después de finalizar el curso", for: "radio-4-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_2, "99" , id:"radio-10-p17b"%>
+              <%= f.label :p17b_2, "NS / NR", for: "radio-10-p17b"%>
             </div>
           </td>
         </tr>
@@ -7339,6 +7387,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
               <%= f.label :p17b_3, "Después de finalizar el curso", for: "radio-6-p17b"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_3, "99" , id:"radio-11-p17b"%>
+              <%= f.label :p17b_3, "NS / NR", for: "radio-11-p17b"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <th style="vertical-align: middle;">La cuarta vez que dejaste de estudiar…</th>
@@ -7352,6 +7406,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p17b_4, "2" , id:"radio-8-p17b"%>
               <%= f.label :p17b_4, "Después de finalizar el curso", for: "radio-8-p17b"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17b_4, "99" , id:"radio-12-p17b"%>
+              <%= f.label :p17b_4, "NS / NR", for: "radio-12-p17b"%>
             </div>
           </td>
         </tr>
@@ -7413,6 +7473,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("radio-6-p17b").addEventListener("click", fun_multi);
   document.getElementById("radio-7-p17b").addEventListener("click", fun_multi);
   document.getElementById("radio-8-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-p17b").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-p17b").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p17b').removeClass('hidden');
@@ -7421,8 +7485,9 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   }
 
   function fun_p17b() {
-    if ($("#radio-1-p17b").is(':checked') == true || 
-        $("#radio-2-p17b").is(':checked') == true) {
+    if ($("#radio-1-p17b").is(':checked') == true ||
+        $("#radio-2-p17b").is(':checked') == true || 
+        $("#radio-9-p17b").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p17b').slideUp();
@@ -7460,6 +7525,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
               <%= f.label :p17c_1, "Un año o más", for: "radio-2-p17c"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_1, "99" , id:"radio-9-p17c"%>
+              <%= f.label :p17c_1, "NS / NR", for: "radio-9-p17c"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <th style="vertical-align: middle;">La segunda vez que dejaste de estudiar…</th>
@@ -7473,6 +7544,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p17c_2, "2" , id:"radio-4-p17c"%>
               <%= f.label :p17c_2, "Un año o más", for: "radio-4-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_2, "99" , id:"radio-10-p17c"%>
+              <%= f.label :p17c_2, "NS / NR", for: "radio-10-p17c"%>
             </div>
           </td>
         </tr>
@@ -7490,6 +7567,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
               <%= f.label :p17c_3, "Un año o más", for: "radio-6-p17c"%>
             </div>
           </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_3, "99" , id:"radio-11-p17c"%>
+              <%= f.label :p17c_3, "NS / NR", for: "radio-11-p17c"%>
+            </div>
+          </td>
         </tr>
         <tr>
           <th style="vertical-align: middle;">La cuarta vez que dejaste de estudiar…</th>
@@ -7503,6 +7586,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
             <div class="inputGroup">
               <%= f.radio_button :p17c_4, "2" , id:"radio-8-p17c"%>
               <%= f.label :p17c_4, "Un año o más", for: "radio-8-p17c"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p17c_4, "99" , id:"radio-12-p17c"%>
+              <%= f.label :p17c_4, "NS / NR", for: "radio-12-p17c"%>
             </div>
           </td>
         </tr>
@@ -7564,6 +7653,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("radio-6-p17c").addEventListener("click", fun_multi);
   document.getElementById("radio-7-p17c").addEventListener("click", fun_multi);
   document.getElementById("radio-8-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-9-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-10-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-11-p17c").addEventListener("click", fun_multi);
+  document.getElementById("radio-12-p17c").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p17c').removeClass('hidden');
@@ -7573,7 +7666,8 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
 
   function fun_p17c() {
     if ($("#radio-1-p17c").is(':checked') == true || 
-        $("#radio-2-p17c").is(':checked') == true) {
+        $("#radio-2-p17c").is(':checked') == true ||
+        $("#radio-9-p17c").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p17c').slideUp();
@@ -7619,12 +7713,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         <%= f.radio_button :p18, "6" , id:"radio-6-p18"%>
         <%= f.label :p18, "Junio", for: "radio-6-p18"%>
       </div>
-    </div>
-    <div class="col-sm-6">
       <div class="inputGroup">
         <%= f.radio_button :p18, "7" , id:"radio-7-p18"%>
         <%= f.label :p18, "Julio", for: "radio-7-p18"%>
       </div>
+      </div>
+      <div class="col-sm-6">
       <div class="inputGroup">
         <%= f.radio_button :p18, "8" , id:"radio-8-p18"%>
         <%= f.label :p18, "Agosto", for: "radio-8-p18"%>
@@ -7648,6 +7742,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       <div class="inputGroup">
         <%= f.radio_button :p18, "99" , id:"radio-13-p18"%>
         <%= f.label :p18, "NO me acuerdo", for: "radio-13-p18"%>
+      </div>
+      <div class="inputGroup">
+        <%= f.radio_button :p18, "99999" , id:"radio-14-p18"%>
+        <%= f.label :p18, "No Contestó", for: "radio-14-p18"%>
       </div>
     </div>
   </div>
@@ -7708,6 +7806,7 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("radio-11-p18").addEventListener("click", fun_p18);
   document.getElementById("radio-12-p18").addEventListener("click", fun_p18);
   document.getElementById("radio-13-p18").addEventListener("click", fun_p18);
+  document.getElementById("radio-14-p18").addEventListener("click", fun_p18);
   function fun_p18() {
     if ($("#radio-1-p18").is(':checked') == true || 
         $("#radio-2-p18").is(':checked') == true || 
@@ -7721,7 +7820,8 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
         $("#radio-10-p18").is(':checked') == true ||
         $("#radio-11-p18").is(':checked') == true ||
         $("#radio-12-p18").is(':checked') == true ||
-        $("#radio-13-p18").is(':checked') == true) {
+        $("#radio-13-p18").is(':checked') == true ||
+        $("#radio-14-p18").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p18').slideUp();
@@ -7858,6 +7958,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       <%= f.radio_button :p20a, "no" , id:"radio-2-p20a"%>
       <%= f.label :p20a, "No", for: "radio-2-p20a"%>
     </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20a, "99" , id:"radio-3-p20a"%>
+      <%= f.label :p20a, "No Responde", for: "radio-3-p20a"%>
+    </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p20a">
@@ -7905,9 +8009,11 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("pregunta_p20b_p20a_boton").addEventListener("click", fun_p20a);
   document.getElementById("radio-1-p20a").addEventListener("click", fun_p20a);
   document.getElementById("radio-2-p20a").addEventListener("click", fun_p20a);
+  document.getElementById("radio-3-p20a").addEventListener("click", fun_p20a);
   function fun_p20a() {
     if ($("#radio-1-p20a").is(':checked') == true || 
-        $("#radio-2-p20a").is(':checked') == true) {
+        $("#radio-2-p20a").is(':checked') == true ||
+        $("#radio-3-p20a").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p20a').slideUp();
       $('#div_p20a').addClass('hidden');
@@ -7936,6 +8042,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
     <div class="inputGroup">
       <%= f.radio_button :p20b, "no" , id:"radio-2-p20b"%>
       <%= f.label :p20b, "No", for: "radio-2-p20b"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20b, "99" , id:"radio-3-p20b"%>
+      <%= f.label :p20b, "No Responde", for: "radio-3-p20b"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20b">Por favor, <strong>escoge una respuesta</strong></div>
@@ -7984,9 +8094,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("pregunta_p20c_p20b_boton").addEventListener("click", fun_p20b);
   document.getElementById("radio-1-p20b").addEventListener("click", fun_p20b);
   document.getElementById("radio-2-p20b").addEventListener("click", fun_p20b);
+  document.getElementById("radio-3-p20b").addEventListener("click", fun_p20b);
   function fun_p20b() {
     if ($("#radio-1-p20b").is(':checked') == true || 
-        $("#radio-2-p20b").is(':checked') == true) {
+        $("#radio-2-p20b").is(':checked') == true ||
+        $("#radio-3-p20b").is(':checked') == true) {
+
     setTimeout(function(){
       $('#div_p20b').slideUp();
       $('#div_p20b').addClass('hidden');
@@ -8015,6 +8128,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
     <div class="inputGroup">
       <%= f.radio_button :p20c, "no" , id:"radio-2-p20c"%>
       <%= f.label :p20c, "No", for: "radio-2-p20c"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p20c, "99" , id:"radio-3-p20c"%>
+      <%= f.label :p20c, "No Responde", for: "radio-3-p20c"%>
     </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20c">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8063,9 +8180,12 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("pregunta_p21_p20c_boton").addEventListener("click", fun_p20c);
   document.getElementById("radio-1-p20c").addEventListener("click", fun_p20c);
   document.getElementById("radio-2-p20c").addEventListener("click", fun_p20c);
+  document.getElementById("radio-3-p20c").addEventListener("click", fun_p20c);
   function fun_p20c() {
     if ($("#radio-1-p20c").is(':checked') == true || 
-        $("#radio-2-p20c").is(':checked') == true) {
+        $("#radio-2-p20c").is(':checked') == true ||
+        $("#radio-3-p20c").is(':checked') == true) {
+
     setTimeout(function(){
       $('#div_p20c').slideUp();
       $('#div_p20c').addClass('hidden');
@@ -12984,6 +13104,10 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
       <%= f.radio_button :p31b, "5" , id:"radio-5-p31b"%>
       <%= f.label :p31b, "Más de 60 minutos", for: "radio-5-p31b"%>
     </div>
+    <div class="inputGroup">
+      <%= f.radio_button :p31b, "99" , id:"radio-6-p31b"%>
+      <%= f.label :p31b, "No Respondió", for: "radio-6-p31b"%>
+    </div>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p31b">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
@@ -13034,12 +13158,14 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   document.getElementById("radio-3-p31b").addEventListener("click", fun_p31b);
   document.getElementById("radio-4-p31b").addEventListener("click", fun_p31b);
   document.getElementById("radio-5-p31b").addEventListener("click", fun_p31b);
+  document.getElementById("radio-6-p31b").addEventListener("click", fun_p31b);
   function fun_p31b() {
     if ($("#radio-1-p31b").is(':checked') == true || 
         $("#radio-2-p31b").is(':checked') == true || 
         $("#radio-3-p31b").is(':checked') == true || 
         $("#radio-4-p31b").is(':checked') == true || 
-        $("#radio-5-p31b").is(':checked') == true) {
+        $("#radio-5-p31b").is(':checked') == true ||
+        $("#radio-6-p31b").is(':checked') == true) {
 
     setTimeout(function(){
       $('#div_p31b').slideUp();
