@@ -26,17 +26,46 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
+    new do
+      except ['Estudiante', 'Docente', 'Director']
+    end
     export
-    bulk_delete
+    bulk_delete do
+      except ['Estudiante', 'Docente', 'Director']
+    end
     show
     edit
-    delete
-    show_in_app
+    delete do
+      except ['Estudiante', 'Docente', 'Director']
+    end
+    show_in_app do
+      except ['Docente', 'Director']
+    end
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    config.model Estudiante do
+    list do
+      field :id do
+      label "Ref BD" 
+      end
+      field :p60 do
+      label "No. Encuesta"
+      end
+      field :p62 do
+      label "Nombre del Digitador"
+      end
+      field :p1 do
+      label "P1"
+      end
+      field :p2 do
+      label "P2"
+      end
+    end
+  end
+
 
   end
 end
