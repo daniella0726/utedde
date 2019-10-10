@@ -22595,6 +22595,21 @@ document.getElementById("radio-1-p17").addEventListener("click", fun_op1);
   </div> 
 </div> 
 
+<script type="text/javascript">
+
+document.getElementById("pregunta_p62_ultima_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_p62').slideDown();
+      $('#div_p62').removeClass('hidden');
+      $('#pregunta_p62_footer').removeClass('hidden');
+      $('#div_ultima').slideUp();
+      $('#div_ultima').addClass('hidden');
+      $('#pregunta_ultima_footer').addClass('hidden');
+      $('#div_error_ultima').addClass('hidden');
+  }
+  
+</script>
+
 
 
 

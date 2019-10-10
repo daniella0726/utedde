@@ -1045,37 +1045,34 @@
     }
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_p6">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p6. Cuántos años lleva como? </h2>
-  <br>
-  <div class="field qts" >
-    <div class="inputGroup">
-      <%= f.radio_button :p6, "Docente" , id:"radio-1-p6"%>
-      <%= f.label :p6, "Docente", for: "radio-1-p6"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.radio_button :p6, "Directivo escolar" , id:"radio-2-p6"%>
-      <%= f.label :p6, "Directivo escolar", for: "radio-2-p6"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.radio_button :p6, "Directivo de esta institución educativa" , id:"radio-3-p6"%>
-      <%= f.label :p6, "Directivo de esta institución educativa", for: "radio-3-p6"%>
-    </div>
+<div class="centrado hidden" style="width: 90%;" id="div_p6">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p6. Cuantos años lleva como:</h2>
+
+  <div class="field qts">
+    <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">a. Docente</h3>
+    <%= f.text_field :p6a, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p6a", placeholder: "años"}%>
+    <br>
+    <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">b. Docente en esta localidad</h3>
+    <%= f.text_field :p6b, {type: "Number",class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p6b", placeholder: "años"}%>
+    <br>
+    <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">c. Docente en esta institución educativa</h3>
+    <%= f.text_field :p6c, {type: "Number",class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p6c", placeholder: "años"}%>
+
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p6">Por favor, <strong>escogé una opción!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_6">
+  <div class="hidden" style="color: #254064;" id="div_error_p6"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p6">
     <i class="fas fa-check-circle"></i>
-      OK
+    OK
   </button>
-  <p  class="hidden" style="color: #4c2f48;" id="p_p6">presioná <strong>ENTER</strong></p>
+  <p  class="hidden" style="color: #254064;" id="p_p6">presiona <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p6_footer">
   <div class="centrado-abajo">
     <div class="row">
-      <div class="col-md-4">
-        <span style="color: #254064">6 de 32 respuestas</span>
+      <div class="col-md-8">
+        <span style="color: #254064;">6 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 18%; background-color: #254064;"></div>
+            <div class="bar" style="width: 19%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1085,7 +1082,7 @@
           </a>
           <a class="boton1" id="pregunta_p5_p6_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
-          </a>
+          </a>          
         </div>
       </div>  
     </div>
@@ -1093,6 +1090,29 @@
 </div>
 
 <script type="text/javascript">
+  var input = document.getElementById("res_p6a");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p6b").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_p6b");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_p6c").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_p6c");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p6").click();
+      }
+    });
 
   document.getElementById("pregunta_p5_p6_boton").addEventListener("click", fun_p6_dev);
   function fun_p6_dev() {
@@ -1106,77 +1126,153 @@
   }
 
   document.getElementById("pregunta_p7_p6_boton").addEventListener("click", fun_p6);
-  document.getElementById("radio-1-p6").addEventListener("click", fun_p6);
-  document.getElementById("radio-2-p6").addEventListener("click", fun_p6);
-  document.getElementById("radio-3-p6").addEventListener("click", fun_p6);
-  function fun_p6() {
-    if ($("#radio-1-p6").is(':checked') == true || 
-        $("#radio-2-p6").is(':checked') == true ||
-        $("#radio-3-p6").is(':checked') == true ) {
-    setTimeout(function(){
+  document.getElementById("but_res_p6").addEventListener("click", fun_p6);
+    function fun_p6() {
+    var frase = document.getElementById("res_p6a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p6a").value = frase;
+    var frase1 = document.getElementById("res_p6b").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_p6b").value = frase1;
+    var frase2 = document.getElementById("res_p6c").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_p6c").value = frase2;
+    if (document.getElementById("res_p6a").value == "" || document.getElementById("res_p6b").value == "" ||document.getElementById("res_p6c").value == "") {
+      $('#but_res_p6').addClass('hidden');
+      $('#p_p6').addClass('hidden');
+      $('#div_error_p6').removeClass('hidden');
+    } else {
       $('#div_p6').slideUp();
       $('#div_p6').addClass('hidden');
       $('#pregunta_p6_footer').addClass('hidden');
       $('#div_p7').slideDown();
       $('#div_p7').removeClass('hidden');
       $('#pregunta_p7_footer').removeClass('hidden');
-      $('#div_error_p7').addClass('hidden');
-  } , 500);
-  } else {
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p6a').on('input', function() { 
+      var frase = document.getElementById("res_p6a").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p6a").value = frase;
+      if (document.getElementById("res_p6a").value == "" || document.getElementById("res_p6b").value == "" ||document.getElementById("res_p6c").value == "") {
+      $('#but_res_p6').addClass('hidden');
+      $('#p_p6').addClass('hidden');
       $('#div_error_p6').removeClass('hidden');
-    }
-    }
+      } else {
+       $('#but_res_p6').removeClass('hidden');
+       $('#p_p6').removeClass('hidden');
+       $('#div_error_p6').addClass('hidden');
+      }
+    }); 
+
+    $('#res_p6b').on('input', function() { 
+      var frase = document.getElementById("res_p6b").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p6b").value = frase;
+      if (document.getElementById("res_p6a").value == "" || document.getElementById("res_p6b").value == "" ||document.getElementById("res_p6c").value == "") {
+      $('#but_res_p6').addClass('hidden');
+      $('#p_p6').addClass('hidden');
+      $('#div_error_p6').removeClass('hidden');
+      } else {
+       $('#but_res_p6').removeClass('hidden');
+       $('#p_p6').removeClass('hidden');
+       $('#div_error_p6').addClass('hidden');
+      }
+    }); 
+
+    $('#res_p6c').on('input', function() { 
+      var frase = document.getElementById("res_p6c").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p6c").value = frase;
+      if (document.getElementById("res_p6a").value == "" || document.getElementById("res_p6b").value == "" ||document.getElementById("res_p6c").value == "") {
+      $('#but_res_p6').addClass('hidden');
+      $('#p_p6').addClass('hidden');
+      $('#div_error_p6').removeClass('hidden');
+      } else {
+       $('#but_res_p6').removeClass('hidden');
+       $('#p_p6').removeClass('hidden');
+       $('#div_error_p6').addClass('hidden');
+      }
+    }); 
+  }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_p7">
+<div class="centrado hidden" style="width: 90%;" id="div_p7">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p7.Las jornada en la que trabaja como docente en esta institución educativa es:</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Puede marcar más de un recuadro)</span>
   <br>
-  <div class="field qts" >
+  <div class="field qts">
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Mañana" , id:"radio-1-p7"%>
-      <%= f.label :p7, "Mañana", for: "radio-1-p7"%>
+      <%= f.check_box :p7_1, checked: "1", id:"radio-1-p7_1"%>
+      <%= f.label :p7_1, "Mañana", for: "radio-1-p7_1"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Tarde" , id:"radio-2-p7"%>
-      <%= f.label :p7, "Tarde", for: "radio-2-p7"%>
+      <%= f.check_box :p7_2, checked: "2", id:"radio-2-p7_2"%>
+      <%= f.label :p7_2, "Tarde", for: "radio-2-p7_2"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Nocturna" , id:"radio-3-p7"%>
-      <%= f.label :p7, "Nocturna", for: "radio-3-p7"%>
+      <%= f.check_box :p7_3, checked: "3", id:"radio-3-p7_3"%>
+      <%= f.label :p7_3, "Nocturna", for: "radio-3-p7_3"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Completa" , id:"radio-4-p7"%>
-      <%= f.label :p7, "Completa", for: "radio-4-p7"%>
+      <%= f.check_box :p7_4, checked: "4", id:"radio-4-p7_4"%>
+      <%= f.label :p7_4, "Completa", for: "radio-4-p7_4"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Fin de semana" , id:"radio-5-p7"%>
-      <%= f.label :p7, "Fin de semana", for: "radio-5-p7"%>
+      <%= f.check_box :p7_5, checked: "5", id:"radio-5-p7_5"%>
+      <%= f.label :p7_5, "Fin de semana", for: "radio-5-p7_5"%>
     </div>
     <div class="inputGroup">
-      <%= f.radio_button :p7, "Única" , id:"radio-6-p7"%>
-      <%= f.label :p7, "Única", for: "radio-6-p7"%>
+      <%= f.check_box :p7_6, checked: "6", id:"radio-6-p7_6"%>
+      <%= f.label :p7_6, "Única", for: "radio-6-p7_6"%>
     </div>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p7">Por favor, <strong>escogé un curso!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_7">
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p7">Por favor, <strong>escoger al menos uno.</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p7">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
-  <p  class="hidden" style="color: #4c2f48;" id="p_p7">presioná <strong>ENTER</strong></p>
+  <p  class="hidden" style="color: #254064;" id="p_p7">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p7_footer">
-  <div class="centrado-abajo">
+  <div class="centrado-abajo" style="" >
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-8">
         <span style="color: #254064">7 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 21%; background-color: #254064;"></div>
+            <div class="bar" style="width: 22%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p8_p7_boton">
+          <a class="boton1" id="pregunta_p8_1_p7_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_p6_p7_boton">
@@ -1201,14 +1297,17 @@
       $('#div_error_p7').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p8_p7_boton").addEventListener("click", fun_p7);
-  document.getElementById("radio-1-p7").addEventListener("click", fun_p7);
-  document.getElementById("radio-2-p7").addEventListener("click", fun_p7);
-  document.getElementById("radio-3-p7").addEventListener("click", fun_p7);
+  document.getElementById("pregunta_p8_1_p7_boton").addEventListener("click", fun_p7);
+
+  document.getElementById("but_res_p7").addEventListener("click", fun_p7);
+
   function fun_p7() {
-    if ($("#radio-1-p7").is(':checked') == true || 
-        $("#radio-2-p7").is(':checked') == true ||
-        $("#radio-3-p7").is(':checked') == true ) {
+    if ($("#radio-1-p7_1").is(':checked') == true || 
+        $("#radio-2-p7_2").is(':checked') == true || 
+        $("#radio-3-p7_3").is(':checked') == true || 
+        $("#radio-4-p7_4").is(':checked') == true || 
+        $("#radio-5-p7_5").is(':checked') == true || 
+        $("#radio-6-p7_6").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p7').slideUp();
       $('#div_p7').addClass('hidden');
@@ -1217,11 +1316,23 @@
       $('#div_p8_1').removeClass('hidden');
       $('#pregunta_p8_1_footer').removeClass('hidden');
       $('#div_error_p8_1').addClass('hidden');
-  } , 500);
+      } , 500);
   } else {
       $('#div_error_p7').removeClass('hidden');
     }
     }
+  document.getElementById("radio-1-p7_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-p7_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-p7_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-p7_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-p7_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-p7_6").addEventListener("click", fun_multi);
+
+  function fun_multi() {
+      $('#but_res_p7').removeClass('hidden');
+      $('#div_error_p7').addClass('hidden');
+
+  }
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p8_1">
@@ -2357,41 +2468,172 @@
   }
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_p9">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p9. Califique de 1 a 5 el nivel de confianza que le tiene a las siguientes entidades relacionadas con el sector educativo, donde 1 = No confía y 5 = Total confianza </h2>
+<div class="centrado hidden" style="width: 90%;" id="div_p9">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p9. Califique de 1 a 5 el nivel de confianza que le tiene a las siguientes entidades relacionadas con el sector educativo, donde 1 = No confía y 5 = Total confianza</h3>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
   <br>
-  <div class="field qts" >
-    <div class="inputGroup">
-      <%= f.radio_button :p9, "La institución educativa en la que trabaja" , id:"radio-1-p9"%>
-      <%= f.label :p9, "La institución educativa en la que trabaja", for: "radio-1-p9"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.radio_button :p9, "La Secretaría de Educación Distrital (Nivel Central)" , id:"radio-2-p9"%>
-      <%= f.label :p9, "La Secretaría de Educación Distrital (Nivel Central)", for: "radio-2-p9"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.radio_button :p9, "La Dirección Local de Educación" , id:"radio-3-p9"%>
-      <%= f.label :p9, "La Dirección Local de Educación", for: "radio-3-p9"%>
-    </div>
-    <div class="inputGroup">
-      <%= f.radio_button :p9, "El Ministerio de Educación Nacional" , id:"radio-4-p9"%>
-      <%= f.label :p9, "El Ministerio de Educación Nacional", for: "radio-4-p9"%>
-    </div>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;"></th>
+          <th style="text-align: center;">1</th>
+          <th style="text-align: center;">2</th>
+          <th style="text-align: center;">3</th>
+          <th style="text-align: center;">4</th>
+          <th style="text-align: center;">5</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td>a. La institución educativa en la que trabaja</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_1, "1" , id:"radio-1-p9_1"%>
+              <%= f.label :p9_1, "", for: "radio-1-p9_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_1, "2" , id:"radio-2-p9_1"%>
+              <%= f.label :p9_1, "", for: "radio-2-p9_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_1, "3" , id:"radio-3-p9_1"%>
+              <%= f.label :p9_1, "", for: "radio-3-p9_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_1, "4" , id:"radio-4-p9_1"%>
+              <%= f.label :p9_1, "", for: "radio-4-p9_1", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_1, "5" , id:"radio-5-p9_1"%>
+              <%= f.label :p9_1, "", for: "radio-5-p9_1", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>b. La Secretaría de Educación Distrital (Nivel Central)</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_2, "1" , id:"radio-1-p9_2"%>
+              <%= f.label :p9_2, "", for: "radio-1-p9_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_2, "2" , id:"radio-2-p9_2"%>
+              <%= f.label :p9_2, "", for: "radio-2-p9_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_2, "3" , id:"radio-3-p9_2"%>
+              <%= f.label :p9_2, "", for: "radio-3-p9_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_2, "4" , id:"radio-4-p9_2"%>
+              <%= f.label :p9_2, "", for: "radio-4-p9_2", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_2, "5" , id:"radio-5-p9_2"%>
+              <%= f.label :p9_2, "", for: "radio-5-p9_2", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>c. La Dirección Local de Educación</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_3, "1" , id:"radio-1-p9_3"%>
+              <%= f.label :p9_3, "", for: "radio-1-p9_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_3, "2" , id:"radio-2-p9_3"%>
+              <%= f.label :p9_3, "", for: "radio-2-p9_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_3, "3" , id:"radio-3-p9_3"%>
+              <%= f.label :p9_3, "", for: "radio-3-p9_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_3, "4" , id:"radio-4-p9_3"%>
+              <%= f.label :p9_3, "", for: "radio-4-p9_3", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_3, "5" , id:"radio-5-p9_3"%>
+              <%= f.label :p9_3, "", for: "radio-5-p9_3", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>d. El Ministerio de Educación Nacional</td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_4, "1" , id:"radio-1-p9_4"%>
+              <%= f.label :p9_4, "", for: "radio-1-p9_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_4, "2" , id:"radio-2-p9_4"%>
+              <%= f.label :p9_4, "", for: "radio-2-p9_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_4, "3" , id:"radio-3-p9_4"%>
+              <%= f.label :p9_4, "", for: "radio-3-p9_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_4, "4" , id:"radio-4-p9_4"%>
+              <%= f.label :p9_4, "", for: "radio-4-p9_4", style:"color:transparent;"%>
+            </div>
+          </td>
+          <td>
+            <div class="inputGroup">
+              <%= f.radio_button :p9_4, "5" , id:"radio-5-p9_4"%>
+              <%= f.label :p9_4, "", for: "radio-5-p9_4", style:"color:transparent;"%>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p9">Por favor, <strong>escogé una opción!</strong></div>
-  <button type="button" class="boton3 hidden" id="but_res_pregunta_9">
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p9">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p9">
     <i class="fas fa-check-circle"></i>
       OK
   </button>
-  <p  class="hidden" style="color: #4c2f48;" id="p_p9">presioná <strong>ENTER</strong></p>
+  <p  class="hidden" style="color: #254064;" id="p_p9">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p9_footer">
-  <div class="centrado-abajo">
+  <div class="centrado-abajo" style="margin-top: 60px;">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-8">
         <span style="color: #254064">9 de 32 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 27%; background-color: #254064;"></div>
+            <div class="bar" style="width: 28%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -2422,15 +2664,30 @@
   }
 
   document.getElementById("pregunta_p10_p9_boton").addEventListener("click", fun_p9);
-  document.getElementById("radio-1-p9").addEventListener("click", fun_p9);
-  document.getElementById("radio-2-p9").addEventListener("click", fun_p9);
-  document.getElementById("radio-3-p9").addEventListener("click", fun_p9);
-  document.getElementById("radio-4-p9").addEventListener("click", fun_p9);
+  
+  document.getElementById("but_res_p9").addEventListener("click", fun_p9);
+
   function fun_p9() {
-    if ($("#radio-1-p9").is(':checked') == true || 
-        $("#radio-2-p9").is(':checked') == true ||
-        $("#radio-3-p9").is(':checked') == true ||
-        $("#radio-4-p9").is(':checked') == true ) {
+    if ($("#radio-1-p9_1").is(':checked') == true ||
+        $("#radio-2-p9_1").is(':checked') == true ||
+        $("#radio-3-p9_1").is(':checked') == true ||
+        $("#radio-4-p9_1").is(':checked') == true ||
+        $("#radio-5-p9_1").is(':checked') == true ||
+        $("#radio-1-p9_2").is(':checked') == true ||
+        $("#radio-2-p9_2").is(':checked') == true ||
+        $("#radio-3-p9_2").is(':checked') == true ||
+        $("#radio-4-p9_2").is(':checked') == true ||
+        $("#radio-5-p9_2").is(':checked') == true ||
+        $("#radio-1-p9_3").is(':checked') == true ||
+        $("#radio-2-p9_3").is(':checked') == true ||
+        $("#radio-3-p9_3").is(':checked') == true ||
+        $("#radio-4-p9_3").is(':checked') == true ||
+        $("#radio-5-p9_3").is(':checked') == true ||
+        $("#radio-1-p9_4").is(':checked') == true ||
+        $("#radio-2-p9_4").is(':checked') == true ||
+        $("#radio-3-p9_4").is(':checked') == true ||
+        $("#radio-4-p9_4").is(':checked') == true ||
+        $("#radio-5-p9_4").is(':checked') == true) {
     setTimeout(function(){
       $('#div_p9').slideUp();
       $('#div_p9').addClass('hidden');
@@ -2443,8 +2700,36 @@
   } else {
       $('#div_error_p9').removeClass('hidden');
     }
-    }
+    } 
+
+    document.getElementById("radio-1-p9_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p9_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p9_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p9_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p9_1").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p9_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p9_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p9_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p9_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p9_2").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p9_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p9_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p9_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p9_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p9_3").addEventListener("click", fun_multi);
+    document.getElementById("radio-1-p9_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-2-p9_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-3-p9_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-4-p9_4").addEventListener("click", fun_multi);
+    document.getElementById("radio-5-p9_4").addEventListener("click", fun_multi);
+    
+    function fun_multi() {
+      $('#but_res_p9').removeClass('hidden');
+      $('#div_error_p9').addClass('hidden');
+
+  }
 </script>
+
 
 <div class="centrado hidden" style="width: 90%" id="div_p10">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p10. ¿En el último año has escuchado o visto alguna campaña de comunicación para promover que los estudiantes permanezcan en el colegio hasta su graduación? </h2>
@@ -2534,7 +2819,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%;" id="div_p10_a">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">P10 A ¿En qué medios?? </h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">P10 A ¿En qué medios? </h2>
   <br>
   <div class="field qts">
     <div class="inputGroup">
@@ -2647,7 +2932,7 @@
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;text-align: left;">P10 A Otra, cúal? </h2>
   <br>
   <div class="field qts">
-    <%= f.text_field :p10a_otra, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_a_otra", placeholder: "Nombre de la persona"}%>
+    <%= f.text_field :p10a_otra, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_a_otra", placeholder: "Otra. Cual?"}%>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p10_a_otra">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p10_a_otra">
@@ -2750,7 +3035,7 @@
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: left;">P10 B ¿En que consistía la campaña? </h2>
   <br>
   <div class="field qts">
-    <%= f.text_field :p10b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_b", placeholder: "Nombre de la persona"}%>
+    <%= f.text_field :p10b, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p10_b", placeholder: "En que consistía la campaña"}%>
   </div>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p10_b">Por favor, <strong>escoger al menos uno.</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p10_b">
@@ -3096,7 +3381,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p11a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p11a. ¿Hace cuántos años vives aquí?</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p11a. ¿Cuál?</h2>
   <br>
   <div class="field qts">
 
@@ -3114,9 +3399,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">27 de 37 respuestas</span>
+        <span style="color: #254064;">11 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 31%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -5368,7 +5653,7 @@
 
 
 <div class="centrado hidden" style="width: 90%; margin-top: 290px;" id="div_p15">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p15. ¿Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones?:</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p15. Con qué frecuencia los(las) niños(as) o jóvenes que abandonan esta institución educativa lo hacen por alguna de las siguientes razones:</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las razones)</span>
   <br>
   <div class="field qts">
@@ -6467,7 +6752,7 @@
         <div class="col-md-8">
         <span style="color: #254064">18 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 53%; background-color: #254064;"></div>
+            <div class="bar" style="width: 50%; background-color: #254064;"></div>
           </div>
         </div>
         <div class="col-md-4">
@@ -6632,9 +6917,9 @@
   <div class="centrado-abajo" style="margin-top: 70px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">19 de 36 respuestas</span>
+        <span style="color: #254064">18 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 53%; background-color: #254064;"></div>
+            <div class="bar" style="width: 50%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -6751,9 +7036,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">27 de 37 respuestas</span>
+        <span style="color: #254064;">18 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 50%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -6864,9 +7149,9 @@
     <div class="centrado-abajo">
       <div class="row">
         <div class="col-md-8">
-        <span style="color: #254064">20 de 36 respuestas</span>
+        <span style="color: #254064">19 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 55%; background-color: #254064;"></div>
+            <div class="bar" style="width: 53%; background-color: #254064;"></div>
           </div>
         </div>
         <div class="col-md-4">
@@ -6992,9 +7277,9 @@
   <div class="centrado-abajo" style="">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">2 de 54 respuestas</span>
+        <span style="color: #254064">19 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+            <div class="bar" style="width: 53%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -7206,12 +7491,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p20">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p20_footer">
-  <div class="centrado-abajo" style="margin-top: 410px;">
+  <div class="centrado-abajo" style="margin-top: 430px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">21 de 36 respuestas</span>
+        <span style="color: #254064">20 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 58%; background-color: #254064;"></div>
+            <div class="bar" style="width: 55%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -7508,12 +7793,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p21">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p21_footer">
-  <div class="centrado-abajo" style="margin-top: 90px;">
+  <div class="centrado-abajo" style="margin-top: 110px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">2 de 54 respuestas</span>
+        <span style="color: #254064">21 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+            <div class="bar" style="width: 58%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -7814,12 +8099,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p23">presiona <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p23_footer">
-  <div class="centrado-abajo" style="margin-top: 130px;">
+  <div class="centrado-abajo" style="margin-top: 150px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">23 de 36 respuestas</span>
+        <span style="color: #254064">22 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 64%; background-color: #254064;"></div>
+            <div class="bar" style="width: 61%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -7840,9 +8125,9 @@
 
   document.getElementById("pregunta_p22_p23_boton").addEventListener("click", fun_p23_dev);
   function fun_p23_dev() {
-      $('#div_p22').slideDown();
-      $('#div_p22').removeClass('hidden');
-      $('#pregunta_p22_footer').removeClass('hidden');
+      $('#div_p21').slideDown();
+      $('#div_p21').removeClass('hidden');
+      $('#pregunta_p21_footer').removeClass('hidden');
       $('#div_p23').slideUp();
       $('#div_p23').addClass('hidden');
       $('#pregunta_p23_footer').addClass('hidden');
@@ -8153,12 +8438,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p24">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p24_footer">
-  <div class="centrado-abajo" style="margin-top: 230px;">
+  <div class="centrado-abajo" style="margin-top: 250px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">24 de 36 respuestas</span>
+        <span style="color: #254064">23 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 66%; background-color: #254064;"></div>
+            <div class="bar" style="width: 64%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -8435,12 +8720,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p25">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p25_footer">
-  <div class="centrado-abajo" style="margin-top: 20px;">
+  <div class="centrado-abajo" style="margin-top: 40px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">25 de 36 respuestas</span>
+        <span style="color: #254064">24 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 69%; background-color: #254064;"></div>
+            <div class="bar" style="width: 67%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -8896,12 +9181,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p26">presiona <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p26_footer">
-  <div class="centrado-abajo" style="margin-top: 650px;">
+  <div class="centrado-abajo" style="margin-top: 670px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">26 de 36 respuestas</span>
+        <span style="color: #254064">25 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 72%; background-color: #254064;"></div>
+            <div class="bar" style="width: 69%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -9156,7 +9441,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%; margin-top: 400px;" id="div_p27a">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p27a. ¿Por qué motivo(s) se discrimina a un(a) estudiante?</h2>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p26a. ¿Por qué motivo(s) se discrimina a un(a) estudiante?</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
   <div class="field qts">
@@ -9369,7 +9654,7 @@
   <p  class="hidden" style="color: #254064;" id="p_p27a">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p27a_footer">
-  <div class="centrado-abajo" style="margin-top: 870px;">
+  <div class="centrado-abajo" style="margin-top: 890px;">
     <div class="row">
       <div class="col-md-8">
         <span style="color: #254064">27 de 36 respuestas</span>
@@ -9927,12 +10212,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p28">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p28_footer">
-  <div class="centrado-abajo" style="margin-top: 540px;">
+  <div class="centrado-abajo" style="margin-top: 560px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">28 de 36 respuestas</span>
+        <span style="color: #254064">27 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 78%; background-color: #254064;"></div>
+            <div class="bar" style="width: 75%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -10518,12 +10803,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p29">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p29_footer">
-  <div class="centrado-abajo" style="margin-top: 560px;">
+  <div class="centrado-abajo" style="margin-top: 570px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">29 de 36 respuestas</span>
+        <span style="color: #254064">28 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 81%; background-color: #254064;"></div>
+            <div class="bar" style="width: 78%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -10671,7 +10956,7 @@
 </script>
 
 
-<div class="centrado hidden" style="width: 90%; margin-top: 160px;" id="div_p30">
+<div class="centrado hidden" style="width: 90%; margin-top: 190px;" id="div_p30">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p29. Indique con qué frecuencia se realizan estas actividades en su institución educativa:</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marque sólo un recuadro en cada una de las afirmaciones)</span>
   <br>
@@ -10963,12 +11248,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p30">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p30_footer">
-  <div class="centrado-abajo" style="margin-top: 390px;">
+  <div class="centrado-abajo" style="margin-top: 470px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">30 de 36 respuestas</span>
+        <span style="color: #254064">29 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 83%; background-color: #254064;"></div>
+            <div class="bar" style="width: 81%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -11107,7 +11392,7 @@
 
 <div class="centrado hidden" style="width: 90%; margin-top: 600px;" id="div_p31">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p30. Califique de 1 a 5, qué tan positivos fueron los siguientes  programas para mejorar las condiciones de acceso y la permanencia escolar en su Institución Educativa, siendo 1 la menor calificación y 5 la mayor</h2>
-  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
   <br>
   <div class="field qts">
     <table class="table">
@@ -11196,8 +11481,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_2"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_2", style:"color:transparent;"%>
+              <%= f.radio_button :p31_2, "999" , id:"radio-6-p31_2"%>
+              <%= f.label :p31_2, "", for: "radio-6-p31_2", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11235,8 +11520,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_3"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_3", style:"color:transparent;"%>
+              <%= f.radio_button :p31_3, "999" , id:"radio-6-p31_3"%>
+              <%= f.label :p31_3, "", for: "radio-6-p31_3", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11274,8 +11559,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_4"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_4", style:"color:transparent;"%>
+              <%= f.radio_button :p31_4, "999" , id:"radio-6-p31_4"%>
+              <%= f.label :p31_4, "", for: "radio-6-p31_4", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11313,8 +11598,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_5"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_5", style:"color:transparent;"%>
+              <%= f.radio_button :p31_5, "999" , id:"radio-6-p31_5"%>
+              <%= f.label :p31_5, "", for: "radio-6-p31_5", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11352,8 +11637,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_6"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_6", style:"color:transparent;"%>
+              <%= f.radio_button :p31_6, "999" , id:"radio-6-p31_6"%>
+              <%= f.label :p31_6, "", for: "radio-6-p31_6", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11391,8 +11676,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_7"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_7", style:"color:transparent;"%>
+              <%= f.radio_button :p31_7, "999" , id:"radio-6-p31_7"%>
+              <%= f.label :p31_7, "", for: "radio-6-p31_7", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11430,8 +11715,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_8"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_8", style:"color:transparent;"%>
+              <%= f.radio_button :p31_8, "999" , id:"radio-6-p31_8"%>
+              <%= f.label :p31_8, "", for: "radio-6-p31_8", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11469,8 +11754,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_9"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_9", style:"color:transparent;"%>
+              <%= f.radio_button :p31_9, "999" , id:"radio-6-p31_9"%>
+              <%= f.label :p31_9, "", for: "radio-6-p31_9", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11508,8 +11793,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_10"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_10", style:"color:transparent;"%>
+              <%= f.radio_button :p31_10, "999" , id:"radio-6-p31_10"%>
+              <%= f.label :p31_10, "", for: "radio-6-p31_10", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11547,8 +11832,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_11"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_11", style:"color:transparent;"%>
+              <%= f.radio_button :p31_11, "999" , id:"radio-6-p31_11"%>
+              <%= f.label :p31_11, "", for: "radio-6-p31_11", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11586,8 +11871,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_12"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_12", style:"color:transparent;"%>
+              <%= f.radio_button :p31_12, "999" , id:"radio-6-p31_12"%>
+              <%= f.label :p31_12, "", for: "radio-6-p31_12", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11625,8 +11910,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_13"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_13", style:"color:transparent;"%>
+              <%= f.radio_button :p31_13, "999" , id:"radio-6-p31_13"%>
+              <%= f.label :p31_13, "", for: "radio-6-p31_13", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11664,8 +11949,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_14"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_14", style:"color:transparent;"%>
+              <%= f.radio_button :p31_14, "999" , id:"radio-6-p31_14"%>
+              <%= f.label :p31_14, "", for: "radio-6-p31_14", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11703,8 +11988,8 @@
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_1, "999" , id:"radio-6-p31_15"%>
-              <%= f.label :p31_1, "", for: "radio-6-p31_15", style:"color:transparent;"%>
+              <%= f.radio_button :p31_15, "999" , id:"radio-6-p31_15"%>
+              <%= f.label :p31_15, "", for: "radio-6-p31_15", style:"color:transparent;"%>
             </div>
           </td>
         </tr>
@@ -11728,12 +12013,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p31">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p31_footer">
-  <div class="centrado-abajo" style="margin-top: 1280px;">
+  <div class="centrado-abajo" style="margin-top: 1300px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">31 de 33 respuestas</span>
+        <span style="color: #254064">30 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+            <div class="bar" style="width: 83%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12007,9 +12292,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">31 de 33 respuestas</span>
+        <span style="color: #254064;">30 de 33 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 94%; background-color: #254064;"></div>
+            <div class="bar" style="width: 83%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12144,12 +12429,12 @@
     <p  class="hidden" style="color: #254064;" id="p_p32">presioná <strong>ENTER</strong></p>
   </div>  
   <div class="container hidden" id="pregunta_p32_footer">
-    <div class="centrado-abajo" style="margin-top: 60px;">
+    <div class="centrado-abajo" style="margin-top: 70px;">
       <div class="row">
         <div class="col-md-8">
-        <span style="color: #254064">32 de 33 respuestas</span>
+        <span style="color: #254064">31 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 97%; background-color: #254064;"></div>
+            <div class="bar" style="width: 86%; background-color: #254064;"></div>
           </div>
         </div>
         <div class="col-md-4">
@@ -12244,7 +12529,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p32a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p32a. Otra. ¿Cuál?</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p31a. Otra. ¿Cuál?</h2>
   <br>
   <div class="field qts">
 
@@ -12262,9 +12547,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">32 de 33 respuestas</span>
+        <span style="color: #254064;">31 de 33 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 97%; background-color: #254064;"></div>
+            <div class="bar" style="width: 86%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12349,7 +12634,7 @@
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%; margin-top: 320px;" id="div_p33">
+<div class="centrado hidden" style="width: 90%; margin-top: 340px;" id="div_p33">
   <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">p32. Señale qué tan de acuerdo está con las siguientes acciones para mejorar el proceso de matrícula y el servicio al ciudadano</h2>
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
@@ -12716,12 +13001,12 @@
   <p  class="hidden" style="color: #254064;" id="p_p33">presioná <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p33_footer">
-  <div class="centrado-abajo" style="margin-top: 720px;">
+  <div class="centrado-abajo" style="margin-top: 770px;">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">33 de 33 respuestas</span>
+        <span style="color: #254064">32 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 89%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -12897,7 +13182,7 @@
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_p33a">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p33a. Otra. ¿Cuál?</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p32a. Otra. ¿Cuál?</h2>
   <br>
   <div class="field qts">
 
@@ -12915,9 +13200,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">33 de 33 respuestas</span>
+        <span style="color: #254064;">32 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 89%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -13026,9 +13311,9 @@
     <div class="centrado-abajo">
       <div class="row">
         <div class="col-md-8">
-        <span style="color: #254064">33 de 33 respuestas</span>
+        <span style="color: #254064">34 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 94%; background-color: #254064;"></div>
           </div>
         </div>
         <div class="col-md-4">
@@ -13115,9 +13400,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">33 de 33 respuestas</span>
+        <span style="color: #254064;">34 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 94%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -13221,9 +13506,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">33 de 33 respuestas</span>
+        <span style="color: #254064;">35 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 100%; background-color: #254064;"></div>
+            <div class="bar" style="width: 97%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -13317,7 +13602,7 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">33 de 33 respuestas</span>
+        <span style="color: #254064;">36 de 36 respuestas</span>
           <div class="progress progress-striped active">
             <div class="bar" style="width: 100%; background-color: #254064;"></div>
           </div>
@@ -13333,6 +13618,19 @@
   </div> 
 </div> 
 
+<script type="text/javascript">
 
+document.getElementById("pregunta_p35_ultima_boton").addEventListener("click", fun_estoy_dev);
+  function fun_estoy_dev() {
+      $('#div_p35').slideDown();
+      $('#div_p35').removeClass('hidden');
+      $('#pregunta_p35_footer').removeClass('hidden');
+      $('#div_ultima').slideUp();
+      $('#div_ultima').addClass('hidden');
+      $('#pregunta_ultima_footer').addClass('hidden');
+      $('#div_error_ultima').addClass('hidden');
+  }
+  
+</script>
 
 <% end %>
