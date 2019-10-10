@@ -856,29 +856,28 @@
   }
 </script>
 
-<div class="centrado hidden" style="width: 90%;" id="div_p4a">
-  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; margin-top: 170px; text-align: left;">P4A. ¿Otro, cúal? </h2>
+<div class="centrado hidden" style="width: 90%" id="div_p4a">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p4a. Otra. ¿Cuál?</h2>
   <br>
   <div class="field qts">
-    <div class="inputGroup">
-      <%= f.text_field :p4a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4a", placeholder: "Nombre de la persona"}%>
-    <br>
-    </div> 
+
+    <%= f.text_field :p4a, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4a", placeholder: "¿Cuál?"}%> 
+
   </div>
-  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4a">Por favor, <strong>escoger al menos uno.</strong></div>
+  <div class="hidden" style="color: #254064;" id="div_error_p4a"><strong>Por favor, escribe sin signos</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p4a">
     <i class="fas fa-check-circle"></i>
-      OK
+    OK
   </button>
-  <p  class="hidden" style="color: #254064;" id="p_p4a">presioná <strong>ENTER</strong></p>
+  <p  class="hidden" style="color: #254064;" id="p_p4a">presiona <strong>ENTER</strong></p>
 </div>  
 <div class="container hidden" id="pregunta_p4a_footer">
-  <div class="centrado-abajo" style="margin-top: 270px;" >
+  <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064">4 de 32 respuestas</span>
+        <span style="color: #254064;">4 de 36 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 12%; background-color: #254064;"></div>
+            <div class="bar" style="width: 11%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -888,7 +887,7 @@
           </a>
           <a class="boton1" id="pregunta_p4_p4a_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
-          </a>
+          </a>          
         </div>
       </div>  
     </div>
@@ -896,7 +895,6 @@
 </div>
 
 <script type="text/javascript">
-
   var input = document.getElementById("res_p4a");
       input.addEventListener("keyup", function(event) {
       if (event.keyCode === 13) {
@@ -938,10 +936,12 @@
       $('#div_p5').removeClass('hidden');
       $('#pregunta_p5_footer').removeClass('hidden');
       $('#div_error_p5').addClass('hidden');
+      document.getElementById("res_p5").focus();
     }
   }
 
   $(document).ready(function(){ 
+
     $('#res_p4a').on('input', function() { 
       var frase = document.getElementById("res_p4a").value; 
       frase = frase.replace("#"," ");
