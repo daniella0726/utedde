@@ -1,7 +1,142 @@
-<p id="notice"><%= notice %></p>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+</style>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+<div class="container">
 
-<h1>Estudiantes</h1>
+  <h1 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >Gráficos Estudiantes</h1>
 
+  <br>
+
+    <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Por Grado</h3>
+
+      <%= bar_chart Estudiante.group(:p1).count, xtitle: "Cantidad", ytitle: "Grado", colors: ["#42B598"]  %>
+      <br>
+    </div>
+
+    <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P2. Por Género</h3>
+
+      <%= bar_chart Estudiante.group(:p2).count, xtitle: "Cantidad", ytitle: "Genero" %>
+
+      <br>
+    </div>
+
+    <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
+
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_1).count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_2).count, xtitle: "Cantidad", ytitle: "Padrastro", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_3).count, xtitle: "Cantidad", ytitle: "Mamá", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_4).count, xtitle: "Cantidad", ytitle: "Madrastra", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_5).count, xtitle: "Cantidad", ytitle: "Herman@s", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_6).count, xtitle: "Cantidad", ytitle: "Prim@s", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_7).count, xtitle: "Cantidad", ytitle: "Tí@s", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_8).count, xtitle: "Cantidad", ytitle: "Abuel@s", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_9).count, xtitle: "Cantidad", ytitle: "Tue espos@", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_10).count, xtitle: "Cantidad", ytitle: "Tus hij@s", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_11).count, xtitle: "Cantidad", ytitle: "Otros Familiares", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-6">
+
+      <%= bar_chart Estudiante.group(:p4_12).count, xtitle: "Cantidad", ytitle: "Otros no Parientes", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+      <div class="col-sm-12">
+
+      <%= bar_chart Estudiante.group(:p4_13).count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
+      
+      <br>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P12. Has perdido algún curso (año)?</h3>
+
+      <%= bar_chart Estudiante.group(:p12).count, xtitle: "Cantidad"%>
+
+      <br>
+    </div>
+
+
+
+
+      
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="hidden">
 <table>
   <thead>
     <tr>
@@ -19,7 +154,6 @@
         <td><%= estudiante.p1 %></td>
         <td><%= estudiante.p2 %></td>
         <td><%= estudiante.p3 %></td>
-        <td><%= estudiante.p4 %></td>
         <td><%= link_to 'Show', estudiante %></td>
         <td><%= link_to 'Edit', edit_estudiante_path(estudiante) %></td>
         <td><%= link_to 'Destroy', estudiante, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,7 +161,6 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New Estudiante', new_estudiante_path %>
+<% link_to 'New Estudiante', new_estudiante_path %>

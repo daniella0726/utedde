@@ -22,7 +22,7 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
+  
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -45,6 +45,14 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+ 
+    config.main_app_name = ["Admin", "Console"]
+
+    config.navigation_static_label = "Gráficos"
+  
+    config.navigation_static_links = ['https://stark-everglades-32611.herokuapp.com/estudiantes/index']
+
+
 
     config.model Estudiante do
     list do
