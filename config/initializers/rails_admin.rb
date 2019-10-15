@@ -39,7 +39,7 @@ RailsAdmin.config do |config|
       except ['Estudiante', 'Docente', 'Director']
     end
     show_in_app do
-      except ['Docente', 'Director']
+      except ['Docente', 'Director', 'Estudiante']
     end
 
     ## With an audit adapter, you can add:
@@ -50,7 +50,7 @@ RailsAdmin.config do |config|
 
     config.navigation_static_label = "Gráficos"
   
-    config.navigation_static_links = ['https://stark-everglades-32611.herokuapp.com/estudiantes/index']
+    config.navigation_static_links = ['estudinates']
 
 
 
