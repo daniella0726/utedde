@@ -32,7 +32,7 @@
       <div class="col-sm-6">
 
       <%= bar_chart Estudiante.group(:p4_1).count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"], label: "Papá"%>
-      
+  
       <br>
       </div>
 
@@ -103,11 +103,30 @@
       
       <br>
       </div>
+
       <div class="col-sm-12">
 
       <%= bar_chart Estudiante.group(:p4_13).count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
       
       <br>
+      </div>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
+
+      <%= bar_chart Estudiante.group(:p7).count, xtitle: "Cantidad"%>
+
+      <br>
+      </div>
+
+      <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
+
+          <div class="col-sm-6">
+          <%= bar_chart Estudiante.group(:p7b).count, xtitle: "Cantidad"%>
+          <br>
+          </div>
       </div>
 
       <div class="container">
@@ -117,14 +136,7 @@
 
       <br>
     </div>
-
-
-
-
       
-    </div>
-
-
 
 
 
