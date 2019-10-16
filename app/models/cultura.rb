@@ -1,0 +1,2 @@
+class Cultura < ApplicationRecord
+end

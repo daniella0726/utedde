@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entrevistador: MyString
+  critico: MyString
+  supervisor: MyString
+  digitador: MyString
+
+two:
+  entrevistador: MyString
+  critico: MyString
+  supervisor: MyString
+  digitador: MyString

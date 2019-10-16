@@ -1,14 +1,14 @@
 <div class="centrado hidden" style="width: 90%;" id="div_estoy">
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">estoy. ¿Hace cuántos años vives aquí?</h2>
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">estoy. XXXXX</h2>
   <br>
   <div class="field qts">
     <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">XXXXX</h4>
     <%= f.text_field :kaka1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka1", placeholder: "XXXXXXXX"}%>
     <br>
-    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Dirección de residencia:</h4>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">XXXXX</h4>
     <%= f.text_field :kaka2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka2", placeholder: "XXXXXXXX"}%>
     <br>
-    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Teléfono fijo o celular:</h4>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">XXXXX</h4>
     <%= f.text_field :kaka3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_kaka3", placeholder: "XXXXXXX"}%>
 
   </div>
