@@ -26,7 +26,7 @@
       <br>
     </div>
 
-    <div class="container">
+    <div class="container hidden">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
 
       <div class="col-sm-6">
@@ -110,6 +110,7 @@
       
       <br>
       </div>
+    </div>
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
@@ -127,13 +128,154 @@
       </div>
 
       <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?</h3>
+
+          <%= bar_chart Estudiante.group(:p9).count%>
+          <br>
+      </div>
+
+      <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?</h3>
+
+          <%= bar_chart Estudiante.group(:p10).count%>
+          <br>
+      </div>
+
+      <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P12. Has perdido algún curso (año)?</h3>
 
       <%= bar_chart Estudiante.group(:p12).count, xtitle: "Cantidad"%>
-
       <br>
-    </div>
-      
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P13. Cuando tienes dificultades academicas en tu colegio.....</h3>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Se establece un plan de mejoramiento/recuperación con tus padres o acudientes y el maestro de manera oportuna</h6>
+
+      <%= bar_chart Estudiante.group(:p13a).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Se establece un plan de mejoramiento/recuperación solamente con el maestro</h6>
+
+      <%= bar_chart Estudiante.group(:p13b).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Tus padres o acudientes están pendientes del plan de mejoramiento/recuperación y el apoyo que necesitas</h6>
+
+      <%= bar_chart Estudiante.group(:p13c).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4" style="margin-top: 20px;">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los docentes u otras personas del colegio están pendientes del plan de recuperación y te apoyan cuando lo necesitas</h6>
+
+      <%= bar_chart Estudiante.group(:p13d).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4" style="margin-top: 20px;">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
+
+      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4" style="margin-top: 20px;">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
+
+      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P14. ¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h3>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Falta de concentración; me disperso fácilmente</h6>
+
+      <%= bar_chart Estudiante.group(:p14a).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Falta de organización y responsabilidad en el cumplimiento de los deberes escolares</h6>
+
+      <%= bar_chart Estudiante.group(:p14b).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Me intereso más en otras cosas que no tienen que ver con el estudio</h6>
+
+      <%= bar_chart Estudiante.group(:p14c).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Considero que el estudio es importante para tener una vida exitosa</h6>
+
+      <%= bar_chart Estudiante.group(:p14d).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. La manera como algunos docentes explican y evalúan los temas</h6>
+
+      <%= bar_chart Estudiante.group(:p14e).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Falta mayor seguimiento y acompañamiento de mis padres o acudientes en mi desempeño académico</h6>
+
+      <%= bar_chart Estudiante.group(:p14f).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Mi comportamiento es adecuado durante el desarrollo de las clases</h6>
+
+      <%= bar_chart Estudiante.group(:p14g).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Falta de apoyo de docentes, coordinadores y orientadores del colegio</h6>
+
+      <%= bar_chart Estudiante.group(:p14h).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Las clases son aburridas y poco motivantes</h6>
+
+      <%= bar_chart Estudiante.group(:p14i).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <br>
+      </div>
+
+      </div>
 
 
 
