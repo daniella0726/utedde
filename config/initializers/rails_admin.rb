@@ -49,10 +49,11 @@ RailsAdmin.config do |config|
     config.main_app_name = ["Admin", "Console"]
 
     config.navigation_static_label = "Gráficos"
-  
-    config.navigation_static_links = ['estudinates']
 
 
+    config.model 'Cultura' do
+    visible false
+    end 
 
     config.model Estudiante do
     list do
