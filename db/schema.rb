@@ -987,7 +987,6 @@ ActiveRecord::Schema.define(version: 2019_10_15_211311) do
     t.string "p28_5"
     t.string "p28_6"
     t.string "p8g"
-    t.string "p15g"
   end
 
 end
