@@ -6,7 +6,7 @@ class EstudiantesController < ApplicationController
   def index
     @estudiantes = Estudiante.all
     @estudiantes = Estudiante.order(p7b: :asc)
-    
+
   end
 
   # GET /estudiantes/1
