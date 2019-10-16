@@ -5,6 +5,7 @@ class EstudiantesController < ApplicationController
   # GET /estudiantes.json
   def index
     @estudiantes = Estudiante.all
+    @estudiantes = Estudiante.order(p7b: :asc)
     
   end
 
