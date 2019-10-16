@@ -110,7 +110,6 @@
       
       <br>
       </div>
-      </div>
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
@@ -123,10 +122,8 @@
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
 
-          <div class="col-sm-6">
-          <%= bar_chart Estudiante.group(:p7b).count, xtitle: "Cantidad"%>
+          <%= pie_chart Estudiante.group(:p7b).count, label: "Hello"%>
           <br>
-          </div>
       </div>
 
       <div class="container">

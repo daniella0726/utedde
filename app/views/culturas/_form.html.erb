@@ -382,7 +382,7 @@
       <div class="col-md-8">
         <span style="color: #254064;">2 de 138 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+            <div class="bar" style="width: 1%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1045,7 +1045,7 @@
       </div>
       <div class="col-md-4">
         <div class="row">
-          <a class="boton1" id="pregunta_p10_pf_boton">
+          <a class="boton1" id="pregunta_pg_pf_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
           <a class="boton1" id="pregunta_pe_pf_boton">
@@ -1070,7 +1070,7 @@
       $('#div_error_pf').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p1_pf_boton").addEventListener("click", fun_pf);
+  document.getElementById("pregunta_pg_pf_boton").addEventListener("click", fun_pf);
   document.getElementById("radio-1-pf").addEventListener("click", fun_pf);
   document.getElementById("radio-2-pf").addEventListener("click", fun_pf);
   document.getElementById("radio-3-pf").addEventListener("click", fun_pf);
@@ -1084,10 +1084,10 @@
       $('#div_pf').slideUp();
       $('#div_pf').addClass('hidden');
       $('#pregunta_pf_footer').addClass('hidden');
-      $('#div_p1').slideDown();
-      $('#div_p1').removeClass('hidden');
-      $('#pregunta_p1_footer').removeClass('hidden');
-      $('#div_error_p1').addClass('hidden');
+      $('#div_pg').slideDown();
+      $('#div_pg').removeClass('hidden');
+      $('#pregunta_pg_footer').removeClass('hidden');
+      $('#div_error_pg').addClass('hidden');
   } , 500);
   } else {
       $('#div_error_pf').removeClass('hidden');
@@ -1096,12 +1096,476 @@
 </script>
 </div>
 
+<div class="centrado hidden" style="width: 90%;" id="div_pg">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">E. Ubicación e identificación de la vivienda</h2>
+  <br>
+  <div class="field qts">
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Localidad</h4>
+    <%= f.text_field :pg1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pg1", placeholder: "Localidad"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Barrio</h4>
+    <%= f.text_field :pg2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pg2", placeholder: "Barrio"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Manzana</h4>
+    <%= f.text_field :pg3, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pg3", placeholder: "Manzana"}%>
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_pg"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pg">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_pg">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_pg_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">0 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_ph_pg_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_pf_pg_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_pg1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_pg2").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_pg2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_pg3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_pg3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pg").click();
+      }
+    });
+
+  document.getElementById("pregunta_pf_pg_boton").addEventListener("click", fun_pg_dev);
+  function fun_pg_dev() {
+      $('#div_pf').slideDown();
+      $('#div_pf').removeClass('hidden');
+      $('#pregunta_pf_footer').removeClass('hidden');
+      $('#div_pg').slideUp();
+      $('#div_pg').addClass('hidden');
+      $('#pregunta_pg_footer').addClass('hidden');
+      $('#div_error_pg').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_ph_pg_boton").addEventListener("click", fun_pg);
+  document.getElementById("but_res_pg").addEventListener("click", fun_pg);
+    function fun_pg() {
+    var frase = document.getElementById("res_pg1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pg1").value = frase;
+    var frase1 = document.getElementById("res_pg2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_pg2").value = frase1;
+    var frase2 = document.getElementById("res_pg3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_pg3").value = frase2;
+    if (document.getElementById("res_pg1").value == "" || document.getElementById("res_pg2").value == "" ||document.getElementById("res_pg3").value == "") {
+      $('#but_res_pg').addClass('hidden');
+      $('#p_pg').addClass('hidden');
+      $('#div_error_pg').removeClass('hidden');
+    } else {
+      $('#div_pg').slideUp();
+      $('#div_pg').addClass('hidden');
+      $('#pregunta_pg_footer').addClass('hidden');
+      $('#div_ph').slideDown();
+      $('#div_ph').removeClass('hidden');
+      $('#pregunta_ph_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_pg1').on('input', function() { 
+      var frase = document.getElementById("res_pg1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pg1").value = frase;
+      if (document.getElementById("res_pg1").value == "" || document.getElementById("res_pg2").value == "" ||document.getElementById("res_pg3").value == "") {
+      $('#but_res_pg').addClass('hidden');
+      $('#p_pg').addClass('hidden');
+      $('#div_error_pg').removeClass('hidden');
+      } else {
+       $('#but_res_pg').removeClass('hidden');
+       $('#p_pg').removeClass('hidden');
+       $('#div_error_pg').addClass('hidden');
+      }
+    }); 
+
+    $('#res_pg2').on('input', function() { 
+      var frase = document.getElementById("res_pg2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pg2").value = frase;
+      if (document.getElementById("res_pg1").value == "" || document.getElementById("res_pg2").value == "" ||document.getElementById("res_pg3").value == "") {
+      $('#but_res_pg').addClass('hidden');
+      $('#p_pg').addClass('hidden');
+      $('#div_error_pg').removeClass('hidden');
+      } else {
+       $('#but_res_pg').removeClass('hidden');
+       $('#p_pg').removeClass('hidden');
+       $('#div_error_pg').addClass('hidden');
+      }
+    }); 
+
+    $('#res_pg3').on('input', function() { 
+      var frase = document.getElementById("res_pg3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pg3").value = frase;
+      if (document.getElementById("res_pg1").value == "" || document.getElementById("res_pg2").value == "" ||document.getElementById("res_pg3").value == "") {
+      $('#but_res_pg').addClass('hidden');
+      $('#p_pg').addClass('hidden');
+      $('#div_error_pg').removeClass('hidden');
+      } else {
+       $('#but_res_pg').removeClass('hidden');
+       $('#p_pg').removeClass('hidden');
+       $('#div_error_pg').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%;" id="div_ph">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">E. Ubicación e identificación de la vivienda</h2>
+  <br>
+  <div class="field qts">
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Vivienda</h4>
+    <%= f.text_field :ph1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ph1", placeholder: "Vivienda"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Hogar</h4>
+    <%= f.text_field :ph2, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ph2", placeholder: "Hogar"}%>
+    <br>
+    <h4 style="font-family: 'Heebo', sans-serif; color: #254064;">Estrato socioeconómico</h4>
+    <%= f.select :ph3, [["1"], ["2"], ["3"], ["4"], ["5"], ["6"]], {:include_blank => true}, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_ph3", placeholder: "Estrato"}%>
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_ph"><strong>Por favor, diligencie todos los campos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_ph">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_ph">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_ph_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">0 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_pi_ph_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_pg_ph_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_ph1");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ph2").focus();
+      }
+    });
+
+  var input1 = document.getElementById("res_ph2");
+      input1.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("res_ph3").focus();
+      }
+    });
+
+  var input2 = document.getElementById("res_ph3");
+      input2.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_ph").focus();
+      }
+    });
+
+  document.getElementById("pregunta_pg_ph_boton").addEventListener("click", fun_ph_dev);
+  function fun_ph_dev() {
+      $('#div_pg').slideDown();
+      $('#div_pg').removeClass('hidden');
+      $('#pregunta_pg_footer').removeClass('hidden');
+      $('#div_ph').slideUp();
+      $('#div_ph').addClass('hidden');
+      $('#pregunta_ph_footer').addClass('hidden');
+      $('#div_error_ph').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_pi_ph_boton").addEventListener("click", fun_ph);
+  document.getElementById("but_res_ph").addEventListener("click", fun_ph);
+    function fun_ph() {
+    var frase = document.getElementById("res_ph1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ph1").value = frase;
+    var frase1 = document.getElementById("res_ph2").value; 
+      frase1 = frase1.replace("#"," ");
+      frase1 = frase1.replace("%"," ");
+      frase1 = frase1.replace("&"," ");
+      frase1 = frase1.replace("$"," ");
+      frase1 = frase1.replace("  "," ");
+      document.getElementById("res_ph2").value = frase1;
+    var frase2 = document.getElementById("res_ph3").value; 
+      frase2 = frase2.replace("#"," ");
+      frase2 = frase2.replace("%"," ");
+      frase2 = frase2.replace("&"," ");
+      frase2 = frase2.replace("$"," ");
+      frase2 = frase2.replace("  "," ");
+      document.getElementById("res_ph3").value = frase2;
+    if (document.getElementById("res_ph1").value == "" || document.getElementById("res_ph2").value == "" ||document.getElementById("res_ph3").value == "") {
+      $('#but_res_ph').addClass('hidden');
+      $('#p_ph').addClass('hidden');
+      $('#div_error_ph').removeClass('hidden');
+    } else {
+      $('#div_ph').slideUp();
+      $('#div_ph').addClass('hidden');
+      $('#pregunta_ph_footer').addClass('hidden');
+      $('#div_pi').slideDown();
+      $('#div_pi').removeClass('hidden');
+      $('#pregunta_pi_footer').removeClass('hidden');
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_ph1').on('input', function() { 
+      var frase = document.getElementById("res_ph1").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ph1").value = frase;
+      if (document.getElementById("res_ph1").value == "" || document.getElementById("res_ph2").value == "" ||document.getElementById("res_ph3").value == "") {
+      $('#but_res_ph').addClass('hidden');
+      $('#p_ph').addClass('hidden');
+      $('#div_error_ph').removeClass('hidden');
+      } else {
+       $('#but_res_ph').removeClass('hidden');
+       $('#p_ph').removeClass('hidden');
+       $('#div_error_ph').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ph2').on('input', function() { 
+      var frase = document.getElementById("res_ph2").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ph2").value = frase;
+      if (document.getElementById("res_ph1").value == "" || document.getElementById("res_ph2").value == "" ||document.getElementById("res_ph3").value == "") {
+      $('#but_res_ph').addClass('hidden');
+      $('#p_ph').addClass('hidden');
+      $('#div_error_ph').removeClass('hidden');
+      } else {
+       $('#but_res_ph').removeClass('hidden');
+       $('#p_ph').removeClass('hidden');
+       $('#div_error_ph').addClass('hidden');
+      }
+    }); 
+
+    $('#res_ph3').on('input', function() { 
+      var frase = document.getElementById("res_ph3").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_ph3").value = frase;
+      if (document.getElementById("res_ph1").value == "" || document.getElementById("res_ph2").value == "" ||document.getElementById("res_ph3").value == "") {
+      $('#but_res_ph').addClass('hidden');
+      $('#p_ph').addClass('hidden');
+      $('#div_error_ph').removeClass('hidden');
+      } else {
+       $('#but_res_ph').removeClass('hidden');
+       $('#p_ph').removeClass('hidden');
+       $('#div_error_ph').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
+<div class="centrado hidden" style="width: 90%" id="div_pi">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Dirección actualizada:</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :pi, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pi", placeholder: "Dirección"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_pi"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pi">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_pi">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_pi_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">0 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 0%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p1_pi_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_ph_pi_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_pi");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_pi").click();
+      }
+    });
+
+  document.getElementById("pregunta_ph_pi_boton").addEventListener("click", fun_pi_dev);
+  function fun_pi_dev() {
+      $('#div_ph').slideDown();
+      $('#div_ph').removeClass('hidden');
+      $('#pregunta_ph_footer').removeClass('hidden');
+      $('#div_pi').slideUp();
+      $('#div_pi').addClass('hidden');
+      $('#pregunta_pi_footer').addClass('hidden');
+      $('#div_error_pi').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p1_pi_boton").addEventListener("click", fun_pi);
+  document.getElementById("but_res_pi").addEventListener("click", fun_pi);
+    function fun_pi() {
+    var frase = document.getElementById("res_pi").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_pi").value = frase;
+    if (document.getElementById("res_pi").value == "") {
+      $('#but_res_pi').addClass('hidden');
+      $('#p_pi').addClass('hidden');
+      $('#div_error_pi').removeClass('hidden');
+    } else {
+      $('#div_pi').slideUp();
+      $('#div_pi').addClass('hidden');
+      $('#pregunta_pi_footer').addClass('hidden');
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_error_p1').addClass('hidden');
+      document.getElementById("res_p1").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_pi').on('input', function() { 
+      var frase = document.getElementById("res_pi").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_pi").value = frase;
+      if (document.getElementById("res_pi").value == "") {
+      $('#but_res_pi').addClass('hidden');
+      $('#p_pi').addClass('hidden');
+      $('#div_error_pi').removeClass('hidden');
+      } else {
+       $('#but_res_pi').removeClass('hidden');
+       $('#p_pi').removeClass('hidden');
+       $('#div_error_pi').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+
 <div class="centrado hidden" style="width: 90%" id="div_p1">
   <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p1. ¿Cuántos hogares habitan esta vivienda?</h2>
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p1", placeholder: "¿Cuál?"}%> 
+    <%= f.text_field :p1, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p1", placeholder: "¿Cuántos?"}%> 
 
   </div>
   <div class="hidden" style="color: #254064;" id="div_error_p1"><strong>Por favor, escribe sin signos</strong></div>
@@ -1115,9 +1579,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">27 de 37 respuestas</span>
+        <span style="color: #254064;">1 de 138 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 1%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1202,7 +1666,7 @@
   }); 
 </script>
 
-<div class="centrado hidden" style="width: 90%" id="div_p2">
+<div class="centrado hidden" style="width: 90%;" id="div_p2">
   <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p2. ¿Cuantas personas conforman este hogar?</h2>
   <br>
   <div class="field qts">
@@ -1221,9 +1685,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">27 de 37 respuestas</span>
+        <span style="color: #254064;">2 de 138 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 1%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1327,9 +1791,9 @@
   <div class="centrado-abajo">
     <div class="row">
       <div class="col-md-8">
-        <span style="color: #254064;">27 de 37 respuestas</span>
+        <span style="color: #254064;">3 de 138 respuestas</span>
           <div class="progress progress-striped active">
-            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+            <div class="bar" style="width: 2%; background-color: #254064;"></div>
           </div>
       </div>
       <div class="col-md-4">
@@ -1384,11 +1848,11 @@
       $('#div_p3').slideUp();
       $('#div_p3').addClass('hidden');
       $('#pregunta_p3_footer').addClass('hidden');
-      $('#div_p10').slideDown();
-      $('#div_p10').removeClass('hidden');
-      $('#pregunta_p10_footer').removeClass('hidden');
-      $('#div_error_p10').addClass('hidden');
-      document.getElementById("res_p10").focus();
+      $('#div_p4').slideDown();
+      $('#div_p4').removeClass('hidden');
+      $('#pregunta_p4_footer').removeClass('hidden');
+      $('#div_error_p4').addClass('hidden');
+      document.getElementById("res_p4").focus();
     }
   }
 
@@ -1414,8 +1878,504 @@
   }); 
 </script>
 
+<div class="centrado hidden" style="width: 90%; margin-top: 410px;" id="div_p4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">A continuación se debe diligenciar la siguiente tabla, identificando y enlistando cada una de las personas que componen este hogar. Por favor llenar la información para todos los integrantes: niñas, niños, jóvenes y personas adultas. En la primera línea debe quedar la persona de mayor edad.</h2>
+  <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;"></span>
+  <br>
+  <div class="field qts">
+    <table class="table">
+      <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <th style="text-align: center;">ID persona</th>
+          <th style="text-align: center;">4. Nombre de las personas del hogar</th>
+          <th style="text-align: center;">5. Años cumplidos</th>
+          <th style="text-align: center;">6. Sexo (Hombre - Mujer - Intersexual) Ficha 1</th>
+          <th style="text-align: center;">7. Marque con una X las personas que toman las decisiones en el hogar</th>
+          <th style="text-align: center;">8. Parentesco con la persona de mayor edad en el hogar Ficha 2</th>
+          <th style="text-align: center;">9. Marque con una X las personas que aportan económicamente al hogar</th>
+          <th style="text-align: center;">Número aleatorio</th>
+          <th style="text-align: center;">Persona seleccionada</th>
+        </tr>
+      </thead>
+      <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%></td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+          <td>
+            <%= f.text_field :p4, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p4", placeholder: ""}%>
+          </td>
+        </tr>        
+      </tbody>
+    </table>
+  </div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p4">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p4">
+    <i class="fas fa-check-circle"></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p4">presioná <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p4_footer">
+  <div class="centrado-abajo" style="margin-top: 890px;">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064">9 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 6%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p10_p4_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p3_p4_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
 
+<script type="text/javascript">
+  var input = document.getElementById("res_p4");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p4").focus();
+      }
+    });
 
+  document.getElementById("pregunta_p3_p4_boton").addEventListener("click", fun_p4_dev);
+  function fun_p4_dev() {
+      $('#div_p3').slideDown();
+      $('#div_p3').removeClass('hidden');
+      $('#pregunta_p3_footer').removeClass('hidden');
+      $('#div_p4').slideUp();
+      $('#div_p4').addClass('hidden');
+      $('#pregunta_p4_footer').addClass('hidden');
+      $('#div_error_p4').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p10_p4_boton").addEventListener("click", fun_p4);
+  document.getElementById("but_res_p4").addEventListener("click", fun_p4);
+    function fun_p4() {
+    var frase = document.getElementById("res_p4").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p4").value = frase;
+    if (document.getElementById("res_p4").value == "") {
+      $('#but_res_p4').addClass('hidden');
+      $('#p_p4').addClass('hidden');
+      $('#div_error_p4').removeClass('hidden');
+    } else {
+      $('#div_p4').slideUp();
+      $('#div_p4').addClass('hidden');
+      $('#pregunta_p4_footer').addClass('hidden');
+      $('#div_p10').slideDown();
+      $('#div_p10').removeClass('hidden');
+      $('#pregunta_p10_footer').removeClass('hidden');
+      $('#div_error_p10').addClass('hidden');
+      document.getElementById("res_p10").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p4').on('input', function() { 
+      var frase = document.getElementById("res_p4").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p4").value = frase;
+      if (document.getElementById("res_p4").value == "") {
+      $('#but_res_p4').addClass('hidden');
+      $('#p_p4').addClass('hidden');
+      $('#div_error_p4').removeClass('hidden');
+      } else {
+       $('#but_res_p4').removeClass('hidden');
+       $('#p_p4').removeClass('hidden');
+       $('#div_error_p4').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
 
 
 <div class="centrado hidden" style="width: 90%" id="div_p10">
@@ -1468,7 +2428,7 @@
             <a class="boton1" id="pregunta_p11_p10_boton">
               <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
             </a>
-            <a class="boton1" id="pregunta_pf_p10_boton">
+            <a class="boton1" id="pregunta_p4_p10_boton">
               <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
             </a>
           </div>
@@ -1479,11 +2439,11 @@
   
   <script type="text/javascript">
   
-    document.getElementById("pregunta_p3_p10_boton").addEventListener("click", fun_p10_dev);
+    document.getElementById("pregunta_p4_p10_boton").addEventListener("click", fun_p10_dev);
     function fun_p10_dev() {
-        $('#div_p3').slideDown();
-        $('#div_p3').removeClass('hidden');
-        $('#pregunta_p3_footer').removeClass('hidden');
+        $('#div_p4').slideDown();
+        $('#div_p4').removeClass('hidden');
+        $('#pregunta_p4_footer').removeClass('hidden');
         $('#div_p10').slideUp();
         $('#div_p10').addClass('hidden');
         $('#pregunta_p10_footer').addClass('hidden');
