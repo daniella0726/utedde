@@ -541,7 +541,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P30. ¿Cuánto tiempo llevas estudiando en este colegio...? (años)</h3>
 
-      <%= pie_chart Estudiante.group(:p30).count, donut: true, colors: ["#009640", "#F18700", "#662483"]%>
+      <%= pie_chart Estudiante.group(:p30).count, donut: true, colors: ["#009640", "#F18700", "#662483", "#B81A5D", "#42B598", "#D3D800"]%>
       <br>
       </div>
 
@@ -553,7 +553,7 @@
 
         <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿En qué medio te desplazas principalmente?</h4>
 
-      <%= column_chart Estudiante.group(:p31a).count, xtitle: "Medio", colors: ["#42B598"]%>
+      <%= column_chart Estudiante.group(:p31a).count, xtitle: "Medio de transporte", colors: ["#42B598"]%>
       <br>
       </div>
 
@@ -561,8 +561,100 @@
 
         <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿Cuánto tiempo te demoras?</h4>
 
-      <%= pie_chart Estudiante.group(:p31b).count, donut: true, colors: ["#B81A5D", "#662483", "#662483"]%>
+      <%= pie_chart Estudiante.group(:p31b).count, donut: true, colors: ["#B81A5D", "#662483", "#D3D800", "#E84E0F", "#554596", "#FFED00"]%>
       <br>
+      </div>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P32. ¿En el último año has participado en alguno de los siguientes programas o recibido alguno de los siguientes beneficios?:</h3>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)</h6>
+
+      <%= column_chart Estudiante.group(:p32a).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)</h6>
+
+      <%= column_chart Estudiante.group(:p32b).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Kits escolares</h6>
+
+      <%= column_chart Estudiante.group(:p32c).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Gratuidad total en matrícula y pensión</h6>
+
+      <%= column_chart Estudiante.group(:p32d).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+      </div>
+
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Ayuda cuando tenías dificultades con alguna materia</h6>
+
+      <%= column_chart Estudiante.group(:p32e).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Apoyo en orientación psicológica o apoyo psicosocial</h6>
+
+      <%= column_chart Estudiante.group(:p32f).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Participación en procesos de inclusión educativa</h6>
+
+      <%= column_chart Estudiante.group(:p32g).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Programas para mejorar la convivencia escolar y la integración de los estudiantes</h6>
+
+      <%= column_chart Estudiante.group(:p32h).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-sm-6">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Programas de integración con la comunidad o las familias vecinas al colegio</h6>
+
+      <%= column_chart Estudiante.group(:p32i).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-6">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j. Articulación con la educación superior y educación media fortalecida</h6>
+
+      <%= column_chart Estudiante.group(:p32j).count, colors: ["#4A99C6"]%>
+      <br>
+      </div>
       </div>
       </div>
 
