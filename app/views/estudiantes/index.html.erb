@@ -658,6 +658,100 @@
       </div>
       </div>
 
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P36. ¿Te has sentido discriminado en el colegio?</h3>
+
+      <%= pie_chart Estudiante.group(:p36).count, donut: true, colors: ["#F18700", "#B81A5D", "#42B598", "#D3D800"]%>
+      <br>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P37. ¿Qué tan satisfecho te sientes con los siguientes aspectos del colegio?</h3>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Las instalaciones físicas (salones, bibliotecas, patio, etc.)</h6>
+
+      <%= bar_chart Estudiante.group(:p37a).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Las formas como enseñan los profesores</h6>
+
+      <%= bar_chart Estudiante.group(:p37b).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. El estímulo en el uso de nuevas tecnologías (computadores, internet, etc.)</h6>
+
+      <%= bar_chart Estudiante.group(:p37c).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los compañeros de estudio</h6>
+
+      <%= bar_chart Estudiante.group(:p37d).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="row text-center">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. El colegio en general</h6>
+
+      <%= bar_chart Estudiante.group(:p37e).count, colors: ["#E30613"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P38. Señala con qué frecuencia en este año</h3>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Recibiste ayuda de tu familia para pagar los gastos del colegio (pensión, útiles, uniformes, etc.)</h6>
+
+      <%= column_chart Estudiante.group(:p38a).count, xtitle: "", colors: ["#009640"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Recibiste ayuda de tu familia en la realización de trabajos o tareas</h6>
+
+      <%= column_chart Estudiante.group(:p38b).count, xtitle: "", colors: ["#009640"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Recibiste motivación de tu familia para asistir al colegio</h6>
+
+      <%= column_chart Estudiante.group(:p38c).count, xtitle: "", colors: ["#009640"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Tuviste el tiempo suficiente para hacer tareas y estudiar</h6>
+
+      <%= column_chart Estudiante.group(:p38d).count, xtitle: "", colors: ["#009640"]%>
+      <br>
+      </div>
+      </div>
+
+
+
 
 
 
