@@ -123,7 +123,7 @@
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
 
-          <%= pie_chart Estudiante.group(:p7b).count, label: "Hello"%>
+          <%= pie_chart Estudiante.group(:p7b).count%>
           <br>
       </div>
 
@@ -274,8 +274,301 @@
       <%= bar_chart Estudiante.group(:p14i).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
-
       </div>
+
+      <div class="col-sm-4" style="margin-top: 20px;">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
+
+      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4" style="margin-top: 20px;">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
+
+      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P16. Afirmaciones</h3>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. ¿Conoces el sistema de evaluación de la institución educativa?</h6>
+
+      <%= bar_chart Estudiante.group(:p16a).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. ¿Consideras que es clara la forma en que te evaluan en cada materia o asignatura?</h6>
+
+      <%= bar_chart Estudiante.group(:p16b).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. ¿Los profesores explican al inicio del periodo cómo y qué cosas van a calificar/evaluar?</h6>
+
+      <%= bar_chart Estudiante.group(:p16c).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. ¿El docente respeta la forma de evaluacion acordada y socializada al inicio del año o de cada periodo?</h6>
+
+      <%= bar_chart Estudiante.group(:p16d).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. ¿La forma de evaluar de los docentes es acorde a lo aprendido y realizado en clase?</h6>
+
+      <%= bar_chart Estudiante.group(:p16e).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. ¿El docente o director de grupo te pregunta cómo te sientes con la forma en que te evalúan?</h6>
+
+      <%= bar_chart Estudiante.group(:p16f).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. ¿Tú y tus compañeros participan en la construcción de la nota definitiva? (auto- evaluación y co-evaluación)</h6>
+
+      <%= bar_chart Estudiante.group(:p16g).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P17 ¿Alguna vez te has retirado de estudiar?</h3>
+
+      <%= pie_chart Estudiante.group(:p17).count, xtitle: "Cantidad", donut: true, colors: ["#662483", "#009640", "#F18700"]%>
+      <br>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P18. La última vez que te retiraste de estudiar, ¿en qué mes te retiraste?</h3>
+
+      <%= column_chart Estudiante.group(:p18).count, xtitle: "Meses"%>
+      <br>
+      </div>
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P20. La última vez que se retiró de estudiar:</h3>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...pasaste el año pero no te matriculaste en el siguiente</h6>
+
+      <%= bar_chart Estudiante.group(:p20a).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...perdiste el año y no te matriculaste al siguiente año</h6>
+
+      <%= bar_chart Estudiante.group(:p20b).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-4">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...dejaste de estudiar antes de terminar el año</h6>
+
+      <%= bar_chart Estudiante.group(:p20c).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <br>
+      </div>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P24. ¿La última vez que te retiraste TEMPORALMENTE de tus estudios fue por alguna de las siguientes razones relacionadas con ese COLEGIO?</h3>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. El colegio no tenía todos los cursos hasta once</h6>
+
+      <%= bar_chart Estudiante.group(:p24a).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Faltaban profesores</h6>
+
+      <%= bar_chart Estudiante.group(:p24b).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. La forma como enseñaban los profesores era aburrida</h6>
+
+      <%= bar_chart Estudiante.group(:p24c).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Las instalaciones del colegio eran desagradables</h6>
+
+      <%= bar_chart Estudiante.group(:p24d).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)</h6>
+
+      <%= bar_chart Estudiante.group(:p24e).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Por el maltrato de los profesores y directivos</h6>
+
+      <%= bar_chart Estudiante.group(:p24f).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Por el maltrato de los compañeros</h6>
+
+      <%= bar_chart Estudiante.group(:p24g).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Cerraron el colegio</h6>
+
+      <%= bar_chart Estudiante.group(:p24h).count, colors: ["#662483"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i.Faltó ayuda del colegio en transporte</h6>
+
+      <%= bar_chart Estudiante.group(:p24i).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j.Faltó ayuda del colegio en alimentación</h6>
+
+      <%= bar_chart Estudiante.group(:p24j).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >k.Faltó ayuda del colegio para los uniformes</h6>
+
+      <%= bar_chart Estudiante.group(:p24k).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >l.Faltó ayuda del colegio para los útiles escolares</h6>
+
+      <%= bar_chart Estudiante.group(:p24l).count, colors: ["#662483"]%>
+      <br>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >m.Faltó ayuda del colegio para el pago de la pensión o la matrícula</h6>
+
+      <%= bar_chart Estudiante.group(:p24m).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >n. Tenías dificultades con los horarios del colegio</h6>
+
+      <%= bar_chart Estudiante.group(:p24n).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >o. La educación del colegio era distinta a tus necesidades e intereses</h6>
+
+      <%= bar_chart Estudiante.group(:p24o).count, colors: ["#662483"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-3">
+
+        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >p. Te expulsaron del colegio</h6>
+
+      <%= bar_chart Estudiante.group(:p24p).count, colors: ["#662483"]%>
+      <br>
+      </div>
+      </div>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P30. ¿Cuánto tiempo llevas estudiando en este colegio...? (años)</h3>
+
+      <%= pie_chart Estudiante.group(:p30).count, donut: true, colors: ["#009640", "#F18700", "#662483"]%>
+      <br>
+      </div>
+
+
+      <div class="container">
+      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P31. ¿En qué medio te desplazas y cuánto tiempo te demoras para venir al colegio?</h3>
+
+      <div class="col-sm-6">
+
+        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿En qué medio te desplazas principalmente?</h4>
+
+      <%= column_chart Estudiante.group(:p31a).count, xtitle: "Medio", colors: ["#42B598"]%>
+      <br>
+      </div>
+
+      <div class="col-sm-6">
+
+        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿Cuánto tiempo te demoras?</h4>
+
+      <%= pie_chart Estudiante.group(:p31b).count, donut: true, colors: ["#B81A5D", "#662483", "#662483"]%>
+      <br>
+      </div>
+      </div>
+
+
+
+
 
 
 
