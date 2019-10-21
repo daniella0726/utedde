@@ -183,6 +183,8 @@
               <%valor = "Por separación de tus padres"%>
             <% elsif (value == "10") %>
               <%valor = "Por separación de tu cónyuge o pareja permanente"%>
+            <% elsif (value == "11") %>
+              <%valor = "Otra"%>
             <% end %>
             <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
           <%end%>
