@@ -296,7 +296,7 @@
         <%end%>
     
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
-        <%= column_chart array, suffix: "%" %>
+        <%= bar_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -401,7 +401,7 @@
         <%end%>
     
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
-        <%= column_chart array, suffix: "%" %>
+        <%= bar_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -419,11 +419,11 @@
       <%end%>
       <% array = [] %>
       <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-        <% if (value == "1") %>
+        <% if (value == "si") %>
           <%valor = "Si"%>
-        <% elsif (value == "2") %>
+        <% elsif (value == "no") %>
           <%valor = "No"%>
-        <% elsif (value == "3") %>
+        <% elsif (value == "99") %>
           <%valor = "No sabe - no responde"%>
         <% end %>
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
@@ -472,9 +472,9 @@
           <%valor = "2 años"%>
         <% elsif (value == "3") %>
           <%valor = "3 años"%>
-        <% elsif (value == "3") %>
+        <% elsif (value == "mas") %>
           <%valor = "Más Años"%>
-        <% elsif (value == "3") %>
+        <% elsif (value == "99") %>
           <%valor = "No Recuerda"%>
         <% end %>
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
@@ -899,22 +899,22 @@
         <% Estudiante.group(:p15a).where(p15a: "1").having("p15a != ?", "--").having("p15a != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tus padres o acudientes", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15b).where(p15b: "1").having("p15b != ?", "--").having("p15b != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15b).where(p15b: "2").having("p15b != ?", "--").having("p15b != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tus docentes", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15c).where(p15c: "1").having("p15c != ?", "--").having("p15c != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15c).where(p15c: "3").having("p15c != ?", "--").having("p15c != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tus coordinadores o el rector", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15d).where(p15d: "1").having("p15d != ?", "--").having("p15d != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15d).where(p15d: "4").having("p15d != ?", "--").having("p15d != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tus orientadores", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15e).where(p15e: "1").having("p15e != ?", "--").having("p15e != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15e).where(p15e: "5").having("p15e != ?", "--").having("p15e != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tus compañeros de curso", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15f).where(p15f: "1").having("p15f != ?", "--").having("p15f != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15f).where(p15f: "6").having("p15f != ?", "--").having("p15f != ?", "").count(:id).each do |value,item|%>
           <% array.push(["De otras personas; amigos o conocidos", (100*item/total.to_f).round(2)]) %>
         <%end%>
-        <% Estudiante.group(:p15g).where(p15g: "1").having("p15g != ?", "--").having("p15g != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p15g).where(p15g: "99").having("p15g != ?", "--").having("p15g != ?", "").count(:id).each do |value,item|%>
           <% array.push(["NS / NR", (100*item/total.to_f).round(2)]) %>
         <%end%>
     
@@ -1114,8 +1114,7 @@
           <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-        <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>  
         <% if (value == "1") %>
           <%valor = "Enero"%>
         <% elsif (value == "2") %>
@@ -1145,6 +1144,7 @@
         <% elsif (value == "99999") %>
           <%valor = "No contestó"%>
         <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %> 
       <%end%>
       <%= column_chart array, suffix: "%" %>
     </div>
@@ -1168,7 +1168,14 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p20a).having("p20a != ?", "--").having("p20a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <% if (value == "si") %>
+          <%valor = "Si"%>
+          <% elsif (value == "no") %>
+            <%valor = "No"%>
+          <% elsif (value == "99") %>
+            <%valor = "No Responde"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
       </div>
@@ -1190,7 +1197,14 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p20b).having("p20b != ?", "--").having("p20b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
       </div>
@@ -1212,7 +1226,14 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p20c).having("p20c != ?", "--").having("p20c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
       </div>
