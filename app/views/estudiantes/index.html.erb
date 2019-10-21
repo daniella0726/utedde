@@ -1242,150 +1242,499 @@
   </div>
 </div>
 
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p23" role="button" aria-expanded="false" aria-controls="collapse_p23">
+     P23.¿Ese colegio era público (oficial) o privado (no oficial)?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p23">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p23).having("p23 != ?", "--").having("p23 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p23).having("p23 != ?", "--").having("p23 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>  
+        <% if (value == "publico") %>
+          <%valor = "Público"%>
+        <% elsif (value == "privado") %>
+          <%valor = "Privado"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %> 
+      <%end%>
+      <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-
-     
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P24. ¿La última vez que te retiraste TEMPORALMENTE de tus estudios fue por alguna de las siguientes razones relacionadas con ese COLEGIO?</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. El colegio no tenía todos los cursos hasta once</h6>
-
-      <%= bar_chart Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P24. ¿La última vez que te retiraste TEMPORALMENTE de tus estudios fue por alguna de las siguientes razones relacionadas con ese COLEGIO?</h4>
+  
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24a" role="button" aria-expanded="false" aria-controls="collapse_p24a">
+     a. El colegio no tenía todos los cursos hasta once
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Faltaban profesores</h6>
-
-      <%= bar_chart Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24b" role="button" aria-expanded="false" aria-controls="collapse_p24b">
+     b. Faltaban profesores
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. La forma como enseñaban los profesores era aburrida</h6>
-
-      <%= bar_chart Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24c" role="button" aria-expanded="false" aria-controls="collapse_p24c">
+     c. La forma como enseñaban los profesores era aburrida
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Las instalaciones del colegio eran desagradables</h6>
-
-      <%= bar_chart Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24d" role="button" aria-expanded="false" aria-controls="collapse_p24d">
+     d. Las instalaciones del colegio eran desagradables
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24e" role="button" aria-expanded="false" aria-controls="collapse_p24e">
+     e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)</h6>
-
-      <%= bar_chart Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24f" role="button" aria-expanded="false" aria-controls="collapse_p24f">
+     f. Por el maltrato de los profesores y directivos
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Por el maltrato de los profesores y directivos</h6>
-
-      <%= bar_chart Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24g" role="button" aria-expanded="false" aria-controls="collapse_p24g">
+     g. Por el maltrato de los compañeros
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Por el maltrato de los compañeros</h6>
-
-      <%= bar_chart Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24h" role="button" aria-expanded="false" aria-controls="collapse_p24h">
+    h. Cerraron el colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Cerraron el colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24i" role="button" aria-expanded="false" aria-controls="collapse_p24i">
+    h. Cerraron el colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24j" role="button" aria-expanded="false" aria-controls="collapse_p24j">
+    j.Faltó ayuda del colegio en alimentación
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24j">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i.Faltó ayuda del colegio en transporte</h6>
-
-      <%= bar_chart Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24k" role="button" aria-expanded="false" aria-controls="collapse_p24k">
+    k.Faltó ayuda del colegio para los uniformes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24k">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j.Faltó ayuda del colegio en alimentación</h6>
-
-      <%= bar_chart Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24l" role="button" aria-expanded="false" aria-controls="collapse_p24l">
+   l.Faltó ayuda del colegio para los útiles escolares
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24l">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >k.Faltó ayuda del colegio para los uniformes</h6>
-
-      <%= bar_chart Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24m" role="button" aria-expanded="false" aria-controls="collapse_p24m">
+   m.Faltó ayuda del colegio para el pago de la pensión o la matrícula
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24m">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >l.Faltó ayuda del colegio para los útiles escolares</h6>
-
-      <%= bar_chart Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24n" role="button" aria-expanded="false" aria-controls="collapse_p24n">
+   n. Tenías dificultades con los horarios del colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24n">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24o" role="button" aria-expanded="false" aria-controls="collapse_p24o">
+  o. La educación del colegio era distinta a tus necesidades e intereses
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24o">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >m.Faltó ayuda del colegio para el pago de la pensión o la matrícula</h6>
-
-      <%= bar_chart Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").count, colors: ["#662483"]%>
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24p" role="button" aria-expanded="false" aria-controls="collapse_p24p">
+  p. Te expulsaron del colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24p">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+</div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >n. Tenías dificultades con los horarios del colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >o. La educación del colegio era distinta a tus necesidades e intereses</h6>
-
-      <%= bar_chart Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >p. Te expulsaron del colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").count, colors: ["#662483"]%>
-      <br>
-      </div>
-      </div>
-      </div>
 
 
       <div class="container">
