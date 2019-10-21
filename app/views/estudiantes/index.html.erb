@@ -1971,99 +1971,229 @@
   </div>
 </div>
 
-
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P32. ¿En el último año has participado en alguno de los siguientes programas o recibido alguno de los siguientes beneficios?:</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)</h6>
-
-      <%= column_chart Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+<div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P32. ¿En el último año has participado en alguno de los siguientes programas o recibido alguno de los siguientes beneficios?</h4>
+  
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32a" role="button" aria-expanded="false" aria-controls="collapse_p32a">
+    a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)</h6>
-
-      <%= column_chart Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32b" role="button" aria-expanded="false" aria-controls="collapse_p32b">
+   b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Kits escolares</h6>
-
-      <%= column_chart Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32c" role="button" aria-expanded="false" aria-controls="collapse_p32c">
+      c. Kits escolares
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Gratuidad total en matrícula y pensión</h6>
-
-      <%= column_chart Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32d" role="button" aria-expanded="false" aria-controls="collapse_p32d">
+      d. Gratuidad total en matrícula y pensión
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32e" role="button" aria-expanded="false" aria-controls="collapse_p32e">
+      e. Ayuda cuando tenías dificultades con alguna materia
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Ayuda cuando tenías dificultades con alguna materia</h6>
-
-      <%= column_chart Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32f" role="button" aria-expanded="false" aria-controls="collapse_p32f">
+      f. Apoyo en orientación psicológica o apoyo psicosocial
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Apoyo en orientación psicológica o apoyo psicosocial</h6>
-
-      <%= column_chart Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32g" role="button" aria-expanded="false" aria-controls="collapse_p32g">
+      g. Participación en procesos de inclusión educativa
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Participación en procesos de inclusión educativa</h6>
-
-      <%= column_chart Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32h" role="button" aria-expanded="false" aria-controls="collapse_p32h">
+      h. Programas para mejorar la convivencia escolar y la integración de los estudiantes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Programas para mejorar la convivencia escolar y la integración de los estudiantes</h6>
-
-      <%= column_chart Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32i" role="button" aria-expanded="false" aria-controls="collapse_p32i">
+      i. Programas de integración con la comunidad o las familias vecinas al colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32j" role="button" aria-expanded="false" aria-controls="collapse_p32j">
+      j. Articulación con la educación superior y educación media fortalecida<
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32j">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
       </div>
-
-      <div class="row">
-      <div class="col-sm-6">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Programas de integración con la comunidad o las familias vecinas al colegio</h6>
-
-      <%= column_chart Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j. Articulación con la educación superior y educación media fortalecida</h6>
-
-      <%= column_chart Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-      </div>
-      </div>
+    </div>
+    <br>
+  </div>
+</div>
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P36. ¿Te has sentido discriminado en el colegio?</h3>
