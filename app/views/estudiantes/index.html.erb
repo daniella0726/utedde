@@ -1780,7 +1780,7 @@
   </p>
   <div class="collapse" id="collapse_p30">
     <div class="card card-body">
-      <<% total  = 0 %>
+      <% total  = 0 %>
         <% Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
         <% total = total + item %>
         <%end%>
@@ -1801,7 +1801,7 @@
           <% end %>
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
-        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+        <%= pie_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -1813,7 +1813,7 @@
   </p>
   <div class="collapse" id="collapse_p30a">
     <div class="card card-body">
-      <<% total  = 0 %>
+      <% total  = 0 %>
         <% Estudiante.group(:p30a).having("p30a != ?", "--").having("p30a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
         <% total = total + item %>
         <%end%>
@@ -1834,7 +1834,7 @@
           <% end %>
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
-        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+        <%= pie_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -1846,7 +1846,7 @@
   </p>
   <div class="collapse" id="collapse_p30b">
     <div class="card card-body">
-      <<% total  = 0 %>
+      <% total  = 0 %>
         <% Estudiante.group(:p30b).having("p30b != ?", "--").having("p30b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
         <% total = total + item %>
         <%end%>
@@ -1873,7 +1873,7 @@
   </p>
   <div class="collapse" id="collapse_p30c">
     <div class="card card-body">
-      <<% total  = 0 %>
+      <% total  = 0 %>
         <% Estudiante.group(:p30c).having("p30c != ?", "--").having("p30c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
         <% total = total + item %>
         <%end%>
