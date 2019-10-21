@@ -53,49 +53,94 @@
     <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
 
+        <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
         <% array = [] %>
         <% Estudiante.group(:p4_1).where(p4_1: "1").having("p4_1 != ?", "--").having("p4_1 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Papa", item]) %>
+          <% array.push(["Papa", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_2).where(p4_2: "1").having("p4_2 != ?", "--").having("p4_2 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Padrastro", item]) %>
+          <% array.push(["Padrastro", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_3).where(p4_3: "1").having("p4_3 != ?", "--").having("p4_3 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Mamá", item]) %>
+          <% array.push(["Mamá", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_4).where(p4_4: "1").having("p4_4 != ?", "--").having("p4_4 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Madrastra", item]) %>
+          <% array.push(["Madrastra", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_5).where(p4_5: "1").having("p4_5 != ?", "--").having("p4_5 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Herman@s", item]) %>
+          <% array.push(["Herman@s", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_6).where(p4_6: "1").having("p4_6 != ?", "--").having("p4_6 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Prim@s", item]) %>
+          <% array.push(["Prim@s", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_7).where(p4_7: "1").having("p4_7 != ?", "--").having("p4_7 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tí@s", item]) %>
+          <% array.push(["Tí@s", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_8).where(p4_8: "1").having("p4_8 != ?", "--").having("p4_8 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Abuel@s", item]) %>
+          <% array.push(["Abuel@s", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_9).where(p4_9: "1").having("p4_9 != ?", "--").having("p4_9 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tu espos@", item]) %>
+          <% array.push(["Tu espos@", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_10).where(p4_10: "1").having("p4_10 != ?", "--").having("p4_10 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tus hij@s", item]) %>
+          <% array.push(["Tus hij@s", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_11).where(p4_11: "1").having("p4_11 != ?", "--").having("p4_11 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Otros Familiares", item]) %>
+          <% array.push(["Otros Familiares", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_12).where(p4_12: "1").having("p4_12 != ?", "--").having("p4_12 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Otros no Parientes", item]) %>
+          <% array.push(["Otros no Parientes", (100*item/total.to_f).round(2)]) %>
         <%end%>
         <% Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Sol@", item]) %>
+          <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
         <%end%> 
 
-        <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+        <%= bar_chart array, suffix: "%" %>
       <br>
+    </div>
+
+    <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5A. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Papá - Padrastro </h3>
+
+          <% total  = 0 %>
+          <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+          <%end%>
+          <% array = [] %>
+          <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+            <% if (value == "1") %>
+              <%valor = "Algunos años de primaria"%>
+            <% elsif (value == "2") %>
+              <%valor = "Toda la primaria"%>
+            <% elsif (value == "3") %>
+              <%valor = "Algunos años de bachillerato"%>
+            <% elsif (value == "4") %>
+              <%valor = "Todo el bachillerato"%>
+            <% elsif (value == "5") %>
+              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+            <% elsif (value == "6") %>
+              <%valor = "Carrera técnica o tecnológica"%>
+            <% elsif (value == "7") %>
+              <%valor = "Uno o mas años de universidad"%>
+            <% elsif (value == "8") %>
+              <%valor = "Carrera universitaria"%>
+            <% elsif (value == "9") %>
+              <%valor = "Postgrado (estudios después de la universidad)"%>
+            <% elsif (value == "10") %>
+              <%valor = "Ninguno"%>
+            <% elsif (value == "99") %>
+              <%valor = "No sabe - no responde"%>
+            <% end %>
+            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+          <%end%>
+
+          <%= pie_chart array , colors: ["#E84E0F"] ,suffix: "%" %>
+          <br>
     </div>
 
       <div class="container">
@@ -110,7 +155,7 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
       <%end%>
 
-      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <%= bar_chart array, suffix: "%" %>
 
       <br>
       </div>
