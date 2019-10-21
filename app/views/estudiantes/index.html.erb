@@ -20,6 +20,13 @@
       <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
           <% total = total + item %>
       <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+          <% array.push(value, (100*item/total.to_f).round(2)) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#42B598"] %>
+
       <br>
     </div>
 
