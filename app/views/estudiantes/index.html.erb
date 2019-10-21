@@ -162,7 +162,29 @@
           <%end%>
           <% array = [] %>
           <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+              <% valor = "" %>
+            <% if (value == "1") %>
+              <%valor = "Porque había problemas de plata en la familia"%>
+            <% elsif (value == "2") %>
+              <%valor = "Por problemas de plata (no encontraba trabajo)"%>
+            <% elsif (value == "3") %>
+              <%valor = "Por desastre natural (inundación, avalancha, terremoto, etc. )"%>
+            <% elsif (value == "4") %>
+              <%valor = "Por la situación de desplazamiento por conflicto armado interno"%>
+            <% elsif (value == "5") %>
+              <%valor = "Porque tu familia o tú fueron víctimas de desplazamiento forzado"%>
+            <% elsif (value == "6") %>
+              <%valor = "Por oportunidades de educación"%>
+            <% elsif (value == "7") %>
+              <%valor = "Por motivos de salud"%>
+            <% elsif (value == "8") %>
+              <%valor = "Por problemas sociopoliticos de mi pais (ej; crisis en Venezuela)"%>
+            <% elsif (value == "9") %>
+              <%valor = "Por separación de tus padres"%>
+            <% elsif (value == "10") %>
+              <%valor = "Por separación de tu cónyuge o pareja permanente"%>
+            <% end %>
+            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
           <%end%>
 
           <%= pie_chart array , suffix: "%" %>
