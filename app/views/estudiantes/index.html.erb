@@ -53,87 +53,23 @@
     <div class="container hidden">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
 
-      <div class="col-sm-6">
+        <% array = [] %>
+        <% array.push(["Papa", Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").count]) %> 
+        <% array.push(["Padrastro", Estudiante.group(:p4_2).having("p4_2 != ?", "--").having("p4_2 != ?", "").count]) %> 
+        <% array.push(["Mamá", Estudiante.group(:p4_3).having("p4_3 != ?", "--").having("p4_3 != ?", "").count]) %> 
+        <% array.push(["Madrastra", Estudiante.group(:p4_4).having("p4_4 != ?", "--").having("p4_4 != ?", "").count]) %>  
+        <% array.push(["Herman@s", Estudiante.group(:p4_5).having("p4_5 != ?", "--").having("p4_5 != ?", "").count]) %>  
+        <% array.push(["Prim@s", Estudiante.group(:p4_6).having("p4_6 != ?", "--").having("p4_6 != ?", "").count]) %>  
+        <% array.push(["Tí@s", Estudiante.group(:p4_7).having("p4_7 != ?", "--").having("p4_7 != ?", "").count]) %>  
+        <% array.push(["Abuel@s", Estudiante.group(:p4_8).having("p4_8 != ?", "--").having("p4_8 != ?", "").count]) %>  
+        <% array.push(["Tue espos@", Estudiante.group(:p4_9).having("p4_9 != ?", "--").having("p4_9 != ?", "").count]) %>  
+        <% array.push(["Tus hij@s", Estudiante.group(:p4_10).having("p4_10 != ?", "--").having("p4_10 != ?", "").count]) %>  
+        <% array.push(["Otros Familiares", Estudiante.group(:p4_11).having("p4_11 != ?", "--").having("p4_11 != ?", "").count]) %> 
+        <% array.push(["Otros no Parientes", Estudiante.group(:p4_12).having("p4_12 != ?", "--").having("p4_12 != ?", "").count]) %>  
+        <% array.push(["Sol@", Estudiante.group(:p4_13).having("p4_13 != ?", "--").having("p4_13 != ?", "").count]) %>  
 
-      <%= bar_chart Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"], label: "Papá"%>
-  
+        <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
       <br>
-      </div>
-
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_2).having("p4_2 != ?", "--").having("p4_2 != ?", "").count, xtitle: "Cantidad", ytitle: "Padrastro", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_3).having("p4_3 != ?", "--").having("p4_3 != ?", "").count, xtitle: "Cantidad", ytitle: "Mamá", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_4).having("p4_4 != ?", "--").having("p4_4 != ?", "").count, xtitle: "Cantidad", ytitle: "Madrastra", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_5).having("p4_5 != ?", "--").having("p4_5 != ?", "").count, xtitle: "Cantidad", ytitle: "Herman@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_6).having("p4_6 != ?", "--").having("p4_6 != ?", "").count, xtitle: "Cantidad", ytitle: "Prim@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_7).having("p4_7 != ?", "--").having("p4_7 != ?", "").count, xtitle: "Cantidad", ytitle: "Tí@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_8).having("p4_8 != ?", "--").having("p4_8 != ?", "").count, xtitle: "Cantidad", ytitle: "Abuel@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_9).having("p4_9 != ?", "--").having("p4_9 != ?", "").count, xtitle: "Cantidad", ytitle: "Tue espos@", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_10).having("p4_10 != ?", "--").having("p4_10 != ?", "").count, xtitle: "Cantidad", ytitle: "Tus hij@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_11).having("p4_11 != ?", "--").having("p4_11 != ?", "").count, xtitle: "Cantidad", ytitle: "Otros Familiares", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_12).having("p4_12 != ?", "--").having("p4_12 != ?", "").count, xtitle: "Cantidad", ytitle: "Otros no Parientes", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-
-      <div class="col-sm-12">
-
-      <%= bar_chart Estudiante.group(:p4_13).having("p4_13 != ?", "--").having("p4_13 != ?", "").count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
     </div>
 
       <div class="container">
