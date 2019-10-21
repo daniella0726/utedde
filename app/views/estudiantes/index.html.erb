@@ -14,7 +14,7 @@
     <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Por Grado</h3>
 
-      <%= bar_chart Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").count, , library: {pieSliceText:'value-and-percentage', xtitle: "Cantidad", ytitle: "Grado", colors: ["#42B598"] } %>
+      <%= bar_chart Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").count, library: {pieSliceText:'value-and-percentage', xtitle: "Cantidad", ytitle: "Grado", colors: ["#42B598"] } %>
       <br>
     </div>
 
