@@ -99,8 +99,7 @@
           <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
         <%end%> 
 
-        <% array = array.sort_by {|a| [ a.item} %>
-
+        <% array = array.sort_by { |a| [ a.item ] } %>
         <%= bar_chart array, suffix: "%" %>
       <br>
     </div>
