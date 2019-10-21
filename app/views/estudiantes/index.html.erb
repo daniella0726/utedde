@@ -1735,35 +1735,243 @@
   </div>
 </div>
 
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p28" role="button" aria-expanded="false" aria-controls="collapse_p28">
+      P28. ¿Por qué razones volviste a estudiar?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p28">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
 
+        <% array = [] %>
+        <% Estudiante.group(:p28_1).where(p28_1: "1").having("p28_1 != ?", "--").having("p28_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para superarme", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_2).where(p28_2: "1").having("p28_2 != ?", "--").having("p28_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Porque quiero terminar de estudiar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_3).where(p28_3: "1").having("p28_3 != ?", "--").having("p28_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Consegui cupo", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_4).where(p28_4: "1").having("p28_4 != ?", "--").having("p28_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Por motivación de mis amigos y familia", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_5).where(p28_5: "1").having("p28_5 != ?", "--").having("p28_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para mejorar mi calidad de vida", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_6).where(p28_6: "1").having("p28_6 != ?", "--").having("p28_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Otra", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P30. ¿Cuánto tiempo llevas estudiando en este colegio...? (años)</h3>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30" role="button" aria-expanded="false" aria-controls="collapse_p30">
+      P30. ¿Cuánto tiempo llevas estudiando en este colegio...?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30">
+    <div class="card card-body">
+      <<% total  = 0 %>
+        <% Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "1 año o menos"%>
+            <% elsif (value == "2") %>
+              <%valor = "2 años"%>
+            <% elsif (value == "3") %>
+              <%valor = "3 años"%>
+            <% elsif (value == "4") %>
+              <%valor = "4 años"%>
+            <% elsif (value == "5") %>
+              <%valor = "5 años"%>
+            <% elsif (value == "6") %>
+              <%valor = "6 años o más"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+  </div>
+  <br>
 
-      <%= pie_chart Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").count, donut: true, colors: ["#009640", "#F18700", "#662483", "#B81A5D", "#42B598", "#D3D800"]%>
-      <br>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30a" role="button" aria-expanded="false" aria-controls="collapse_p30a">
+      p30aa. ¿Quién realizó tu inscripción para solicitar cupo?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30a">
+    <div class="card card-body">
+      <<% total  = 0 %>
+        <% Estudiante.group(:p30a).having("p30a != ?", "--").having("p30a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30a).having("p30a != ?", "--").having("p30a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Papá o mamá (padrastro o madrastra)"%>
+            <% elsif (value == "2") %>
+              <%valor = "Hermanos mayores"%>
+            <% elsif (value == "3") %>
+              <%valor = "Otros familiares"%>
+            <% elsif (value == "4") %>
+              <%valor = "Otras personas no parientes"%>
+            <% elsif (value == "5") %>
+              <%valor = "Tú"%>
+            <% elsif (value == "6") %>
+              <%valor = "No recuerdas"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30b" role="button" aria-expanded="false" aria-controls="collapse_p30b">
+     P30b. ¿Por cuál medio realizaron la inscripción?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30b">
+    <div class="card card-body">
+      <<% total  = 0 %>
+        <% Estudiante.group(:p30b).having("p30b != ?", "--").having("p30b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30b).having("p30b != ?", "--").having("p30b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Por página web"%>
+            <% elsif (value == "2") %>
+              <%valor = "De forma presencial"%>
+            <% elsif (value == "3") %>
+              <%valor = "No recuerdas"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30c" role="button" aria-expanded="false" aria-controls="collapse_p30c">
+     P30c. ¿Consideras que obtener un cupo en esta institución educativa fue…?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30c">
+    <div class="card card-body">
+      <<% total  = 0 %>
+        <% Estudiante.group(:p30c).having("p30c != ?", "--").having("p30c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30c).having("p30c != ?", "--").having("p30c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Muy fácil"%>
+            <% elsif (value == "2") %>
+              <%valor = "Fácil"%>
+            <% elsif (value == "3") %>
+              <%valor = "Difícil"%> 
+            <% elsif (value == "4") %>
+              <%valor = "Muy Difícil"%> 
+            <% elsif (value == "5") %>
+              <%valor = "No sabes"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+  </div>
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P31. ¿En qué medio te desplazas y cuánto tiempo te demoras para venir al colegio?</h4>
+  
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p31a" role="button" aria-expanded="false" aria-controls="collapse_p31a">
+     ¿En qué medio te desplazas principalmente?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p31a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "A pie"%>
+            <% elsif (value == "2") %>
+              <%valor = "Bicicleta"%>
+            <% elsif (value == "3") %>
+              <%valor = "Carro, taxi"%>
+            <% elsif (value == "4") %>
+              <%valor = "Moto"%>
+            <% elsif (value == "5") %>
+              <%valor = "Transmilenio/ bus/ buseta"%>
+            <% elsif (value == "6") %>
+              <%valor = "Mototaxi, bicitaxi"%>
+            <% elsif (value == "7") %>
+              <%valor = "Ruta escolar"%>
+            <% elsif (value == "8") %>
+              <%valor = "Otro"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
 
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P31. ¿En qué medio te desplazas y cuánto tiempo te demoras para venir al colegio?</h3>
-
-      <div class="col-sm-6">
-
-        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿En qué medio te desplazas principalmente?</h4>
-
-      <%= column_chart Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").count, xtitle: "Medio de transporte", colors: ["#42B598"]%>
-      <br>
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p31b" role="button" aria-expanded="false" aria-controls="collapse_p31b">
+     ¿Cuánto tiempo te demoras?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p31b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Menos de 5 minutos"%>
+            <% elsif (value == "2") %>
+              <%valor = "De 6 a 15 minutos"%>
+            <% elsif (value == "3") %>
+              <%valor = "De 16 a 30 minutos"%>
+            <% elsif (value == "3") %>
+              <%valor = "De 31 a 60 minutos"%>
+            <% elsif (value == "3") %>
+              <%valor = "Más de 60 minutos"%>
+            <% elsif (value == "3") %>
+              <%valor = "No Respondió"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
       </div>
+    </div>
+    <br>
+  </div>
+</div>
 
-      <div class="col-sm-6">
 
-        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿Cuánto tiempo te demoras?</h4>
-
-      <%= pie_chart Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").count, donut: true, colors: ["#B81A5D", "#662483", "#D3D800", "#E84E0F", "#554596", "#FFED00"]%>
-      <br>
-      </div>
-      </div>
 
 
       <div class="container">
