@@ -99,7 +99,7 @@
           <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
         <%end%> 
 
-        <%= bar_chart array, suffix: "%" %>
+        <%= bar_chart array.sort, suffix: "%" %>
       <br>
     </div>
 
@@ -139,7 +139,87 @@
             <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
           <%end%>
 
-          <%= pie_chart array , colors: ["#E84E0F"] ,suffix: "%" %>
+          <%= pie_chart array ,suffix: "%" %>
+          <br>
+    </div>
+
+    <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5B. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Mamá - Madrastra </h3>
+
+          <% total  = 0 %>
+          <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+          <%end%>
+          <% array = [] %>
+          <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+            <% if (value == "1") %>
+              <%valor = "Algunos años de primaria"%>
+            <% elsif (value == "2") %>
+              <%valor = "Toda la primaria"%>
+            <% elsif (value == "3") %>
+              <%valor = "Algunos años de bachillerato"%>
+            <% elsif (value == "4") %>
+              <%valor = "Todo el bachillerato"%>
+            <% elsif (value == "5") %>
+              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+            <% elsif (value == "6") %>
+              <%valor = "Carrera técnica o tecnológica"%>
+            <% elsif (value == "7") %>
+              <%valor = "Uno o mas años de universidad"%>
+            <% elsif (value == "8") %>
+              <%valor = "Carrera universitaria"%>
+            <% elsif (value == "9") %>
+              <%valor = "Postgrado (estudios después de la universidad)"%>
+            <% elsif (value == "10") %>
+              <%valor = "Ninguno"%>
+            <% elsif (value == "99") %>
+              <%valor = "No sabe - no responde"%>
+            <% end %>
+            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+          <%end%>
+
+          <%= pie_chart array ,suffix: "%" %>
+          <br>
+    </div>
+
+    <div class="container">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5C. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo </h3>
+
+          <% total  = 0 %>
+          <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+          <%end%>
+          <% array = [] %>
+          <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+            <% if (value == "1") %>
+              <%valor = "Algunos años de primaria"%>
+            <% elsif (value == "2") %>
+              <%valor = "Toda la primaria"%>
+            <% elsif (value == "3") %>
+              <%valor = "Algunos años de bachillerato"%>
+            <% elsif (value == "4") %>
+              <%valor = "Todo el bachillerato"%>
+            <% elsif (value == "5") %>
+              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+            <% elsif (value == "6") %>
+              <%valor = "Carrera técnica o tecnológica"%>
+            <% elsif (value == "7") %>
+              <%valor = "Uno o mas años de universidad"%>
+            <% elsif (value == "8") %>
+              <%valor = "Carrera universitaria"%>
+            <% elsif (value == "9") %>
+              <%valor = "Postgrado (estudios después de la universidad)"%>
+            <% elsif (value == "10") %>
+              <%valor = "Ninguno"%>
+            <% elsif (value == "99") %>
+              <%valor = "No sabe - no responde"%>
+            <% end %>
+            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+          <%end%>
+
+          <%= pie_chart array , suffix: "%" %>
           <br>
     </div>
 
