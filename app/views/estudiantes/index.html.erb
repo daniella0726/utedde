@@ -264,6 +264,44 @@
   <br>
 
   <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p6" role="button" aria-expanded="false" aria-controls="collapse_p6">
+      P6. ¿Te reconoces como…?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p6">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p6_1).where(p6_1: "1").having("p6_1 != ?", "--").having("p6_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Indígena", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_2).where(p6_2: "1").having("p6_2 != ?", "--").having("p6_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Gitano(a)", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_3).where(p6_3: "1").having("p6_3 != ?", "--").having("p6_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Negro(a) - Afro", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_4).where(p6_4: "1").having("p6_4 != ?", "--").having("p6_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_5).where(p6_5: "1").having("p6_5 != ?", "--").having("p6_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Migrante del exterior", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_6).where(p6_6: "1").having("p6_6 != ?", "--").having("p6_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
     <a class="pregunta" data-toggle="collapse" href="#collapse_p7" role="button" aria-expanded="false" aria-controls="collapse_p7">
      P7. ¿Siempre has vivido en Bogotá?
     </a>
