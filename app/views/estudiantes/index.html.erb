@@ -69,44 +69,44 @@
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_7).count, xtitle: "Cantidad", ytitle: "Tí@s", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_7).having("p4_7 != ?", "--").having("p4_7 != ?", "").count, xtitle: "Cantidad", ytitle: "Tí@s", colors: ["#E84E0F"] %>
       
       <br>
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_8).count, xtitle: "Cantidad", ytitle: "Abuel@s", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_8).having("p4_8 != ?", "--").having("p4_8 != ?", "").count, xtitle: "Cantidad", ytitle: "Abuel@s", colors: ["#E84E0F"] %>
       
       <br>
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_9).count, xtitle: "Cantidad", ytitle: "Tue espos@", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_9).having("p4_9 != ?", "--").having("p4_9 != ?", "").count, xtitle: "Cantidad", ytitle: "Tue espos@", colors: ["#E84E0F"] %>
       
       <br>
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_10).count, xtitle: "Cantidad", ytitle: "Tus hij@s", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_10).having("p4_10 != ?", "--").having("p4_10 != ?", "").count, xtitle: "Cantidad", ytitle: "Tus hij@s", colors: ["#E84E0F"] %>
       
       <br>
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_11).count, xtitle: "Cantidad", ytitle: "Otros Familiares", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_11).having("p4_11 != ?", "--").having("p4_11 != ?", "").count, xtitle: "Cantidad", ytitle: "Otros Familiares", colors: ["#E84E0F"] %>
       
       <br>
       </div>
       <div class="col-sm-6">
 
-      <%= bar_chart Estudiante.group(:p4_12).count, xtitle: "Cantidad", ytitle: "Otros no Parientes", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_12).having("p4_12 != ?", "--").having("p4_12 != ?", "").count, xtitle: "Cantidad", ytitle: "Otros no Parientes", colors: ["#E84E0F"] %>
       
       <br>
       </div>
 
       <div class="col-sm-12">
 
-      <%= bar_chart Estudiante.group(:p4_13).count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
+      <%= bar_chart Estudiante.group(:p4_13).having("p4_13 != ?", "--").having("p4_13 != ?", "").count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
       
       <br>
       </div>
@@ -115,7 +115,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
 
-      <%= bar_chart Estudiante.group(:p7).count, xtitle: "Cantidad"%>
+      <%= bar_chart Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").count, xtitle: "Cantidad"%>
 
       <br>
       </div>
@@ -123,28 +123,28 @@
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
 
-          <%= pie_chart Estudiante.group(:p7b).count%>
+          <%= pie_chart Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").count%>
           <br>
       </div>
 
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?</h3>
 
-          <%= bar_chart Estudiante.group(:p9).count%>
+          <%= bar_chart Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").count%>
           <br>
       </div>
 
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?</h3>
 
-          <%= bar_chart Estudiante.group(:p10).count%>
+          <%= bar_chart Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").count%>
           <br>
       </div>
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P12. Has perdido algún curso (año)?</h3>
 
-      <%= bar_chart Estudiante.group(:p12).count, xtitle: "Cantidad"%>
+      <%= bar_chart Estudiante.group(:p12).having("p12 != ?", "--").having("p12 != ?", "").count, xtitle: "Cantidad"%>
       <br>
       </div>
 
@@ -155,7 +155,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Se establece un plan de mejoramiento/recuperación con tus padres o acudientes y el maestro de manera oportuna</h6>
 
-      <%= bar_chart Estudiante.group(:p13a).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13a).having("p13a != ?", "--").having("p13a != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -163,7 +163,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Se establece un plan de mejoramiento/recuperación solamente con el maestro</h6>
 
-      <%= bar_chart Estudiante.group(:p13b).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13b).having("p13b != ?", "--").having("p13b != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -171,7 +171,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Tus padres o acudientes están pendientes del plan de mejoramiento/recuperación y el apoyo que necesitas</h6>
 
-      <%= bar_chart Estudiante.group(:p13c).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13c).having("p13c != ?", "--").having("p13c != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -179,7 +179,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los docentes u otras personas del colegio están pendientes del plan de recuperación y te apoyan cuando lo necesitas</h6>
 
-      <%= bar_chart Estudiante.group(:p13d).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13d).having("p13d != ?", "--").having("p13d != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -187,7 +187,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
 
-      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13e).having("p13e != ?", "--").having("p13e != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -195,7 +195,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
 
-      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13f).having("p13f != ?", "--").having("p13f != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
       </div>
@@ -207,7 +207,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Falta de concentración; me disperso fácilmente</h6>
 
-      <%= bar_chart Estudiante.group(:p14a).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14a).having("p14a != ?", "--").having("p14a != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -215,7 +215,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Falta de organización y responsabilidad en el cumplimiento de los deberes escolares</h6>
 
-      <%= bar_chart Estudiante.group(:p14b).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14b).having("p14b != ?", "--").having("p14b != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -223,7 +223,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Me intereso más en otras cosas que no tienen que ver con el estudio</h6>
 
-      <%= bar_chart Estudiante.group(:p14c).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14c).having("p14c != ?", "--").having("p14c != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -239,7 +239,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. La manera como algunos docentes explican y evalúan los temas</h6>
 
-      <%= bar_chart Estudiante.group(:p14e).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14e).having("p14e != ?", "--").having("p14e != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -247,7 +247,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Falta mayor seguimiento y acompañamiento de mis padres o acudientes en mi desempeño académico</h6>
 
-      <%= bar_chart Estudiante.group(:p14f).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14f).having("p14f != ?", "--").having("p14f != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -255,7 +255,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Mi comportamiento es adecuado durante el desarrollo de las clases</h6>
 
-      <%= bar_chart Estudiante.group(:p14g).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14g).having("p14g != ?", "--").having("p14g != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -263,7 +263,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Falta de apoyo de docentes, coordinadores y orientadores del colegio</h6>
 
-      <%= bar_chart Estudiante.group(:p14h).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14h).having("p14h != ?", "--").having("p14h != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
 
@@ -271,7 +271,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Las clases son aburridas y poco motivantes</h6>
 
-      <%= bar_chart Estudiante.group(:p14i).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
+      <%= bar_chart Estudiante.group(:p14i).having("p14i != ?", "--").having("p14i != ?", "").count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
       <br>
       </div>
       </div>
@@ -280,7 +280,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
 
-      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13e).having("p13e != ?", "--").having("p13e != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
 
@@ -288,7 +288,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
 
-      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
+      <%= bar_chart Estudiante.group(:p13f).having("p13f != ?", "--").having("p13f != ?", "").count, xtitle: "Cantidad", colors: ["#889B77"]%>
       <br>
       </div>
       </div>
@@ -300,7 +300,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. ¿Conoces el sistema de evaluación de la institución educativa?</h6>
 
-      <%= bar_chart Estudiante.group(:p16a).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16a).having("p16a != ?", "--").having("p16a != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -308,7 +308,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. ¿Consideras que es clara la forma en que te evaluan en cada materia o asignatura?</h6>
 
-      <%= bar_chart Estudiante.group(:p16b).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16b).having("p16b != ?", "--").having("p16b != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -316,7 +316,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. ¿Los profesores explican al inicio del periodo cómo y qué cosas van a calificar/evaluar?</h6>
 
-      <%= bar_chart Estudiante.group(:p16c).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16c).having("p16c != ?", "--").having("p16c != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -324,7 +324,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. ¿El docente respeta la forma de evaluacion acordada y socializada al inicio del año o de cada periodo?</h6>
 
-      <%= bar_chart Estudiante.group(:p16d).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16d).having("p16d != ?", "--").having("p16d != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -332,7 +332,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. ¿La forma de evaluar de los docentes es acorde a lo aprendido y realizado en clase?</h6>
 
-      <%= bar_chart Estudiante.group(:p16e).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16e).having("p16e != ?", "--").having("p16e != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -340,7 +340,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. ¿El docente o director de grupo te pregunta cómo te sientes con la forma en que te evalúan?</h6>
 
-      <%= bar_chart Estudiante.group(:p16f).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16f).having("p16f != ?", "--").having("p16f != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
 
@@ -348,7 +348,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. ¿Tú y tus compañeros participan en la construcción de la nota definitiva? (auto- evaluación y co-evaluación)</h6>
 
-      <%= bar_chart Estudiante.group(:p16g).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
+      <%= bar_chart Estudiante.group(:p16g).having("p16g != ?", "--").having("p16g != ?", "").count, xtitle: "Cantidad", colors: ["#D3D800"]%>
       <br>
       </div>
       </div>
@@ -356,7 +356,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P17 ¿Alguna vez te has retirado de estudiar?</h3>
 
-      <%= pie_chart Estudiante.group(:p17).count, xtitle: "Cantidad", donut: true, colors: ["#662483", "#009640", "#F18700"]%>
+      <%= pie_chart Estudiante.group(:p17).having("p17 != ?", "--").having("p17 != ?", "").count, xtitle: "Cantidad", donut: true, colors: ["#662483", "#009640", "#F18700"]%>
       <br>
       </div>
 
@@ -364,7 +364,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P18. La última vez que te retiraste de estudiar, ¿en qué mes te retiraste?</h3>
 
-      <%= column_chart Estudiante.group(:p18).count, xtitle: "Meses"%>
+      <%= column_chart Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").count, xtitle: "Meses"%>
       <br>
       </div>
 
@@ -375,7 +375,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...pasaste el año pero no te matriculaste en el siguiente</h6>
 
-      <%= bar_chart Estudiante.group(:p20a).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <%= bar_chart Estudiante.group(:p20a).having("p20a != ?", "--").having("p20a != ?", "").count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
       <br>
       </div>
 
@@ -383,7 +383,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...perdiste el año y no te matriculaste al siguiente año</h6>
 
-      <%= bar_chart Estudiante.group(:p20b).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <%= bar_chart Estudiante.group(:p20b).having("p20b != ?", "--").having("p20b != ?", "").count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
       <br>
       </div>
 
@@ -391,7 +391,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...dejaste de estudiar antes de terminar el año</h6>
 
-      <%= bar_chart Estudiante.group(:p20c).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
+      <%= bar_chart Estudiante.group(:p20c).having("p20c != ?", "--").having("p20c != ?", "").count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
       <br>
       </div>
       </div>
@@ -405,7 +405,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. El colegio no tenía todos los cursos hasta once</h6>
 
-      <%= bar_chart Estudiante.group(:p24a).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
       <br>
       </div>
 
@@ -413,7 +413,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Faltaban profesores</h6>
 
-      <%= bar_chart Estudiante.group(:p24b).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
       <br>
       </div>
 
@@ -421,7 +421,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. La forma como enseñaban los profesores era aburrida</h6>
 
-      <%= bar_chart Estudiante.group(:p24c).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
       <br>
       </div>
 
@@ -429,7 +429,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Las instalaciones del colegio eran desagradables</h6>
 
-      <%= bar_chart Estudiante.group(:p24d).count, xtitle: "Cantidad", colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").count, xtitle: "Cantidad", colors: ["#662483"]%>
       <br>
       </div>
       </div>
@@ -439,7 +439,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)</h6>
 
-      <%= bar_chart Estudiante.group(:p24e).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -447,7 +447,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Por el maltrato de los profesores y directivos</h6>
 
-      <%= bar_chart Estudiante.group(:p24f).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -455,7 +455,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Por el maltrato de los compañeros</h6>
 
-      <%= bar_chart Estudiante.group(:p24g).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -463,7 +463,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Cerraron el colegio</h6>
 
-      <%= bar_chart Estudiante.group(:p24h).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
       </div>
@@ -473,7 +473,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i.Faltó ayuda del colegio en transporte</h6>
 
-      <%= bar_chart Estudiante.group(:p24i).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -481,7 +481,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j.Faltó ayuda del colegio en alimentación</h6>
 
-      <%= bar_chart Estudiante.group(:p24j).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -489,7 +489,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >k.Faltó ayuda del colegio para los uniformes</h6>
 
-      <%= bar_chart Estudiante.group(:p24k).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -497,7 +497,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >l.Faltó ayuda del colegio para los útiles escolares</h6>
 
-      <%= bar_chart Estudiante.group(:p24l).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
       </div>
@@ -507,7 +507,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >m.Faltó ayuda del colegio para el pago de la pensión o la matrícula</h6>
 
-      <%= bar_chart Estudiante.group(:p24m).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -515,7 +515,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >n. Tenías dificultades con los horarios del colegio</h6>
 
-      <%= bar_chart Estudiante.group(:p24n).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -523,7 +523,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >o. La educación del colegio era distinta a tus necesidades e intereses</h6>
 
-      <%= bar_chart Estudiante.group(:p24o).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
 
@@ -531,7 +531,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >p. Te expulsaron del colegio</h6>
 
-      <%= bar_chart Estudiante.group(:p24p).count, colors: ["#662483"]%>
+      <%= bar_chart Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").count, colors: ["#662483"]%>
       <br>
       </div>
       </div>
@@ -541,7 +541,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P30. ¿Cuánto tiempo llevas estudiando en este colegio...? (años)</h3>
 
-      <%= pie_chart Estudiante.group(:p30).count, donut: true, colors: ["#009640", "#F18700", "#662483", "#B81A5D", "#42B598", "#D3D800"]%>
+      <%= pie_chart Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").count, donut: true, colors: ["#009640", "#F18700", "#662483", "#B81A5D", "#42B598", "#D3D800"]%>
       <br>
       </div>
 
@@ -553,7 +553,7 @@
 
         <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿En qué medio te desplazas principalmente?</h4>
 
-      <%= column_chart Estudiante.group(:p31a).count, xtitle: "Medio de transporte", colors: ["#42B598"]%>
+      <%= column_chart Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").count, xtitle: "Medio de transporte", colors: ["#42B598"]%>
       <br>
       </div>
 
@@ -561,7 +561,7 @@
 
         <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿Cuánto tiempo te demoras?</h4>
 
-      <%= pie_chart Estudiante.group(:p31b).count, donut: true, colors: ["#B81A5D", "#662483", "#D3D800", "#E84E0F", "#554596", "#FFED00"]%>
+      <%= pie_chart Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").count, donut: true, colors: ["#B81A5D", "#662483", "#D3D800", "#E84E0F", "#554596", "#FFED00"]%>
       <br>
       </div>
       </div>
@@ -575,7 +575,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)</h6>
 
-      <%= column_chart Estudiante.group(:p32a).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -583,7 +583,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)</h6>
 
-      <%= column_chart Estudiante.group(:p32b).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -591,7 +591,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Kits escolares</h6>
 
-      <%= column_chart Estudiante.group(:p32c).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -599,7 +599,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Gratuidad total en matrícula y pensión</h6>
 
-      <%= column_chart Estudiante.group(:p32d).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
       </div>
@@ -610,7 +610,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Ayuda cuando tenías dificultades con alguna materia</h6>
 
-      <%= column_chart Estudiante.group(:p32e).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -618,7 +618,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Apoyo en orientación psicológica o apoyo psicosocial</h6>
 
-      <%= column_chart Estudiante.group(:p32f).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -626,7 +626,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Participación en procesos de inclusión educativa</h6>
 
-      <%= column_chart Estudiante.group(:p32g).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -634,7 +634,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Programas para mejorar la convivencia escolar y la integración de los estudiantes</h6>
 
-      <%= column_chart Estudiante.group(:p32h).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
       </div>
@@ -644,7 +644,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Programas de integración con la comunidad o las familias vecinas al colegio</h6>
 
-      <%= column_chart Estudiante.group(:p32i).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
 
@@ -652,7 +652,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j. Articulación con la educación superior y educación media fortalecida</h6>
 
-      <%= column_chart Estudiante.group(:p32j).count, colors: ["#4A99C6"]%>
+      <%= column_chart Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").count, colors: ["#4A99C6"]%>
       <br>
       </div>
       </div>
@@ -661,7 +661,7 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P36. ¿Te has sentido discriminado en el colegio?</h3>
 
-      <%= pie_chart Estudiante.group(:p36).count, donut: true, colors: ["#F18700", "#B81A5D", "#42B598", "#D3D800"]%>
+      <%= pie_chart Estudiante.group(:p36).having("p36 != ?", "--").having("p36 != ?", "").count, donut: true, colors: ["#F18700", "#B81A5D", "#42B598", "#D3D800"]%>
       <br>
       </div>
 
@@ -674,7 +674,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Las instalaciones físicas (salones, bibliotecas, patio, etc.)</h6>
 
-      <%= bar_chart Estudiante.group(:p37a).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <%= bar_chart Estudiante.group(:p37a).having("p37a != ?", "--").having("p37a != ?", "").count, xtitle: "Cantidad", colors: ["#E30613"]%>
       <br>
       </div>
 
@@ -682,7 +682,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Las formas como enseñan los profesores</h6>
 
-      <%= bar_chart Estudiante.group(:p37b).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <%= bar_chart Estudiante.group(:p37b).having("p37b != ?", "--").having("p37b != ?", "").count, xtitle: "Cantidad", colors: ["#E30613"]%>
       <br>
       </div>
 
@@ -690,7 +690,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. El estímulo en el uso de nuevas tecnologías (computadores, internet, etc.)</h6>
 
-      <%= bar_chart Estudiante.group(:p37c).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <%= bar_chart Estudiante.group(:p37c).having("p37c != ?", "--").having("p37c != ?", "").count, xtitle: "Cantidad", colors: ["#E30613"]%>
       <br>
       </div>
 
@@ -698,7 +698,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los compañeros de estudio</h6>
 
-      <%= bar_chart Estudiante.group(:p37d).count, xtitle: "Cantidad", colors: ["#E30613"]%>
+      <%= bar_chart Estudiante.group(:p37d).having("p37d != ?", "--").having("p37d != ?", "").count, xtitle: "Cantidad", colors: ["#E30613"]%>
       <br>
       </div>
       </div>
@@ -708,7 +708,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. El colegio en general</h6>
 
-      <%= bar_chart Estudiante.group(:p37e).count, colors: ["#E30613"]%>
+      <%= bar_chart Estudiante.group(:p37e).having("p37e != ?", "--").having("p37e != ?", "").count, colors: ["#E30613"]%>
       <br>
       </div>
       </div>
@@ -721,7 +721,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Recibiste ayuda de tu familia para pagar los gastos del colegio (pensión, útiles, uniformes, etc.)</h6>
 
-      <%= column_chart Estudiante.group(:p38a).count, xtitle: "", colors: ["#009640"]%>
+      <%= column_chart Estudiante.group(:p38a).having("p38a != ?", "--").having("p38a != ?", "").count, xtitle: "", colors: ["#009640"]%>
       <br>
       </div>
 
@@ -729,7 +729,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Recibiste ayuda de tu familia en la realización de trabajos o tareas</h6>
 
-      <%= column_chart Estudiante.group(:p38b).count, xtitle: "", colors: ["#009640"]%>
+      <%= column_chart Estudiante.group(:p38b).having("p38b != ?", "--").having("p38b != ?", "").count, xtitle: "", colors: ["#009640"]%>
       <br>
       </div>
 
@@ -737,7 +737,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Recibiste motivación de tu familia para asistir al colegio</h6>
 
-      <%= column_chart Estudiante.group(:p38c).count, xtitle: "", colors: ["#009640"]%>
+      <%= column_chart Estudiante.group(:p38c).having("p38c != ?", "--").having("p38c != ?", "").count, xtitle: "", colors: ["#009640"]%>
       <br>
       </div>
 
@@ -745,7 +745,7 @@
 
         <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Tuviste el tiempo suficiente para hacer tareas y estudiar</h6>
 
-      <%= column_chart Estudiante.group(:p38d).count, xtitle: "", colors: ["#009640"]%>
+      <%= column_chart Estudiante.group(:p38d).having("p38d != ?", "--").having("p38d != ?", "").count, xtitle: "", colors: ["#009640"]%>
       <br>
       </div>
       </div>
