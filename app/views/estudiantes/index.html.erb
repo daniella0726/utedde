@@ -14,7 +14,12 @@
     <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Por Grado</h3>
 
-      <%= bar_chart Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").count, colors: ["#42B598"] , library: { isStacked: 'percent' } %>
+      <%= bar_chart Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count, colors: ["#42B598"] , library: { isStacked: 'percent' } %>
+
+      <% total  = 0 %>
+      <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
       <br>
     </div>
 
