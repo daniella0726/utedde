@@ -1861,7 +1861,7 @@
           <% end %>
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
-        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+        <%= pie_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -1892,7 +1892,7 @@
           <% end %>
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
-        <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+        <%= pie_chart array, suffix: "%" %>
     </div>
   </div>  
   <br>
@@ -1959,11 +1959,11 @@
               <%valor = "De 6 a 15 minutos"%>
             <% elsif (value == "3") %>
               <%valor = "De 16 a 30 minutos"%>
-            <% elsif (value == "3") %>
+            <% elsif (value == "4") %>
               <%valor = "De 31 a 60 minutos"%>
-            <% elsif (value == "3") %>
+            <% elsif (value == "5") %>
               <%valor = "Más de 60 minutos"%>
-            <% elsif (value == "3") %>
+            <% elsif (value == "99") %>
               <%valor = "No Respondió"%>
           <% end %>
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
