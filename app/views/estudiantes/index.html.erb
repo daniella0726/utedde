@@ -37,7 +37,7 @@
       <% array = [] %>
       <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
           <%= value%>
-          <% if (value = 2) %>
+          <% if (value = "2") %>
             <%valor = "Femenino"%>
           <% else %>
             <%valor = "Masculino"%>
@@ -55,16 +55,9 @@
 
       <div class="col-sm-6">
 
-      <% total  = 0 %>
-      <% Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-      <%end%>
-      <% array = [] %>
-      <% Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
-      <%end%>
+      <%= bar_chart Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"], label: "Papá"%>
 
-      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      
   
       <br>
       </div>
