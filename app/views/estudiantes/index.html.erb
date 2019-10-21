@@ -50,7 +50,7 @@
       <br>
     </div>
 
-    <div class="container hidden">
+    <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
 
         <% array = [] %>
@@ -119,7 +119,7 @@
               <%valor = "Por separación de tus padres"%>
             <% elsif (value == "10") %>
               <%valor = "Por separación de tu cónyuge o pareja permanente"%>
-            <% elsif (value == "11") %>
+            <% elsif (value == "otro") %>
               <%valor = "Otra"%>
             <% end %>
             <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
