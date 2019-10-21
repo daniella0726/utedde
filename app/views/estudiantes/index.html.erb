@@ -1,31 +1,57 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+.pregunta {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  font-family: 'Heebo';
+  border: 1px solid #43a2d2;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
 </style>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+
+
 <div class="container">
 
   <h1 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >Gráficos Estudiantes</h1>
 
   <br>
-
     <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Por Grado</h3>
-
-      <% total  = 0 %>
-      <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-      <%end%>
-      <% array = [] %>
-      <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
-      <%end%>
-      <%= bar_chart array, colors: ["#42B598"] , suffix: "%" %>
-
+      <div class="pregunta" id="lab_pregunta_p1">
+        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Distribución por grado</h3>
+      </div>
+      <div class="hidden" id="pregunta_p1">
+        <% total  = 0 %>
+        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+            <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+            <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#42B598"] , suffix: "%" %>
       <br>
+      </div>
     </div>
+    <script type="text/javascript">
+      document.getElementById("lab_pregunta_p1").addEventListener("click", fun_p1);
+      function fun_p1() {
+      $('#pregunta_p1').slideDown();
+      $('#pregunta_p1').removeClass('hidden');
+      }
+    </script>
 
     <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P2. Por Género</h3>
@@ -98,8 +124,8 @@
         <% Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
         <%end%> 
-        <% array = array.sort {|a,b| a[1] <=> b[1]}%>
-        <%= bar_chart array, suffix: "%" %>
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= column_chart array, suffix: "%" %>
       <br>
     </div>
 
