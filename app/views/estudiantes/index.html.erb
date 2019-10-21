@@ -36,9 +36,8 @@
       <%end%>
       <% array = [] %>
       <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <%= value%>
           <% valor = "" %>
-          <% if (value == "1") %>
+          <% if (value == "2") %>
             <%valor = "Femenino"%>
           <% else %>
             <%valor = "Masculino"%>
@@ -140,7 +139,16 @@
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
 
-      <%= bar_chart Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").count, xtitle: "Cantidad"%>
+      <% total  = 0 %>
+      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
 
       <br>
       </div>
@@ -148,7 +156,16 @@
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
 
-          <%= pie_chart Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").count, library: {pieSliceText:'value-and-percentage'} %>
+          <% total  = 0 %>
+          <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+          <%end%>
+          <% array = [] %>
+          <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <%end%>
+
+          <%= pie_chart array, colors: ["#E84E0F"] , suffix: "%" %>
           <br>
       </div>
 
