@@ -54,19 +54,19 @@
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
 
         <% array = [] %>
-        <% array.push(["Papa", Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").count]) %> 
-        <% array.push(["Padrastro", Estudiante.group(:p4_2).having("p4_2 != ?", "--").having("p4_2 != ?", "").count]) %> 
-        <% array.push(["Mamá", Estudiante.group(:p4_3).having("p4_3 != ?", "--").having("p4_3 != ?", "").count]) %> 
-        <% array.push(["Madrastra", Estudiante.group(:p4_4).having("p4_4 != ?", "--").having("p4_4 != ?", "").count]) %>  
-        <% array.push(["Herman@s", Estudiante.group(:p4_5).having("p4_5 != ?", "--").having("p4_5 != ?", "").count]) %>  
-        <% array.push(["Prim@s", Estudiante.group(:p4_6).having("p4_6 != ?", "--").having("p4_6 != ?", "").count]) %>  
-        <% array.push(["Tí@s", Estudiante.group(:p4_7).having("p4_7 != ?", "--").having("p4_7 != ?", "").count]) %>  
-        <% array.push(["Abuel@s", Estudiante.group(:p4_8).having("p4_8 != ?", "--").having("p4_8 != ?", "").count]) %>  
-        <% array.push(["Tue espos@", Estudiante.group(:p4_9).having("p4_9 != ?", "--").having("p4_9 != ?", "").count]) %>  
-        <% array.push(["Tus hij@s", Estudiante.group(:p4_10).having("p4_10 != ?", "--").having("p4_10 != ?", "").count]) %>  
-        <% array.push(["Otros Familiares", Estudiante.group(:p4_11).having("p4_11 != ?", "--").having("p4_11 != ?", "").count]) %> 
-        <% array.push(["Otros no Parientes", Estudiante.group(:p4_12).having("p4_12 != ?", "--").having("p4_12 != ?", "").count]) %>  
-        <% array.push(["Sol@", Estudiante.group(:p4_13).having("p4_13 != ?", "--").having("p4_13 != ?", "").count]) %>  
+        <% array.push(["Papa", Estudiante.group(:p4_1).where(p4_1: "1").having("p4_1 != ?", "--").having("p4_1 != ?", "").count]) %> 
+        <% array.push(["Padrastro", Estudiante.group(:p4_2).where(p4_2: "1").having("p4_2 != ?", "--").having("p4_2 != ?", "").count]) %> 
+        <% array.push(["Mamá", Estudiante.group(:p4_3).where(p4_3: "1").having("p4_3 != ?", "--").having("p4_3 != ?", "").count]) %> 
+        <% array.push(["Madrastra", Estudiante.group(:p4_4).where(p4_4: "1").having("p4_4 != ?", "--").having("p4_4 != ?", "").count]) %>  
+        <% array.push(["Herman@s", Estudiante.group(:p4_5).where(p4_5: "1").having("p4_5 != ?", "--").having("p4_5 != ?", "").count]) %>  
+        <% array.push(["Prim@s", Estudiante.group(:p4_6).where(p4_6: "1").having("p4_6 != ?", "--").having("p4_6 != ?", "").count]) %>  
+        <% array.push(["Tí@s", Estudiante.group(:p4_7).where(p4_7: "1").having("p4_7 != ?", "--").having("p4_7 != ?", "").count]) %>  
+        <% array.push(["Abuel@s", Estudiante.group(:p4_8).where(p4_8: "1").having("p4_8 != ?", "--").having("p4_8 != ?", "").count]) %>  
+        <% array.push(["Tue espos@", Estudiante.group(:p4_9).where(p4_9: "1").having("p4_9 != ?", "--").having("p4_9 != ?", "").count]) %>  
+        <% array.push(["Tus hij@s", Estudiante.group(:p4_10).where(p4_10: "1").having("p4_10 != ?", "--").having("p4_10 != ?", "").count]) %>  
+        <% array.push(["Otros Familiares", Estudiante.group(:p4_11).where(p4_11: "1").having("p4_11 != ?", "--").having("p4_11 != ?", "").count]) %> 
+        <% array.push(["Otros no Parientes", Estudiante.group(:p4_12).where(p4_12: "1").having("p4_12 != ?", "--").having("p4_12 != ?", "").count]) %>  
+        <% array.push(["Sol@", Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count]) %>  
 
         <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
       <br>
