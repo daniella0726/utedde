@@ -38,7 +38,7 @@
       <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
           <%= value%>
           <% valor = "" %>
-          <% if (value = "1") %>
+          <% if (value == "1") %>
             <%valor = "Femenino"%>
           <% else %>
             <%valor = "Masculino"%>
@@ -57,8 +57,6 @@
       <div class="col-sm-6">
 
       <%= bar_chart Estudiante.group(:p4_1).having("p4_1 != ?", "--").having("p4_1 != ?", "").count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"], label: "Papá"%>
-
-
   
       <br>
       </div>
