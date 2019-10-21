@@ -123,7 +123,7 @@
       <div class="container">
         <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
 
-          <%= pie_chart Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").count%>
+          <%= pie_chart Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").count, library: {pieSliceText:'value-and-percentage'} %>
           <br>
       </div>
 
