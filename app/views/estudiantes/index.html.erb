@@ -98,8 +98,7 @@
         <% Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
         <%end%> 
-
-        <% array = array.sort_by { |a| [ a.item ] } %>
+        <% array = array.sort {|a,b| a[1] <=> b[1]}%>
         <%= bar_chart array, suffix: "%" %>
       <br>
     </div>
