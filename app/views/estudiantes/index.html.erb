@@ -1768,7 +1768,7 @@
         <%end%>
     
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
-        <%= column_chart array, suffix: "%" %>
+        <%= bar_chart array, suffix: "%" %>
     </div>
   </div>
   <br>
@@ -1802,12 +1802,13 @@
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+    </div>
   </div>
   <br>
 
   <p>
     <a class="pregunta" data-toggle="collapse" href="#collapse_p30a" role="button" aria-expanded="false" aria-controls="collapse_p30a">
-      p30aa. ¿Quién realizó tu inscripción para solicitar cupo?
+      p30Aa. ¿Quién realizó tu inscripción para solicitar cupo?
     </a>
   </p>
   <div class="collapse" id="collapse_p30a">
@@ -1834,6 +1835,7 @@
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+    </div>
   </div>
   <br>
 
@@ -1860,6 +1862,7 @@
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
+    </div>
   </div>
   <br>
 
@@ -1890,7 +1893,8 @@
           <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
         <%end%>
         <%= pie_chart array, colors: ["#662483"] , suffix: "%" %>
-  </div>
+    </div>
+  </div>  
   <br>
 
   <div class="container">
