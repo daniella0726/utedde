@@ -27,11 +27,11 @@
 
   <h1 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >Gráficos Estudiantes</h1>
   <p>
-    <a class="pregunta" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p1" role="button" aria-expanded="false" aria-controls="collapse_p1">
       P1. Distribución por grado
     </a>
   </p>
-  <div class="collapse" id="collapseExample">
+  <div class="collapse" id="collapse_p1">
     <div class="card card-body">
       <% total  = 0 %>
         <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
@@ -47,11 +47,11 @@
   <br>
 
   <p>
-    <a class="pregunta" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-      P12. Distribución por género
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p2" role="button" aria-expanded="false" aria-controls="collapse_p2">
+      P2. Distribución por género
     </a>
   </p>
-  <div class="collapse" id="collapseExample">
+  <div class="collapse" id="collapse_p2">
     <div class="card card-body">
       <% total  = 0 %>
       <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
@@ -73,10 +73,14 @@
   </div>
   <br>
 
-    <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
-
-        <% total  = 0 %>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p4" role="button" aria-expanded="false" aria-controls="collapse_p4">
+      P4. Con quien Vives
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p4">
+    <div class="card card-body">
+      <% total  = 0 %>
         <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
           <% total = total + item %>
         <%end%>
@@ -123,132 +127,149 @@
         <%end%> 
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
         <%= column_chart array, suffix: "%" %>
-      <br>
     </div>
+  </div>
+  <br>
 
-    <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5A. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Papá - Padrastro </h3>
-
-          <% total  = 0 %>
-          <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% valor = "" %>
-            <% if (value == "1") %>
-              <%valor = "Algunos años de primaria"%>
-            <% elsif (value == "2") %>
-              <%valor = "Toda la primaria"%>
-            <% elsif (value == "3") %>
-              <%valor = "Algunos años de bachillerato"%>
-            <% elsif (value == "4") %>
-              <%valor = "Todo el bachillerato"%>
-            <% elsif (value == "5") %>
-              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
-            <% elsif (value == "6") %>
-              <%valor = "Carrera técnica o tecnológica"%>
-            <% elsif (value == "7") %>
-              <%valor = "Uno o mas años de universidad"%>
-            <% elsif (value == "8") %>
-              <%valor = "Carrera universitaria"%>
-            <% elsif (value == "9") %>
-              <%valor = "Postgrado (estudios después de la universidad)"%>
-            <% elsif (value == "10") %>
-              <%valor = "Ninguno"%>
-            <% elsif (value == "99") %>
-              <%valor = "No sabe - no responde"%>
-            <% end %>
-            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5a" role="button" aria-expanded="false" aria-controls="collapse_p5a">
+      P5A. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Papá - Padrastro
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5a">
+    <div class="card card-body">
+     <% total  = 0 %>
+      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% valor = "" %>
+        <% if (value == "1") %>
+          <%valor = "Algunos años de primaria"%>
+        <% elsif (value == "2") %>
+          <%valor = "Toda la primaria"%>
+        <% elsif (value == "3") %>
+          <%valor = "Algunos años de bachillerato"%>
+        <% elsif (value == "4") %>
+          <%valor = "Todo el bachillerato"%>
+        <% elsif (value == "5") %>
+          <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+        <% elsif (value == "6") %>
+          <%valor = "Carrera técnica o tecnológica"%>
+        <% elsif (value == "7") %>
+          <%valor = "Uno o mas años de universidad"%>
+        <% elsif (value == "8") %>
+          <%valor = "Carrera universitaria"%>
+        <% elsif (value == "9") %>
+          <%valor = "Postgrado (estudios después de la universidad)"%>
+        <% elsif (value == "10") %>
+          <%valor = "Ninguno"%>
+        <% elsif (value == "99") %>
+          <%valor = "No sabe - no responde"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
           <%= pie_chart array ,suffix: "%" %>
-          <br>
     </div>
+  </div>
+  <br>
 
-    <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5B. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Mamá - Madrastra </h3>
-
-          <% total  = 0 %>
-          <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% valor = "" %>
-            <% if (value == "1") %>
-              <%valor = "Algunos años de primaria"%>
-            <% elsif (value == "2") %>
-              <%valor = "Toda la primaria"%>
-            <% elsif (value == "3") %>
-              <%valor = "Algunos años de bachillerato"%>
-            <% elsif (value == "4") %>
-              <%valor = "Todo el bachillerato"%>
-            <% elsif (value == "5") %>
-              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
-            <% elsif (value == "6") %>
-              <%valor = "Carrera técnica o tecnológica"%>
-            <% elsif (value == "7") %>
-              <%valor = "Uno o mas años de universidad"%>
-            <% elsif (value == "8") %>
-              <%valor = "Carrera universitaria"%>
-            <% elsif (value == "9") %>
-              <%valor = "Postgrado (estudios después de la universidad)"%>
-            <% elsif (value == "10") %>
-              <%valor = "Ninguno"%>
-            <% elsif (value == "99") %>
-              <%valor = "No sabe - no responde"%>
-            <% end %>
-            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
-          <%= pie_chart array ,suffix: "%" %>
-          <br>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5b" role="button" aria-expanded="false" aria-controls="collapse_p5b">
+      P5B. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Mamá - Madrastra
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5b">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% valor = "" %>
+      <% if (value == "1") %>
+        <%valor = "Algunos años de primaria"%>
+      <% elsif (value == "2") %>
+        <%valor = "Toda la primaria"%>
+      <% elsif (value == "3") %>
+        <%valor = "Algunos años de bachillerato"%>
+      <% elsif (value == "4") %>
+        <%valor = "Todo el bachillerato"%>
+      <% elsif (value == "5") %>
+        <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+      <% elsif (value == "6") %>
+        <%valor = "Carrera técnica o tecnológica"%>
+      <% elsif (value == "7") %>
+        <%valor = "Uno o mas años de universidad"%>
+      <% elsif (value == "8") %>
+        <%valor = "Carrera universitaria"%>
+      <% elsif (value == "9") %>
+        <%valor = "Postgrado (estudios después de la universidad)"%>
+      <% elsif (value == "10") %>
+        <%valor = "Ninguno"%>
+      <% elsif (value == "99") %>
+        <%valor = "No sabe - no responde"%>
+      <% end %>
+      <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array ,suffix: "%" %>
     </div>
+  </div>
+  <br>
 
-    <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P5C. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo </h3>
-
-          <% total  = 0 %>
-          <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% valor = "" %>
-            <% if (value == "1") %>
-              <%valor = "Algunos años de primaria"%>
-            <% elsif (value == "2") %>
-              <%valor = "Toda la primaria"%>
-            <% elsif (value == "3") %>
-              <%valor = "Algunos años de bachillerato"%>
-            <% elsif (value == "4") %>
-              <%valor = "Todo el bachillerato"%>
-            <% elsif (value == "5") %>
-              <%valor = "Uno o mas años de educación técnica o tecnológica"%>
-            <% elsif (value == "6") %>
-              <%valor = "Carrera técnica o tecnológica"%>
-            <% elsif (value == "7") %>
-              <%valor = "Uno o mas años de universidad"%>
-            <% elsif (value == "8") %>
-              <%valor = "Carrera universitaria"%>
-            <% elsif (value == "9") %>
-              <%valor = "Postgrado (estudios después de la universidad)"%>
-            <% elsif (value == "10") %>
-              <%valor = "Ninguno"%>
-            <% elsif (value == "99") %>
-              <%valor = "No sabe - no responde"%>
-            <% end %>
-            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
-          <%= pie_chart array , suffix: "%" %>
-          <br>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5c" role="button" aria-expanded="false" aria-controls="collapse_p5c">
+      P5C. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5c">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% valor = "" %>
+      <% if (value == "1") %>
+        <%valor = "Algunos años de primaria"%>
+      <% elsif (value == "2") %>
+        <%valor = "Toda la primaria"%>
+      <% elsif (value == "3") %>
+        <%valor = "Algunos años de bachillerato"%>
+      <% elsif (value == "4") %>
+        <%valor = "Todo el bachillerato"%>
+      <% elsif (value == "5") %>
+        <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+      <% elsif (value == "6") %>
+        <%valor = "Carrera técnica o tecnológica"%>
+      <% elsif (value == "7") %>
+        <%valor = "Uno o mas años de universidad"%>
+      <% elsif (value == "8") %>
+        <%valor = "Carrera universitaria"%>
+      <% elsif (value == "9") %>
+        <%valor = "Postgrado (estudios después de la universidad)"%>
+      <% elsif (value == "10") %>
+        <%valor = "Ninguno"%>
+      <% elsif (value == "99") %>
+        <%valor = "No sabe - no responde"%>
+      <% end %>
+      <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array ,suffix: "%" %>
     </div>
+  </div>
+  <br>
 
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
-
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p7" role="button" aria-expanded="false" aria-controls="collapse_p7">
+     P7. ¿Siempre has vivido en Bogotá?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p7">
+    <div class="card card-body">
       <% total  = 0 %>
       <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
           <% total = total + item %>
@@ -257,83 +278,94 @@
       <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
       <%end%>
-
       <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-      <br>
-      </div>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p7b" role="button" aria-expanded="false" aria-controls="collapse_p7b">
+     P7B. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p7b">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% valor = "" %>
+        <% if (value == "1") %>
+          <%valor = "Porque había problemas de plata en la familia"%>
+        <% elsif (value == "2") %>
+          <%valor = "Por problemas de plata (no encontraba trabajo)"%>
+        <% elsif (value == "3") %>
+          <%valor = "Por desastre natural (inundación, avalancha, terremoto, etc. )"%>
+        <% elsif (value == "4") %>
+          <%valor = "Por la situación de desplazamiento por conflicto armado interno"%>
+        <% elsif (value == "5") %>
+          <%valor = "Porque tu familia o tú fueron víctimas de desplazamiento forzado"%>
+        <% elsif (value == "6") %>
+          <%valor = "Por oportunidades de educación"%>
+        <% elsif (value == "7") %>
+          <%valor = "Por motivos de salud"%>
+        <% elsif (value == "8") %>
+          <%valor = "Por problemas sociopoliticos de mi pais (ej; crisis en Venezuela)"%>
+        <% elsif (value == "9") %>
+          <%valor = "Por separación de tus padres"%>
+        <% elsif (value == "10") %>
+          <%valor = "Por separación de tu cónyuge o pareja permanente"%>
+        <% elsif (value == "otro") %>
+          <%valor = "Otra"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array , suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p9" role="button" aria-expanded="false" aria-controls="collapse_p9">
+     P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p9">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-          <% total  = 0 %>
-          <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% valor = "" %>
-            <% if (value == "1") %>
-              <%valor = "Porque había problemas de plata en la familia"%>
-            <% elsif (value == "2") %>
-              <%valor = "Por problemas de plata (no encontraba trabajo)"%>
-            <% elsif (value == "3") %>
-              <%valor = "Por desastre natural (inundación, avalancha, terremoto, etc. )"%>
-            <% elsif (value == "4") %>
-              <%valor = "Por la situación de desplazamiento por conflicto armado interno"%>
-            <% elsif (value == "5") %>
-              <%valor = "Porque tu familia o tú fueron víctimas de desplazamiento forzado"%>
-            <% elsif (value == "6") %>
-              <%valor = "Por oportunidades de educación"%>
-            <% elsif (value == "7") %>
-              <%valor = "Por motivos de salud"%>
-            <% elsif (value == "8") %>
-              <%valor = "Por problemas sociopoliticos de mi pais (ej; crisis en Venezuela)"%>
-            <% elsif (value == "9") %>
-              <%valor = "Por separación de tus padres"%>
-            <% elsif (value == "10") %>
-              <%valor = "Por separación de tu cónyuge o pareja permanente"%>
-            <% elsif (value == "otro") %>
-              <%valor = "Otra"%>
-            <% end %>
-            <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
-          <%= pie_chart array , suffix: "%" %>
-          <br>
-      </div>
-
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?</h3>
-
-          <% total  = 0 %>
-          <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% array.push([value, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
-          <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
-          <br>
-      </div>
-
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?</h3>
-
-          <% total  = 0 %>
-          <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% total = total + item %>
-          <%end%>
-          <% array = [] %>
-          <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-              <% array.push([value, (100*item/total.to_f).round(2)]) %>   
-          <%end%>
-
-          <%= bar_chart array, suffix: "%" %>
-          <br>
-      </div>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p10" role="button" aria-expanded="false" aria-controls="collapse_p10">
+     P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p10">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P12. Has perdido algún curso (año)?</h3>
