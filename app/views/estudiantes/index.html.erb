@@ -1,754 +1,2426 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+.pregunta {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  font-family: 'Heebo';
+  border: 1px solid #43a2d2;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
 </style>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+
+
 <div class="container">
 
   <h1 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >Gráficos Estudiantes</h1>
-
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p1" role="button" aria-expanded="false" aria-controls="collapse_p1">
+      P1. Distribución por grado
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p1">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+            <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+            <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#42B598"] , suffix: "%" %>
+    </div>
+  </div>
   <br>
 
-    <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P1. Por Grado</h3>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p2" role="button" aria-expanded="false" aria-controls="collapse_p2">
+      P2. Distribución por género
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p2">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% valor = "" %>
+          <% if (value == "2") %>
+            <%valor = "Femenino"%>
+          <% else %>
+            <%valor = "Masculino"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
 
-      <%= bar_chart Estudiante.group(:p1).count, xtitle: "Cantidad", ytitle: "Grado", colors: ["#42B598"]  %>
-      <br>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
     </div>
+  </div>
+  <br>
 
-    <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P2. Por Género</h3>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p4" role="button" aria-expanded="false" aria-controls="collapse_p4">
+      P4. Con quien Vives
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p4">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
 
-      <%= bar_chart Estudiante.group(:p2).count, xtitle: "Cantidad", ytitle: "Genero" %>
-
-      <br>
+        <% array = [] %>
+        <% Estudiante.group(:p4_1).where(p4_1: "1").having("p4_1 != ?", "--").having("p4_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Papa", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_2).where(p4_2: "1").having("p4_2 != ?", "--").having("p4_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Padrastro", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_3).where(p4_3: "1").having("p4_3 != ?", "--").having("p4_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Mamá", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_4).where(p4_4: "1").having("p4_4 != ?", "--").having("p4_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Madrastra", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_5).where(p4_5: "1").having("p4_5 != ?", "--").having("p4_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Herman@s", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_6).where(p4_6: "1").having("p4_6 != ?", "--").having("p4_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Prim@s", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_7).where(p4_7: "1").having("p4_7 != ?", "--").having("p4_7 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tí@s", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_8).where(p4_8: "1").having("p4_8 != ?", "--").having("p4_8 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Abuel@s", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_9).where(p4_9: "1").having("p4_9 != ?", "--").having("p4_9 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tu espos@", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_10).where(p4_10: "1").having("p4_10 != ?", "--").having("p4_10 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus hij@s", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_11).where(p4_11: "1").having("p4_11 != ?", "--").having("p4_11 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Otros Familiares", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_12).where(p4_12: "1").having("p4_12 != ?", "--").having("p4_12 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Otros no Parientes", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
+        <%end%> 
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= column_chart array, suffix: "%" %>
     </div>
+  </div>
+  <br>
 
-    <div class="container hidden">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P4. Con quien Vives</h3>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5a" role="button" aria-expanded="false" aria-controls="collapse_p5a">
+      P5A. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Papá - Padrastro
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5a">
+    <div class="card card-body">
+     <% total  = 0 %>
+      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% valor = "" %>
+        <% if (value == "1") %>
+          <%valor = "Algunos años de primaria"%>
+        <% elsif (value == "2") %>
+          <%valor = "Toda la primaria"%>
+        <% elsif (value == "3") %>
+          <%valor = "Algunos años de bachillerato"%>
+        <% elsif (value == "4") %>
+          <%valor = "Todo el bachillerato"%>
+        <% elsif (value == "5") %>
+          <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+        <% elsif (value == "6") %>
+          <%valor = "Carrera técnica o tecnológica"%>
+        <% elsif (value == "7") %>
+          <%valor = "Uno o mas años de universidad"%>
+        <% elsif (value == "8") %>
+          <%valor = "Carrera universitaria"%>
+        <% elsif (value == "9") %>
+          <%valor = "Postgrado (estudios después de la universidad)"%>
+        <% elsif (value == "10") %>
+          <%valor = "Ninguno"%>
+        <% elsif (value == "99") %>
+          <%valor = "No sabe - no responde"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+          <%= pie_chart array ,suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-      <div class="col-sm-6">
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5b" role="button" aria-expanded="false" aria-controls="collapse_p5b">
+      P5B. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Mamá - Madrastra
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5b">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% valor = "" %>
+      <% if (value == "1") %>
+        <%valor = "Algunos años de primaria"%>
+      <% elsif (value == "2") %>
+        <%valor = "Toda la primaria"%>
+      <% elsif (value == "3") %>
+        <%valor = "Algunos años de bachillerato"%>
+      <% elsif (value == "4") %>
+        <%valor = "Todo el bachillerato"%>
+      <% elsif (value == "5") %>
+        <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+      <% elsif (value == "6") %>
+        <%valor = "Carrera técnica o tecnológica"%>
+      <% elsif (value == "7") %>
+        <%valor = "Uno o mas años de universidad"%>
+      <% elsif (value == "8") %>
+        <%valor = "Carrera universitaria"%>
+      <% elsif (value == "9") %>
+        <%valor = "Postgrado (estudios después de la universidad)"%>
+      <% elsif (value == "10") %>
+        <%valor = "Ninguno"%>
+      <% elsif (value == "99") %>
+        <%valor = "No sabe - no responde"%>
+      <% end %>
+      <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array ,suffix: "%" %>
+    </div>
+  </div>
+  <br>
 
-      <%= bar_chart Estudiante.group(:p4_1).count, xtitle: "Cantidad", ytitle: "Papá", colors: ["#E84E0F"], label: "Papá"%>
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p5c" role="button" aria-expanded="false" aria-controls="collapse_p5c">
+      P5C. ¿Cuál es el nivel educativo más alto alcanzado por tus padres y por la persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo? - Persona adulta (distinta a tus padres) con quien permaneces la mayor parte del tiempo
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p5c">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% valor = "" %>
+      <% if (value == "1") %>
+        <%valor = "Algunos años de primaria"%>
+      <% elsif (value == "2") %>
+        <%valor = "Toda la primaria"%>
+      <% elsif (value == "3") %>
+        <%valor = "Algunos años de bachillerato"%>
+      <% elsif (value == "4") %>
+        <%valor = "Todo el bachillerato"%>
+      <% elsif (value == "5") %>
+        <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+      <% elsif (value == "6") %>
+        <%valor = "Carrera técnica o tecnológica"%>
+      <% elsif (value == "7") %>
+        <%valor = "Uno o mas años de universidad"%>
+      <% elsif (value == "8") %>
+        <%valor = "Carrera universitaria"%>
+      <% elsif (value == "9") %>
+        <%valor = "Postgrado (estudios después de la universidad)"%>
+      <% elsif (value == "10") %>
+        <%valor = "Ninguno"%>
+      <% elsif (value == "99") %>
+        <%valor = "No sabe - no responde"%>
+      <% end %>
+      <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array ,suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p6" role="button" aria-expanded="false" aria-controls="collapse_p6">
+      P6. ¿Te reconoces como…?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p6">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p6_1).where(p6_1: "1").having("p6_1 != ?", "--").having("p6_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Indígena", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_2).where(p6_2: "1").having("p6_2 != ?", "--").having("p6_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Gitano(a)", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_3).where(p6_3: "1").having("p6_3 != ?", "--").having("p6_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Negro(a) - Afro", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_4).where(p6_4: "1").having("p6_4 != ?", "--").having("p6_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_5).where(p6_5: "1").having("p6_5 != ?", "--").having("p6_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Migrante del exterior", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p6_6).where(p6_6: "1").having("p6_6 != ?", "--").having("p6_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p7" role="button" aria-expanded="false" aria-controls="collapse_p7">
+     P7. ¿Siempre has vivido en Bogotá?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p7">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p7b" role="button" aria-expanded="false" aria-controls="collapse_p7b">
+     P7B. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p7b">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% valor = "" %>
+        <% if (value == "1") %>
+          <%valor = "Porque había problemas de plata en la familia"%>
+        <% elsif (value == "2") %>
+          <%valor = "Por problemas de plata (no encontraba trabajo)"%>
+        <% elsif (value == "3") %>
+          <%valor = "Por desastre natural (inundación, avalancha, terremoto, etc. )"%>
+        <% elsif (value == "4") %>
+          <%valor = "Por la situación de desplazamiento por conflicto armado interno"%>
+        <% elsif (value == "5") %>
+          <%valor = "Porque tu familia o tú fueron víctimas de desplazamiento forzado"%>
+        <% elsif (value == "6") %>
+          <%valor = "Por oportunidades de educación"%>
+        <% elsif (value == "7") %>
+          <%valor = "Por motivos de salud"%>
+        <% elsif (value == "8") %>
+          <%valor = "Por problemas sociopoliticos de mi pais (ej; crisis en Venezuela)"%>
+        <% elsif (value == "9") %>
+          <%valor = "Por separación de tus padres"%>
+        <% elsif (value == "10") %>
+          <%valor = "Por separación de tu cónyuge o pareja permanente"%>
+        <% elsif (value == "otro") %>
+          <%valor = "Otra"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array , suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p8" role="button" aria-expanded="false" aria-controls="collapse_p8">
+      P8. Durante el ÚLTIMO AÑO, ¿de los siguientes problemas, cuales se han presentado en tu hogar?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p8">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p8a).where(p8a: "1").having("p8a != ?", "--").having("p8a != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Enfermedad grave de algún miembro del hogar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8b).where(p8b: "1").having("p8b != ?", "--").having("p8b != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Muerte de alguno de los miembros del hogar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8c).where(p8c: "1").having("p8c != ?", "--").having("p8c != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Algún menor de 18 años se fue del hogar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8d).where(p8d: "1").having("p8d != ?", "--").having("p8d != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Alguno de los padres tuvo que irse del hogar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8e).where(p8e: "1").having("p8e != ?", "--").having("p8e != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Separación de los padres o el cónyuge", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8f).where(p8f: "1").having("p8f != ?", "--").having("p8f != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Problemas de plata", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p8g).where(p8g: "1").having("p8g != ?", "--").having("p8g != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p9" role="button" aria-expanded="false" aria-controls="collapse_p9">
+     P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p9">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "si") %>
+          <%valor = "Si"%>
+        <% elsif (value == "no") %>
+          <%valor = "No"%>
+        <% elsif (value == "99") %>
+          <%valor = "No sabe - no responde"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p10" role="button" aria-expanded="false" aria-controls="collapse_p10">
+     P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p10">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p10a" role="button" aria-expanded="false" aria-controls="collapse_p10a">
+      P10A. Cuántos años estuviste en el jardín?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p10a">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p10a).having("p10a != ?", "--").having("p10a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p10a).having("p10a != ?", "--").having("p10a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "1") %>
+          <%valor = "1 año"%>
+        <% elsif (value == "2") %>
+          <%valor = "2 años"%>
+        <% elsif (value == "3") %>
+          <%valor = "3 años"%>
+        <% elsif (value == "mas") %>
+          <%valor = "Más Años"%>
+        <% elsif (value == "99") %>
+          <%valor = "No Recuerda"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p11" role="button" aria-expanded="false" aria-controls="collapse_p11">
+      p11. ¿Cuántos años cumplidos tenías cuando hiciste primero de primaria?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p11">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p11).having("p11 != ?", "--").having("p11 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p11).having("p11 != ?", "--").having("p11 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "4") %>
+          <%valor = "4 años"%>
+        <% elsif (value == "5") %>
+          <%valor = "5 años"%>
+        <% elsif (value == "6") %>
+          <%valor = "6 año"%>
+        <% elsif (value == "7") %>
+          <%valor = "7 años"%>
+        <% elsif (value == "8") %>
+          <%valor = "8 años"%>
+        <% elsif (value == "9") %>
+          <%valor = "9 años"%>
+        <% elsif (value == "10") %>
+          <%valor = "10 años"%>
+        <% elsif (value == "11") %>
+          <%valor = "11 años"%>
+        <% elsif (value == "mas") %>
+          <%valor = "Más años"%>
+        <% elsif (value == "99") %>
+          <%valor = "No Recuerda"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p12" role="button" aria-expanded="false" aria-controls="collapse_p12">
+      P12. Has perdido algún curso (año)?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p12">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p12).having("p12 != ?", "--").having("p12 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p12).having("p12 != ?", "--").having("p12 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P13. Cuando tienes dificultades academicas en tu colegio.....</h4>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13a" role="button" aria-expanded="false" aria-controls="collapse_p13a">
+        a. Se establece un plan de mejoramiento/recuperación con tus padres o acudientes y el maestro de manera oportuna
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13a).having("p13a != ?", "--").having("p13a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13a).having("p13a != ?", "--").having("p13a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13b" role="button" aria-expanded="false" aria-controls="collapse_p13b">
+        b. Se establece un plan de mejoramiento/recuperación solamente con el maestro
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13b).having("p13b != ?", "--").having("p13b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13b).having("p13b != ?", "--").having("p13b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13c" role="button" aria-expanded="false" aria-controls="collapse_p13c">
+        c. Tus padres o acudientes están pendientes del plan de mejoramiento/recuperación y el apoyo que necesitas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13c).having("p13c != ?", "--").having("p13c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13c).having("p13c != ?", "--").having("p13c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4" style="margin-top: 20px;">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13d" role="button" aria-expanded="false" aria-controls="collapse_p13d">
+        d. Los docentes u otras personas del colegio están pendientes del plan de recuperación y te apoyan cuando lo necesitas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13d).having("p13d != ?", "--").having("p13d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13d).having("p13d != ?", "--").having("p13d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4" style="margin-top: 20px;">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13e" role="button" aria-expanded="false" aria-controls="collapse_p13e">
+        e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13e).having("p13e != ?", "--").having("p13e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13e).having("p13e != ?", "--").having("p13e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4" style="margin-top: 20px;">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p13f" role="button" aria-expanded="false" aria-controls="collapse_p13f">
+        f. Te entregan un plan de mejoramiento/recuperación a tiempo
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p13f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p13f).having("p13f != ?", "--").having("p13f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p13f).having("p13f != ?", "--").having("p13f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+  </div>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P14. ¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h4>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14a" role="button" aria-expanded="false" aria-controls="collapse_p14a">
+        a. Falta de concentración; me disperso fácilmente
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14a).having("p14a != ?", "--").having("p14a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14a).having("p14a != ?", "--").having("p14a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14b" role="button" aria-expanded="false" aria-controls="collapse_p14b">
+        b. Falta de organización y responsabilidad en el cumplimiento de los deberes escolares
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14b).having("p14b != ?", "--").having("p14b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14b).having("p14b != ?", "--").having("p14b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14c" role="button" aria-expanded="false" aria-controls="collapse_p14c">
+       c. Me intereso más en otras cosas que no tienen que ver con el estudio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14c).having("p14c != ?", "--").having("p14c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14c).having("p14c != ?", "--").having("p14c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14d" role="button" aria-expanded="false" aria-controls="collapse_p14d">
+       d. Considero que el estudio es importante para tener una vida exitosa
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14d).having("p14d != ?", "--").having("p14d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14d).having("p14d != ?", "--").having("p14d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14e" role="button" aria-expanded="false" aria-controls="collapse_p14e">
+       e. La manera como algunos docentes explican y evalúan los temas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14e).having("p14e != ?", "--").having("p14e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14e).having("p14e != ?", "--").having("p14e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14f" role="button" aria-expanded="false" aria-controls="collapse_p14f">
+       f. Falta mayor seguimiento y acompañamiento de mis padres o acudientes en mi desempeño académico
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14f).having("p14f != ?", "--").having("p14f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14f).having("p14f != ?", "--").having("p14f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14g" role="button" aria-expanded="false" aria-controls="collapse_p14g">
+      g. Mi comportamiento es adecuado durante el desarrollo de las clases
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14g).having("p14g != ?", "--").having("p14g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14g).having("p14g != ?", "--").having("p14g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14h" role="button" aria-expanded="false" aria-controls="collapse_p14h">
+      h. Falta de apoyo de docentes, coordinadores y orientadores del colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14h).having("p14h != ?", "--").having("p14h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14h).having("p14h != ?", "--").having("p14h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p14i" role="button" aria-expanded="false" aria-controls="collapse_p14i">
+      i. Las clases son aburridas y poco motivantes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p14i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p14i).having("p14i != ?", "--").having("p14i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p14i).having("p14i != ?", "--").having("p14i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+<p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p15" role="button" aria-expanded="false" aria-controls="collapse_p15">
+      P15. Cuando tienes dificultades academicas en tu colegio encuentras apoyo en...
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p15">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p15a).where(p15a: "1").having("p15a != ?", "--").having("p15a != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus padres o acudientes", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15b).where(p15b: "2").having("p15b != ?", "--").having("p15b != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus docentes", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15c).where(p15c: "3").having("p15c != ?", "--").having("p15c != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus coordinadores o el rector", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15d).where(p15d: "4").having("p15d != ?", "--").having("p15d != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus orientadores", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15e).where(p15e: "5").having("p15e != ?", "--").having("p15e != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tus compañeros de curso", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15f).where(p15f: "6").having("p15f != ?", "--").having("p15f != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["De otras personas; amigos o conocidos", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p15g).where(p15g: "99").having("p15g != ?", "--").having("p15g != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["NS / NR", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P16. Afirmaciones</h4>
   
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_2).count, xtitle: "Cantidad", ytitle: "Padrastro", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_3).count, xtitle: "Cantidad", ytitle: "Mamá", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_4).count, xtitle: "Cantidad", ytitle: "Madrastra", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_5).count, xtitle: "Cantidad", ytitle: "Herman@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_6).count, xtitle: "Cantidad", ytitle: "Prim@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_7).count, xtitle: "Cantidad", ytitle: "Tí@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_8).count, xtitle: "Cantidad", ytitle: "Abuel@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_9).count, xtitle: "Cantidad", ytitle: "Tue espos@", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_10).count, xtitle: "Cantidad", ytitle: "Tus hij@s", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_11).count, xtitle: "Cantidad", ytitle: "Otros Familiares", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-      <div class="col-sm-6">
-
-      <%= bar_chart Estudiante.group(:p4_12).count, xtitle: "Cantidad", ytitle: "Otros no Parientes", colors: ["#E84E0F"] %>
-      
-      <br>
-      </div>
-
-      <div class="col-sm-12">
-
-      <%= bar_chart Estudiante.group(:p4_13).count, xtitle: "Cantidad", ytitle: "Sol@", colors: ["#E84E0F"] %>
-      
-      <br>
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16a" role="button" aria-expanded="false" aria-controls="collapse_p16a">
+      a. ¿Conoces el sistema de evaluación de la institución educativa?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16a).having("p16a != ?", "--").having("p16a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16a).having("p16a != ?", "--").having("p16a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
       </div>
     </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7. ¿Siempre has vivido en Bogotá?</h3>
-
-      <%= bar_chart Estudiante.group(:p7).count, xtitle: "Cantidad"%>
-
-      <br>
-      </div>
-
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P7C. ¿Cuál fue la principal razón por la que cambiaste de municipio, ciudad, departamento, país?</h3>
-
-          <%= pie_chart Estudiante.group(:p7b).count%>
-          <br>
-      </div>
-
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P9. ¿Alguna de las personas que vive contigo tiene alguna discapacidad (es ciega, sorda, usa silla de ruedas de manera permanente, tiene discapacidad intelectual, etc.)?</h3>
-
-          <%= bar_chart Estudiante.group(:p9).count%>
-          <br>
-      </div>
-
-      <div class="container">
-        <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P10. ¿Antes de iniciar la primaria, ... estuviste en algún jardín?</h3>
-
-          <%= bar_chart Estudiante.group(:p10).count%>
-          <br>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P12. Has perdido algún curso (año)?</h3>
-
-      <%= bar_chart Estudiante.group(:p12).count, xtitle: "Cantidad"%>
-      <br>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P13. Cuando tienes dificultades academicas en tu colegio.....</h3>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Se establece un plan de mejoramiento/recuperación con tus padres o acudientes y el maestro de manera oportuna</h6>
-
-      <%= bar_chart Estudiante.group(:p13a).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Se establece un plan de mejoramiento/recuperación solamente con el maestro</h6>
-
-      <%= bar_chart Estudiante.group(:p13b).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Tus padres o acudientes están pendientes del plan de mejoramiento/recuperación y el apoyo que necesitas</h6>
-
-      <%= bar_chart Estudiante.group(:p13c).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4" style="margin-top: 20px;">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los docentes u otras personas del colegio están pendientes del plan de recuperación y te apoyan cuando lo necesitas</h6>
-
-      <%= bar_chart Estudiante.group(:p13d).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4" style="margin-top: 20px;">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
-
-      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4" style="margin-top: 20px;">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
-
-      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P14. ¿Qué aspecto(s) influye(n) en tus problemas de aprendizaje y reprobación escolar?</h3>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Falta de concentración; me disperso fácilmente</h6>
-
-      <%= bar_chart Estudiante.group(:p14a).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Falta de organización y responsabilidad en el cumplimiento de los deberes escolares</h6>
-
-      <%= bar_chart Estudiante.group(:p14b).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Me intereso más en otras cosas que no tienen que ver con el estudio</h6>
-
-      <%= bar_chart Estudiante.group(:p14c).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Considero que el estudio es importante para tener una vida exitosa</h6>
-
-      <%= bar_chart Estudiante.group(:p14d).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. La manera como algunos docentes explican y evalúan los temas</h6>
-
-      <%= bar_chart Estudiante.group(:p14e).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Falta mayor seguimiento y acompañamiento de mis padres o acudientes en mi desempeño académico</h6>
-
-      <%= bar_chart Estudiante.group(:p14f).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Mi comportamiento es adecuado durante el desarrollo de las clases</h6>
-
-      <%= bar_chart Estudiante.group(:p14g).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Falta de apoyo de docentes, coordinadores y orientadores del colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p14h).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Las clases son aburridas y poco motivantes</h6>
-
-      <%= bar_chart Estudiante.group(:p14i).count, xtitle: "Cantidad", colors: ["#B81A5D"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="col-sm-4" style="margin-top: 20px;">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Tus compañeros de clase están pendientes de tu plan de mejoramiento/recuperación y te apoyan cuando lo necesitas</h6>
-
-      <%= bar_chart Estudiante.group(:p13e).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4" style="margin-top: 20px;">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Te entregan un plan de mejoramiento/recuperación a tiempo</h6>
-
-      <%= bar_chart Estudiante.group(:p13f).count, xtitle: "Cantidad", colors: ["#889B77"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P16. Afirmaciones</h3>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. ¿Conoces el sistema de evaluación de la institución educativa?</h6>
-
-      <%= bar_chart Estudiante.group(:p16a).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. ¿Consideras que es clara la forma en que te evaluan en cada materia o asignatura?</h6>
-
-      <%= bar_chart Estudiante.group(:p16b).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. ¿Los profesores explican al inicio del periodo cómo y qué cosas van a calificar/evaluar?</h6>
-
-      <%= bar_chart Estudiante.group(:p16c).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. ¿El docente respeta la forma de evaluacion acordada y socializada al inicio del año o de cada periodo?</h6>
-
-      <%= bar_chart Estudiante.group(:p16d).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. ¿La forma de evaluar de los docentes es acorde a lo aprendido y realizado en clase?</h6>
-
-      <%= bar_chart Estudiante.group(:p16e).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. ¿El docente o director de grupo te pregunta cómo te sientes con la forma en que te evalúan?</h6>
-
-      <%= bar_chart Estudiante.group(:p16f).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. ¿Tú y tus compañeros participan en la construcción de la nota definitiva? (auto- evaluación y co-evaluación)</h6>
-
-      <%= bar_chart Estudiante.group(:p16g).count, xtitle: "Cantidad", colors: ["#D3D800"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P17 ¿Alguna vez te has retirado de estudiar?</h3>
-
-      <%= pie_chart Estudiante.group(:p17).count, xtitle: "Cantidad", donut: true, colors: ["#662483", "#009640", "#F18700"]%>
-      <br>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P18. La última vez que te retiraste de estudiar, ¿en qué mes te retiraste?</h3>
-
-      <%= column_chart Estudiante.group(:p18).count, xtitle: "Meses"%>
-      <br>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P20. La última vez que se retiró de estudiar:</h3>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...pasaste el año pero no te matriculaste en el siguiente</h6>
-
-      <%= bar_chart Estudiante.group(:p20a).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...perdiste el año y no te matriculaste al siguiente año</h6>
-
-      <%= bar_chart Estudiante.group(:p20b).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-4">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >...dejaste de estudiar antes de terminar el año</h6>
-
-      <%= bar_chart Estudiante.group(:p20c).count, xtitle: "Cantidad", colors: ["#E84E0F"]%>
-      <br>
-      </div>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P24. ¿La última vez que te retiraste TEMPORALMENTE de tus estudios fue por alguna de las siguientes razones relacionadas con ese COLEGIO?</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. El colegio no tenía todos los cursos hasta once</h6>
-
-      <%= bar_chart Estudiante.group(:p24a).count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Faltaban profesores</h6>
-
-      <%= bar_chart Estudiante.group(:p24b).count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. La forma como enseñaban los profesores era aburrida</h6>
-
-      <%= bar_chart Estudiante.group(:p24c).count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Las instalaciones del colegio eran desagradables</h6>
-
-      <%= bar_chart Estudiante.group(:p24d).count, xtitle: "Cantidad", colors: ["#662483"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)</h6>
-
-      <%= bar_chart Estudiante.group(:p24e).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Por el maltrato de los profesores y directivos</h6>
-
-      <%= bar_chart Estudiante.group(:p24f).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Por el maltrato de los compañeros</h6>
-
-      <%= bar_chart Estudiante.group(:p24g).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Cerraron el colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24h).count, colors: ["#662483"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i.Faltó ayuda del colegio en transporte</h6>
-
-      <%= bar_chart Estudiante.group(:p24i).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j.Faltó ayuda del colegio en alimentación</h6>
-
-      <%= bar_chart Estudiante.group(:p24j).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >k.Faltó ayuda del colegio para los uniformes</h6>
-
-      <%= bar_chart Estudiante.group(:p24k).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >l.Faltó ayuda del colegio para los útiles escolares</h6>
-
-      <%= bar_chart Estudiante.group(:p24l).count, colors: ["#662483"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >m.Faltó ayuda del colegio para el pago de la pensión o la matrícula</h6>
-
-      <%= bar_chart Estudiante.group(:p24m).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >n. Tenías dificultades con los horarios del colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24n).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >o. La educación del colegio era distinta a tus necesidades e intereses</h6>
-
-      <%= bar_chart Estudiante.group(:p24o).count, colors: ["#662483"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >p. Te expulsaron del colegio</h6>
-
-      <%= bar_chart Estudiante.group(:p24p).count, colors: ["#662483"]%>
-      <br>
-      </div>
-      </div>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P30. ¿Cuánto tiempo llevas estudiando en este colegio...? (años)</h3>
-
-      <%= pie_chart Estudiante.group(:p30).count, donut: true, colors: ["#009640", "#F18700", "#662483", "#B81A5D", "#42B598", "#D3D800"]%>
-      <br>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P31. ¿En qué medio te desplazas y cuánto tiempo te demoras para venir al colegio?</h3>
-
-      <div class="col-sm-6">
-
-        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿En qué medio te desplazas principalmente?</h4>
-
-      <%= column_chart Estudiante.group(:p31a).count, xtitle: "Medio de transporte", colors: ["#42B598"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-        <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >¿Cuánto tiempo te demoras?</h4>
-
-      <%= pie_chart Estudiante.group(:p31b).count, donut: true, colors: ["#B81A5D", "#662483", "#D3D800", "#E84E0F", "#554596", "#FFED00"]%>
-      <br>
-      </div>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P32. ¿En el último año has participado en alguno de los siguientes programas o recibido alguno de los siguientes beneficios?:</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)</h6>
-
-      <%= column_chart Estudiante.group(:p32a).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)</h6>
-
-      <%= column_chart Estudiante.group(:p32b).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Kits escolares</h6>
-
-      <%= column_chart Estudiante.group(:p32c).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Gratuidad total en matrícula y pensión</h6>
-
-      <%= column_chart Estudiante.group(:p32d).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-      </div>
-
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. Ayuda cuando tenías dificultades con alguna materia</h6>
-
-      <%= column_chart Estudiante.group(:p32e).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >f. Apoyo en orientación psicológica o apoyo psicosocial</h6>
-
-      <%= column_chart Estudiante.group(:p32f).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >g. Participación en procesos de inclusión educativa</h6>
-
-      <%= column_chart Estudiante.group(:p32g).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >h. Programas para mejorar la convivencia escolar y la integración de los estudiantes</h6>
-
-      <%= column_chart Estudiante.group(:p32h).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="row">
-      <div class="col-sm-6">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >i. Programas de integración con la comunidad o las familias vecinas al colegio</h6>
-
-      <%= column_chart Estudiante.group(:p32i).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-6">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >j. Articulación con la educación superior y educación media fortalecida</h6>
-
-      <%= column_chart Estudiante.group(:p32j).count, colors: ["#4A99C6"]%>
-      <br>
-      </div>
-      </div>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P36. ¿Te has sentido discriminado en el colegio?</h3>
-
-      <%= pie_chart Estudiante.group(:p36).count, donut: true, colors: ["#F18700", "#B81A5D", "#42B598", "#D3D800"]%>
-      <br>
-      </div>
-
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P37. ¿Qué tan satisfecho te sientes con los siguientes aspectos del colegio?</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Las instalaciones físicas (salones, bibliotecas, patio, etc.)</h6>
-
-      <%= bar_chart Estudiante.group(:p37a).count, xtitle: "Cantidad", colors: ["#E30613"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Las formas como enseñan los profesores</h6>
-
-      <%= bar_chart Estudiante.group(:p37b).count, xtitle: "Cantidad", colors: ["#E30613"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. El estímulo en el uso de nuevas tecnologías (computadores, internet, etc.)</h6>
-
-      <%= bar_chart Estudiante.group(:p37c).count, xtitle: "Cantidad", colors: ["#E30613"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Los compañeros de estudio</h6>
-
-      <%= bar_chart Estudiante.group(:p37d).count, xtitle: "Cantidad", colors: ["#E30613"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="row text-center">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >e. El colegio en general</h6>
-
-      <%= bar_chart Estudiante.group(:p37e).count, colors: ["#E30613"]%>
-      <br>
-      </div>
-      </div>
-
-      <div class="container">
-      <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P38. Señala con qué frecuencia en este año</h3>
-
-      <div class="row">
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >a. Recibiste ayuda de tu familia para pagar los gastos del colegio (pensión, útiles, uniformes, etc.)</h6>
-
-      <%= column_chart Estudiante.group(:p38a).count, xtitle: "", colors: ["#009640"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >b. Recibiste ayuda de tu familia en la realización de trabajos o tareas</h6>
-
-      <%= column_chart Estudiante.group(:p38b).count, xtitle: "", colors: ["#009640"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >c. Recibiste motivación de tu familia para asistir al colegio</h6>
-
-      <%= column_chart Estudiante.group(:p38c).count, xtitle: "", colors: ["#009640"]%>
-      <br>
-      </div>
-
-      <div class="col-sm-3">
-
-        <h6 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >d. Tuviste el tiempo suficiente para hacer tareas y estudiar</h6>
-
-      <%= column_chart Estudiante.group(:p38d).count, xtitle: "", colors: ["#009640"]%>
-      <br>
-      </div>
-      </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16b" role="button" aria-expanded="false" aria-controls="collapse_p16b">
+      b. ¿Consideras que es clara la forma en que te evaluan en cada materia o asignatura?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16b).having("p16b != ?", "--").having("p16b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16b).having("p16b != ?", "--").having("p16b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16c" role="button" aria-expanded="false" aria-controls="collapse_p16c">
+      c. ¿Los profesores explican al inicio del periodo cómo y qué cosas van a calificar/evaluar?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16c).having("p16c != ?", "--").having("p16c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16c).having("p16c != ?", "--").having("p16c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16d" role="button" aria-expanded="false" aria-controls="collapse_p16d">
+      d. ¿El docente respeta la forma de evaluacion acordada y socializada al inicio del año o de cada periodo?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16d).having("p16d != ?", "--").having("p16d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16d).having("p16d != ?", "--").having("p16d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16e" role="button" aria-expanded="false" aria-controls="collapse_p16e">
+     e. ¿La forma de evaluar de los docentes es acorde a lo aprendido y realizado en clase?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16e).having("p16e != ?", "--").having("p16e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16e).having("p16e != ?", "--").having("p16e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16f" role="button" aria-expanded="false" aria-controls="collapse_p16f">
+     f. ¿El docente o director de grupo te pregunta cómo te sientes con la forma en que te evalúan?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16f).having("p16f != ?", "--").having("p16f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16f).having("p16f != ?", "--").having("p16f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p16g" role="button" aria-expanded="false" aria-controls="collapse_p16g">
+     g. ¿Tú y tus compañeros participan en la construcción de la nota definitiva?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p16g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p16g).having("p16g != ?", "--").having("p16g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p16g).having("p16g != ?", "--").having("p16g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p17" role="button" aria-expanded="false" aria-controls="collapse_p17">
+     P17. ¿Alguna vez te has retirado de estudiar?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p17">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p17).having("p17 != ?", "--").having("p17 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p17).having("p17 != ?", "--").having("p17 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= pie_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p18" role="button" aria-expanded="false" aria-controls="collapse_p18">
+     P18. La última vez que te retiraste de estudiar, ¿en qué mes te retiraste?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p18">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>  
+        <% if (value == "1") %>
+          <%valor = "Enero"%>
+        <% elsif (value == "2") %>
+          <%valor = "Febrero"%>
+        <% elsif (value == "3") %>
+          <%valor = "Marzo"%>
+        <% elsif (value == "4") %>
+          <%valor = "Abril"%>
+        <% elsif (value == "5") %>
+          <%valor = "Mayo"%>
+        <% elsif (value == "6") %>
+          <%valor = "Junio"%>
+        <% elsif (value == "7") %>
+          <%valor = "Julio"%>
+        <% elsif (value == "8") %>
+          <%valor = "Agosto"%>
+        <% elsif (value == "9") %>
+          <%valor = "Septiembre"%>
+        <% elsif (value == "10") %>
+          <%valor = "Octubre"%>
+        <% elsif (value == "11") %>
+          <%valor = "Noviembre"%>
+        <% elsif (value == "12") %>
+          <%valor = "Diciembre"%>
+        <% elsif (value == "99") %>
+          <%valor = "No me acuerdo"%>
+        <% elsif (value == "99999") %>
+          <%valor = "No contestó"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %> 
+      <%end%>
+      <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P20. La última vez que se retiró de estudiar</h4>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p20a" role="button" aria-expanded="false" aria-controls="collapse_p20a">
+     a. ...pasaste el año pero no te matriculaste en el siguiente
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p20a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p20a).having("p20a != ?", "--").having("p20a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p20a).having("p20a != ?", "--").having("p20a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "si") %>
+          <%valor = "Si"%>
+          <% elsif (value == "no") %>
+            <%valor = "No"%>
+          <% elsif (value == "99") %>
+            <%valor = "No Responde"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p20b" role="button" aria-expanded="false" aria-controls="collapse_p20b">
+     b. ...perdiste el año y no te matriculaste al siguiente año
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p20b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p20b).having("p20b != ?", "--").having("p20b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p20b).having("p20b != ?", "--").having("p20b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p20c" role="button" aria-expanded="false" aria-controls="collapse_p20c">
+     c. ...dejaste de estudiar antes de terminar el año
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p20c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p20c).having("p20c != ?", "--").having("p20c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p20c).having("p20c != ?", "--").having("p20c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p23" role="button" aria-expanded="false" aria-controls="collapse_p23">
+     P23.¿Ese colegio era público (oficial) o privado (no oficial)?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p23">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p23).having("p23 != ?", "--").having("p23 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p23).having("p23 != ?", "--").having("p23 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>  
+        <% if (value == "publico") %>
+          <%valor = "Público"%>
+        <% elsif (value == "privado") %>
+          <%valor = "Privado"%>
+        <% end %>
+        <% array.push([valor, (100*item/total.to_f).round(2)]) %> 
+      <%end%>
+      <%= column_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P24. ¿La última vez que te retiraste TEMPORALMENTE de tus estudios fue por alguna de las siguientes razones relacionadas con ese COLEGIO?</h4>
+  
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24a" role="button" aria-expanded="false" aria-controls="collapse_p24a">
+     a. El colegio no tenía todos los cursos hasta once
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24a).having("p24a != ?", "--").having("p24a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24b" role="button" aria-expanded="false" aria-controls="collapse_p24b">
+     b. Faltaban profesores
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24b).having("p24b != ?", "--").having("p24b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24c" role="button" aria-expanded="false" aria-controls="collapse_p24c">
+     c. La forma como enseñaban los profesores era aburrida
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24c).having("p24c != ?", "--").having("p24c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24d" role="button" aria-expanded="false" aria-controls="collapse_p24d">
+     d. Las instalaciones del colegio eran desagradables
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24d).having("p24d != ?", "--").having("p24d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24e" role="button" aria-expanded="false" aria-controls="collapse_p24e">
+     e. Había muchos conflictos y violencia en el colegio (presencia de pandillas, "matoneo", bullying, consumo de alcohol y drogas, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24e).having("p24e != ?", "--").having("p24e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24f" role="button" aria-expanded="false" aria-controls="collapse_p24f">
+     f. Por el maltrato de los profesores y directivos
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24f).having("p24f != ?", "--").having("p24f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24g" role="button" aria-expanded="false" aria-controls="collapse_p24g">
+     g. Por el maltrato de los compañeros
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24g).having("p24g != ?", "--").having("p24g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24h" role="button" aria-expanded="false" aria-controls="collapse_p24h">
+    h. Cerraron el colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24h).having("p24h != ?", "--").having("p24h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24i" role="button" aria-expanded="false" aria-controls="collapse_p24i">
+    h. Cerraron el colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24i).having("p24i != ?", "--").having("p24i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24j" role="button" aria-expanded="false" aria-controls="collapse_p24j">
+    j.Faltó ayuda del colegio en alimentación
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24j">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24j).having("p24j != ?", "--").having("p24j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24k" role="button" aria-expanded="false" aria-controls="collapse_p24k">
+    k.Faltó ayuda del colegio para los uniformes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24k">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24k).having("p24k != ?", "--").having("p24k != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24l" role="button" aria-expanded="false" aria-controls="collapse_p24l">
+   l.Faltó ayuda del colegio para los útiles escolares
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24l">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24l).having("p24l != ?", "--").having("p24l != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24m" role="button" aria-expanded="false" aria-controls="collapse_p24m">
+   m.Faltó ayuda del colegio para el pago de la pensión o la matrícula
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24m">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24m).having("p24m != ?", "--").having("p24m != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24n" role="button" aria-expanded="false" aria-controls="collapse_p24n">
+   n. Tenías dificultades con los horarios del colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24n">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24n).having("p24n != ?", "--").having("p24n != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24o" role="button" aria-expanded="false" aria-controls="collapse_p24o">
+  o. La educación del colegio era distinta a tus necesidades e intereses
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24o">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24o).having("p24o != ?", "--").having("p24o != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p24p" role="button" aria-expanded="false" aria-controls="collapse_p24p">
+  p. Te expulsaron del colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p24p">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p24p).having("p24p != ?", "--").having("p24p != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "si") %>
+            <%valor = "Si"%>
+            <% elsif (value == "no") %>
+              <%valor = "No"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Responde"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= bar_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p28" role="button" aria-expanded="false" aria-controls="collapse_p28">
+      P28. ¿Por qué razones volviste a estudiar?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p28">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p28_1).where(p28_1: "1").having("p28_1 != ?", "--").having("p28_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para superarme", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_2).where(p28_2: "1").having("p28_2 != ?", "--").having("p28_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Porque quiero terminar de estudiar", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_3).where(p28_3: "1").having("p28_3 != ?", "--").having("p28_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Consegui cupo", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_4).where(p28_4: "1").having("p28_4 != ?", "--").having("p28_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Por motivación de mis amigos y familia", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_5).where(p28_5: "1").having("p28_5 != ?", "--").having("p28_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para mejorar mi calidad de vida", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+        <% Estudiante.group(:p28_6).where(p28_6: "1").having("p28_6 != ?", "--").having("p28_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Otra", (100*item/total.to_f).round(2)]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= bar_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30" role="button" aria-expanded="false" aria-controls="collapse_p30">
+      P30. ¿Cuánto tiempo llevas estudiando en este colegio...?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30).having("p30 != ?", "--").having("p30 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "1 año o menos"%>
+            <% elsif (value == "2") %>
+              <%valor = "2 años"%>
+            <% elsif (value == "3") %>
+              <%valor = "3 años"%>
+            <% elsif (value == "4") %>
+              <%valor = "4 años"%>
+            <% elsif (value == "5") %>
+              <%valor = "5 años"%>
+            <% elsif (value == "6") %>
+              <%valor = "6 años o más"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30a" role="button" aria-expanded="false" aria-controls="collapse_p30a">
+      p30Aa. ¿Quién realizó tu inscripción para solicitar cupo?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30a">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:p30a).having("p30a != ?", "--").having("p30a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30a).having("p30a != ?", "--").having("p30a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Papá o mamá (padrastro o madrastra)"%>
+            <% elsif (value == "2") %>
+              <%valor = "Hermanos mayores"%>
+            <% elsif (value == "3") %>
+              <%valor = "Otros familiares"%>
+            <% elsif (value == "4") %>
+              <%valor = "Otras personas no parientes"%>
+            <% elsif (value == "5") %>
+              <%valor = "Tú"%>
+            <% elsif (value == "6") %>
+              <%valor = "No recuerdas"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30b" role="button" aria-expanded="false" aria-controls="collapse_p30b">
+     P30b. ¿Por cuál medio realizaron la inscripción?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30b">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:p30b).having("p30b != ?", "--").having("p30b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30b).having("p30b != ?", "--").having("p30b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Por página web"%>
+            <% elsif (value == "2") %>
+              <%valor = "De forma presencial"%>
+            <% elsif (value == "3") %>
+              <%valor = "No recuerdas"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p30c" role="button" aria-expanded="false" aria-controls="collapse_p30c">
+     P30c. ¿Consideras que obtener un cupo en esta institución educativa fue…?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p30c">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:p30c).having("p30c != ?", "--").having("p30c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p30c).having("p30c != ?", "--").having("p30c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Muy fácil"%>
+            <% elsif (value == "2") %>
+              <%valor = "Fácil"%>
+            <% elsif (value == "3") %>
+              <%valor = "Difícil"%> 
+            <% elsif (value == "4") %>
+              <%valor = "Muy Difícil"%> 
+            <% elsif (value == "5") %>
+              <%valor = "No sabes"%>      
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+    </div>
+  </div>  
+  <br>
+
+  <div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P31. ¿En qué medio te desplazas y cuánto tiempo te demoras para venir al colegio?</h4>
+  
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p31a" role="button" aria-expanded="false" aria-controls="collapse_p31a">
+     ¿En qué medio te desplazas principalmente?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p31a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p31a).having("p31a != ?", "--").having("p31a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "A pie"%>
+            <% elsif (value == "2") %>
+              <%valor = "Bicicleta"%>
+            <% elsif (value == "3") %>
+              <%valor = "Carro, taxi"%>
+            <% elsif (value == "4") %>
+              <%valor = "Moto"%>
+            <% elsif (value == "5") %>
+              <%valor = "Transmilenio/ bus/ buseta"%>
+            <% elsif (value == "6") %>
+              <%valor = "Mototaxi, bicitaxi"%>
+            <% elsif (value == "7") %>
+              <%valor = "Ruta escolar"%>
+            <% elsif (value == "8") %>
+              <%valor = "Otro"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#662483"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p31b" role="button" aria-expanded="false" aria-controls="collapse_p31b">
+     ¿Cuánto tiempo te demoras?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p31b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p31b).having("p31b != ?", "--").having("p31b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "Menos de 5 minutos"%>
+            <% elsif (value == "2") %>
+              <%valor = "De 6 a 15 minutos"%>
+            <% elsif (value == "3") %>
+              <%valor = "De 16 a 30 minutos"%>
+            <% elsif (value == "4") %>
+              <%valor = "De 31 a 60 minutos"%>
+            <% elsif (value == "5") %>
+              <%valor = "Más de 60 minutos"%>
+            <% elsif (value == "99") %>
+              <%valor = "No Respondió"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+<div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P32. ¿En el último año has participado en alguno de los siguientes programas o recibido alguno de los siguientes beneficios?</h4>
+  
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32a" role="button" aria-expanded="false" aria-controls="collapse_p32a">
+    a. Alimentación escolar (desayuno, almuerzo, refrigerio, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32a).having("p32a != ?", "--").having("p32a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32b" role="button" aria-expanded="false" aria-controls="collapse_p32b">
+   b. Programa de movilidad escolar (subsidio de transporte, ruta, al colegio en bici, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32b).having("p32b != ?", "--").having("p32b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32c" role="button" aria-expanded="false" aria-controls="collapse_p32c">
+      c. Kits escolares
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32c).having("p32c != ?", "--").having("p32c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32d" role="button" aria-expanded="false" aria-controls="collapse_p32d">
+      d. Gratuidad total en matrícula y pensión
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32d).having("p32d != ?", "--").having("p32d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32e" role="button" aria-expanded="false" aria-controls="collapse_p32e">
+      e. Ayuda cuando tenías dificultades con alguna materia
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32e).having("p32e != ?", "--").having("p32e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32f" role="button" aria-expanded="false" aria-controls="collapse_p32f">
+      f. Apoyo en orientación psicológica o apoyo psicosocial
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32f).having("p32f != ?", "--").having("p32f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32g" role="button" aria-expanded="false" aria-controls="collapse_p32g">
+      g. Participación en procesos de inclusión educativa
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32g).having("p32g != ?", "--").having("p32g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32h" role="button" aria-expanded="false" aria-controls="collapse_p32h">
+      h. Programas para mejorar la convivencia escolar y la integración de los estudiantes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32h).having("p32h != ?", "--").having("p32h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32i" role="button" aria-expanded="false" aria-controls="collapse_p32i">
+      i. Programas de integración con la comunidad o las familias vecinas al colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32i).having("p32i != ?", "--").having("p32i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p32j" role="button" aria-expanded="false" aria-controls="collapse_p32j">
+      j. Articulación con la educación superior y educación media fortalecida
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p32j">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p32j).having("p32j != ?", "--").having("p32j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p36" role="button" aria-expanded="false" aria-controls="collapse_p36">
+      P36. ¿Te has sentido discriminado en el colegio?
+    </a>
+    </p>
+    <div class="collapse" id="collapse_p36">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p36).having("p36 != ?", "--").having("p36 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p36).having("p36 != ?", "--").having("p36 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= pie_chart array, suffix: "%" %>
+      </div>
+    </div>
+    <br>
+
+<div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P37. ¿Qué tan satisfecho te sientes con los siguientes aspectos del colegio?</h4>
+  
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p37a" role="button" aria-expanded="false" aria-controls="collapse_p37a">
+    a. Las instalaciones físicas (salones, bibliotecas, patio, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p37a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p37a).having("p37a != ?", "--").having("p37a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p37a).having("p37a != ?", "--").having("p37a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#E30613"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p37b" role="button" aria-expanded="false" aria-controls="collapse_p37b">
+    b. Las formas como enseñan los profesores
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p37b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p37b).having("p37b != ?", "--").having("p37b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p37b).having("p37b != ?", "--").having("p37b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#E30613"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p37c" role="button" aria-expanded="false" aria-controls="collapse_p37c">
+    c. El estímulo en el uso de nuevas tecnologías (computadores, internet, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p37c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p37c).having("p37c != ?", "--").having("p37c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p37c).having("p37c != ?", "--").having("p37c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#E30613"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p37d" role="button" aria-expanded="false" aria-controls="collapse_p37d">
+    d. Los compañeros de estudio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p37d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p37d).having("p37d != ?", "--").having("p37d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p37d).having("p37d != ?", "--").having("p37d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#E30613"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-3">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p37e" role="button" aria-expanded="false" aria-controls="collapse_p37e">
+    e. El colegio en general
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p37e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p37e).having("p37e != ?", "--").having("p37e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p37e).having("p37e != ?", "--").having("p37e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#E30613"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+
+<div class="container">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P38. Señala con qué frecuencia en este año</h4>
+  
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p38a" role="button" aria-expanded="false" aria-controls="collapse_p38a">
+    a. Recibiste ayuda de tu familia para pagar los gastos del colegio (pensión, útiles, uniformes, etc.)
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p38a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p38a).having("p38a != ?", "--").having("p38a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p38a).having("p38a != ?", "--").having("p38a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#009640"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p38b" role="button" aria-expanded="false" aria-controls="collapse_p38b">
+    b. Recibiste ayuda de tu familia en la realización de trabajos o tareas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p38b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p38b).having("p38b != ?", "--").having("p38b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p38b).having("p38b != ?", "--").having("p38b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#009640"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p38c" role="button" aria-expanded="false" aria-controls="collapse_p38c">
+    c. Recibiste motivación de tu familia para asistir al colegio
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p38c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p38c).having("p38c != ?", "--").having("p38c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p38c).having("p38c != ?", "--").having("p38c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#009640"] , suffix: "%" %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p38d" role="button" aria-expanded="false" aria-controls="collapse_p38d">
+    d. Tuviste el tiempo suficiente para hacer tareas y estudiar
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p38d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p38d).having("p38d != ?", "--").having("p38d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p38d).having("p38d != ?", "--").having("p38d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2)]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#009640"] , suffix: "%" %>
+      </div>
+<<<<<<< HEAD
 
       <div class="container">
       <h3 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left; text-align: center;" >P39. En este último año cursado, ¿con quién permaneciste la mayor parte del tiempo entre semana cuando no estabas en el colegio?</h3>
@@ -764,6 +2436,12 @@
 
 
 
+=======
+    </div>
+    <br>
+  </div>
+</div>
+>>>>>>> 1a710c003272909da52e9b210f502cb79240c9d9
 
 
 </div>
