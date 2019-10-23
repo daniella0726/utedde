@@ -41,7 +41,12 @@
         <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
             <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
-        <%= bar_chart array, colors: ["#42B598"] , suffix: "%" %>
+        <%= bar_chart array, colors: ["#42B598"] , suffix: "%" , height: "220px",
+        library: {
+          tooltip: {
+            pointFormat: 'Valor: <b>{point.z}</b>'
+          }
+        }%>
     </div>
   </div>
   <br>
