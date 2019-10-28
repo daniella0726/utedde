@@ -7565,10 +7565,10 @@ $("#radio-7-p60").is(':checked') == true) {
         $('#div_p60').slideUp();
         $('#div_p60').addClass('hidden');
         $('#pregunta_p60_footer').addClass('hidden');
-        $('#div_p61').slideDown();
-        $('#div_p61').removeClass('hidden');
-        $('#pregunta_p61_footer').removeClass('hidden');
-        $('#div_error_p61').addClass('hidden');
+        $('#div_ultima').slideDown();
+        $('#div_ultima').removeClass('hidden');
+        $('#pregunta_ultima_footer').removeClass('hidden');
+        $('#div_error_ultima').addClass('hidden');
     } , 500);
     } else {
         $('#div_error_p60').removeClass('hidden');
@@ -7609,14 +7609,13 @@ document.getElementById("pregunta_p60_ultima_boton").addEventListener("click", f
       $('#div_p60').slideDown();
       $('#div_p60').removeClass('hidden');
       $('#pregunta_p60_footer').removeClass('hidden');
-      $('#div_ultima').slideUp();
-      $('#div_ultima').addClass('hidden');
-      $('#pregunta_ultima_footer').addClass('hidden');
-      $('#div_error_ultima').addClass('hidden');
+      $('#div_p61').slideUp();
+      $('#div_p61').addClass('hidden');
+      $('#pregunta_p61_footer').addClass('hidden');
+      $('#div_error_p61').addClass('hidden');
   }
   
 </script>
-
 
 
 <div class="centrado hidden" style="width: 90%" id="div_p61">
@@ -7701,8 +7700,7 @@ $("#radio-2-p61").is(':checked') == true ||
 
 $("#radio-3-p61").is(':checked') == true || 
 
-$("#radio-4-p61").is(':checked') == true || 
-
+$("#radio-4-p61").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -7722,20 +7720,20 @@ $("#radio-4-p61").is(':checked') == true ||
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_p62">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p62. Si una persona reinsertada de grupos armados ilegales  llegara a vivir a su vecindario (barrio o conjunto), usted:</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p62. Si una persona reinsertada de grupos armados ilegales  llegara a vivir a su vecindario (barrio o conjunto), usted:</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p62, "1" , id:"radio-5-p62"%>
-        <%= f.label :p62, "En desacuerdo", for: "radio-5-p62"%>
+        <%= f.radio_button :p62, "1" , id:"radio-1-p62"%>
+        <%= f.label :p62, "En desacuerdo", for: "radio-1-p62"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p62, "2" , id:"radio-6-p62"%>
-        <%= f.label :p62, "De acuerdo", for: "radio-6-p62"%>
+        <%= f.radio_button :p62, "2" , id:"radio-2-p62"%>
+        <%= f.label :p62, "De acuerdo", for: "radio-2-p62"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p62, "99" , id:"radio-7-p62"%>
-        <%= f.label :p62, "Ns/Nr", for: "radio-7-p62"%>
+        <%= f.radio_button :p62, "99" , id:"radio-3-p62"%>
+        <%= f.label :p62, "Ns/Nr", for: "radio-3-p62"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p62">Por favor, <strong>escoge una respuesta</strong></div>
@@ -7783,20 +7781,19 @@ $("#radio-4-p61").is(':checked') == true ||
   
     document.getElementById("pregunta_p63_p62_boton").addEventListener("click", fun_p62);
 
-document.getElementById("radio-5-p62").addEventListener("click", fun_p62);
+document.getElementById("radio-1-p62").addEventListener("click", fun_p62);
 
-document.getElementById("radio-6-p62").addEventListener("click", fun_p62);
+document.getElementById("radio-2-p62").addEventListener("click", fun_p62);
 
-document.getElementById("radio-7-p62").addEventListener("click", fun_p62);
+document.getElementById("radio-3-p62").addEventListener("click", fun_p62);
 
 function fun_p62() {
       if (
-$("#radio-5-p62").is(':checked') == true || 
+$("#radio-1-p62").is(':checked') == true || 
 
-$("#radio-6-p62").is(':checked') == true || 
+$("#radio-2-p62").is(':checked') == true || 
 
-$("#radio-7-p62").is(':checked') == true || 
-
+$("#radio-3-p62").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -7820,16 +7817,16 @@ $("#radio-7-p62").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p63, "1" , id:"radio-8-p63"%>
-        <%= f.label :p63, "En desacuerdo", for: "radio-8-p63"%>
+        <%= f.radio_button :p63, "1" , id:"radio-1-p63"%>
+        <%= f.label :p63, "En desacuerdo", for: "radio-1-p63"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p63, "2" , id:"radio-9-p63"%>
-        <%= f.label :p63, "De acuerdo", for: "radio-9-p63"%>
+        <%= f.radio_button :p63, "2" , id:"radio-2-p63"%>
+        <%= f.label :p63, "De acuerdo", for: "radio-2-p63"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p63, "99" , id:"radio-10-p63"%>
-        <%= f.label :p63, "Ns/Nr", for: "radio-10-p63"%>
+        <%= f.radio_button :p63, "99" , id:"radio-3-p63"%>
+        <%= f.label :p63, "Ns/Nr", for: "radio-3-p63"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p63">Por favor, <strong>escoge una respuesta</strong></div>
@@ -7877,20 +7874,19 @@ $("#radio-7-p62").is(':checked') == true ||
   
     document.getElementById("pregunta_p64_p63_boton").addEventListener("click", fun_p63);
 
-document.getElementById("radio-8-p63").addEventListener("click", fun_p63);
+document.getElementById("radio-1-p63").addEventListener("click", fun_p63);
 
-document.getElementById("radio-9-p63").addEventListener("click", fun_p63);
+document.getElementById("radio-2-p63").addEventListener("click", fun_p63);
 
-document.getElementById("radio-10-p63").addEventListener("click", fun_p63);
+document.getElementById("radio-3-p63").addEventListener("click", fun_p63);
 
 function fun_p63() {
       if (
-$("#radio-8-p63").is(':checked') == true || 
+$("#radio-1-p63").is(':checked') == true || 
 
-$("#radio-9-p63").is(':checked') == true || 
+$("#radio-2-p63").is(':checked') == true || 
 
-$("#radio-10-p63").is(':checked') == true || 
-
+$("#radio-3-p63").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -8019,16 +8015,16 @@ $("#radio-10-p63").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p65, "1" , id:"radio-11-p65"%>
-        <%= f.label :p65, "Si", for: "radio-11-p65"%>
+        <%= f.radio_button :p65, "1" , id:"radio-1-p65"%>
+        <%= f.label :p65, "Si", for: "radio-1-p65"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p65, "2" , id:"radio-12-p65"%>
-        <%= f.label :p65, "No", for: "radio-12-p65"%>
+        <%= f.radio_button :p65, "2" , id:"radio-2-p65"%>
+        <%= f.label :p65, "No", for: "radio-2-p65"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p65, "99" , id:"radio-13-p65"%>
-        <%= f.label :p65, "Ns/Nr", for: "radio-13-p65"%>
+        <%= f.radio_button :p65, "99" , id:"radio-3-p65"%>
+        <%= f.label :p65, "Ns/Nr", for: "radio-3-p65"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p65">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8076,20 +8072,19 @@ $("#radio-10-p63").is(':checked') == true ||
   
     document.getElementById("pregunta_p66_p65_boton").addEventListener("click", fun_p65);
 
-document.getElementById("radio-11-p65").addEventListener("click", fun_p65);
+document.getElementById("radio-1-p65").addEventListener("click", fun_p65);
 
-document.getElementById("radio-12-p65").addEventListener("click", fun_p65);
+document.getElementById("radio-2-p65").addEventListener("click", fun_p65);
 
-document.getElementById("radio-13-p65").addEventListener("click", fun_p65);
+document.getElementById("radio-3-p65").addEventListener("click", fun_p65);
 
 function fun_p65() {
       if (
-$("#radio-11-p65").is(':checked') == true || 
+$("#radio-1-p65").is(':checked') == true || 
 
-$("#radio-12-p65").is(':checked') == true || 
+$("#radio-2-p65").is(':checked') == true || 
 
-$("#radio-13-p65").is(':checked') == true || 
-
+$("#radio-3-p65").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -8113,16 +8108,16 @@ $("#radio-13-p65").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p66, "1" , id:"radio-14-p66"%>
-        <%= f.label :p66, "En desacuerdo", for: "radio-14-p66"%>
+        <%= f.radio_button :p66, "1" , id:"radio-1-p66"%>
+        <%= f.label :p66, "En desacuerdo", for: "radio-1-p66"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p66, "2" , id:"radio-15-p66"%>
-        <%= f.label :p66, "De acuerdo", for: "radio-15-p66"%>
+        <%= f.radio_button :p66, "2" , id:"radio-2-p66"%>
+        <%= f.label :p66, "De acuerdo", for: "radio-2-p66"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p66, "99" , id:"radio-16-p66"%>
-        <%= f.label :p66, "Ns/Nr", for: "radio-16-p66"%>
+        <%= f.radio_button :p66, "99" , id:"radio-3-p66"%>
+        <%= f.label :p66, "Ns/Nr", for: "radio-3-p66"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p66">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8170,20 +8165,19 @@ $("#radio-13-p65").is(':checked') == true ||
   
     document.getElementById("pregunta_p67_p66_boton").addEventListener("click", fun_p66);
 
-document.getElementById("radio-14-p66").addEventListener("click", fun_p66);
+document.getElementById("radio-1-p66").addEventListener("click", fun_p66);
 
-document.getElementById("radio-15-p66").addEventListener("click", fun_p66);
+document.getElementById("radio-2-p66").addEventListener("click", fun_p66);
 
-document.getElementById("radio-16-p66").addEventListener("click", fun_p66);
+document.getElementById("radio-3-p66").addEventListener("click", fun_p66);
 
 function fun_p66() {
       if (
-$("#radio-14-p66").is(':checked') == true || 
+$("#radio-1-p66").is(':checked') == true || 
 
-$("#radio-15-p66").is(':checked') == true || 
+$("#radio-2-p66").is(':checked') == true || 
 
-$("#radio-16-p66").is(':checked') == true || 
-
+$("#radio-3-p66").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -8207,16 +8201,16 @@ $("#radio-16-p66").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p67, "1" , id:"radio-17-p67"%>
-        <%= f.label :p67, "En desacuerdo", for: "radio-17-p67"%>
+        <%= f.radio_button :p67, "1" , id:"radio-1-p67"%>
+        <%= f.label :p67, "En desacuerdo", for: "radio-1-p67"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p67, "2" , id:"radio-18-p67"%>
-        <%= f.label :p67, "De acuerdo", for: "radio-18-p67"%>
+        <%= f.radio_button :p67, "2" , id:"radio-2-p67"%>
+        <%= f.label :p67, "De acuerdo", for: "radio-2-p67"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p67, "99" , id:"radio-19-p67"%>
-        <%= f.label :p67, "Ns/Nr", for: "radio-19-p67"%>
+        <%= f.radio_button :p67, "99" , id:"radio-3-p67"%>
+        <%= f.label :p67, "Ns/Nr", for: "radio-3-p67"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p67">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8264,20 +8258,19 @@ $("#radio-16-p66").is(':checked') == true ||
   
     document.getElementById("pregunta_p68_p67_boton").addEventListener("click", fun_p67);
 
-document.getElementById("radio-17-p67").addEventListener("click", fun_p67);
+document.getElementById("radio-1-p67").addEventListener("click", fun_p67);
 
-document.getElementById("radio-18-p67").addEventListener("click", fun_p67);
+document.getElementById("radio-2-p67").addEventListener("click", fun_p67);
 
-document.getElementById("radio-19-p67").addEventListener("click", fun_p67);
+document.getElementById("radio-3-p67").addEventListener("click", fun_p67);
 
 function fun_p67() {
       if (
-$("#radio-17-p67").is(':checked') == true || 
+$("#radio-1-p67").is(':checked') == true || 
 
-$("#radio-18-p67").is(':checked') == true || 
+$("#radio-2-p67").is(':checked') == true || 
 
-$("#radio-19-p67").is(':checked') == true || 
-
+$("#radio-3-p67").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -8301,16 +8294,16 @@ $("#radio-19-p67").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p68, "1" , id:"radio-20-p68"%>
-        <%= f.label :p68, "Si", for: "radio-20-p68"%>
+        <%= f.radio_button :p68, "1" , id:"radio-1-p68"%>
+        <%= f.label :p68, "Si", for: "radio-1-p68"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p68, "2" , id:"radio-21-p68"%>
-        <%= f.label :p68, "No", for: "radio-21-p68"%>
+        <%= f.radio_button :p68, "2" , id:"radio-2-p68"%>
+        <%= f.label :p68, "No", for: "radio-2-p68"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p68, "99" , id:"radio-22-p68"%>
-        <%= f.label :p68, "Ns/Nr", for: "radio-22-p68"%>
+        <%= f.radio_button :p68, "99" , id:"radio-3-p68"%>
+        <%= f.label :p68, "Ns/Nr", for: "radio-3-p68"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p68">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8358,20 +8351,19 @@ $("#radio-19-p67").is(':checked') == true ||
   
     document.getElementById("pregunta_p69_p68_boton").addEventListener("click", fun_p68);
 
-document.getElementById("radio-20-p68").addEventListener("click", fun_p68);
+document.getElementById("radio-1-p68").addEventListener("click", fun_p68);
 
-document.getElementById("radio-21-p68").addEventListener("click", fun_p68);
+document.getElementById("radio-2-p68").addEventListener("click", fun_p68);
 
-document.getElementById("radio-22-p68").addEventListener("click", fun_p68);
+document.getElementById("radio-3-p68").addEventListener("click", fun_p68);
 
 function fun_p68() {
       if (
-$("#radio-20-p68").is(':checked') == true || 
+$("#radio-1-p68").is(':checked') == true || 
 
-$("#radio-21-p68").is(':checked') == true || 
+$("#radio-2-p68").is(':checked') == true || 
 
-$("#radio-22-p68").is(':checked') == true || 
-
+$("#radio-3-p68").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -8395,20 +8387,20 @@ $("#radio-22-p68").is(':checked') == true ||
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :p69, "1" , id:"radio-23-p69"%>
-        <%= f.label :p69, "Le sería indiferente", for: "radio-23-p69"%>
+        <%= f.radio_button :p69, "1" , id:"radio-1-p69"%>
+        <%= f.label :p69, "Le sería indiferente", for: "radio-1-p69"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p69, "2" , id:"radio-24-p69"%>
-        <%= f.label :p69, "Lo rechazaría", for: "radio-24-p69"%>
+        <%= f.radio_button :p69, "2" , id:"radio-2-p69"%>
+        <%= f.label :p69, "Lo rechazaría", for: "radio-2-p69"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p69, "3" , id:"radio-25-p69"%>
-        <%= f.label :p69, "Lo aceptaría", for: "radio-25-p69"%>
+        <%= f.radio_button :p69, "3" , id:"radio-3-p69"%>
+        <%= f.label :p69, "Lo aceptaría", for: "radio-3-p69"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p69, "99" , id:"radio-26-p69"%>
-        <%= f.label :p69, "Ns/Nr", for: "radio-26-p69"%>
+        <%= f.radio_button :p69, "99" , id:"radio-4-p69"%>
+        <%= f.label :p69, "Ns/Nr", for: "radio-4-p69"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p69">Por favor, <strong>escoge una respuesta</strong></div>
@@ -8456,24 +8448,23 @@ $("#radio-22-p68").is(':checked') == true ||
   
     document.getElementById("pregunta_p70_p69_boton").addEventListener("click", fun_p69);
 
-document.getElementById("radio-23-p69").addEventListener("click", fun_p69);
+document.getElementById("radio-1-p69").addEventListener("click", fun_p69);
 
-document.getElementById("radio-24-p69").addEventListener("click", fun_p69);
+document.getElementById("radio-2-p69").addEventListener("click", fun_p69);
 
-document.getElementById("radio-25-p69").addEventListener("click", fun_p69);
+document.getElementById("radio-3-p69").addEventListener("click", fun_p69);
 
-document.getElementById("radio-26-p69").addEventListener("click", fun_p69);
+document.getElementById("radio-4-p69").addEventListener("click", fun_p69);
 
 function fun_p69() {
       if (
-$("#radio-23-p69").is(':checked') == true || 
+$("#radio-1-p69").is(':checked') == true || 
 
-$("#radio-24-p69").is(':checked') == true || 
+$("#radio-2-p69").is(':checked') == true || 
 
-$("#radio-25-p69").is(':checked') == true || 
+$("#radio-3-p69").is(':checked') == true || 
 
-$("#radio-26-p69").is(':checked') == true || 
-
+$("#radio-4-p69").is(':checked') == true 
 ) {
   
       setTimeout(function(){
