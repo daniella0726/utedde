@@ -144,46 +144,74 @@
 
         <% array = [] %>
         <% Estudiante.group(:p4_1).where(p4_1: "1").having("p4_1 != ?", "--").having("p4_1 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Papa", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Papa", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_2).where(p4_2: "1").having("p4_2 != ?", "--").having("p4_2 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Padrastro", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Padrastro", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_3).where(p4_3: "1").having("p4_3 != ?", "--").having("p4_3 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Mamá", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Mamá", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_4).where(p4_4: "1").having("p4_4 != ?", "--").having("p4_4 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Madrastra", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Madrastra", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_5).where(p4_5: "1").having("p4_5 != ?", "--").having("p4_5 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Herman@s", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Herman@s", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_6).where(p4_6: "1").having("p4_6 != ?", "--").having("p4_6 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Prim@s", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Prim@s", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_7).where(p4_7: "1").having("p4_7 != ?", "--").having("p4_7 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tí@s", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Tí@s", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_8).where(p4_8: "1").having("p4_8 != ?", "--").having("p4_8 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Abuel@s", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Abuel@s", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_9).where(p4_9: "1").having("p4_9 != ?", "--").having("p4_9 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tu espos@", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Tu espos@", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_10).where(p4_10: "1").having("p4_10 != ?", "--").having("p4_10 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tus hij@s", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Tus hij@s", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_11).where(p4_11: "1").having("p4_11 != ?", "--").having("p4_11 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Otros Familiares", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Otros Familiares", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_12).where(p4_12: "1").having("p4_12 != ?", "--").having("p4_12 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Otros no Parientes", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Otros no Parientes", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p4_13).where(p4_13: "1").having("p4_13 != ?", "--").having("p4_13 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Sol@", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Sol@", (100*item/total.to_f).round(2), item]) %>
         <%end%> 
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
         <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+          <td><%= p[] %></td>
+        <% end %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
