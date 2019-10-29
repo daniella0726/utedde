@@ -4482,7 +4482,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p25a).having("p25a != ?", "--").having("p25a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4525,7 +4525,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p25b).having("p25b != ?", "--").having("p25b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4568,7 +4568,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p25c).having("p25c != ?", "--").having("p25c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4614,7 +4614,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p25d).having("p25d != ?", "--").having("p25d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4661,7 +4661,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26a).having("p26a != ?", "--").having("p26a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4704,7 +4704,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26b).having("p26b != ?", "--").having("p26b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4747,7 +4747,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26c).having("p26c != ?", "--").having("p26c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4793,7 +4793,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26d).having("p26d != ?", "--").having("p26d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4836,7 +4836,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26e).having("p26e != ?", "--").having("p26e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4879,7 +4879,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26f).having("p26f != ?", "--").having("p26f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4926,7 +4926,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26g).having("p26g != ?", "--").having("p26g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -4969,7 +4969,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26h).having("p26h != ?", "--").having("p26h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -5012,7 +5012,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26i).having("p26i != ?", "--").having("p26i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -5059,7 +5059,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p26j).having("p26j != ?", "--").having("p26j != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
