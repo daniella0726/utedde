@@ -1862,31 +1862,31 @@
         <% Estudiante.group(:p12pm_1).where(p12pm_1: "1").having("p12pm_1 != ?", "--").having("p12pm_1 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Matemáticas", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_2).where(p12pm_2: "2").having("p12pm_2 != ?", "--").having("p12pm_2 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_2).where(p12pm_2: "1").having("p12pm_2 != ?", "--").having("p12pm_2 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Ciencias naturales y educación ambiental", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_3).where(p12pm_3: "3").having("p12pm_3 != ?", "--").having("p12pm_3 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_3).where(p12pm_3: "1").having("p12pm_3 != ?", "--").having("p12pm_3 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Idiomas extranjeros", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_4).where(p12pm_4: "4").having("p12pm_4 != ?", "--").having("p12pm_4 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_4).where(p12pm_4: "1").having("p12pm_4 != ?", "--").having("p12pm_4 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Ciencias sociales, historia, geografía, constitución política y democracia", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_5).where(p12pm_5: "5").having("p12pm_5 != ?", "--").having("p12pm_5 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_5).where(p12pm_5: "1").having("p12pm_5 != ?", "--").having("p12pm_5 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Educación artística y Cultural", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_6).where(p12pm_6: "6").having("p12pm_6 != ?", "--").having("p12pm_6 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_6).where(p12pm_6: "1").having("p12pm_6 != ?", "--").having("p12pm_6 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Educación religiosa", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_7).where(p12pm_7: "7").having("p12pm_7 != ?", "--").having("p12pm_7 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_7).where(p12pm_7: "1").having("p12pm_7 != ?", "--").having("p12pm_7 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Educación ética y en valores humanos", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_8).where(p12pm_8: "8").having("p12pm_8 != ?", "--").having("p12pm_8 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_8).where(p12pm_8: "1").having("p12pm_8 != ?", "--").having("p12pm_8 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Tecnología e informática", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_9).where(p12pm_9: "9").having("p12pm_9 != ?", "--").having("p12pm_9 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_9).where(p12pm_9: "1").having("p12pm_9 != ?", "--").having("p12pm_9 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Humanidades, lengua castellana", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p12pm_10).where(p12pm_10: "10").having("p12pm_10 != ?", "--").having("p12pm_10 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p12pm_10).where(p12pm_10: "1").having("p12pm_10 != ?", "--").having("p12pm_10 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Educación física, recreación y deportes", (100*item/total.to_f).round(2), item]) %>
         <%end%>
     
@@ -1935,7 +1935,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13a).having("p13a != ?", "--").having("p13a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -1978,7 +1978,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13b).having("p13b != ?", "--").having("p13b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -2021,7 +2021,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13c).having("p13c != ?", "--").having("p13c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -2064,7 +2064,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13d).having("p13d != ?", "--").having("p13d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -2107,7 +2107,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13e).having("p13e != ?", "--").having("p13e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -2150,7 +2150,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p13f).having("p13f != ?", "--").having("p13f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
         <br>
@@ -2198,7 +2198,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14a).having("p14a != ?", "--").having("p14a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2241,7 +2241,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14b).having("p14b != ?", "--").having("p14b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2284,7 +2284,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14c).having("p14c != ?", "--").having("p14c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2329,7 +2329,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14d).having("p14d != ?", "--").having("p14d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2372,7 +2372,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14e).having("p14e != ?", "--").having("p14e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2415,7 +2415,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14f).having("p14f != ?", "--").having("p14f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2460,7 +2460,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14g).having("p14g != ?", "--").having("p14g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2503,7 +2503,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14h).having("p14h != ?", "--").having("p14h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
@@ -2546,7 +2546,7 @@
         <%end%>
         <% array = [] %>
         <% Estudiante.group(:p14i).having("p14i != ?", "--").having("p14i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
         <br>
