@@ -2051,7 +2051,7 @@
         <% Estudiante.group(:p46_7).where(p46_7: "1").having("p46_7 != ?", "--").having("p46_7 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Ninguno", (100*item/total.to_f).round(2), item]) %>
         <%end%>
-        <% Estudiante.group(:p46_8).where(p46_8: "1").having("p46_8 != ?", "--").having("p40_8 != ?", "").count(:id).each do |value,item|%>
+        <% Estudiante.group(:p46_8).where(p46_8: "1").having("p46_8 != ?", "--").having("p46_8 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Otro.¿Cuál?", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
