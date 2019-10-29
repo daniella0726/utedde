@@ -3402,7 +3402,8 @@
           <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>  
+      <% Estudiante.group(:p18).having("p18 != ?", "--").having("p18 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%> 
+        <%valor =""%> 
         <% if (value == "1") %>
           <%valor = "Enero"%>
         <% elsif (value == "2") %>
