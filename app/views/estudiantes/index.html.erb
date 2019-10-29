@@ -509,26 +509,54 @@
 
         <% array = [] %>
         <% Estudiante.group(:p6_1).where(p6_1: "1").having("p6_1 != ?", "--").having("p6_1 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Indígena", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Indígena", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_2).where(p6_2: "1").having("p6_2 != ?", "--").having("p6_2 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Gitano(a)", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Gitano(a)", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_3).where(p6_3: "1").having("p6_3 != ?", "--").having("p6_3 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Negro(a) - Afro", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Negro(a) - Afro", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_4).where(p6_4: "1").having("p6_4 != ?", "--").having("p6_4 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2), item) %>
         <%end%>
         <% Estudiante.group(:p6_5).where(p6_5: "1").having("p6_5 != ?", "--").having("p6_5 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Migrante del exterior", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Migrante del exterior", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_6).where(p6_6: "1").having("p6_6 != ?", "--").having("p6_6 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2), item]) %>
         <%end%>
     
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
         <%= bar_chart array, suffix: "%" %>
+
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
@@ -546,9 +574,36 @@
       <%end%>
       <% array = [] %>
       <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
       <%end%>
       <%= bar_chart array, suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
@@ -593,6 +648,57 @@
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= pie_chart array , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+              <% if (value == "1") %>
+                <%valor = "Porque había problemas de plata en la familia"%>
+              <% elsif (value == "2") %>
+                <%valor = "Por problemas de plata (no encontraba trabajo)"%>
+              <% elsif (value == "3") %>
+                <%valor = "Por desastre natural (inundación, avalancha, terremoto, etc. )"%>
+              <% elsif (value == "4") %>
+                <%valor = "Por la situación de desplazamiento por conflicto armado interno"%>
+              <% elsif (value == "5") %>
+                <%valor = "Porque tu familia o tú fueron víctimas de desplazamiento forzado"%>
+              <% elsif (value == "6") %>
+                <%valor = "Por oportunidades de educación"%>
+              <% elsif (value == "7") %>
+                <%valor = "Por motivos de salud"%>
+              <% elsif (value == "8") %>
+                <%valor = "Por problemas sociopoliticos de mi pais (ej; crisis en Venezuela)"%>
+              <% elsif (value == "9") %>
+                <%valor = "Por separación de tus padres"%>
+              <% elsif (value == "10") %>
+                <%valor = "Por separación de tu cónyuge o pareja permanente"%>
+              <% elsif (value == "otro") %>
+                <%valor = "Otra"%>
+              <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
+
     </div>
   </div>
   <br>
@@ -611,29 +717,57 @@
 
         <% array = [] %>
         <% Estudiante.group(:p8a).where(p8a: "1").having("p8a != ?", "--").having("p8a != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Enfermedad grave de algún miembro del hogar", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Enfermedad grave de algún miembro del hogar", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8b).where(p8b: "1").having("p8b != ?", "--").having("p8b != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Muerte de alguno de los miembros del hogar", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Muerte de alguno de los miembros del hogar", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8c).where(p8c: "1").having("p8c != ?", "--").having("p8c != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Algún menor de 18 años se fue del hogar", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Algún menor de 18 años se fue del hogar", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8d).where(p8d: "1").having("p8d != ?", "--").having("p8d != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Alguno de los padres tuvo que irse del hogar", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Alguno de los padres tuvo que irse del hogar", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8e).where(p8e: "1").having("p8e != ?", "--").having("p8e != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Separación de los padres o el cónyuge", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Separación de los padres o el cónyuge", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8f).where(p8f: "1").having("p8f != ?", "--").having("p8f != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Problemas de plata", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Problemas de plata", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p8g).where(p8g: "1").having("p8g != ?", "--").having("p8g != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2)]) %>
+          <% array.push(["Ninguna de las anteriores", (100*item/total.to_f).round(2), item]) %>
         <%end%>
     
         <% array = array.sort {|a,b| b[1] <=> a[1]} %>
         <%= bar_chart array, suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
+       
     </div>
   </div>
   <br>
@@ -661,6 +795,39 @@
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "si") %>
+          <%valor = "Si"%>
+        <% elsif (value == "no") %>
+          <%valor = "No"%>
+        <% elsif (value == "99") %>
+          <%valor = "No sabe - no responde"%>
+        <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
@@ -681,6 +848,32 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
@@ -712,6 +905,43 @@
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p10a).having("p10a != ?", "--").having("p10a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+            <%valor = "1 año"%>
+          <% elsif (value == "2") %>
+            <%valor = "2 años"%>
+          <% elsif (value == "3") %>
+            <%valor = "3 años"%>
+          <% elsif (value == "mas") %>
+            <%valor = "Más Años"%>
+          <% elsif (value == "99") %>
+            <%valor = "No Recuerda"%>
+          <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
