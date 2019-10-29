@@ -2301,6 +2301,348 @@
 
 </div>
 
+<div class="container">
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p49" role="button" aria-expanded="false" aria-controls="collapse_p49">
+     p49. ¿Has trabajado alguna vez?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p49">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p49).having("p49 != ?", "--").having("p49 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p49).having("p49 != ?", "--").having("p49 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
+      <%end%>
+      <%= pie_chart array, suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+  </div>
+
+</div>
+
+</div>
+
+<div class="container">
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p50" role="button" aria-expanded="false" aria-controls="collapse_p50">
+     p50. Durante la SEMANA PASADA…
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p50">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p50).having("p50 != ?", "--").having("p50 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p50).having("p50 != ?", "--").having("p50 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+              <%valor = "trabajaste?"%>
+            <% elsif (value == "2") %>
+              <%valor = "buscaste trabajo?"%>
+            <% elsif (value == "3") %>
+              <%valor = "no trabajaste?"%>
+            <% end %
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
+      <%end%>
+      <%= pie_chart array, suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+  </div>
+
+</div>
+
+</div>
+
+<div class="container">
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p53" role="button" aria-expanded="false" aria-controls="collapse_p53">
+      p53. ¿Por qué razón trabajas?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p53">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p53_1).where(p53_1: "1").having("p53_1 != ?", "--").having("p53_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para pagar los gastos del colegio (pensión, libros, uniforme, etc.)", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_2).where(p53_2: "1").having("p53_2 != ?", "--").having("p53_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para ayudar con los gastos de la casa", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_3).where(p53_3: "1").having("p53_3 != ?", "--").having("p53_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para participar en el negocio de tu familia", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_4).where(p53_4: "1").having("p53_4 != ?", "--").having("p53_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Porque el trabajo te forma y te hace honrado", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_5).where(p53_5: "1").having("p53_5 != ?", "--").having("p53_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["El trabajo te aleja de los vicios", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_6).where(p53_6: "1").having("p53_6 != ?", "--").having("p53_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Para tener tu propio dinero", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_7).where(p53_7: "1").having("p53_7 != ?", "--").having("p53_7 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Porque tus padres / acudientes te obligan", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p53_8).where(p53_8: "1").having("p53_8 != ?", "--").having("p53_8 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Otra. ¿Cuál?", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+
+</div>
+
+<div class="container">
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p54" role="button" aria-expanded="false" aria-controls="collapse_p54">
+      p54. ¿Que días a la semana realizas este trabajo?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p54">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p54_1).where(p54_1: "1").having("p54_1 != ?", "--").having("p54_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Lunes", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_2).where(p54_2: "1").having("p54_2 != ?", "--").having("p54_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Martes", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_3).where(p54_3: "1").having("p54_3 != ?", "--").having("p54_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Miercoles", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_4).where(p54_4: "1").having("p54_4 != ?", "--").having("p54_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Jueves", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_5).where(p54_5: "1").having("p54_5 != ?", "--").having("p54_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Viernes", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_6).where(p54_6: "1").having("p54_6 != ?", "--").having("p54_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Sábado", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p54_7).where(p54_7: "1").having("p54_7 != ?", "--").having("p54_7 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Domingo", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+
+</div>
+
+<div class="container">
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p55" role="button" aria-expanded="false" aria-controls="collapse_p55">
+      p55. ¿En qué jornadas realizas este trabajo?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p55">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p55_1).where(p55_1: "1").having("p55_1 != ?", "--").having("p55_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Mañana", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p55_2).where(p55_2: "1").having("p55_2 != ?", "--").having("p55_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tarde", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p55_3).where(p55_3: "1").having("p55_3 != ?", "--").having("p55_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Noche", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <%= column_chart array, suffix: "%" %>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+
+</div>
+
+<div class="container">
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p50" role="button" aria-expanded="false" aria-controls="collapse_p50">
+     p50. Durante la SEMANA PASADA…
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p50">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p50).having("p50 != ?", "--").having("p50 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p50).having("p50 != ?", "--").having("p50 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <% if (value == "1") %>
+              <%valor = "trabajaste?"%>
+            <% elsif (value == "2") %>
+              <%valor = "buscaste trabajo?"%>
+            <% elsif (value == "3") %>
+              <%valor = "no trabajaste?"%>
+            <% end %
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
+      <%end%>
+      <%= pie_chart array, suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+  </div>
+
+</div>
+
+</div>
+
+
 <div class="hidden">
 <table>
   <thead>
