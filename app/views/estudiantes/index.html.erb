@@ -518,7 +518,7 @@
           <% array.push(["Negro(a) - Afro", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_4).where(p6_4: "1").having("p6_4 != ?", "--").having("p6_4 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2), item) %>
+          <% array.push(["victima del conflicto armado interno", (100*item/total.to_f).round(2), item]) %>
         <%end%>
         <% Estudiante.group(:p6_5).where(p6_5: "1").having("p6_5 != ?", "--").having("p6_5 != ?", "").count(:id).each do |value,item|%>
           <% array.push(["Migrante del exterior", (100*item/total.to_f).round(2), item]) %>
