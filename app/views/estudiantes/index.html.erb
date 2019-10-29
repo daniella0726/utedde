@@ -965,6 +965,53 @@
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+       <% Estudiante.group(:p11).having("p11 != ?", "--").having("p11 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% if (value == "4") %>
+          <%valor = "4 años"%>
+        <% elsif (value == "5") %>
+          <%valor = "5 años"%>
+        <% elsif (value == "6") %>
+          <%valor = "6 año"%>
+        <% elsif (value == "7") %>
+          <%valor = "7 años"%>
+        <% elsif (value == "8") %>
+          <%valor = "8 años"%>
+        <% elsif (value == "9") %>
+          <%valor = "9 años"%>
+        <% elsif (value == "10") %>
+          <%valor = "10 años"%>
+        <% elsif (value == "11") %>
+          <%valor = "11 años"%>
+        <% elsif (value == "mas") %>
+          <%valor = "Más años"%>
+        <% elsif (value == "99") %>
+          <%valor = "No Recuerda"%>
+        <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
@@ -985,6 +1032,78 @@
         <% array.push([value, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p12).having("p12 != ?", "--").having("p12 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=value%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+  <br>
+
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p12a" role="button" aria-expanded="false" aria-controls="collapse_p12a">
+      p12aa. ¿Qué curso?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p12a">
+    <div class="card card-body">
+      <% total  = 0 %>
+      <% Estudiante.group(:p12a).having("p12a != ?", "--").having("p12a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% total = total + item %>
+      <%end%>
+      <% array = [] %>
+      <% Estudiante.group(:p12a).having("p12a != ?", "--").having("p12a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array.push([value, (100*item/total.to_f).round(2)]) %>   
+      <%end%>
+      <%= bar_chart array, colors: ["#E84E0F"] , suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p12a).having("p12a != ?", "--").having("p12a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=value%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
+        </div>
     </div>
   </div>
   <br>
