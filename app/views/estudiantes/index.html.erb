@@ -6724,6 +6724,120 @@
 
 </div>
 
+  <div class="container row">
+
+    <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p34d" role="button" aria-expanded="false" aria-controls="collapse_p34d">
+    fuiste víctima de amenazas o insultos por parte de otros compañeros?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p34d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p34d).having("p34d != ?", "--").having("p34d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p34d).having("p34d != ?", "--").having("p34d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-6">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p34e" role="button" aria-expanded="false" aria-controls="collapse_p34e">
+    te sentiste discriminado(a) en el colegio?
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p34e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p34e).having("p34e != ?", "--").having("p34e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p34e).having("p34e != ?", "--").having("p34e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  </div>
+
   <p>
     <a class="pregunta" data-toggle="collapse" href="#collapse_p36" role="button" aria-expanded="false" aria-controls="collapse_p36">
       P36. ¿Te has sentido discriminado en el colegio?
