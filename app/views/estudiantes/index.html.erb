@@ -254,6 +254,54 @@
         <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
           <%= pie_chart array ,suffix: "%" %>
+          <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% if (value == "1") %>
+                <%valor = "Algunos años de primaria"%>
+              <% elsif (value == "2") %>
+                <%valor = "Toda la primaria"%>
+              <% elsif (value == "3") %>
+                <%valor = "Algunos años de bachillerato"%>
+              <% elsif (value == "4") %>
+                <%valor = "Todo el bachillerato"%>
+              <% elsif (value == "5") %>
+                <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+              <% elsif (value == "6") %>
+                <%valor = "Carrera técnica o tecnológica"%>
+              <% elsif (value == "7") %>
+                <%valor = "Uno o mas años de universidad"%>
+              <% elsif (value == "8") %>
+                <%valor = "Carrera universitaria"%>
+              <% elsif (value == "9") %>
+                <%valor = "Postgrado (estudios después de la universidad)"%>
+              <% elsif (value == "10") %>
+                <%valor = "Ninguno"%>
+              <% elsif (value == "99") %>
+                <%valor = "No sabe - no responde"%>
+              <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
     </div>
   </div>
   <br>
@@ -298,6 +346,55 @@
       <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= pie_chart array ,suffix: "%" %>
+       <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+                <% if (value == "1") %>
+                  <%valor = "Algunos años de primaria"%>
+                <% elsif (value == "2") %>
+                  <%valor = "Toda la primaria"%>
+                <% elsif (value == "3") %>
+                  <%valor = "Algunos años de bachillerato"%>
+                <% elsif (value == "4") %>
+                  <%valor = "Todo el bachillerato"%>
+                <% elsif (value == "5") %>
+                  <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+                <% elsif (value == "6") %>
+                  <%valor = "Carrera técnica o tecnológica"%>
+                <% elsif (value == "7") %>
+                  <%valor = "Uno o mas años de universidad"%>
+                <% elsif (value == "8") %>
+                  <%valor = "Carrera universitaria"%>
+                <% elsif (value == "9") %>
+                  <%valor = "Postgrado (estudios después de la universidad)"%>
+                <% elsif (value == "10") %>
+                  <%valor = "Ninguno"%>
+                <% elsif (value == "99") %>
+                  <%valor = "No sabe - no responde"%>
+                <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
     </div>
   </div>
   <br>
@@ -342,6 +439,55 @@
       <% array.push([valor, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= pie_chart array ,suffix: "%" %>
+      <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+              <% valor = "" %>
+                <% if (value == "1") %>
+                  <%valor = "Algunos años de primaria"%>
+                <% elsif (value == "2") %>
+                  <%valor = "Toda la primaria"%>
+                <% elsif (value == "3") %>
+                  <%valor = "Algunos años de bachillerato"%>
+                <% elsif (value == "4") %>
+                  <%valor = "Todo el bachillerato"%>
+                <% elsif (value == "5") %>
+                  <%valor = "Uno o mas años de educación técnica o tecnológica"%>
+                <% elsif (value == "6") %>
+                  <%valor = "Carrera técnica o tecnológica"%>
+                <% elsif (value == "7") %>
+                  <%valor = "Uno o mas años de universidad"%>
+                <% elsif (value == "8") %>
+                  <%valor = "Carrera universitaria"%>
+                <% elsif (value == "9") %>
+                  <%valor = "Postgrado (estudios después de la universidad)"%>
+                <% elsif (value == "10") %>
+                  <%valor = "Ninguno"%>
+                <% elsif (value == "99") %>
+                  <%valor = "No sabe - no responde"%>
+                <% end %>
+              <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
+              </tr>  
+        <%end%>
+              <tr class="table-dark" style="text-align: center;">
+                <th scope="row" style="text-align: center;">Total</th>
+                <td style="text-align: center;"><%= total%></td>
+                <td style="text-align: center;">100%</td>
+              </tr>
+              </tbody>
+        </table>
     </div>
   </div>
   <br>
