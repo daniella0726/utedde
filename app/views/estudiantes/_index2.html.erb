@@ -1185,7 +1185,7 @@
       <%end%>
       <% array = [] %>
       <% Estudiante.group(:p43).having("p43 != ?", "--").having("p43 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
-          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>   
+          <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
       <%end%>
       <%= pie_chart array, suffix: "%" %>
       <br>
