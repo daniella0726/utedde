@@ -43,23 +43,23 @@
         <%end%>
         <%= bar_chart array , name:"relativo" , colors: ["#42B598"] , suffix: "%"%>
         <br>
-        <table class="table table-border">
+        <table class="table table-bordered">
               <thead>
                 <tr style="text-align: center;">
-                  <th scope="col">Valor</th>
-                  <th scope="col">Cantidad</th>
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
                   <th scope="col">%</th>
                 </tr>
               </thead>
               <tbody>
         <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
               <tr style="text-align: center;">
-                <th scope="row"><%=value%></th>
-                <td><%=item%></td>
-                <td><%=(100*item/total.to_f).round(2)%></td>
+                <th scope="row" style="text-align: center;"><%=value%></th>
+                <td style="text-align: center;"><%=item%></td>
+                <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
               </tr>  
         <%end%>
-              <tr class="table-dark">
+              <tr class="table-dark" style="text-align: center;">
                 <th scope="row">Total</th>
                 <td><%= total%></td>
                 <td>100%</td>
