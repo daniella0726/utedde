@@ -1846,6 +1846,78 @@
 
   </div>
 
+  <p>
+    <a class="pregunta" data-toggle="collapse" href="#collapse_p12pm" role="button" aria-expanded="false" aria-controls="collapse_p12pm">
+      p12pm Durante el ÚLTIMO AÑO, ¿de los siguientes problemas, cuales se han presentado en tu hogar?
+    </a>
+  </p>
+  <div class="collapse" id="collapse_p12pm">
+    <div class="card card-body">
+      <% total  = 0 %>
+        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
+          <% total = total + item %>
+        <%end%>
+
+        <% array = [] %>
+        <% Estudiante.group(:p12pm_1).where(p12pm_1: "1").having("p12pm_1 != ?", "--").having("p12pm_1 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Matemáticas", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_2).where(p12pm_2: "2").having("p12pm_2 != ?", "--").having("p12pm_2 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Ciencias naturales y educación ambiental", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_3).where(p12pm_3: "3").having("p12pm_3 != ?", "--").having("p12pm_3 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Idiomas extranjeros", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_4).where(p12pm_4: "4").having("p12pm_4 != ?", "--").having("p12pm_4 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Ciencias sociales, historia, geografía, constitución política y democracia", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_5).where(p12pm_5: "5").having("p12pm_5 != ?", "--").having("p12pm_5 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Educación artística y Cultural", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_6).where(p12pm_6: "6").having("p12pm_6 != ?", "--").having("p12pm_6 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Educación religiosa", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_7).where(p12pm_7: "7").having("p12pm_7 != ?", "--").having("p12pm_7 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Educación ética y en valores humanos", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_8).where(p12pm_8: "8").having("p12pm_8 != ?", "--").having("p12pm_8 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Tecnología e informática", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_9).where(p12pm_9: "9").having("p12pm_9 != ?", "--").having("p12pm_9 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Humanidades, lengua castellana", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+        <% Estudiante.group(:p12pm_10).where(p12pm_10: "10").having("p12pm_10 != ?", "--").having("p12pm_10 != ?", "").count(:id).each do |value,item|%>
+          <% array.push(["Educación física, recreación y deportes", (100*item/total.to_f).round(2), item]) %>
+        <%end%>
+    
+        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
+        <%= bar_chart array, suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+       
+    </div>
+  </div>
+  <br>
+
   <div class="container">
   <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P13. Cuando tienes dificultades academicas en tu colegio.....</h4>
 
@@ -1866,6 +1938,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -1888,6 +1981,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -1910,6 +2024,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -1932,6 +2067,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -1954,6 +2110,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -1976,6 +2153,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#889B77"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2003,6 +2201,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2025,6 +2244,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2047,6 +2287,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2071,6 +2332,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2093,6 +2375,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2115,6 +2418,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2139,6 +2463,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2161,6 +2506,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
@@ -2183,6 +2549,27 @@
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
         <%end%>
         <%= bar_chart array, colors: ["#B81A5D"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
       </div>
     </div>
     <br>
