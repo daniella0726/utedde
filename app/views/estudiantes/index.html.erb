@@ -861,7 +861,7 @@
               <tbody>
         <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
               <tr style="text-align: center;">
-                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <th scope="row" style="text-align: center;"><%=value%></th>
                 <td style="text-align: center;"><%=item%></td>
                 <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
               </tr>  
@@ -929,7 +929,7 @@
             <%valor = "No Recuerda"%>
           <% end %>
               <tr style="text-align: center;">
-                <th scope="row" style="text-align: center;"><%=valor%></th>
+                <th scope="row" style="text-align: center;"><%=value%></th>
                 <td style="text-align: center;"><%=item%></td>
                 <td style="text-align: center;"><%=(100*item/total.to_f).round(2)%></td>
               </tr>  
