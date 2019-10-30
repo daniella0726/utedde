@@ -21,6 +21,514 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://kit.fontawesome.com/1f7411956b.js"></script>
 
+ <div class="container row">
+  <h4 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: left;" >P35. ¿Con qué frecuencia en este último año se presentaron las siguientes situaciones:?</h4>
+  
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35a" role="button" aria-expanded="false" aria-controls="collapse_p35a">
+    Conflictos entre estudiantes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35a">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35a).having("p35a != ?", "--").having("p35a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35a).having("p35a != ?", "--").having("p35a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35b" role="button" aria-expanded="false" aria-controls="collapse_p35b">
+    Conflictos de los estudiantes con los profesores o directivos
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35b">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35b).having("p35b != ?", "--").having("p35b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35b).having("p35b != ?", "--").having("p35b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35c" role="button" aria-expanded="false" aria-controls="collapse_p35c">
+    Conflictos entre profesores y directivos
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35c">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35c).having("p35c != ?", "--").having("p35c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35c).having("p35c != ?", "--").having("p35c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  </div>
+
+  <div class="container row">
+
+    <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35d" role="button" aria-expanded="false" aria-controls="collapse_p35d">
+    Problemas de consumo de alcohol entre los estudiantes
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35d">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35d).having("p35d != ?", "--").having("p35d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35d).having("p35d != ?", "--").having("p35d != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35e" role="button" aria-expanded="false" aria-controls="collapse_p35e">
+     Presencia de vandalismo o pandillismo
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35e">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35e).having("p35e != ?", "--").having("p35e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35e).having("p35e != ?", "--").having("p35e != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35f" role="button" aria-expanded="false" aria-controls="collapse_p35f">
+     Presencia de armas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35f">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35f).having("p35f != ?", "--").having("p35f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35f).having("p35f != ?", "--").having("p35f != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  </div>
+
+  <div class="container row">
+
+    <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35g" role="button" aria-expanded="false" aria-controls="collapse_p35g">
+     Presencia de venta o consumo de drogas
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35g">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35g).having("p35g != ?", "--").having("p35g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35g).having("p35g != ?", "--").having("p35g != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35h" role="button" aria-expanded="false" aria-controls="collapse_p35h">
+     Los(as) estudiantes se sienten discriminados
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35h">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35h).having("p35h != ?", "--").having("p35h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35h).having("p35h != ?", "--").having("p35h != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <div class="col-sm-4">
+    <p>
+      <a class="pregunta" data-toggle="collapse" href="#collapse_p35i" role="button" aria-expanded="false" aria-controls="collapse_p35i">
+     Conflictos entre profesores
+      </a>
+    </p>
+    <div class="collapse" id="collapse_p35i">
+      <div class="card card-body">
+        <% total  = 0 %>
+        <% Estudiante.group(:p35i).having("p35i != ?", "--").having("p35i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% total = total + item %>
+        <%end%>
+        <% array = [] %>
+        <% Estudiante.group(:p35i).having("p35i != ?", "--").having("p35i != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+          <%valor = ""%>
+          <% if (value == "1") %>
+            <%valor = "Nunca"%>
+            <% elsif (value == "2") %>
+              <%valor = "Casi Nunca"%>
+            <% elsif (value == "3") %>
+              <%valor = "A veces"%>
+            <% elsif (value == "4") %>
+              <%valor = "Casi siempre"%>
+            <% elsif (value == "5") %>
+              <%valor = "Siempre"%>
+          <% end %>
+          <% array.push([valor, (100*item/total.to_f).round(2), item]) %>  
+        <%end%>
+        <%= column_chart array, colors: ["#4A99C6"] , suffix: "%" %>
+        <br>
+        <div style="text-align: center;">
+        <table class="table table-bordered" style="width: 80%; text-align: center;">
+              <thead>
+                <tr style="text-align: center;">
+                  <th scope="col" style="text-align: center;">Valor</th>
+                  <th scope="col" style="text-align: center;">Cantidad</th>
+                  <th scope="col" style="text-align: center;">%</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% array.each do |p| %>
+               <tr style="text-align: center;">
+                <th scope="row" style="text-align: center;"><%=p[0]%></th>
+                <td style="text-align: center;"><%=p[2]%></td>
+                <td style="text-align: center;"><%=p[1]%></td>
+              </tr>  
+        <%end%>
+              </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  </div>
+
+
   <p>
     <a class="pregunta" data-toggle="collapse" href="#collapse_p36" role="button" aria-expanded="false" aria-controls="collapse_p36">
       P36. ¿Te has sentido discriminado en el colegio?
