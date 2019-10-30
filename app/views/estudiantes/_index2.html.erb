@@ -3043,59 +3043,6 @@
 
 </div>
 
-<div class="container">
-
-  <p>
-    <a class="pregunta" data-toggle="collapse" href="#collapse_p55" role="button" aria-expanded="false" aria-controls="collapse_p55">
-      p55. ¿En qué jornadas realizas este trabajo?
-    </a>
-  </p>
-  <div class="collapse" id="collapse_p55">
-    <div class="card card-body">
-      <% total  = 0 %>
-        <% Estudiante.group(:created_at).count(:id).each do |value,item|%>
-          <% total = total + item %>
-        <%end%>
-
-        <% array = [] %>
-        <% Estudiante.group(:p55_1).where(p55_1: "1").having("p55_1 != ?", "--").having("p55_1 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Mañana", (100*item/total.to_f).round(2), item]) %>
-        <%end%>
-        <% Estudiante.group(:p55_2).where(p55_2: "1").having("p55_2 != ?", "--").having("p55_2 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Tarde", (100*item/total.to_f).round(2), item]) %>
-        <%end%>
-        <% Estudiante.group(:p55_3).where(p55_3: "1").having("p55_3 != ?", "--").having("p55_3 != ?", "").count(:id).each do |value,item|%>
-          <% array.push(["Noche", (100*item/total.to_f).round(2), item]) %>
-        <%end%>
-        <% array = array.sort {|a,b| b[1] <=> a[1]} %>
-        <br>
-        <div style="text-align: center;">
-        <table class="table table-bordered" style="width: 80%; text-align: center;">
-              <thead>
-                <tr style="text-align: center;">
-                  <th scope="col" style="text-align: center;">Valor</th>
-                  <th scope="col" style="text-align: center;">Cantidad</th>
-                  <th scope="col" style="text-align: center;">%</th>
-                </tr>
-              </thead>
-              <tbody>
-        <%= column_chart array, suffix: "%" %>
-        <% array.each do |p| %>
-               <tr style="text-align: center;">
-                <th scope="row" style="text-align: center;"><%=p[0]%></th>
-                <td style="text-align: center;"><%=p[2]%></td>
-                <td style="text-align: center;"><%=p[1]%></td>
-              </tr>  
-        <%end%>
-              </tbody>
-        </table>
-        </div>
-    </div>
-  </div>
-  <br>
-
-</div>
-
 
 
 
