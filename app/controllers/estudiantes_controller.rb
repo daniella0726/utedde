@@ -17,6 +17,10 @@ class EstudiantesController < ApplicationController
     @estudiantes = Estudiante.all
   end
 
+  def index4
+    @estudiantes = Estudiante.all
+  end
+
   # GET /estudiantes/1
   # GET /estudiantes/1.json
   def show

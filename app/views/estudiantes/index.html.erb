@@ -34,11 +34,12 @@
   <div class="collapse" id="collapse_p1">
     <div class="card card-body">
       <% total  = 0 %>
-        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql = Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id) %>
+        <% array_sql.each do |value,item|%>
             <% total = total + item %>
         <%end%>
         <% array = [] %>
-        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
             <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
         <%end%>
         <%= bar_chart array , name:"relativo" , colors: ["#42B598"] , suffix: "%"%>
@@ -53,7 +54,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <tr style="text-align: center;">
                 <th scope="row" style="text-align: center;"><%=value%></th>
                 <td style="text-align: center;"><%=item%></td>
@@ -80,11 +81,12 @@
   <div class="collapse" id="collapse_p2">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
           <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
           <% valor = "" %>
           <% if (value == "2") %>
             <%valor = "Femenino"%>
@@ -106,7 +108,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p2).having("p2 != ?", "--").having("p2 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
                <% if (value == "2") %>
                   <%valor = "Femenino"%>
                 <% else %>
@@ -217,11 +219,12 @@
   <div class="collapse" id="collapse_p5a">
     <div class="card card-body">
      <% total  = 0 %>
-      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+     <% array_sql = Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
           <% valor = "" %>
         <% if (value == "1") %>
           <%valor = "Algunos años de primaria"%>
@@ -260,7 +263,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p5a).having("p5a != ?", "--").having("p5a != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <% if (value == "1") %>
                 <%valor = "Algunos años de primaria"%>
               <% elsif (value == "2") %>
@@ -310,11 +313,12 @@
   <div class="collapse" id="collapse_p5b">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
         <% valor = "" %>
       <% if (value == "1") %>
         <%valor = "Algunos años de primaria"%>
@@ -353,7 +357,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p5b).having("p5b != ?", "--").having("p5b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <% valor = "" %>
                 <% if (value == "1") %>
                   <%valor = "Algunos años de primaria"%>
@@ -404,11 +408,12 @@
   <div class="collapse" id="collapse_p5c">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
       <% valor = "" %>
       <% if (value == "1") %>
         <%valor = "Algunos años de primaria"%>
@@ -447,7 +452,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p5c).having("p5c != ?", "--").having("p5c != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <% valor = "" %>
                 <% if (value == "1") %>
                   <%valor = "Algunos años de primaria"%>
@@ -558,11 +563,12 @@
   <div class="collapse" id="collapse_p7">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
           <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p7).having("p7 != ?", "--").having("p7 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
           <% array.push([value, (100*item/total.to_f).round(2), item]) %>   
       <%end%>
       <%= bar_chart array, suffix: "%" %>
@@ -604,11 +610,12 @@
   <div class="collapse" id="collapse_p7b">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
           <% valor = "" %>
         <% if (value == "1") %>
           <%valor = "Porque había problemas de plata en la familia"%>
@@ -647,7 +654,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p7b).having("p7b != ?", "--").having("p7b != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <% valor = "" %>
               <% if (value == "1") %>
                 <%valor = "Porque había problemas de plata en la familia"%>
@@ -762,11 +769,12 @@
   <div class="collapse" id="collapse_p9">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
         <% if (value == "si") %>
           <%valor = "Si"%>
         <% elsif (value == "no") %>
@@ -788,7 +796,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p9).having("p9 != ?", "--").having("p9 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
         <% if (value == "si") %>
           <%valor = "Si"%>
         <% elsif (value == "no") %>
@@ -822,11 +830,12 @@
   <div class="collapse" id="collapse_p10">
     <div class="card card-body">
       <% total  = 0 %>
-      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql = Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id) %>
+      <% array_sql.each do |value,item|%>
       <% total = total + item %>
       <%end%>
       <% array = [] %>
-      <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+      <% array_sql.each do |value,item|%>
           <% array.push([value, (100*item/total.to_f).round(2)]) %>   
       <%end%>
       <%= bar_chart array, suffix: "%" %>
@@ -841,7 +850,7 @@
                 </tr>
               </thead>
               <tbody>
-        <% Estudiante.group(:p10).having("p10 != ?", "--").having("p10 != ?", "").order('COUNT(id) DESC').count(:id).each do |value,item|%>
+        <% array_sql.each do |value,item|%>
               <tr style="text-align: center;">
                 <th scope="row" style="text-align: center;"><%=value%></th>
                 <td style="text-align: center;"><%=item%></td>
