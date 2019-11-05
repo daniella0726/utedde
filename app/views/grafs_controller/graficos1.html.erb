@@ -29,13 +29,13 @@
 <div class="container">
 
   <h1 style="font-family: 'Heebo', sans-serif; color: #254064; text-align: center;" >Gráficos Estudiantes</h1>
-  <p>
-    <a class="pregunta" data-toggle="collapse" data-target="#collapse_p1" role="button" aria-expanded="false" aria-controls="collapse_p1">
-      P1. Distribución por grado
+  <h4 class="panel-title">
+    <a class="pregunta" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_p1" aria-expanded="true" aria-controls="collapse_p1">
+          P1. Distribución por grado
     </a>
-  </p>
-  <div class="collapse" id="collapse_p1">
-    <div class="card card-body">
+  </h4>
+  <div id="collapse_p1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
       <% total  = 0 %>rails 
         <% array_sql = Estudiante.group(:p1).having("p1 != ?", "--").having("p1 != ?", "").order('COUNT(id) DESC').count(:id) %>
         <% array_sql.each do |value,item|%>
@@ -71,10 +71,10 @@
               </tr>
               </tbody>
         </table>
-        </div>
     </div>
   </div>
-  <br>
+</div>
+<br>
 
   <p>
     <a class="pregunta" data-toggle="collapse" href="#collapse_p2" role="button" aria-expanded="false" aria-controls="collapse_p2">
