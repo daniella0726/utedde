@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 root 'home#index'
 get 'grafs_controller/graficos1'
+get 'grafs_controller/graficos2'
 
 
 
