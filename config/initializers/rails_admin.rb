@@ -54,8 +54,47 @@ RailsAdmin.config do |config|
     config.model 'Cultura' do
     visible false
     end 
+  config.model Director do
+    list do
+      field :id do
+      label "Ref BD" 
+      end
+      field :pen do
+      label "No. Encuesta"
+      end
+      field :p35 do
+      label "Nombre del Digitador"
+      end
+      field :p1 do
+      label "P1"
+      end
+      field :p2 do
+      label "P2"
+      end
+    end
+  end
 
-    config.model Estudiante do
+  config.model Docente do
+    list do
+      field :id do
+      label "Ref BD" 
+      end
+      field :pen do
+      label "No. Encuesta"
+      end
+      field :p35 do
+      label "Nombre del Digitador"
+      end
+      field :p1 do
+      label "P1"
+      end
+      field :p2 do
+      label "P2"
+      end
+    end
+  end
+
+  config.model Estudiante do
     list do
       field :id do
       label "Ref BD" 
@@ -73,48 +112,8 @@ RailsAdmin.config do |config|
       label "P2"
       end
     end
-
-    config.model Director do
-    list do
-      field :id do
-      label "Ref BD" 
-      end
-      field :pen do
-      label "No. Encuesta"
-      end
-      field :p35 do
-      label "Nombre del Digitador"
-      end
-      field :p1 do
-      label "P1"
-      end
-      field :p2 do
-      label "P2"
-      end
-    end
-
-    config.model Docente do
-    list do
-      field :id do
-      label "Ref BD" 
-      end
-      field :pen do
-      label "No. Encuesta"
-      end
-      field :p35 do
-      label "Nombre del Digitador"
-      end
-      field :p1 do
-      label "P1"
-      end
-      field :p2 do
-      label "P2"
-      end
-    end
   end
-
-
-  end
+end
 end
 
 RailsAdmin.config do |config|
