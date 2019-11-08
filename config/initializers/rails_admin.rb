@@ -73,6 +73,44 @@ RailsAdmin.config do |config|
       label "P2"
       end
     end
+
+    config.model Director do
+    list do
+      field :id do
+      label "Ref BD" 
+      end
+      field :pen do
+      label "No. Encuesta"
+      end
+      field :p35 do
+      label "Nombre del Digitador"
+      end
+      field :p1 do
+      label "P1"
+      end
+      field :p2 do
+      label "P2"
+      end
+    end
+
+    config.model Docente do
+    list do
+      field :id do
+      label "Ref BD" 
+      end
+      field :pen do
+      label "No. Encuesta"
+      end
+      field :p35 do
+      label "Nombre del Digitador"
+      end
+      field :p1 do
+      label "P1"
+      end
+      field :p2 do
+      label "P2"
+      end
+    end
   end
 
 
