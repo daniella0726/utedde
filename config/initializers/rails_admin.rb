@@ -68,7 +68,7 @@ RailsAdmin.config do |config|
       field :p1 do
       label "P1"
       end
-      field :p2 do
+      field :p3 do
       label "P2"
       end
     end
@@ -88,7 +88,7 @@ RailsAdmin.config do |config|
       field :p1 do
       label "P1"
       end
-      field :p2 do
+      field :p3 do
       label "P2"
       end
     end
