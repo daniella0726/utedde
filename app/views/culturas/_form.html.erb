@@ -2174,14 +2174,14 @@
   document.getElementById("pregunta_p8_p4_boton").addEventListener("click", fun_p4);
   document.getElementById("but_res_p4").addEventListener("click", fun_p4);
     function fun_p4() {
-    var frase = document.getElementById("res_p4").value; 
+    var frase = document.getElementById("res_p4a_1").value; 
       frase = frase.replace("#"," ");
       frase = frase.replace("%"," ");
       frase = frase.replace("&"," ");
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
-      document.getElementById("res_p4").value = frase;
-    if (document.getElementById("res_p4").value == "") {
+      document.getElementById("res_p4a_1").value = frase;
+    if (document.getElementById("res_p4a_1").value == "") {
       $('#but_res_p4').addClass('hidden');
       $('#p_p4').addClass('hidden');
       $('#div_error_p4').removeClass('hidden');
