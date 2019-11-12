@@ -440,7 +440,6 @@
       $('#div_pc').removeClass('hidden');
       $('#pregunta_pc_footer').removeClass('hidden');
       $('#div_error_pc').addClass('hidden');
-      document.getElementById("res_pc").focus();
     }
   }
 
@@ -1745,7 +1744,6 @@
       $('#div_p4').removeClass('hidden');
       $('#pregunta_p4_footer').removeClass('hidden');
       $('#div_error_p4').addClass('hidden');
-      document.getElementById("res_p4").focus();
     }
   }
 
@@ -2161,13 +2159,6 @@
 </div>
 
 <script type="text/javascript">
-  var input = document.getElementById("res_p4");
-      input.addEventListener("keyup", function(event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("but_res_p4").focus();
-      }
-    });
 
   document.getElementById("pregunta_p3_p4_boton").addEventListener("click", fun_p4_dev);
   function fun_p4_dev() {
@@ -2208,14 +2199,14 @@
 
   $(document).ready(function(){ 
 
-    $('#res_p4').on('input', function() { 
-      var frase = document.getElementById("res_p4").value; 
+    $('#res_p4a_1').on('input', function() { 
+      var frase = document.getElementById("res_p4a_1").value; 
       frase = frase.replace("#"," ");
       frase = frase.replace("%"," ");
       frase = frase.replace("&"," ");
       frase = frase.replace("$"," ");
-      document.getElementById("res_p4").value = frase;
-      if (document.getElementById("res_p4").value == "") {
+      document.getElementById("res_p4a_1").value = frase;
+      if (document.getElementById("res_p4a_1").value == "") {
       $('#but_res_p4').addClass('hidden');
       $('#p_p4').addClass('hidden');
       $('#div_error_p4').removeClass('hidden');
