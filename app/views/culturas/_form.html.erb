@@ -2334,6 +2334,2669 @@
 </script>
 
 
+<div class="centrado hidden" style="width: 90%" id="div_p9">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p9. Tipo de vivienda</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p9, "1" , id:"radio-1-p9"%>
+        <%= f.label :p9, "Casa ", for: "radio-1-p9"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p9, "2" , id:"radio-2-p9"%>
+        <%= f.label :p9, "Apartamento ", for: "radio-2-p9"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p9, "3" , id:"radio-3-p9"%>
+        <%= f.label :p9, "Tipo Cuarto (ej: Inquilinato) ", for: "radio-3-p9"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p9, "99" , id:"radio-4-p9"%>
+        <%= f.label :p9, "Ns/Nr ", for: "radio-4-p9"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p9">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p9">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p9">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p9_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">9 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p10_p9_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p8_p9_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p8_p9_boton").addEventListener("click", fun_p9_dev);
+    function fun_p9_dev() {
+        $('#div_p8').slideDown();
+        $('#div_p8').removeClass('hidden');
+        $('#pregunta_p8_footer').removeClass('hidden');
+        $('#div_p9').slideUp();
+        $('#div_p9').addClass('hidden');
+        $('#pregunta_p9_footer').addClass('hidden');
+        $('#div_error_p9').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p10_p9_boton").addEventListener("click", fun_p9);
+
+document.getElementById("radio-1-p9").addEventListener("click", fun_p9);
+
+document.getElementById("radio-2-p9").addEventListener("click", fun_p9);
+
+document.getElementById("radio-3-p9").addEventListener("click", fun_p9);
+
+document.getElementById("radio-4-p9").addEventListener("click", fun_p9);
+
+function fun_p9() {
+      if (
+$("#radio-1-p9").is(':checked') == true || 
+
+$("#radio-2-p9").is(':checked') == true || 
+
+$("#radio-3-p9").is(':checked') == true || 
+
+$("#radio-4-p9").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p9').slideUp();
+        $('#div_p9').addClass('hidden');
+        $('#pregunta_p9_footer').addClass('hidden');
+        $('#div_p10').slideDown();
+        $('#div_p10').removeClass('hidden');
+        $('#pregunta_p10_footer').removeClass('hidden');
+        $('#div_error_p10').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p9').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p10">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p10. El lugar donde habita es </h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p10, "1" , id:"radio-1-p10"%>
+        <%= f.label :p10, "En arriendo", for: "radio-1-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "2" , id:"radio-2-p10"%>
+        <%= f.label :p10, "Propio totalmente pago (el duen?o es alguno de los miembros con quien vive) ", for: "radio-2-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "3" , id:"radio-3-p10"%>
+        <%= f.label :p10, "Propio pero se esta? pagando (el duen?o es alguno de los miembros con quien vive)", for: "radio-3-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "4" , id:"radio-4-p10"%>
+        <%= f.label :p10, "No paga arriendo pero tiene permiso del propietario para vivir alli? ", for: "radio-4-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "5" , id:"radio-5-p10"%>
+        <%= f.label :p10, "No paga arriendo y no tiene permiso del duen?o ", for: "radio-5-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "6" , id:"radio-6-p10"%>
+        <%= f.label :p10, "Otra relacio?n", for: "radio-6-p10"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p10, "99" , id:"radio-7-p10"%>
+        <%= f.label :p10, "Ns/Nr ", for: "radio-7-p10"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p10">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p10">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p10">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p10_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">10 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p11_p10_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p9_p10_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p9_p10_boton").addEventListener("click", fun_p10_dev);
+    function fun_p10_dev() {
+        $('#div_p9').slideDown();
+        $('#div_p9').removeClass('hidden');
+        $('#pregunta_p9_footer').removeClass('hidden');
+        $('#div_p10').slideUp();
+        $('#div_p10').addClass('hidden');
+        $('#pregunta_p10_footer').addClass('hidden');
+        $('#div_error_p10').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p11_p10_boton").addEventListener("click", fun_p10);
+
+document.getElementById("radio-1-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-2-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-3-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-4-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-5-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-6-p10").addEventListener("click", fun_p10);
+
+document.getElementById("radio-7-p10").addEventListener("click", fun_p10);
+
+function fun_p10() {
+      if (
+$("#radio-1-p10").is(':checked') == true || 
+
+$("#radio-2-p10").is(':checked') == true || 
+
+$("#radio-3-p10").is(':checked') == true || 
+
+$("#radio-4-p10").is(':checked') == true || 
+
+$("#radio-5-p10").is(':checked') == true || 
+
+$("#radio-6-p10").is(':checked') == true || 
+
+$("#radio-7-p10").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p10').slideUp();
+        $('#div_p10').addClass('hidden');
+        $('#pregunta_p10_footer').addClass('hidden');
+        $('#div_p11').slideDown();
+        $('#div_p11').removeClass('hidden');
+        $('#pregunta_p11_footer').removeClass('hidden');
+        $('#div_error_p11').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p10').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p11">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p11. Nombre del(la) Encuestado(a)</h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p11, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p11", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p11"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p11">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p11">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p11_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p12_p11_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p10_p11_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p11");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p11").click();
+      }
+    });
+
+  document.getElementById("pregunta_p10_p11_boton").addEventListener("click", fun_p11_dev);
+  function fun_p11_dev() {
+      $('#div_p10').slideDown();
+      $('#div_p10').removeClass('hidden');
+      $('#pregunta_p10_footer').removeClass('hidden');
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_error_p11').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
+  document.getElementById("but_res_p11").addEventListener("click", fun_p11);
+    function fun_p11() {
+    var frase = document.getElementById("res_p11").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p11").value = frase;
+    if (document.getElementById("res_p11").value == "") {
+      $('#but_res_p11').addClass('hidden');
+      $('#p_p11').addClass('hidden');
+      $('#div_error_p11').removeClass('hidden');
+    } else {
+      $('#div_p11').slideUp();
+      $('#div_p11').addClass('hidden');
+      $('#pregunta_p11_footer').addClass('hidden');
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+      document.getElementById("res_p12").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p11').on('input', function() { 
+      var frase = document.getElementById("res_p11").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p11").value = frase;
+      if (document.getElementById("res_p11").value == "") {
+      $('#but_res_p11').addClass('hidden');
+      $('#p_p11').addClass('hidden');
+      $('#div_error_p11').removeClass('hidden');
+      } else {
+       $('#but_res_p11').removeClass('hidden');
+       $('#p_p11').removeClass('hidden');
+       $('#div_error_p11').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p12">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p12. Correo Electro?nico </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p12, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p12", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p12"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p12">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p12">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p12_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p13_p12_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p11_p12_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p12");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p12").click();
+      }
+    });
+
+  document.getElementById("pregunta_p11_p12_boton").addEventListener("click", fun_p12_dev);
+  function fun_p12_dev() {
+      $('#div_p11').slideDown();
+      $('#div_p11').removeClass('hidden');
+      $('#pregunta_p11_footer').removeClass('hidden');
+      $('#div_p12').slideUp();
+      $('#div_p12').addClass('hidden');
+      $('#pregunta_p12_footer').addClass('hidden');
+      $('#div_error_p12').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p13_p12_boton").addEventListener("click", fun_p12);
+  document.getElementById("but_res_p12").addEventListener("click", fun_p12);
+    function fun_p12() {
+    var frase = document.getElementById("res_p12").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p12").value = frase;
+    if (document.getElementById("res_p12").value == "") {
+      $('#but_res_p12').addClass('hidden');
+      $('#p_p12').addClass('hidden');
+      $('#div_error_p12').removeClass('hidden');
+    } else {
+      $('#div_p12').slideUp();
+      $('#div_p12').addClass('hidden');
+      $('#pregunta_p12_footer').addClass('hidden');
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+      document.getElementById("res_p13").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p12').on('input', function() { 
+      var frase = document.getElementById("res_p12").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p12").value = frase;
+      if (document.getElementById("res_p12").value == "") {
+      $('#but_res_p12').addClass('hidden');
+      $('#p_p12').addClass('hidden');
+      $('#div_error_p12').removeClass('hidden');
+      } else {
+       $('#but_res_p12').removeClass('hidden');
+       $('#p_p12').removeClass('hidden');
+       $('#div_error_p12').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p13">
+  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p13. Tele?fono </h2>
+  <br>
+  <div class="field qts">
+
+    <%= f.text_field :p13, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p13", placeholder: "¿Cuál?"}%> 
+
+  </div>
+  <div class="hidden" style="color: #254064;" id="div_error_p13"><strong>Por favor, escribe sin signos</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_p13">
+    <i class="fas fa-check-circle"></i>
+    OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p13">presiona <strong>ENTER</strong></p>
+</div>  
+<div class="container hidden" id="pregunta_p13_footer">
+  <div class="centrado-abajo">
+    <div class="row">
+      <div class="col-md-8">
+        <span style="color: #254064;">27 de 37 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 84%; background-color: #254064;"></div>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <a class="boton1" id="pregunta_p14_p13_boton">
+            <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>
+          <a class="boton1" id="pregunta_p12_p13_boton">
+            <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+          </a>          
+        </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+
+<script type="text/javascript">
+  var input = document.getElementById("res_p13");
+      input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("but_res_p13").click();
+      }
+    });
+
+  document.getElementById("pregunta_p12_p13_boton").addEventListener("click", fun_p13_dev);
+  function fun_p13_dev() {
+      $('#div_p12').slideDown();
+      $('#div_p12').removeClass('hidden');
+      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_p13').slideUp();
+      $('#div_p13').addClass('hidden');
+      $('#pregunta_p13_footer').addClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p14_p13_boton").addEventListener("click", fun_p13);
+  document.getElementById("but_res_p13").addEventListener("click", fun_p13);
+    function fun_p13() {
+    var frase = document.getElementById("res_p13").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      frase = frase.replace("  "," ");
+      document.getElementById("res_p13").value = frase;
+    if (document.getElementById("res_p13").value == "") {
+      $('#but_res_p13').addClass('hidden');
+      $('#p_p13').addClass('hidden');
+      $('#div_error_p13').removeClass('hidden');
+    } else {
+      $('#div_p13').slideUp();
+      $('#div_p13').addClass('hidden');
+      $('#pregunta_p13_footer').addClass('hidden');
+      $('#div_p14').slideDown();
+      $('#div_p14').removeClass('hidden');
+      $('#pregunta_p14_footer').removeClass('hidden');
+      $('#div_error_p14').addClass('hidden');
+      document.getElementById("res_p14").focus();
+    }
+  }
+
+  $(document).ready(function(){ 
+
+    $('#res_p13').on('input', function() { 
+      var frase = document.getElementById("res_p13").value; 
+      frase = frase.replace("#"," ");
+      frase = frase.replace("%"," ");
+      frase = frase.replace("&"," ");
+      frase = frase.replace("$"," ");
+      document.getElementById("res_p13").value = frase;
+      if (document.getElementById("res_p13").value == "") {
+      $('#but_res_p13').addClass('hidden');
+      $('#p_p13').addClass('hidden');
+      $('#div_error_p13').removeClass('hidden');
+      } else {
+       $('#but_res_p13').removeClass('hidden');
+       $('#p_p13').removeClass('hidden');
+       $('#div_error_p13').addClass('hidden');
+      }
+    }); 
+  }); 
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_a">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_a. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - a. La familia</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_a, "1" , id:"radio-1-p14_a"%>
+        <%= f.label :p14_a, "Nada importante ", for: "radio-1-p14_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_a, "2" , id:"radio-2-p14_a"%>
+        <%= f.label :p14_a, "Poco importante ", for: "radio-2-p14_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_a, "3" , id:"radio-3-p14_a"%>
+        <%= f.label :p14_a, "Bastante importante ", for: "radio-3-p14_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_a, "4" , id:"radio-4-p14_a"%>
+        <%= f.label :p14_a, "Muy importante ", for: "radio-4-p14_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_a, "99" , id:"radio-5-p14_a"%>
+        <%= f.label :p14_a, "Ns/Nr ", for: "radio-5-p14_a"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_a">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_a">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_a">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_a_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">14 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p14_b_p14_a_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p13_p14_a_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p13_p14_a_boton").addEventListener("click", fun_p14_a_dev);
+    function fun_p14_a_dev() {
+        $('#div_p13').slideDown();
+        $('#div_p13').removeClass('hidden');
+        $('#pregunta_p13_footer').removeClass('hidden');
+        $('#div_p14_a').slideUp();
+        $('#div_p14_a').addClass('hidden');
+        $('#pregunta_p14_a_footer').addClass('hidden');
+        $('#div_error_p14_a').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p14_b_p14_a_boton").addEventListener("click", fun_p14_a);
+
+document.getElementById("radio-1-p14_a").addEventListener("click", fun_p14_a);
+
+document.getElementById("radio-2-p14_a").addEventListener("click", fun_p14_a);
+
+document.getElementById("radio-3-p14_a").addEventListener("click", fun_p14_a);
+
+document.getElementById("radio-4-p14_a").addEventListener("click", fun_p14_a);
+
+document.getElementById("radio-5-p14_a").addEventListener("click", fun_p14_a);
+
+function fun_p14_a() {
+      if (
+$("#radio-1-p14_a").is(':checked') == true || 
+
+$("#radio-2-p14_a").is(':checked') == true || 
+
+$("#radio-3-p14_a").is(':checked') == true || 
+
+$("#radio-4-p14_a").is(':checked') == true || 
+
+$("#radio-5-p14_a").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_a').slideUp();
+        $('#div_p14_a').addClass('hidden');
+        $('#pregunta_p14_a_footer').addClass('hidden');
+        $('#div_p14_b').slideDown();
+        $('#div_p14_b').removeClass('hidden');
+        $('#pregunta_p14_b_footer').removeClass('hidden');
+        $('#div_error_p14_b').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_a').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_b">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_b. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - b. La poli?tica</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_b, "1" , id:"radio-1-p14_b"%>
+        <%= f.label :p14_b, "Nada importante ", for: "radio-1-p14_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_b, "2" , id:"radio-2-p14_b"%>
+        <%= f.label :p14_b, "Poco importante ", for: "radio-2-p14_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_b, "3" , id:"radio-3-p14_b"%>
+        <%= f.label :p14_b, "Bastante importante ", for: "radio-3-p14_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_b, "4" , id:"radio-4-p14_b"%>
+        <%= f.label :p14_b, "Muy importante ", for: "radio-4-p14_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_b, "99" , id:"radio-5-p14_b"%>
+        <%= f.label :p14_b, "Ns/Nr ", for: "radio-5-p14_b"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_b">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_b">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_b">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_b_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">15 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p14_c_p14_b_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_a_p14_b_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_a_p14_b_boton").addEventListener("click", fun_p14_b_dev);
+    function fun_p14_b_dev() {
+        $('#div_p14_a').slideDown();
+        $('#div_p14_a').removeClass('hidden');
+        $('#pregunta_p14_a_footer').removeClass('hidden');
+        $('#div_p14_b').slideUp();
+        $('#div_p14_b').addClass('hidden');
+        $('#pregunta_p14_b_footer').addClass('hidden');
+        $('#div_error_p14_b').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p14_c_p14_b_boton").addEventListener("click", fun_p14_b);
+
+document.getElementById("radio-1-p14_b").addEventListener("click", fun_p14_b);
+
+document.getElementById("radio-2-p14_b").addEventListener("click", fun_p14_b);
+
+document.getElementById("radio-3-p14_b").addEventListener("click", fun_p14_b);
+
+document.getElementById("radio-4-p14_b").addEventListener("click", fun_p14_b);
+
+document.getElementById("radio-5-p14_b").addEventListener("click", fun_p14_b);
+
+function fun_p14_b() {
+      if (
+$("#radio-1-p14_b").is(':checked') == true || 
+
+$("#radio-2-p14_b").is(':checked') == true || 
+
+$("#radio-3-p14_b").is(':checked') == true || 
+
+$("#radio-4-p14_b").is(':checked') == true || 
+
+$("#radio-5-p14_b").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_b').slideUp();
+        $('#div_p14_b').addClass('hidden');
+        $('#pregunta_p14_b_footer').addClass('hidden');
+        $('#div_p14_c').slideDown();
+        $('#div_p14_c').removeClass('hidden');
+        $('#pregunta_p14_c_footer').removeClass('hidden');
+        $('#div_error_p14_c').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_b').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_c">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_c. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - c. El trabajo</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_c, "1" , id:"radio-1-p14_c"%>
+        <%= f.label :p14_c, "Nada importante ", for: "radio-1-p14_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_c, "2" , id:"radio-2-p14_c"%>
+        <%= f.label :p14_c, "Poco importante ", for: "radio-2-p14_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_c, "3" , id:"radio-3-p14_c"%>
+        <%= f.label :p14_c, "Bastante importante ", for: "radio-3-p14_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_c, "4" , id:"radio-4-p14_c"%>
+        <%= f.label :p14_c, "Muy importante ", for: "radio-4-p14_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_c, "99" , id:"radio-5-p14_c"%>
+        <%= f.label :p14_c, "Ns/Nr ", for: "radio-5-p14_c"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_c">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_c">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_c">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_c_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">16 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p14_d_p14_c_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_b_p14_c_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_b_p14_c_boton").addEventListener("click", fun_p14_c_dev);
+    function fun_p14_c_dev() {
+        $('#div_p14_b').slideDown();
+        $('#div_p14_b').removeClass('hidden');
+        $('#pregunta_p14_b_footer').removeClass('hidden');
+        $('#div_p14_c').slideUp();
+        $('#div_p14_c').addClass('hidden');
+        $('#pregunta_p14_c_footer').addClass('hidden');
+        $('#div_error_p14_c').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p14_d_p14_c_boton").addEventListener("click", fun_p14_c);
+
+document.getElementById("radio-1-p14_c").addEventListener("click", fun_p14_c);
+
+document.getElementById("radio-2-p14_c").addEventListener("click", fun_p14_c);
+
+document.getElementById("radio-3-p14_c").addEventListener("click", fun_p14_c);
+
+document.getElementById("radio-4-p14_c").addEventListener("click", fun_p14_c);
+
+document.getElementById("radio-5-p14_c").addEventListener("click", fun_p14_c);
+
+function fun_p14_c() {
+      if (
+$("#radio-1-p14_c").is(':checked') == true || 
+
+$("#radio-2-p14_c").is(':checked') == true || 
+
+$("#radio-3-p14_c").is(':checked') == true || 
+
+$("#radio-4-p14_c").is(':checked') == true || 
+
+$("#radio-5-p14_c").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_c').slideUp();
+        $('#div_p14_c').addClass('hidden');
+        $('#pregunta_p14_c_footer').addClass('hidden');
+        $('#div_p14_d').slideDown();
+        $('#div_p14_d').removeClass('hidden');
+        $('#pregunta_p14_d_footer').removeClass('hidden');
+        $('#div_error_p14_d').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_c').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_d">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_d. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - d. La religio?n</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_d, "1" , id:"radio-1-p14_d"%>
+        <%= f.label :p14_d, "Nada importante ", for: "radio-1-p14_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_d, "2" , id:"radio-2-p14_d"%>
+        <%= f.label :p14_d, "Poco importante ", for: "radio-2-p14_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_d, "3" , id:"radio-3-p14_d"%>
+        <%= f.label :p14_d, "Bastante importante ", for: "radio-3-p14_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_d, "4" , id:"radio-4-p14_d"%>
+        <%= f.label :p14_d, "Muy importante ", for: "radio-4-p14_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_d, "99" , id:"radio-5-p14_d"%>
+        <%= f.label :p14_d, "Ns/Nr ", for: "radio-5-p14_d"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_d">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_d">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_d">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_d_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">17 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p14_e_p14_d_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_c_p14_d_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_c_p14_d_boton").addEventListener("click", fun_p14_d_dev);
+    function fun_p14_d_dev() {
+        $('#div_p14_c').slideDown();
+        $('#div_p14_c').removeClass('hidden');
+        $('#pregunta_p14_c_footer').removeClass('hidden');
+        $('#div_p14_d').slideUp();
+        $('#div_p14_d').addClass('hidden');
+        $('#pregunta_p14_d_footer').addClass('hidden');
+        $('#div_error_p14_d').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p14_e_p14_d_boton").addEventListener("click", fun_p14_d);
+
+document.getElementById("radio-1-p14_d").addEventListener("click", fun_p14_d);
+
+document.getElementById("radio-2-p14_d").addEventListener("click", fun_p14_d);
+
+document.getElementById("radio-3-p14_d").addEventListener("click", fun_p14_d);
+
+document.getElementById("radio-4-p14_d").addEventListener("click", fun_p14_d);
+
+document.getElementById("radio-5-p14_d").addEventListener("click", fun_p14_d);
+
+function fun_p14_d() {
+      if (
+$("#radio-1-p14_d").is(':checked') == true || 
+
+$("#radio-2-p14_d").is(':checked') == true || 
+
+$("#radio-3-p14_d").is(':checked') == true || 
+
+$("#radio-4-p14_d").is(':checked') == true || 
+
+$("#radio-5-p14_d").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_d').slideUp();
+        $('#div_p14_d').addClass('hidden');
+        $('#pregunta_p14_d_footer').addClass('hidden');
+        $('#div_p14_e').slideDown();
+        $('#div_p14_e').removeClass('hidden');
+        $('#pregunta_p14_e_footer').removeClass('hidden');
+        $('#div_error_p14_e').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_d').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_e">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_e. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - e. El dinero</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_e, "1" , id:"radio-1-p14_e"%>
+        <%= f.label :p14_e, "Nada importante ", for: "radio-1-p14_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_e, "2" , id:"radio-2-p14_e"%>
+        <%= f.label :p14_e, "Poco importante ", for: "radio-2-p14_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_e, "3" , id:"radio-3-p14_e"%>
+        <%= f.label :p14_e, "Bastante importante ", for: "radio-3-p14_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_e, "4" , id:"radio-4-p14_e"%>
+        <%= f.label :p14_e, "Muy importante ", for: "radio-4-p14_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_e, "99" , id:"radio-5-p14_e"%>
+        <%= f.label :p14_e, "Ns/Nr ", for: "radio-5-p14_e"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_e">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_e">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_e">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_e_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">18 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p14_f_p14_e_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_d_p14_e_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_d_p14_e_boton").addEventListener("click", fun_p14_e_dev);
+    function fun_p14_e_dev() {
+        $('#div_p14_d').slideDown();
+        $('#div_p14_d').removeClass('hidden');
+        $('#pregunta_p14_d_footer').removeClass('hidden');
+        $('#div_p14_e').slideUp();
+        $('#div_p14_e').addClass('hidden');
+        $('#pregunta_p14_e_footer').addClass('hidden');
+        $('#div_error_p14_e').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p14_f_p14_e_boton").addEventListener("click", fun_p14_e);
+
+document.getElementById("radio-1-p14_e").addEventListener("click", fun_p14_e);
+
+document.getElementById("radio-2-p14_e").addEventListener("click", fun_p14_e);
+
+document.getElementById("radio-3-p14_e").addEventListener("click", fun_p14_e);
+
+document.getElementById("radio-4-p14_e").addEventListener("click", fun_p14_e);
+
+document.getElementById("radio-5-p14_e").addEventListener("click", fun_p14_e);
+
+function fun_p14_e() {
+      if (
+$("#radio-1-p14_e").is(':checked') == true || 
+
+$("#radio-2-p14_e").is(':checked') == true || 
+
+$("#radio-3-p14_e").is(':checked') == true || 
+
+$("#radio-4-p14_e").is(':checked') == true || 
+
+$("#radio-5-p14_e").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_e').slideUp();
+        $('#div_p14_e').addClass('hidden');
+        $('#pregunta_p14_e_footer').addClass('hidden');
+        $('#div_p14_f').slideDown();
+        $('#div_p14_f').removeClass('hidden');
+        $('#pregunta_p14_f_footer').removeClass('hidden');
+        $('#div_error_p14_f').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_e').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p14_f">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p14_f. En una escala de 1 a 4, donde 1 es Nada importante y 4 Muy importante, ¿que? tan importante es en su vida? - f. El tiempo libre</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p14_f, "1" , id:"radio-1-p14_f"%>
+        <%= f.label :p14_f, "Nada importante ", for: "radio-1-p14_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_f, "2" , id:"radio-2-p14_f"%>
+        <%= f.label :p14_f, "Poco importante ", for: "radio-2-p14_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_f, "3" , id:"radio-3-p14_f"%>
+        <%= f.label :p14_f, "Bastante importante ", for: "radio-3-p14_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_f, "4" , id:"radio-4-p14_f"%>
+        <%= f.label :p14_f, "Muy importante ", for: "radio-4-p14_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p14_f, "99" , id:"radio-5-p14_f"%>
+        <%= f.label :p14_f, "Ns/Nr ", for: "radio-5-p14_f"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_f">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p14_f">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p14_f">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p14_f_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">19 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p15_p14_f_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_e_p14_f_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_e_p14_f_boton").addEventListener("click", fun_p14_f_dev);
+    function fun_p14_f_dev() {
+        $('#div_p14_e').slideDown();
+        $('#div_p14_e').removeClass('hidden');
+        $('#pregunta_p14_e_footer').removeClass('hidden');
+        $('#div_p14_f').slideUp();
+        $('#div_p14_f').addClass('hidden');
+        $('#pregunta_p14_f_footer').addClass('hidden');
+        $('#div_error_p14_f').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p15_p14_f_boton").addEventListener("click", fun_p14_f);
+
+document.getElementById("radio-1-p14_f").addEventListener("click", fun_p14_f);
+
+document.getElementById("radio-2-p14_f").addEventListener("click", fun_p14_f);
+
+document.getElementById("radio-3-p14_f").addEventListener("click", fun_p14_f);
+
+document.getElementById("radio-4-p14_f").addEventListener("click", fun_p14_f);
+
+document.getElementById("radio-5-p14_f").addEventListener("click", fun_p14_f);
+
+function fun_p14_f() {
+      if (
+$("#radio-1-p14_f").is(':checked') == true || 
+
+$("#radio-2-p14_f").is(':checked') == true || 
+
+$("#radio-3-p14_f").is(':checked') == true || 
+
+$("#radio-4-p14_f").is(':checked') == true || 
+
+$("#radio-5-p14_f").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p14_f').slideUp();
+        $('#div_p14_f').addClass('hidden');
+        $('#pregunta_p14_f_footer').addClass('hidden');
+        $('#div_p15').slideDown();
+        $('#div_p15').removeClass('hidden');
+        $('#pregunta_p15_footer').removeClass('hidden');
+        $('#div_error_p15').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p14_f').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p15">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p15. ¿Con cua?l de las siguientes frases esta? usted ma?s de acuerdo? </h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p15, "1" , id:"radio-1-p15"%>
+        <%= f.label :p15, "La democracia es preferible a cualquier otra forma de gobierno ", for: "radio-1-p15"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p15, "2" , id:"radio-2-p15"%>
+        <%= f.label :p15, "En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democra?tico", for: "radio-2-p15"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p15, "3" , id:"radio-3-p15"%>
+        <%= f.label :p15, "Da lo mismo un re?gimen democra?tico que uno no democra?tico ", for: "radio-3-p15"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p15, "99" , id:"radio-4-p15"%>
+        <%= f.label :p15, "Ns/Nr ", for: "radio-4-p15"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p15">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p15">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p15_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">20 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p16_a_p15_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p14_f_p15_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p14_f_p15_boton").addEventListener("click", fun_p15_dev);
+    function fun_p15_dev() {
+        $('#div_p14_f').slideDown();
+        $('#div_p14_f').removeClass('hidden');
+        $('#pregunta_p14_f_footer').removeClass('hidden');
+        $('#div_p15').slideUp();
+        $('#div_p15').addClass('hidden');
+        $('#pregunta_p15_footer').addClass('hidden');
+        $('#div_error_p15').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p16_a_p15_boton").addEventListener("click", fun_p15);
+
+document.getElementById("radio-1-p15").addEventListener("click", fun_p15);
+
+document.getElementById("radio-2-p15").addEventListener("click", fun_p15);
+
+document.getElementById("radio-3-p15").addEventListener("click", fun_p15);
+
+document.getElementById("radio-4-p15").addEventListener("click", fun_p15);
+
+function fun_p15() {
+      if (
+$("#radio-1-p15").is(':checked') == true || 
+
+$("#radio-2-p15").is(':checked') == true || 
+
+$("#radio-3-p15").is(':checked') == true || 
+
+$("#radio-4-p15").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p15').slideUp();
+        $('#div_p15').addClass('hidden');
+        $('#pregunta_p15_footer').addClass('hidden');
+        $('#div_p16_a').slideDown();
+        $('#div_p16_a').removeClass('hidden');
+        $('#pregunta_p16_a_footer').removeClass('hidden');
+        $('#div_error_p16_a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p15').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p16_a">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p16_a. ¿Usted en general, se siente mucho, poco o nada motivado para votar por...? -a. Presidente</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p16_a, "1" , id:"radio-1-p16_a"%>
+        <%= f.label :p16_a, "Nada", for: "radio-1-p16_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_a, "2" , id:"radio-2-p16_a"%>
+        <%= f.label :p16_a, "Poco ", for: "radio-2-p16_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_a, "3" , id:"radio-3-p16_a"%>
+        <%= f.label :p16_a, "Mucho ", for: "radio-3-p16_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_a, "99" , id:"radio-4-p16_a"%>
+        <%= f.label :p16_a, "Ns/Nr ", for: "radio-4-p16_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_a, "88" , id:"radio-5-p16_a"%>
+        <%= f.label :p16_a, "No aplica ", for: "radio-5-p16_a"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_a">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16_a">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16_a">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_a_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">21 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p16_b_p16_a_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p15_p16_a_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p15_p16_a_boton").addEventListener("click", fun_p16_a_dev);
+    function fun_p16_a_dev() {
+        $('#div_p15').slideDown();
+        $('#div_p15').removeClass('hidden');
+        $('#pregunta_p15_footer').removeClass('hidden');
+        $('#div_p16_a').slideUp();
+        $('#div_p16_a').addClass('hidden');
+        $('#pregunta_p16_a_footer').addClass('hidden');
+        $('#div_error_p16_a').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p16_b_p16_a_boton").addEventListener("click", fun_p16_a);
+
+document.getElementById("radio-1-p16_a").addEventListener("click", fun_p16_a);
+
+document.getElementById("radio-2-p16_a").addEventListener("click", fun_p16_a);
+
+document.getElementById("radio-3-p16_a").addEventListener("click", fun_p16_a);
+
+document.getElementById("radio-4-p16_a").addEventListener("click", fun_p16_a);
+
+document.getElementById("radio-5-p16_a").addEventListener("click", fun_p16_a);
+
+function fun_p16_a() {
+      if (
+$("#radio-1-p16_a").is(':checked') == true || 
+
+$("#radio-2-p16_a").is(':checked') == true || 
+
+$("#radio-3-p16_a").is(':checked') == true || 
+
+$("#radio-4-p16_a").is(':checked') == true || 
+
+$("#radio-5-p16_a").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p16_a').slideUp();
+        $('#div_p16_a').addClass('hidden');
+        $('#pregunta_p16_a_footer').addClass('hidden');
+        $('#div_p16_b').slideDown();
+        $('#div_p16_b').removeClass('hidden');
+        $('#pregunta_p16_b_footer').removeClass('hidden');
+        $('#div_error_p16_b').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16_a').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p16_b">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p16_b. ¿Usted en general, se siente mucho, poco o nada motivado para votar por...? -b. Alcalde</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p16_b, "1" , id:"radio-1-p16_b"%>
+        <%= f.label :p16_b, "Nada", for: "radio-1-p16_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_b, "2" , id:"radio-2-p16_b"%>
+        <%= f.label :p16_b, "Poco ", for: "radio-2-p16_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_b, "3" , id:"radio-3-p16_b"%>
+        <%= f.label :p16_b, "Mucho ", for: "radio-3-p16_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_b, "99" , id:"radio-4-p16_b"%>
+        <%= f.label :p16_b, "Ns/Nr ", for: "radio-4-p16_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_b, "88" , id:"radio-5-p16_b"%>
+        <%= f.label :p16_b, "No aplica ", for: "radio-5-p16_b"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_b">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16_b">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16_b">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_b_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">22 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p16_c_p16_b_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_a_p16_b_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_a_p16_b_boton").addEventListener("click", fun_p16_b_dev);
+    function fun_p16_b_dev() {
+        $('#div_p16_a').slideDown();
+        $('#div_p16_a').removeClass('hidden');
+        $('#pregunta_p16_a_footer').removeClass('hidden');
+        $('#div_p16_b').slideUp();
+        $('#div_p16_b').addClass('hidden');
+        $('#pregunta_p16_b_footer').addClass('hidden');
+        $('#div_error_p16_b').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p16_c_p16_b_boton").addEventListener("click", fun_p16_b);
+
+document.getElementById("radio-1-p16_b").addEventListener("click", fun_p16_b);
+
+document.getElementById("radio-2-p16_b").addEventListener("click", fun_p16_b);
+
+document.getElementById("radio-3-p16_b").addEventListener("click", fun_p16_b);
+
+document.getElementById("radio-4-p16_b").addEventListener("click", fun_p16_b);
+
+document.getElementById("radio-5-p16_b").addEventListener("click", fun_p16_b);
+
+function fun_p16_b() {
+      if (
+$("#radio-1-p16_b").is(':checked') == true || 
+
+$("#radio-2-p16_b").is(':checked') == true || 
+
+$("#radio-3-p16_b").is(':checked') == true || 
+
+$("#radio-4-p16_b").is(':checked') == true || 
+
+$("#radio-5-p16_b").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p16_b').slideUp();
+        $('#div_p16_b').addClass('hidden');
+        $('#pregunta_p16_b_footer').addClass('hidden');
+        $('#div_p16_c').slideDown();
+        $('#div_p16_c').removeClass('hidden');
+        $('#pregunta_p16_c_footer').removeClass('hidden');
+        $('#div_error_p16_c').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16_b').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p16_c">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p16_c. ¿Usted en general, se siente mucho, poco o nada motivado para votar por...? -c. Congreso</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p16_c, "1" , id:"radio-1-p16_c"%>
+        <%= f.label :p16_c, "Nada", for: "radio-1-p16_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_c, "2" , id:"radio-2-p16_c"%>
+        <%= f.label :p16_c, "Poco ", for: "radio-2-p16_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_c, "3" , id:"radio-3-p16_c"%>
+        <%= f.label :p16_c, "Mucho ", for: "radio-3-p16_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_c, "99" , id:"radio-4-p16_c"%>
+        <%= f.label :p16_c, "Ns/Nr ", for: "radio-4-p16_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_c, "88" , id:"radio-5-p16_c"%>
+        <%= f.label :p16_c, "No aplica ", for: "radio-5-p16_c"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_c">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16_c">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16_c">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_c_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">23 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p16_d_p16_c_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_b_p16_c_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_b_p16_c_boton").addEventListener("click", fun_p16_c_dev);
+    function fun_p16_c_dev() {
+        $('#div_p16_b').slideDown();
+        $('#div_p16_b').removeClass('hidden');
+        $('#pregunta_p16_b_footer').removeClass('hidden');
+        $('#div_p16_c').slideUp();
+        $('#div_p16_c').addClass('hidden');
+        $('#pregunta_p16_c_footer').addClass('hidden');
+        $('#div_error_p16_c').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p16_d_p16_c_boton").addEventListener("click", fun_p16_c);
+
+document.getElementById("radio-1-p16_c").addEventListener("click", fun_p16_c);
+
+document.getElementById("radio-2-p16_c").addEventListener("click", fun_p16_c);
+
+document.getElementById("radio-3-p16_c").addEventListener("click", fun_p16_c);
+
+document.getElementById("radio-4-p16_c").addEventListener("click", fun_p16_c);
+
+document.getElementById("radio-5-p16_c").addEventListener("click", fun_p16_c);
+
+function fun_p16_c() {
+      if (
+$("#radio-1-p16_c").is(':checked') == true || 
+
+$("#radio-2-p16_c").is(':checked') == true || 
+
+$("#radio-3-p16_c").is(':checked') == true || 
+
+$("#radio-4-p16_c").is(':checked') == true || 
+
+$("#radio-5-p16_c").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p16_c').slideUp();
+        $('#div_p16_c').addClass('hidden');
+        $('#pregunta_p16_c_footer').addClass('hidden');
+        $('#div_p16_d').slideDown();
+        $('#div_p16_d').removeClass('hidden');
+        $('#pregunta_p16_d_footer').removeClass('hidden');
+        $('#div_error_p16_d').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16_c').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p16_d">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p16_d. ¿Usted en general, se siente mucho, poco o nada motivado para votar por...? -d. Concejo Distrital</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p16_d, "1" , id:"radio-1-p16_d"%>
+        <%= f.label :p16_d, "Nada", for: "radio-1-p16_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_d, "2" , id:"radio-2-p16_d"%>
+        <%= f.label :p16_d, "Poco ", for: "radio-2-p16_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_d, "3" , id:"radio-3-p16_d"%>
+        <%= f.label :p16_d, "Mucho ", for: "radio-3-p16_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_d, "99" , id:"radio-4-p16_d"%>
+        <%= f.label :p16_d, "Ns/Nr ", for: "radio-4-p16_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_d, "88" , id:"radio-5-p16_d"%>
+        <%= f.label :p16_d, "No aplica ", for: "radio-5-p16_d"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_d">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16_d">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16_d">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_d_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">24 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p16_e_p16_d_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_c_p16_d_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_c_p16_d_boton").addEventListener("click", fun_p16_d_dev);
+    function fun_p16_d_dev() {
+        $('#div_p16_c').slideDown();
+        $('#div_p16_c').removeClass('hidden');
+        $('#pregunta_p16_c_footer').removeClass('hidden');
+        $('#div_p16_d').slideUp();
+        $('#div_p16_d').addClass('hidden');
+        $('#pregunta_p16_d_footer').addClass('hidden');
+        $('#div_error_p16_d').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p16_e_p16_d_boton").addEventListener("click", fun_p16_d);
+
+document.getElementById("radio-1-p16_d").addEventListener("click", fun_p16_d);
+
+document.getElementById("radio-2-p16_d").addEventListener("click", fun_p16_d);
+
+document.getElementById("radio-3-p16_d").addEventListener("click", fun_p16_d);
+
+document.getElementById("radio-4-p16_d").addEventListener("click", fun_p16_d);
+
+document.getElementById("radio-5-p16_d").addEventListener("click", fun_p16_d);
+
+function fun_p16_d() {
+      if (
+$("#radio-1-p16_d").is(':checked') == true || 
+
+$("#radio-2-p16_d").is(':checked') == true || 
+
+$("#radio-3-p16_d").is(':checked') == true || 
+
+$("#radio-4-p16_d").is(':checked') == true || 
+
+$("#radio-5-p16_d").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p16_d').slideUp();
+        $('#div_p16_d').addClass('hidden');
+        $('#pregunta_p16_d_footer').addClass('hidden');
+        $('#div_p16_e').slideDown();
+        $('#div_p16_e').removeClass('hidden');
+        $('#pregunta_p16_e_footer').removeClass('hidden');
+        $('#div_error_p16_e').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16_d').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p16_e">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p16_e. ¿Usted en general, se siente mucho, poco o nada motivado para votar por...? -e. Junta Administradora Local</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p16_e, "1" , id:"radio-1-p16_e"%>
+        <%= f.label :p16_e, "Nada", for: "radio-1-p16_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_e, "2" , id:"radio-2-p16_e"%>
+        <%= f.label :p16_e, "Poco ", for: "radio-2-p16_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_e, "3" , id:"radio-3-p16_e"%>
+        <%= f.label :p16_e, "Mucho ", for: "radio-3-p16_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_e, "99" , id:"radio-4-p16_e"%>
+        <%= f.label :p16_e, "Ns/Nr ", for: "radio-4-p16_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p16_e, "88" , id:"radio-5-p16_e"%>
+        <%= f.label :p16_e, "No aplica ", for: "radio-5-p16_e"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_e">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p16_e">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p16_e">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p16_e_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">25 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_a_p16_e_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_d_p16_e_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_d_p16_e_boton").addEventListener("click", fun_p16_e_dev);
+    function fun_p16_e_dev() {
+        $('#div_p16_d').slideDown();
+        $('#div_p16_d').removeClass('hidden');
+        $('#pregunta_p16_d_footer').removeClass('hidden');
+        $('#div_p16_e').slideUp();
+        $('#div_p16_e').addClass('hidden');
+        $('#pregunta_p16_e_footer').addClass('hidden');
+        $('#div_error_p16_e').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_a_p16_e_boton").addEventListener("click", fun_p16_e);
+
+document.getElementById("radio-1-p16_e").addEventListener("click", fun_p16_e);
+
+document.getElementById("radio-2-p16_e").addEventListener("click", fun_p16_e);
+
+document.getElementById("radio-3-p16_e").addEventListener("click", fun_p16_e);
+
+document.getElementById("radio-4-p16_e").addEventListener("click", fun_p16_e);
+
+document.getElementById("radio-5-p16_e").addEventListener("click", fun_p16_e);
+
+function fun_p16_e() {
+      if (
+$("#radio-1-p16_e").is(':checked') == true || 
+
+$("#radio-2-p16_e").is(':checked') == true || 
+
+$("#radio-3-p16_e").is(':checked') == true || 
+
+$("#radio-4-p16_e").is(':checked') == true || 
+
+$("#radio-5-p16_e").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p16_e').slideUp();
+        $('#div_p16_e').addClass('hidden');
+        $('#pregunta_p16_e_footer').addClass('hidden');
+        $('#div_p17_a').slideDown();
+        $('#div_p17_a').removeClass('hidden');
+        $('#pregunta_p17_a_footer').removeClass('hidden');
+        $('#div_error_p17_a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p16_e').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_a">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_a. A la hora de votar ¿Que? tan importante es para usted...? - a. La religio?n del(la) candidato(a)</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "1" , id:"radio-1-p17_a"%>
+        <%= f.label :p17_a, "Nada", for: "radio-1-p17_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "2" , id:"radio-2-p17_a"%>
+        <%= f.label :p17_a, "Poco ", for: "radio-2-p17_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "3" , id:"radio-3-p17_a"%>
+        <%= f.label :p17_a, "Algo", for: "radio-3-p17_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "4" , id:"radio-4-p17_a"%>
+        <%= f.label :p17_a, "Mucho", for: "radio-4-p17_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "99" , id:"radio-5-p17_a"%>
+        <%= f.label :p17_a, "Ns/Nr ", for: "radio-5-p17_a"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_a, "88" , id:"radio-6-p17_a"%>
+        <%= f.label :p17_a, "No aplica ", for: "radio-6-p17_a"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_a">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_a">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_a">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_a_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">26 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_b_p17_a_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p16_e_p17_a_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p16_e_p17_a_boton").addEventListener("click", fun_p17_a_dev);
+    function fun_p17_a_dev() {
+        $('#div_p16_e').slideDown();
+        $('#div_p16_e').removeClass('hidden');
+        $('#pregunta_p16_e_footer').removeClass('hidden');
+        $('#div_p17_a').slideUp();
+        $('#div_p17_a').addClass('hidden');
+        $('#pregunta_p17_a_footer').addClass('hidden');
+        $('#div_error_p17_a').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_b_p17_a_boton").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-1-p17_a").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-2-p17_a").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-3-p17_a").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-4-p17_a").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-5-p17_a").addEventListener("click", fun_p17_a);
+
+document.getElementById("radio-6-p17_a").addEventListener("click", fun_p17_a);
+
+function fun_p17_a() {
+      if (
+$("#radio-1-p17_a").is(':checked') == true || 
+
+$("#radio-2-p17_a").is(':checked') == true || 
+
+$("#radio-3-p17_a").is(':checked') == true || 
+
+$("#radio-4-p17_a").is(':checked') == true || 
+
+$("#radio-5-p17_a").is(':checked') == true || 
+
+$("#radio-6-p17_a").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_a').slideUp();
+        $('#div_p17_a').addClass('hidden');
+        $('#pregunta_p17_a_footer').addClass('hidden');
+        $('#div_p17_b').slideDown();
+        $('#div_p17_b').removeClass('hidden');
+        $('#pregunta_p17_b_footer').removeClass('hidden');
+        $('#div_error_p17_b').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_a').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_b">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_b. A la hora de votar ¿Que? tan importante es para usted...? - b. El partido del(la) candidato(a)</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "1" , id:"radio-1-p17_b"%>
+        <%= f.label :p17_b, "Nada", for: "radio-1-p17_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "2" , id:"radio-2-p17_b"%>
+        <%= f.label :p17_b, "Poco ", for: "radio-2-p17_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "3" , id:"radio-3-p17_b"%>
+        <%= f.label :p17_b, "Algo", for: "radio-3-p17_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "4" , id:"radio-4-p17_b"%>
+        <%= f.label :p17_b, "Mucho", for: "radio-4-p17_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "99" , id:"radio-5-p17_b"%>
+        <%= f.label :p17_b, "Ns/Nr ", for: "radio-5-p17_b"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_b, "88" , id:"radio-6-p17_b"%>
+        <%= f.label :p17_b, "No aplica ", for: "radio-6-p17_b"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_b">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_b">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_b">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_b_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">27 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_c_p17_b_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_a_p17_b_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_a_p17_b_boton").addEventListener("click", fun_p17_b_dev);
+    function fun_p17_b_dev() {
+        $('#div_p17_a').slideDown();
+        $('#div_p17_a').removeClass('hidden');
+        $('#pregunta_p17_a_footer').removeClass('hidden');
+        $('#div_p17_b').slideUp();
+        $('#div_p17_b').addClass('hidden');
+        $('#pregunta_p17_b_footer').addClass('hidden');
+        $('#div_error_p17_b').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_c_p17_b_boton").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-1-p17_b").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-2-p17_b").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-3-p17_b").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-4-p17_b").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-5-p17_b").addEventListener("click", fun_p17_b);
+
+document.getElementById("radio-6-p17_b").addEventListener("click", fun_p17_b);
+
+function fun_p17_b() {
+      if (
+$("#radio-1-p17_b").is(':checked') == true || 
+
+$("#radio-2-p17_b").is(':checked') == true || 
+
+$("#radio-3-p17_b").is(':checked') == true || 
+
+$("#radio-4-p17_b").is(':checked') == true || 
+
+$("#radio-5-p17_b").is(':checked') == true || 
+
+$("#radio-6-p17_b").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_b').slideUp();
+        $('#div_p17_b').addClass('hidden');
+        $('#pregunta_p17_b_footer').addClass('hidden');
+        $('#div_p17_c').slideDown();
+        $('#div_p17_c').removeClass('hidden');
+        $('#pregunta_p17_c_footer').removeClass('hidden');
+        $('#div_error_p17_c').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_b').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_c">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_c. A la hora de votar ¿Que? tan importante es para usted...? - c. Las personas pu?blicas que apoyan al(la) candidato(a)</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "1" , id:"radio-1-p17_c"%>
+        <%= f.label :p17_c, "Nada", for: "radio-1-p17_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "2" , id:"radio-2-p17_c"%>
+        <%= f.label :p17_c, "Poco ", for: "radio-2-p17_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "3" , id:"radio-3-p17_c"%>
+        <%= f.label :p17_c, "Algo", for: "radio-3-p17_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "4" , id:"radio-4-p17_c"%>
+        <%= f.label :p17_c, "Mucho", for: "radio-4-p17_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "99" , id:"radio-5-p17_c"%>
+        <%= f.label :p17_c, "Ns/Nr ", for: "radio-5-p17_c"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_c, "88" , id:"radio-6-p17_c"%>
+        <%= f.label :p17_c, "No aplica ", for: "radio-6-p17_c"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_c">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_c">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_c">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_c_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">28 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_d_p17_c_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_b_p17_c_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_b_p17_c_boton").addEventListener("click", fun_p17_c_dev);
+    function fun_p17_c_dev() {
+        $('#div_p17_b').slideDown();
+        $('#div_p17_b').removeClass('hidden');
+        $('#pregunta_p17_b_footer').removeClass('hidden');
+        $('#div_p17_c').slideUp();
+        $('#div_p17_c').addClass('hidden');
+        $('#pregunta_p17_c_footer').addClass('hidden');
+        $('#div_error_p17_c').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_d_p17_c_boton").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-1-p17_c").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-2-p17_c").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-3-p17_c").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-4-p17_c").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-5-p17_c").addEventListener("click", fun_p17_c);
+
+document.getElementById("radio-6-p17_c").addEventListener("click", fun_p17_c);
+
+function fun_p17_c() {
+      if (
+$("#radio-1-p17_c").is(':checked') == true || 
+
+$("#radio-2-p17_c").is(':checked') == true || 
+
+$("#radio-3-p17_c").is(':checked') == true || 
+
+$("#radio-4-p17_c").is(':checked') == true || 
+
+$("#radio-5-p17_c").is(':checked') == true || 
+
+$("#radio-6-p17_c").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_c').slideUp();
+        $('#div_p17_c').addClass('hidden');
+        $('#pregunta_p17_c_footer').addClass('hidden');
+        $('#div_p17_d').slideDown();
+        $('#div_p17_d').removeClass('hidden');
+        $('#pregunta_p17_d_footer').removeClass('hidden');
+        $('#div_error_p17_d').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_c').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_d">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_d. A la hora de votar ¿Que? tan importante es para usted...? - d. La opinio?n de los medios de comunicacio?n</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "1" , id:"radio-1-p17_d"%>
+        <%= f.label :p17_d, "Nada", for: "radio-1-p17_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "2" , id:"radio-2-p17_d"%>
+        <%= f.label :p17_d, "Poco ", for: "radio-2-p17_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "3" , id:"radio-3-p17_d"%>
+        <%= f.label :p17_d, "Algo", for: "radio-3-p17_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "4" , id:"radio-4-p17_d"%>
+        <%= f.label :p17_d, "Mucho", for: "radio-4-p17_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "99" , id:"radio-5-p17_d"%>
+        <%= f.label :p17_d, "Ns/Nr ", for: "radio-5-p17_d"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_d, "88" , id:"radio-6-p17_d"%>
+        <%= f.label :p17_d, "No aplica ", for: "radio-6-p17_d"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_d">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_d">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_d">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_d_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">29 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_e_p17_d_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_c_p17_d_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_c_p17_d_boton").addEventListener("click", fun_p17_d_dev);
+    function fun_p17_d_dev() {
+        $('#div_p17_c').slideDown();
+        $('#div_p17_c').removeClass('hidden');
+        $('#pregunta_p17_c_footer').removeClass('hidden');
+        $('#div_p17_d').slideUp();
+        $('#div_p17_d').addClass('hidden');
+        $('#pregunta_p17_d_footer').addClass('hidden');
+        $('#div_error_p17_d').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_e_p17_d_boton").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-1-p17_d").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-2-p17_d").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-3-p17_d").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-4-p17_d").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-5-p17_d").addEventListener("click", fun_p17_d);
+
+document.getElementById("radio-6-p17_d").addEventListener("click", fun_p17_d);
+
+function fun_p17_d() {
+      if (
+$("#radio-1-p17_d").is(':checked') == true || 
+
+$("#radio-2-p17_d").is(':checked') == true || 
+
+$("#radio-3-p17_d").is(':checked') == true || 
+
+$("#radio-4-p17_d").is(':checked') == true || 
+
+$("#radio-5-p17_d").is(':checked') == true || 
+
+$("#radio-6-p17_d").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_d').slideUp();
+        $('#div_p17_d').addClass('hidden');
+        $('#pregunta_p17_d_footer').addClass('hidden');
+        $('#div_p17_e').slideDown();
+        $('#div_p17_e').removeClass('hidden');
+        $('#pregunta_p17_e_footer').removeClass('hidden');
+        $('#div_error_p17_e').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_d').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_e">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_e. A la hora de votar ¿Que? tan importante es para usted...? - e. Lo que dicen las encuestas</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "1" , id:"radio-1-p17_e"%>
+        <%= f.label :p17_e, "Nada", for: "radio-1-p17_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "2" , id:"radio-2-p17_e"%>
+        <%= f.label :p17_e, "Poco ", for: "radio-2-p17_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "3" , id:"radio-3-p17_e"%>
+        <%= f.label :p17_e, "Algo", for: "radio-3-p17_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "4" , id:"radio-4-p17_e"%>
+        <%= f.label :p17_e, "Mucho", for: "radio-4-p17_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "99" , id:"radio-5-p17_e"%>
+        <%= f.label :p17_e, "Ns/Nr ", for: "radio-5-p17_e"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_e, "88" , id:"radio-6-p17_e"%>
+        <%= f.label :p17_e, "No aplica ", for: "radio-6-p17_e"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_e">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_e">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_e">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_e_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">30 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_f_p17_e_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_d_p17_e_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_d_p17_e_boton").addEventListener("click", fun_p17_e_dev);
+    function fun_p17_e_dev() {
+        $('#div_p17_d').slideDown();
+        $('#div_p17_d').removeClass('hidden');
+        $('#pregunta_p17_d_footer').removeClass('hidden');
+        $('#div_p17_e').slideUp();
+        $('#div_p17_e').addClass('hidden');
+        $('#pregunta_p17_e_footer').addClass('hidden');
+        $('#div_error_p17_e').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_f_p17_e_boton").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-1-p17_e").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-2-p17_e").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-3-p17_e").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-4-p17_e").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-5-p17_e").addEventListener("click", fun_p17_e);
+
+document.getElementById("radio-6-p17_e").addEventListener("click", fun_p17_e);
+
+function fun_p17_e() {
+      if (
+$("#radio-1-p17_e").is(':checked') == true || 
+
+$("#radio-2-p17_e").is(':checked') == true || 
+
+$("#radio-3-p17_e").is(':checked') == true || 
+
+$("#radio-4-p17_e").is(':checked') == true || 
+
+$("#radio-5-p17_e").is(':checked') == true || 
+
+$("#radio-6-p17_e").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_e').slideUp();
+        $('#div_p17_e').addClass('hidden');
+        $('#pregunta_p17_e_footer').addClass('hidden');
+        $('#div_p17_f').slideDown();
+        $('#div_p17_f').removeClass('hidden');
+        $('#pregunta_p17_f_footer').removeClass('hidden');
+        $('#div_error_p17_f').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_e').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_f">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_f. A la hora de votar ¿Que? tan importante es para usted...? - f. Las recomendaciones de amistades y familiares</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "1" , id:"radio-1-p17_f"%>
+        <%= f.label :p17_f, "Nada", for: "radio-1-p17_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "2" , id:"radio-2-p17_f"%>
+        <%= f.label :p17_f, "Poco ", for: "radio-2-p17_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "3" , id:"radio-3-p17_f"%>
+        <%= f.label :p17_f, "Algo", for: "radio-3-p17_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "4" , id:"radio-4-p17_f"%>
+        <%= f.label :p17_f, "Mucho", for: "radio-4-p17_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "99" , id:"radio-5-p17_f"%>
+        <%= f.label :p17_f, "Ns/Nr ", for: "radio-5-p17_f"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_f, "88" , id:"radio-6-p17_f"%>
+        <%= f.label :p17_f, "No aplica ", for: "radio-6-p17_f"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_f">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_f">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_f">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_f_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">31 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p17_g_p17_f_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_e_p17_f_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_e_p17_f_boton").addEventListener("click", fun_p17_f_dev);
+    function fun_p17_f_dev() {
+        $('#div_p17_e').slideDown();
+        $('#div_p17_e').removeClass('hidden');
+        $('#pregunta_p17_e_footer').removeClass('hidden');
+        $('#div_p17_f').slideUp();
+        $('#div_p17_f').addClass('hidden');
+        $('#pregunta_p17_f_footer').addClass('hidden');
+        $('#div_error_p17_f').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p17_g_p17_f_boton").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-1-p17_f").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-2-p17_f").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-3-p17_f").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-4-p17_f").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-5-p17_f").addEventListener("click", fun_p17_f);
+
+document.getElementById("radio-6-p17_f").addEventListener("click", fun_p17_f);
+
+function fun_p17_f() {
+      if (
+$("#radio-1-p17_f").is(':checked') == true || 
+
+$("#radio-2-p17_f").is(':checked') == true || 
+
+$("#radio-3-p17_f").is(':checked') == true || 
+
+$("#radio-4-p17_f").is(':checked') == true || 
+
+$("#radio-5-p17_f").is(':checked') == true || 
+
+$("#radio-6-p17_f").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_f').slideUp();
+        $('#div_p17_f').addClass('hidden');
+        $('#pregunta_p17_f_footer').addClass('hidden');
+        $('#div_p17_g').slideDown();
+        $('#div_p17_g').removeClass('hidden');
+        $('#pregunta_p17_g_footer').removeClass('hidden');
+        $('#div_error_p17_g').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_f').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+<div class="centrado hidden" style="width: 90%" id="div_p17_g">
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">p17_g. A la hora de votar ¿Que? tan importante es para usted...? - g. Las propuestas del(la) candidato (a)</h3>
+    <br>
+    <div class="field qts">
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "1" , id:"radio-1-p17_g"%>
+        <%= f.label :p17_g, "Nada", for: "radio-1-p17_g"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "2" , id:"radio-2-p17_g"%>
+        <%= f.label :p17_g, "Poco ", for: "radio-2-p17_g"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "3" , id:"radio-3-p17_g"%>
+        <%= f.label :p17_g, "Algo", for: "radio-3-p17_g"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "4" , id:"radio-4-p17_g"%>
+        <%= f.label :p17_g, "Mucho", for: "radio-4-p17_g"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "99" , id:"radio-5-p17_g"%>
+        <%= f.label :p17_g, "Ns/Nr ", for: "radio-5-p17_g"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p17_g, "88" , id:"radio-6-p17_g"%>
+        <%= f.label :p17_g, "No aplica ", for: "radio-6-p17_g"%>
+      </div>
+</div>
+    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_g">Por favor, <strong>escoge una respuesta</strong></div>
+    <button type="button" class="boton3 hidden" id="but_res_p17_g">
+      <i class="fas fa-check-circle"></i>
+        OK
+    </button>
+    <p  class="hidden" style="color: #254064;" id="p_p17_g">presioná <strong>ENTER</strong></p>
+  </div>  
+  <div class="container hidden" id="pregunta_p17_g_footer">
+    <div class="centrado-abajo">
+      <div class="row">
+        <div class="col-md-8">
+        <span style="color: #254064">32 de 138 respuestas</span>
+          <div class="progress progress-striped active">
+            <div class="bar" style="width: 4%; background-color: #254064;"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <a class="boton1" id="pregunta_p18_a_p17_g_boton">
+              <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+            <a class="boton1" id="pregunta_p17_f_p17_g_boton">
+              <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
+            </a>
+          </div>
+      </div>  
+    </div>
+  </div> 
+</div>
+  
+  <script type="text/javascript">
+  
+    document.getElementById("pregunta_p17_f_p17_g_boton").addEventListener("click", fun_p17_g_dev);
+    function fun_p17_g_dev() {
+        $('#div_p17_f').slideDown();
+        $('#div_p17_f').removeClass('hidden');
+        $('#pregunta_p17_f_footer').removeClass('hidden');
+        $('#div_p17_g').slideUp();
+        $('#div_p17_g').addClass('hidden');
+        $('#pregunta_p17_g_footer').addClass('hidden');
+        $('#div_error_p17_g').addClass('hidden');
+    }
+  
+    document.getElementById("pregunta_p18_a_p17_g_boton").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-1-p17_g").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-2-p17_g").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-3-p17_g").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-4-p17_g").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-5-p17_g").addEventListener("click", fun_p17_g);
+
+document.getElementById("radio-6-p17_g").addEventListener("click", fun_p17_g);
+
+function fun_p17_g() {
+      if (
+$("#radio-1-p17_g").is(':checked') == true || 
+
+$("#radio-2-p17_g").is(':checked') == true || 
+
+$("#radio-3-p17_g").is(':checked') == true || 
+
+$("#radio-4-p17_g").is(':checked') == true || 
+
+$("#radio-5-p17_g").is(':checked') == true || 
+
+$("#radio-6-p17_g").is(':checked') == true 
+) {
+  
+      setTimeout(function(){
+        $('#div_p17_g').slideUp();
+        $('#div_p17_g').addClass('hidden');
+        $('#pregunta_p17_g_footer').addClass('hidden');
+        $('#div_p18_a').slideDown();
+        $('#div_p18_a').removeClass('hidden');
+        $('#pregunta_p18_a_footer').removeClass('hidden');
+        $('#div_error_p18_a').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p17_g').removeClass('hidden');
+      }
+      } 
+  
+
+</script>
+
+
+
 
 <div class="centrado hidden" style="width: 90%; text-align: center;" id="div_ultima">
   <div  class="col-md-3">
