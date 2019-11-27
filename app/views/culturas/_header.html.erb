@@ -1,0 +1,88 @@
+<style>
+body {
+  margin: 0;
+  font-family:  @import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #E2F4FF;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+</style>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+<div class="container" style="max-width: 1400px;">
+
+  <div class="header" id="myHeader">
+
+    <div class="" id="div_pregunta_0">
+      <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Empezar nueva encuesta estudiantes</h2>
+    </div>
+
+    <div class="hidden" id="div_p60">
+      <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Número de la encuesta (PAPEL)</h2>
+    </div>
+
+    <div class="hidden" id="div_p1">
+      <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P1. ¿En que curso estás? </h2>
+    </div>
+
+    <div class="hidden" id="div_p2">
+      <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">P2. ¿Eres hombre o mujer? </h2>
+    </div>
+
+
+
+
+
+  </div>
+  
+
+
+</div>
+
+
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+
+
+

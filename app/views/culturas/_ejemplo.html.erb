@@ -1,0 +1,564 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700&display=swap');
+.hidden {
+  display: none !important;}
+  .centrado{
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  }
+
+  .centrado-abajo{
+  position: absolute;
+  top: 90%; 
+  width: 80%;
+  }
+  .qts{
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    -webkit-appearance: none;
+    transform: translateZ(0px);
+    font-size: 18px;
+    line-height: 38px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 0px 8px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    outline: none;
+    border-radius: 0px;
+    transition: box-shadow 0.2s ease 0s;
+    background: none;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4c2f48;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #43a2d2;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  select:hover {
+  background-color: dodgerblue;
+  }
+  .no-focus-outline button:focus {
+    outline: none;
+  }
+  
+
+  .boton3 {
+  color: #254064 !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-radius: 50px;
+  border-color: #254064;
+  transition: all 1s ease;
+  position: relative;
+  }
+  .boton3:hover {
+  background: #254064;
+  color: #fff !important;
+  }
+  .boton1 {
+    cursor: pointer;
+  transition: all 1s ease;
+  }
+  .boton1:hover {
+  color: white !important;
+  }
+  
+
+.inputGroup {
+  background-color: transparent;
+  display: block;
+  margin: 10px 0;
+  position: relative;
+  width: 80%
+}
+.inputGroup label {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3C454C;
+  font-family: 'Heebo';
+  border: 1px solid #43a2d2;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+.inputGroup label:before {
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  content: '';
+  background-color: #254064;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) scale3d(1, 1, 1);
+          transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: '';
+  border: 1px solid #254064;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+  -webkit-transform: translate(-50%, -50%) scale3d(56, 56, 1);
+          transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+  background-color: #43a2d2;
+  border-color: #43a2d2;
+}
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+  .form {
+  padding: 0 16px;
+  margin: 50px auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  }
+
+  body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+    color: #4c2f48;
+    background-color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  code {
+    background-color: #9AA3AC;
+    padding: 0 8px;
+  }
+</style>
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://kit.fontawesome.com/1f7411956b.js"></script>
+
+<%= render 'header', encuestah: @encuestah %>
+<%= render 'footer', encuestah: @encuestah %>
+
+<%= form_with(model: encuestah, local: true) do |form| %>
+  <% if encuestah.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(encuestah.errors.count, "error") %> prohibited this encuestah from being saved:</h2>
+
+      <ul>
+      <% encuestah.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container" style="max-width: 1400px;">
+
+    <div class="centrado" style="width: 90%; text-align: center; position: absolute;" id="div_bpregunta_0">
+      <button type="button" class="boton3" style="" id="but_res_pregunta_0">
+        <i class="fas fa-check-circle"; id="but_pregunta_0"></i>
+        Empieza!
+      </button>
+    </div>
+
+      <script type="text/javascript">
+      $('form').on('keypress', e => {
+        if (e.keyCode == 13) {
+            return false;
+        }
+      });
+      var input = document.getElementById("but_res_pregunta_0");
+          input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("but_res_pregunta_0").click();
+          }
+        });
+      document.getElementById("but_res_pregunta_0").addEventListener("click", fun_pregunta_0);
+      function fun_pregunta_0() {
+          $('#div_pregunta_0').slideUp();
+          $('#div_pregunta_0').addClass('hidden');
+          $('#div_bpregunta_0').addClass('hidden');
+          $('#div_p60').slideDown();
+          $('#div_p60').removeClass('hidden');
+          $('#div_bp60').removeClass('hidden');
+          $('#pregunta_p60_footer').removeClass('hidden');
+          $('#div_error_p60').addClass('hidden');
+          document.getElementById("res_p60").focus();
+      }
+
+    </script>
+
+    <div class="centrado hidden" style="width: 90%" id="div_bp60">
+      <br>
+      <div class="field qts">
+
+        <%= form.text_field :p60, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p60", placeholder: "Escribe aqui el número"}%> 
+
+      </div>
+      <div class="hidden" style="color: #254064;" id="div_error_p60"><strong>Por favor, escribe sin signos</strong></div>
+      <button type="button" class="boton3 hidden" id="but_res_p60">
+        <i class="fas fa-check-circle"></i>
+        OK
+      </button>
+      <p  class="hidden" style="color: #254064;" id="p_p60">presiona <strong>ENTER</strong></p>
+    </div>
+
+      <script type="text/javascript">
+      var input = document.getElementById("res_p60");
+          input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("but_res_p60").click();
+          }
+        });
+
+      document.getElementById("pregunta_pregunta_0_p60_boton").addEventListener("click", fun_p60_dev);
+      function fun_p60_dev() {
+          $('#div_pregunta_0').slideDown();
+          $('#div_pregunta_0').removeClass('hidden');
+          $('#div_bpregunta_0').removeClass('hidden');
+          $('#pregunta_pregunta_0_footer').removeClass('hidden');
+          $('#div_p60').slideUp();
+          $('#div_p60').addClass('hidden');
+          $('#div_bp60').addClass('hidden');
+          $('#pregunta_p60_footer').addClass('hidden');
+          $('#div_error_p60').addClass('hidden');
+      }
+
+      document.getElementById("pregunta_p1_p60_boton").addEventListener("click", fun_p60);
+      document.getElementById("but_res_p60").addEventListener("click", fun_p60);
+        function fun_p60() {
+        var frase = document.getElementById("res_p60").value; 
+          frase = frase.replace("#"," ");
+          frase = frase.replace("%"," ");
+          frase = frase.replace("&"," ");
+          frase = frase.replace("$"," ");
+          frase = frase.replace("  "," ");
+          document.getElementById("res_p60").value = frase;
+        if (document.getElementById("res_p60").value == "") {
+          $('#but_res_p60').addClass('hidden');
+          $('#p_p60').addClass('hidden');
+          $('#div_error_p60').removeClass('hidden');
+        } else {
+          $('#div_p60').slideUp();
+          $('#div_p60').addClass('hidden');
+          $('#div_bp60').addClass('hidden');
+          $('#pregunta_p60_footer').addClass('hidden');
+          $('#div_p1').slideDown();
+          $('#div_p1').removeClass('hidden');
+          $('#div_bp1').removeClass('hidden');
+          $('#pregunta_p1_footer').removeClass('hidden');
+          $('#div_error_p1').addClass('hidden');
+          document.getElementById("res_p1").focus();
+        }
+      }
+
+      $(document).ready(function(){ 
+
+        $('#res_p60').on('input', function() { 
+          var frase = document.getElementById("res_p60").value; 
+          frase = frase.replace("#"," ");
+          frase = frase.replace("%"," ");
+          frase = frase.replace("&"," ");
+          frase = frase.replace("$"," ");
+          document.getElementById("res_p60").value = frase;
+          if (document.getElementById("res_p60").value == "") {
+          $('#but_res_p60').addClass('hidden');
+          $('#p_p60').addClass('hidden');
+          $('#div_error_p60').removeClass('hidden');
+          } else {
+           $('#but_res_p60').removeClass('hidden');
+           $('#p_p60').removeClass('hidden');
+           $('#div_error_p60').addClass('hidden');
+          }
+        }); 
+      }); 
+    </script>  
+
+
+    <div class="hidden" style="width: 100%" id="div_bp1">
+      
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "5" , id:"radio-1-p1"%>
+          <%= form.label :p1, "5", for: "radio-1-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "6" , id:"radio-2-p1"%>
+          <%= form.label :p1, "6", for: "radio-2-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "7" , id:"radio-3-p1"%>
+          <%= form.label :p1, "7", for: "radio-3-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "8" , id:"radio-4-p1"%>
+          <%= form.label :p1, "8", for: "radio-4-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "9" , id:"radio-5-p1"%>
+          <%= form.label :p1, "9", for: "radio-5-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "10" , id:"radio-6-p1"%>
+          <%= form.label :p1, "10", for: "radio-6-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "11" , id:"radio-7-p1"%>
+          <%= form.label :p1, "11", for: "radio-7-p1"%>
+        </div>
+
+
+
+
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "5" , id:"radio-1-p1"%>
+          <%= form.label :p1, "5", for: "radio-1-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "6" , id:"radio-2-p1"%>
+          <%= form.label :p1, "6", for: "radio-2-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "7" , id:"radio-3-p1"%>
+          <%= form.label :p1, "7", for: "radio-3-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "8" , id:"radio-4-p1"%>
+          <%= form.label :p1, "8", for: "radio-4-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "9" , id:"radio-5-p1"%>
+          <%= form.label :p1, "9", for: "radio-5-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "10" , id:"radio-6-p1"%>
+          <%= form.label :p1, "10", for: "radio-6-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "11" , id:"radio-7-p1"%>
+          <%= form.label :p1, "11", for: "radio-7-p1"%>
+        </div>
+
+
+
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "5" , id:"radio-1-p1"%>
+          <%= form.label :p1, "5", for: "radio-1-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "6" , id:"radio-2-p1"%>
+          <%= form.label :p1, "6", for: "radio-2-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "7" , id:"radio-3-p1"%>
+          <%= form.label :p1, "7", for: "radio-3-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "8" , id:"radio-4-p1"%>
+          <%= form.label :p1, "8", for: "radio-4-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "9" , id:"radio-5-p1"%>
+          <%= form.label :p1, "9", for: "radio-5-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "10" , id:"radio-6-p1"%>
+          <%= form.label :p1, "10", for: "radio-6-p1"%>
+        </div>
+        <div class="inputGroup">
+          <%= form.radio_button :p1, "11" , id:"radio-7-p1"%>
+          <%= form.label :p1, "11", for: "radio-7-p1"%>
+        </div>
+        <br> <br> <br> <br>
+    </div>
+    <div class="invalid-feedback hidden" style="color: #4c2f48;" id="div_error_p1">Por favor, <strong>escogé un curso!</strong></div>
+      <button type="button" class="boton3 hidden" id="but_res_p1">
+        <i class="fas fa-check-circle"></i>
+          OK
+      </button>
+      <p  class="hidden" style="color: #4c2f48;" id="p_p1">presioná <strong>ENTER</strong></p> 
+
+    <script type="text/javascript">
+
+      document.getElementById("pregunta_p60_p1_boton").addEventListener("click", fun_p1_dev);
+      function fun_p1_dev() {
+          $('#div_p60').slideDown();
+          $('#div_p60').removeClass('hidden');
+          $('#div_bp60').removeClass('hidden');
+          $('#pregunta_p60_footer').removeClass('hidden');
+          $('#div_p1').slideUp();
+          $('#div_p1').addClass('hidden');
+          $('#div_bp1').addClass('hidden');
+          $('#pregunta_p1_footer').addClass('hidden');
+          $('#div_error_p1').addClass('hidden');
+      }
+
+      document.getElementById("pregunta_p2_p1_boton").addEventListener("click", fun_p1);
+      document.getElementById("radio-1-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-2-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-3-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-4-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-5-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-6-p1").addEventListener("click", fun_p1);
+      document.getElementById("radio-7-p1").addEventListener("click", fun_p1);
+      function fun_p1() {
+        if ($("#radio-1-p1").is(':checked') == true || 
+            $("#radio-2-p1").is(':checked') == true || 
+            $("#radio-3-p1").is(':checked') == true || 
+            $("#radio-4-p1").is(':checked') == true || 
+            $("#radio-5-p1").is(':checked') == true || 
+            $("#radio-6-p1").is(':checked') == true || 
+            $("#radio-7-p1").is(':checked') == true ) {
+        setTimeout(function(){
+          $('#div_p1').slideUp();
+          $('#div_p1').addClass('hidden');
+          $('#div_bp1').addClass('hidden');
+          $('#pregunta_p1_footer').addClass('hidden');
+          $('#div_p2').slideDown();
+          $('#div_p2').removeClass('hidden');
+          $('#div_bp2').removeClass('hidden');
+          $('#pregunta_p2_footer').removeClass('hidden');
+          $('#div_error_p2').addClass('hidden');
+      } , 500);
+      } else {
+          $('#div_error_p1').removeClass('hidden');
+        }
+        }
+    </script>
+
+<div class="hidden" style="width: 100%" id="div_bp2">
+
+    <div class="inputGroup">
+      <%= form.radio_button :p2, "1" , id:"radio-1-p2"%>
+      <%= form.label :p2, "Hombre", for: "radio-1-p2"%>
+    </div>
+
+    <div class="inputGroup">
+      <%= form.radio_button :p2, "2" , id:"radio-2-p2"%>
+      <%= form.label :p2, "Mujer", for: "radio-2-p2"%>
+    </div>
+
+  <br> <br> <br> <br>
+</div>
+  <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p2">Por favor, <strong>escoge una respuesta</strong></div>
+  <button type="button" class="boton3 hidden" id="but_res_pregunta_2">
+    <i class="fas fa-check-circle";></i>
+      OK
+  </button>
+  <p  class="hidden" style="color: #254064;" id="p_p2">presioná <strong>ENTER</strong></p>
+
+<script type="text/javascript">
+
+  document.getElementById("pregunta_p1_p2_boton").addEventListener("click", fun_p2_dev);
+  function fun_p2_dev() {
+      $('#div_p1').slideDown();
+      $('#div_p1').removeClass('hidden');
+      $('#div_bp1').removeClass('hidden');
+      $('#pregunta_p1_footer').removeClass('hidden');
+      $('#div_p2').slideUp();
+      $('#div_p2').addClass('hidden');
+      $('#div_bp2').addClass('hidden');
+      $('#pregunta_p2_footer').addClass('hidden');
+      $('#div_error_p2').addClass('hidden');
+  }
+
+  document.getElementById("pregunta_p3_p2_boton").addEventListener("click", fun_p2);
+  document.getElementById("radio-1-p2").addEventListener("click", fun_p2);
+  document.getElementById("radio-2-p2").addEventListener("click", fun_p2);
+  function fun_p2() {
+    if ($("#radio-1-p2").is(':checked') == true ||  
+        $("#radio-2-p2").is(':checked') == true) {
+    setTimeout(function(){
+      $('#div_p2').slideUp();
+      $('#div_p2').addClass('hidden');
+      $('#div_bp2').addClass('hidden');
+      $('#pregunta_p2_footer').addClass('hidden');
+      $('#div_p3').slideDown();
+      $('#div_p3').removeClass('hidden');
+      $('#div_bp3').removeClass('hidden');
+      $('#pregunta_p3_footer').removeClass('hidden');
+      $('#div_error_p3').addClass('hidden');
+  } , 500);
+  } else {
+      $('#div_error_p1').removeClass('hidden');
+    }
+    }
+</script>
+
+
+</div>
+
+  <div class="actions">
+    <% form.submit %>
+  </div>
+<% end %>
+
+
