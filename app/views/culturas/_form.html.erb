@@ -2281,9 +2281,7 @@ $("#radio-7-p10").is(':checked') == true
   
 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_p11">
-  <p>Nombre del(la) Encuestado(a)</p>
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p11. Nombre del(la) Encuestado(a)</h2>
+<div class="centrado hidden" style="width: 90%" id="div_bp11">
   <br>
   <div class="field qts">
 
@@ -2336,6 +2334,7 @@ $("#radio-7-p10").is(':checked') == true
       $('#pregunta_p10_footer').removeClass('hidden');
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
+      $('#div_bp11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
       $('#div_error_p11').addClass('hidden');
   }
@@ -2357,9 +2356,11 @@ $("#radio-7-p10").is(':checked') == true
     } else {
       $('#div_p11').slideUp();
       $('#div_p11').addClass('hidden');
+      $('#div_bp11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
       $('#div_p12').slideDown();
       $('#div_p12').removeClass('hidden');
+      $('#div_bp12').removeClass('hidden');
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_error_p12').addClass('hidden');
       document.getElementById("res_p12").focus();
@@ -2387,13 +2388,11 @@ $("#radio-7-p10").is(':checked') == true
     }); 
   }); 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_p12">
-  <p>Correo Electronico </p>
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p12. Correo Electronico </h2>
+<div class="centrado hidden" style="width: 90%" id="div_bp12">
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p12, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p12", placeholder: "¿Cuál?"}%> 
+    <%= f.text_field :p12, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p12", placeholder: "correo electrónico"}%> 
 
   </div>
   <div class="hidden" style="color: #254064;" id="div_error_p12"><strong>Por favor, escribe sin signos</strong></div>
@@ -2439,9 +2438,11 @@ $("#radio-7-p10").is(':checked') == true
   function fun_p12_dev() {
       $('#div_p11').slideDown();
       $('#div_p11').removeClass('hidden');
+      $('#div_bp11').removeClass('hidden');
       $('#pregunta_p11_footer').removeClass('hidden');
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
+      $('#div_bp12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
       $('#div_error_p12').addClass('hidden');
   }
@@ -2463,9 +2464,11 @@ $("#radio-7-p10").is(':checked') == true
     } else {
       $('#div_p12').slideUp();
       $('#div_p12').addClass('hidden');
+      $('#div_bp12').addClass('hidden');
       $('#pregunta_p12_footer').addClass('hidden');
       $('#div_p13').slideDown();
       $('#div_p13').removeClass('hidden');
+      $('#div_bp13').removeClass('hidden');
       $('#pregunta_p13_footer').removeClass('hidden');
       $('#div_error_p13').addClass('hidden');
       document.getElementById("res_p13").focus();
@@ -2493,13 +2496,11 @@ $("#radio-7-p10").is(':checked') == true
     }); 
   }); 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_p13">
-  <p>Tele?fono </p>
-  <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">p13. Tele?fono </h2>
+<div class="centrado hidden" style="width: 90%" id="div_bp13">
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p13, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p13", placeholder: "¿Cuál?"}%> 
+    <%= f.text_field :p13, {type:"Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p13", placeholder: "Telenono"}%> 
 
   </div>
   <div class="hidden" style="color: #254064;" id="div_error_p13"><strong>Por favor, escribe sin signos</strong></div>
@@ -2545,9 +2546,11 @@ $("#radio-7-p10").is(':checked') == true
   function fun_p13_dev() {
       $('#div_p12').slideDown();
       $('#div_p12').removeClass('hidden');
+      $('#div_bp12').removeClass('hidden');
       $('#pregunta_p12_footer').removeClass('hidden');
       $('#div_p13').slideUp();
       $('#div_p13').addClass('hidden');
+      $('#div_bp13').addClass('hidden');
       $('#pregunta_p13_footer').addClass('hidden');
       $('#div_error_p13').addClass('hidden');
   }
@@ -2569,9 +2572,11 @@ $("#radio-7-p10").is(':checked') == true
     } else {
       $('#div_p13').slideUp();
       $('#div_p13').addClass('hidden');
+      $('#div_bp13').addClass('hidden');
       $('#pregunta_p13_footer').addClass('hidden');
       $('#div_p14_a').slideDown();
       $('#div_p14_a').removeClass('hidden');
+      $('#div_bp14_a').removeClass('hidden');
       $('#pregunta_p14_a_footer').removeClass('hidden');
       $('#div_error_p14_a').addClass('hidden');
       document.getElementById("res_p14_a").focus();
@@ -2599,10 +2604,10 @@ $("#radio-7-p10").is(':checked') == true
     }); 
   }); 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp14_a">
+<div class="container hidden" style="width: 90%;" id="div_bp14_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
@@ -2616,7 +2621,6 @@ $("#radio-7-p10").is(':checked') == true
           </tr>
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
-
         <tr>
           <td>a. La familia</td>
           <td>
@@ -2812,7 +2816,8 @@ $("#radio-7-p10").is(':checked') == true
         <tr>
 </tbody>
     </table>
-  </div>
+    <br> <br>
+  
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p14_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p14_a">
     <i class="fas fa-check-circle"></i>
@@ -2985,9 +2990,8 @@ document.getElementById("radio-5-p14_f").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_bp15">
+<div class="container hidden" style="width: 90%" id="div_bp15">
     <br>
-    <div class="field qts">
 <div class="inputGroup">
         <%= f.radio_button :p15, "1" , id:"radio-1-p15"%>
         <%= f.label :p15, "La democracia es preferible a cualquier otra forma de gobierno ", for: "radio-1-p15"%>
@@ -3004,7 +3008,7 @@ document.getElementById("radio-5-p14_f").addEventListener("click", fun_multi);
         <%= f.radio_button :p15, "99" , id:"radio-4-p15"%>
         <%= f.label :p15, "Ns/Nr ", for: "radio-4-p15"%>
       </div>
-</div>
+<br> <br>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p15">Por favor, <strong>escoge una respuesta</strong></div>
     <button type="button" class="boton3 hidden" id="but_res_p15">
       <i class="fas fa-check-circle"></i>
@@ -3067,23 +3071,18 @@ $("#radio-4-p15").is(':checked') == true
   
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp16_a">
+<div class="container hidden" style="width: 90%;" id="div_bp16_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
 <th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
+<th style="text-align: center;">Poco</th>
+<th style="text-align: center;">Mucho</th>
 <th style="text-align: center;">Ns/Nr </th>
 <th style="text-align: center;">No aplica </th>
           </tr>
@@ -3112,13 +3111,13 @@ $("#radio-4-p15").is(':checked') == true
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_a, "4" , id:"radio-4-p16_a"%>
+              <%= f.radio_button :p16_a, "99" , id:"radio-4-p16_a"%>
               <%= f.label :p16_a, "", for: "radio-4-p16_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_a, "5" , id:"radio-5-p16_a"%>
+              <%= f.radio_button :p16_a, "88" , id:"radio-5-p16_a"%>
               <%= f.label :p16_a, "", for: "radio-5-p16_a", style:"color:transparent;"%>
             </div>
           </td>
@@ -3144,13 +3143,13 @@ $("#radio-4-p15").is(':checked') == true
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_b, "4" , id:"radio-4-p16_b"%>
+              <%= f.radio_button :p16_b, "99" , id:"radio-4-p16_b"%>
               <%= f.label :p16_b, "", for: "radio-4-p16_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_b, "5" , id:"radio-5-p16_b"%>
+              <%= f.radio_button :p16_b, "88" , id:"radio-5-p16_b"%>
               <%= f.label :p16_b, "", for: "radio-5-p16_b", style:"color:transparent;"%>
             </div>
           </td>
@@ -3176,13 +3175,13 @@ $("#radio-4-p15").is(':checked') == true
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_c, "4" , id:"radio-4-p16_c"%>
+              <%= f.radio_button :p16_c, "99" , id:"radio-4-p16_c"%>
               <%= f.label :p16_c, "", for: "radio-4-p16_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_c, "5" , id:"radio-5-p16_c"%>
+              <%= f.radio_button :p16_c, "88" , id:"radio-5-p16_c"%>
               <%= f.label :p16_c, "", for: "radio-5-p16_c", style:"color:transparent;"%>
             </div>
           </td>
@@ -3208,13 +3207,13 @@ $("#radio-4-p15").is(':checked') == true
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_d, "4" , id:"radio-4-p16_d"%>
+              <%= f.radio_button :p16_d, "99" , id:"radio-4-p16_d"%>
               <%= f.label :p16_d, "", for: "radio-4-p16_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_d, "5" , id:"radio-5-p16_d"%>
+              <%= f.radio_button :p16_d, "88" , id:"radio-5-p16_d"%>
               <%= f.label :p16_d, "", for: "radio-5-p16_d", style:"color:transparent;"%>
             </div>
           </td>
@@ -3240,20 +3239,20 @@ $("#radio-4-p15").is(':checked') == true
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_e, "4" , id:"radio-4-p16_e"%>
+              <%= f.radio_button :p16_e, "99" , id:"radio-4-p16_e"%>
               <%= f.label :p16_e, "", for: "radio-4-p16_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p16_e, "5" , id:"radio-5-p16_e"%>
+              <%= f.radio_button :p16_e, "88" , id:"radio-5-p16_e"%>
               <%= f.label :p16_e, "", for: "radio-5-p16_e", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p16_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p16_a">
     <i class="fas fa-check-circle"></i>
@@ -3406,27 +3405,16 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp17_a">
+<div class="container " style="width: 90%;" id="div_bp17_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
 <th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
+<th style="text-align: center;">Poco</th>
 <th style="text-align: center;">Algo</th>
 <th style="text-align: center;">Mucho</th>
 <th style="text-align: center;">Ns/Nr </th>
@@ -3463,13 +3451,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_a, "5" , id:"radio-5-p17_a"%>
+              <%= f.radio_button :p17_a, "99" , id:"radio-5-p17_a"%>
               <%= f.label :p17_a, "", for: "radio-5-p17_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_a, "6" , id:"radio-6-p17_a"%>
+              <%= f.radio_button :p17_a, "88" , id:"radio-6-p17_a"%>
               <%= f.label :p17_a, "", for: "radio-6-p17_a", style:"color:transparent;"%>
             </div>
           </td>
@@ -3501,13 +3489,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_b, "5" , id:"radio-5-p17_b"%>
+              <%= f.radio_button :p17_b, "99" , id:"radio-5-p17_b"%>
               <%= f.label :p17_b, "", for: "radio-5-p17_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_b, "6" , id:"radio-6-p17_b"%>
+              <%= f.radio_button :p17_b, "88" , id:"radio-6-p17_b"%>
               <%= f.label :p17_b, "", for: "radio-6-p17_b", style:"color:transparent;"%>
             </div>
           </td>
@@ -3539,13 +3527,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_c, "5" , id:"radio-5-p17_c"%>
+              <%= f.radio_button :p17_c, "99" , id:"radio-5-p17_c"%>
               <%= f.label :p17_c, "", for: "radio-5-p17_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_c, "6" , id:"radio-6-p17_c"%>
+              <%= f.radio_button :p17_c, "88" , id:"radio-6-p17_c"%>
               <%= f.label :p17_c, "", for: "radio-6-p17_c", style:"color:transparent;"%>
             </div>
           </td>
@@ -3577,13 +3565,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_d, "5" , id:"radio-5-p17_d"%>
+              <%= f.radio_button :p17_d, "99" , id:"radio-5-p17_d"%>
               <%= f.label :p17_d, "", for: "radio-5-p17_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_d, "6" , id:"radio-6-p17_d"%>
+              <%= f.radio_button :p17_d, "88" , id:"radio-6-p17_d"%>
               <%= f.label :p17_d, "", for: "radio-6-p17_d", style:"color:transparent;"%>
             </div>
           </td>
@@ -3615,13 +3603,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_e, "5" , id:"radio-5-p17_e"%>
+              <%= f.radio_button :p17_e, "99" , id:"radio-5-p17_e"%>
               <%= f.label :p17_e, "", for: "radio-5-p17_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_e, "6" , id:"radio-6-p17_e"%>
+              <%= f.radio_button :p17_e, "88" , id:"radio-6-p17_e"%>
               <%= f.label :p17_e, "", for: "radio-6-p17_e", style:"color:transparent;"%>
             </div>
           </td>
@@ -3653,13 +3641,13 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_f, "5" , id:"radio-5-p17_f"%>
+              <%= f.radio_button :p17_f, "99" , id:"radio-5-p17_f"%>
               <%= f.label :p17_f, "", for: "radio-5-p17_f", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_f, "6" , id:"radio-6-p17_f"%>
+              <%= f.radio_button :p17_f, "88" , id:"radio-6-p17_f"%>
               <%= f.label :p17_f, "", for: "radio-6-p17_f", style:"color:transparent;"%>
             </div>
           </td>
@@ -3691,20 +3679,20 @@ document.getElementById("radio-5-p16_e").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_g, "5" , id:"radio-5-p17_g"%>
+              <%= f.radio_button :p17_g, "99" , id:"radio-5-p17_g"%>
               <%= f.label :p17_g, "", for: "radio-5-p17_g", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p17_g, "6" , id:"radio-6-p17_g"%>
+              <%= f.radio_button :p17_g, "88" , id:"radio-6-p17_g"%>
               <%= f.label :p17_g, "", for: "radio-6-p17_g", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p17_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p17_a">
     <i class="fas fa-check-circle"></i>
@@ -3925,40 +3913,24 @@ document.getElementById("radio-6-p17_g").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp18_a">
+<div class="container hidden" style="width: 90%;" id="div_bp18_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Algo</th>
-<th style="text-align: center;">Mucho</th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
+<th style="text-align: center;">Si </th>
+<th style="text-align: center;">No </th>
+<th style="text-align: center;">NS/NR </th>
           </tr>
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
 
         <tr>
-          <td>El Concejo</td>
+          <td>a. El Concejo</td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p18_a, "1" , id:"radio-1-p18_a"%>
@@ -3967,360 +3939,360 @@ document.getElementById("radio-6-p17_g").addEventListener("click", fun_multi);
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_a, "2" , id:"radio-2-p18_a"%>
+              <%= f.radio_button :p18_a, "no" , id:"radio-2-p18_a"%>
               <%= f.label :p18_a, "", for: "radio-2-p18_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_a, "3" , id:"radio-3-p18_a"%>
+              <%= f.radio_button :p18_a, "99" , id:"radio-3-p18_a"%>
               <%= f.label :p18_a, "", for: "radio-3-p18_a", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La alcaldia y sus entidades (Secretarias, Institutos, Empresas, etc)</td>
+          <td>b. La alcaldia y sus entidades (Secretarias, Institutos, Empresas, etc)</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_b, "1" , id:"radio-1-p18_b"%>
+              <%= f.radio_button :p18_b, "si" , id:"radio-1-p18_b"%>
               <%= f.label :p18_b, "", for: "radio-1-p18_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_b, "2" , id:"radio-2-p18_b"%>
+              <%= f.radio_button :p18_b, "no" , id:"radio-2-p18_b"%>
               <%= f.label :p18_b, "", for: "radio-2-p18_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_b, "3" , id:"radio-3-p18_b"%>
+              <%= f.radio_button :p18_b, "99" , id:"radio-3-p18_b"%>
               <%= f.label :p18_b, "", for: "radio-3-p18_b", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Autoridades locales (Las alcaldias y JAL)</td>
+          <td>c. Autoridades locales (Las alcaldias y JAL)</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_c, "1" , id:"radio-1-p18_c"%>
+              <%= f.radio_button :p18_c, "si" , id:"radio-1-p18_c"%>
               <%= f.label :p18_c, "", for: "radio-1-p18_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_c, "2" , id:"radio-2-p18_c"%>
+              <%= f.radio_button :p18_c, "no" , id:"radio-2-p18_c"%>
               <%= f.label :p18_c, "", for: "radio-2-p18_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_c, "3" , id:"radio-3-p18_c"%>
+              <%= f.radio_button :p18_c, "99" , id:"radio-3-p18_c"%>
               <%= f.label :p18_c, "", for: "radio-3-p18_c", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La Policia</td>
+          <td>d. La Policia</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_d, "1" , id:"radio-1-p18_d"%>
+              <%= f.radio_button :p18_d, "si" , id:"radio-1-p18_d"%>
               <%= f.label :p18_d, "", for: "radio-1-p18_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_d, "2" , id:"radio-2-p18_d"%>
+              <%= f.radio_button :p18_d, "no" , id:"radio-2-p18_d"%>
               <%= f.label :p18_d, "", for: "radio-2-p18_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_d, "3" , id:"radio-3-p18_d"%>
+              <%= f.radio_button :p18_d, "99" , id:"radio-3-p18_d"%>
               <%= f.label :p18_d, "", for: "radio-3-p18_d", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Organismos de control (Contraloria, Personeria, Veeduria)</td>
+          <td>e. Organismos de control (Contraloria, Personeria, Veeduria)</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_e, "1" , id:"radio-1-p18_e"%>
+              <%= f.radio_button :p18_e, "si" , id:"radio-1-p18_e"%>
               <%= f.label :p18_e, "", for: "radio-1-p18_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_e, "2" , id:"radio-2-p18_e"%>
+              <%= f.radio_button :p18_e, "no" , id:"radio-2-p18_e"%>
               <%= f.label :p18_e, "", for: "radio-2-p18_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_e, "3" , id:"radio-3-p18_e"%>
+              <%= f.radio_button :p18_e, "99" , id:"radio-3-p18_e"%>
               <%= f.label :p18_e, "", for: "radio-3-p18_e", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La iglesia</td>
+          <td>f. La iglesia</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_f, "1" , id:"radio-1-p18_f"%>
+              <%= f.radio_button :p18_f, "si" , id:"radio-1-p18_f"%>
               <%= f.label :p18_f, "", for: "radio-1-p18_f", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_f, "2" , id:"radio-2-p18_f"%>
+              <%= f.radio_button :p18_f, "no" , id:"radio-2-p18_f"%>
               <%= f.label :p18_f, "", for: "radio-2-p18_f", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_f, "3" , id:"radio-3-p18_f"%>
+              <%= f.radio_button :p18_f, "99" , id:"radio-3-p18_f"%>
               <%= f.label :p18_f, "", for: "radio-3-p18_f", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>El ejercito</td>
+          <td>g. El ejercito</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_g, "1" , id:"radio-1-p18_g"%>
+              <%= f.radio_button :p18_g, "si" , id:"radio-1-p18_g"%>
               <%= f.label :p18_g, "", for: "radio-1-p18_g", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_g, "2" , id:"radio-2-p18_g"%>
+              <%= f.radio_button :p18_g, "no" , id:"radio-2-p18_g"%>
               <%= f.label :p18_g, "", for: "radio-2-p18_g", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_g, "3" , id:"radio-3-p18_g"%>
+              <%= f.radio_button :p18_g, "99" , id:"radio-3-p18_g"%>
               <%= f.label :p18_g, "", for: "radio-3-p18_g", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Los maestros</td>
+          <td>h. Los maestros</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_h, "1" , id:"radio-1-p18_h"%>
+              <%= f.radio_button :p18_h, "si" , id:"radio-1-p18_h"%>
               <%= f.label :p18_h, "", for: "radio-1-p18_h", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_h, "2" , id:"radio-2-p18_h"%>
+              <%= f.radio_button :p18_h, "no" , id:"radio-2-p18_h"%>
               <%= f.label :p18_h, "", for: "radio-2-p18_h", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_h, "3" , id:"radio-3-p18_h"%>
+              <%= f.radio_button :p18_h, "99" , id:"radio-3-p18_h"%>
               <%= f.label :p18_h, "", for: "radio-3-p18_h", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>El Gobierno Nacional</td>
+          <td>i. El Gobierno Nacional</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_i, "1" , id:"radio-1-p18_i"%>
+              <%= f.radio_button :p18_i, "si" , id:"radio-1-p18_i"%>
               <%= f.label :p18_i, "", for: "radio-1-p18_i", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_i, "2" , id:"radio-2-p18_i"%>
+              <%= f.radio_button :p18_i, "no" , id:"radio-2-p18_i"%>
               <%= f.label :p18_i, "", for: "radio-2-p18_i", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_i, "3" , id:"radio-3-p18_i"%>
+              <%= f.radio_button :p18_i, "99" , id:"radio-3-p18_i"%>
               <%= f.label :p18_i, "", for: "radio-3-p18_i", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>El Congreso de la Republica</td>
+          <td>j. El Congreso de la Republica</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_j, "1" , id:"radio-1-p18_j"%>
+              <%= f.radio_button :p18_j, "si" , id:"radio-1-p18_j"%>
               <%= f.label :p18_j, "", for: "radio-1-p18_j", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_j, "2" , id:"radio-2-p18_j"%>
+              <%= f.radio_button :p18_j, "no" , id:"radio-2-p18_j"%>
               <%= f.label :p18_j, "", for: "radio-2-p18_j", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_j, "3" , id:"radio-3-p18_j"%>
+              <%= f.radio_button :p18_j, "99" , id:"radio-3-p18_j"%>
               <%= f.label :p18_j, "", for: "radio-3-p18_j", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La prensa</td>
+          <td>k. La prensa</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_k, "1" , id:"radio-1-p18_k"%>
+              <%= f.radio_button :p18_k, "si" , id:"radio-1-p18_k"%>
               <%= f.label :p18_k, "", for: "radio-1-p18_k", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_k, "2" , id:"radio-2-p18_k"%>
+              <%= f.radio_button :p18_k, "no" , id:"radio-2-p18_k"%>
               <%= f.label :p18_k, "", for: "radio-2-p18_k", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_k, "3" , id:"radio-3-p18_k"%>
+              <%= f.radio_button :p18_k, "99" , id:"radio-3-p18_k"%>
               <%= f.label :p18_k, "", for: "radio-3-p18_k", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Los funcionarios publicos</td>
+          <td>l. Los funcionarios publicos</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_l, "1" , id:"radio-1-p18_l"%>
+              <%= f.radio_button :p18_l, "si" , id:"radio-1-p18_l"%>
               <%= f.label :p18_l, "", for: "radio-1-p18_l", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_l, "2" , id:"radio-2-p18_l"%>
+              <%= f.radio_button :p18_l, "no" , id:"radio-2-p18_l"%>
               <%= f.label :p18_l, "", for: "radio-2-p18_l", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_l, "3" , id:"radio-3-p18_l"%>
+              <%= f.radio_button :p18_l, "99" , id:"radio-3-p18_l"%>
               <%= f.label :p18_l, "", for: "radio-3-p18_l", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Los jueces</td>
+          <td>m. Los jueces</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_m, "1" , id:"radio-1-p18_m"%>
+              <%= f.radio_button :p18_m, "si" , id:"radio-1-p18_m"%>
               <%= f.label :p18_m, "", for: "radio-1-p18_m", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_m, "2" , id:"radio-2-p18_m"%>
+              <%= f.radio_button :p18_m, "no" , id:"radio-2-p18_m"%>
               <%= f.label :p18_m, "", for: "radio-2-p18_m", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_m, "3" , id:"radio-3-p18_m"%>
+              <%= f.radio_button :p18_m, "99" , id:"radio-3-p18_m"%>
               <%= f.label :p18_m, "", for: "radio-3-p18_m", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>organos judiciales</td>
+          <td>n. Organos judiciales</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_n, "1" , id:"radio-1-p18_n"%>
+              <%= f.radio_button :p18_n, "si" , id:"radio-1-p18_n"%>
               <%= f.label :p18_n, "", for: "radio-1-p18_n", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_n, "2" , id:"radio-2-p18_n"%>
+              <%= f.radio_button :p18_n, "no" , id:"radio-2-p18_n"%>
               <%= f.label :p18_n, "", for: "radio-2-p18_n", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_n, "3" , id:"radio-3-p18_n"%>
+              <%= f.radio_button :p18_n, "99" , id:"radio-3-p18_n"%>
               <%= f.label :p18_n, "", for: "radio-3-p18_n", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Los politicos</td>
+          <td>ñ. Los politicos</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_ñ, "1" , id:"radio-1-p18_ñ"%>
+              <%= f.radio_button :p18_ñ, "si" , id:"radio-1-p18_ñ"%>
               <%= f.label :p18_ñ, "", for: "radio-1-p18_ñ", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_ñ, "2" , id:"radio-2-p18_ñ"%>
+              <%= f.radio_button :p18_ñ, "no" , id:"radio-2-p18_ñ"%>
               <%= f.label :p18_ñ, "", for: "radio-2-p18_ñ", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_ñ, "3" , id:"radio-3-p18_ñ"%>
+              <%= f.radio_button :p18_ñ, "99" , id:"radio-3-p18_ñ"%>
               <%= f.label :p18_ñ, "", for: "radio-3-p18_ñ", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La radio</td>
+          <td>o. La radio</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_o, "1" , id:"radio-1-p18_o"%>
+              <%= f.radio_button :p18_o, "si" , id:"radio-1-p18_o"%>
               <%= f.label :p18_o, "", for: "radio-1-p18_o", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_o, "2" , id:"radio-2-p18_o"%>
+              <%= f.radio_button :p18_o, "no" , id:"radio-2-p18_o"%>
               <%= f.label :p18_o, "", for: "radio-2-p18_o", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_o, "3" , id:"radio-3-p18_o"%>
+              <%= f.radio_button :p18_o, "99" , id:"radio-3-p18_o"%>
               <%= f.label :p18_o, "", for: "radio-3-p18_o", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Los sindicatos</td>
+          <td>p. Los sindicatos</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_p, "1" , id:"radio-1-p18_p"%>
+              <%= f.radio_button :p18_p, "si" , id:"radio-1-p18_p"%>
               <%= f.label :p18_p, "", for: "radio-1-p18_p", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_p, "2" , id:"radio-2-p18_p"%>
+              <%= f.radio_button :p18_p, "no" , id:"radio-2-p18_p"%>
               <%= f.label :p18_p, "", for: "radio-2-p18_p", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_p, "3" , id:"radio-3-p18_p"%>
+              <%= f.radio_button :p18_p, "99" , id:"radio-3-p18_p"%>
               <%= f.label :p18_p, "", for: "radio-3-p18_p", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>La television</td>
+          <td>q. La television</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_q, "1" , id:"radio-1-p18_q"%>
+              <%= f.radio_button :p18_q, "si" , id:"radio-1-p18_q"%>
               <%= f.label :p18_q, "", for: "radio-1-p18_q", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_q, "2" , id:"radio-2-p18_q"%>
+              <%= f.radio_button :p18_q, "no" , id:"radio-2-p18_q"%>
               <%= f.label :p18_q, "", for: "radio-2-p18_q", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p18_q, "3" , id:"radio-3-p18_q"%>
+              <%= f.radio_button :p18_q, "99" , id:"radio-3-p18_q"%>
               <%= f.label :p18_q, "", for: "radio-3-p18_q", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p18_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p18_a">
     <i class="fas fa-check-circle"></i>
@@ -4589,205 +4561,186 @@ document.getElementById("radio-3-p18_q").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp19_a">
+<div class="container hidden" style="width: 90%;" id="div_bp19_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Algo</th>
-<th style="text-align: center;">Mucho</th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
+<th style="text-align: center;">Si </th>
+<th style="text-align: center;">No </th>
+<th style="text-align: center;">NS/NR </th>
           </tr>
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
 
         <tr>
-          <td> Cuando es la unica alternativa que le queda a uno para alcanzar sus objetivos</td>
+          <td>a. Cuando es la unica alternativa que le queda a uno para alcanzar sus objetivos</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_a, "1" , id:"radio-1-p19_a"%>
+              <%= f.radio_button :p19_a, "si" , id:"radio-1-p19_a"%>
               <%= f.label :p19_a, "", for: "radio-1-p19_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_a, "2" , id:"radio-2-p19_a"%>
+              <%= f.radio_button :p19_a, "no" , id:"radio-2-p19_a"%>
               <%= f.label :p19_a, "", for: "radio-2-p19_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_a, "3" , id:"radio-3-p19_a"%>
+              <%= f.radio_button :p19_a, "99" , id:"radio-3-p19_a"%>
               <%= f.label :p19_a, "", for: "radio-3-p19_a", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando los demas lo hacen</td>
+          <td>b. Cuando los demas lo hacen</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_b, "1" , id:"radio-1-p19_b"%>
+              <%= f.radio_button :p19_b, "si" , id:"radio-1-p19_b"%>
               <%= f.label :p19_b, "", for: "radio-1-p19_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_b, "2" , id:"radio-2-p19_b"%>
+              <%= f.radio_button :p19_b, "no" , id:"radio-2-p19_b"%>
               <%= f.label :p19_b, "", for: "radio-2-p19_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_b, "3" , id:"radio-3-p19_b"%>
+              <%= f.radio_button :p19_b, "99" , id:"radio-3-p19_b"%>
               <%= f.label :p19_b, "", for: "radio-3-p19_b", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando es lo acostumbrado</td>
+          <td>c. Cuando es lo acostumbrado</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_c, "1" , id:"radio-1-p19_c"%>
+              <%= f.radio_button :p19_c, "si" , id:"radio-1-p19_c"%>
               <%= f.label :p19_c, "", for: "radio-1-p19_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_c, "2" , id:"radio-2-p19_c"%>
+              <%= f.radio_button :p19_c, "no" , id:"radio-2-p19_c"%>
               <%= f.label :p19_c, "", for: "radio-2-p19_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_c, "3" , id:"radio-3-p19_c"%>
+              <%= f.radio_button :p19_c, "99" , id:"radio-3-p19_c"%>
               <%= f.label :p19_c, "", for: "radio-3-p19_c", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando se hace por necesidad</td>
+          <td>d. Cuando se hace por necesidad</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_d, "1" , id:"radio-1-p19_d"%>
+              <%= f.radio_button :p19_d, "si" , id:"radio-1-p19_d"%>
               <%= f.label :p19_d, "", for: "radio-1-p19_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_d, "2" , id:"radio-2-p19_d"%>
+              <%= f.radio_button :p19_d, "no" , id:"radio-2-p19_d"%>
               <%= f.label :p19_d, "", for: "radio-2-p19_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_d, "3" , id:"radio-3-p19_d"%>
+              <%= f.radio_button :p19_d, "99" , id:"radio-3-p19_d"%>
               <%= f.label :p19_d, "", for: "radio-3-p19_d", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando es bastante seguro que uno no sera castigado</td>
+          <td>e. Cuando es bastante seguro que uno no sera castigado</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_e, "1" , id:"radio-1-p19_e"%>
+              <%= f.radio_button :p19_e, "si" , id:"radio-1-p19_e"%>
               <%= f.label :p19_e, "", for: "radio-1-p19_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_e, "2" , id:"radio-2-p19_e"%>
+              <%= f.radio_button :p19_e, "no" , id:"radio-2-p19_e"%>
               <%= f.label :p19_e, "", for: "radio-2-p19_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_e, "3" , id:"radio-3-p19_e"%>
+              <%= f.radio_button :p19_e, "99" , id:"radio-3-p19_e"%>
               <%= f.label :p19_e, "", for: "radio-3-p19_e", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando se obra por desconocimiento de la ley</td>
+          <td>f. Cuando se obra por desconocimiento de la ley</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_f, "1" , id:"radio-1-p19_f"%>
+              <%= f.radio_button :p19_f, "si" , id:"radio-1-p19_f"%>
               <%= f.label :p19_f, "", for: "radio-1-p19_f", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_f, "2" , id:"radio-2-p19_f"%>
+              <%= f.radio_button :p19_f, "no" , id:"radio-2-p19_f"%>
               <%= f.label :p19_f, "", for: "radio-2-p19_f", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_f, "3" , id:"radio-3-p19_f"%>
+              <%= f.radio_button :p19_f, "99" , id:"radio-3-p19_f"%>
               <%= f.label :p19_f, "", for: "radio-3-p19_f", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando favorezco a la gente mientras obtengo un beneficio individual</td>
+          <td>g. Cuando favorezco a la gente mientras obtengo un beneficio individual</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_g, "1" , id:"radio-1-p19_g"%>
+              <%= f.radio_button :p19_g, "si" , id:"radio-1-p19_g"%>
               <%= f.label :p19_g, "", for: "radio-1-p19_g", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_g, "2" , id:"radio-2-p19_g"%>
+              <%= f.radio_button :p19_g, "no" , id:"radio-2-p19_g"%>
               <%= f.label :p19_g, "", for: "radio-2-p19_g", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_g, "3" , id:"radio-3-p19_g"%>
+              <%= f.radio_button :p19_g, "99" , id:"radio-3-p19_g"%>
               <%= f.label :p19_g, "", for: "radio-3-p19_g", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>Cuando alguien a quien uno considera ejemplo de comportamiento lo ha hecho</td>
+          <td>h. Cuando alguien a quien uno considera ejemplo de comportamiento lo ha hecho</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_h, "1" , id:"radio-1-p19_h"%>
+              <%= f.radio_button :p19_h, "si" , id:"radio-1-p19_h"%>
               <%= f.label :p19_h, "", for: "radio-1-p19_h", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_h, "2" , id:"radio-2-p19_h"%>
+              <%= f.radio_button :p19_h, "no" , id:"radio-2-p19_h"%>
               <%= f.label :p19_h, "", for: "radio-2-p19_h", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p19_h, "3" , id:"radio-3-p19_h"%>
+              <%= f.radio_button :p19_h, "99" , id:"radio-3-p19_h"%>
               <%= f.label :p19_h, "", for: "radio-3-p19_h", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p19_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p19_a">
     <i class="fas fa-check-circle"></i>
@@ -4936,37 +4889,15 @@ document.getElementById("radio-3-p19_h").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp20_a">
+<div class="container hidden" style="width: 90%;" id="div_bp20_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Algo</th>
-<th style="text-align: center;">Mucho</th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
 <th style="text-align: center;">Si</th>
 <th style="text-align: center;">No</th>
 <th style="text-align: center;">Ns/Nr</th>
@@ -4978,19 +4909,19 @@ document.getElementById("radio-3-p19_h").addEventListener("click", fun_multi);
           <td>a. Simulo estar enfermo para no trabajar</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_a, "1" , id:"radio-1-p20_a"%>
+              <%= f.radio_button :p20_a, "si" , id:"radio-1-p20_a"%>
               <%= f.label :p20_a, "", for: "radio-1-p20_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_a, "2" , id:"radio-2-p20_a"%>
+              <%= f.radio_button :p20_a, "no" , id:"radio-2-p20_a"%>
               <%= f.label :p20_a, "", for: "radio-2-p20_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_a, "3" , id:"radio-3-p20_a"%>
+              <%= f.radio_button :p20_a, "99" , id:"radio-3-p20_a"%>
               <%= f.label :p20_a, "", for: "radio-3-p20_a", style:"color:transparent;"%>
             </div>
           </td>
@@ -4998,61 +4929,59 @@ document.getElementById("radio-3-p19_h").addEventListener("click", fun_multi);
           <td>b. Busco una forma de pagar menos impuestos de los que debia</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_b, "1" , id:"radio-1-p20_b"%>
+              <%= f.radio_button :p20_b, "si" , id:"radio-1-p20_b"%>
               <%= f.label :p20_b, "", for: "radio-1-p20_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_b, "2" , id:"radio-2-p20_b"%>
+              <%= f.radio_button :p20_b, "no" , id:"radio-2-p20_b"%>
               <%= f.label :p20_b, "", for: "radio-2-p20_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_b, "3" , id:"radio-3-p20_b"%>
+              <%= f.radio_button :p20_b, "99" , id:"radio-3-p20_b"%>
               <%= f.label :p20_b, "", for: "radio-3-p20_b", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>"c. Se beneficio de subsidio estatal que no
-le correspondia"</td>
+          <td>c. Se beneficio de subsidio estatal que no le correspondia</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_c, "1" , id:"radio-1-p20_c"%>
+              <%= f.radio_button :p20_c, "si" , id:"radio-1-p20_c"%>
               <%= f.label :p20_c, "", for: "radio-1-p20_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_c, "2" , id:"radio-2-p20_c"%>
+              <%= f.radio_button :p20_c, "no" , id:"radio-2-p20_c"%>
               <%= f.label :p20_c, "", for: "radio-2-p20_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_c, "3" , id:"radio-3-p20_c"%>
+              <%= f.radio_button :p20_c, "99" , id:"radio-3-p20_c"%>
               <%= f.label :p20_c, "", for: "radio-3-p20_c", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>"d. Ha escondido productos para no pagar en
-la caja del supermercado"</td>
+          <td>d. Ha escondido productos para no pagar en la caja del supermercado</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_d, "1" , id:"radio-1-p20_d"%>
+              <%= f.radio_button :p20_d, "si" , id:"radio-1-p20_d"%>
               <%= f.label :p20_d, "", for: "radio-1-p20_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_d, "2" , id:"radio-2-p20_d"%>
+              <%= f.radio_button :p20_d, "no" , id:"radio-2-p20_d"%>
               <%= f.label :p20_d, "", for: "radio-2-p20_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_d, "3" , id:"radio-3-p20_d"%>
+              <%= f.radio_button :p20_d, "99" , id:"radio-3-p20_d"%>
               <%= f.label :p20_d, "", for: "radio-3-p20_d", style:"color:transparent;"%>
             </div>
           </td>
@@ -5060,26 +4989,26 @@ la caja del supermercado"</td>
           <td>e. No ha escuchado ningun comentario</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_e, "1" , id:"radio-1-p20_e"%>
+              <%= f.radio_button :p20_e, "si" , id:"radio-1-p20_e"%>
               <%= f.label :p20_e, "", for: "radio-1-p20_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_e, "2" , id:"radio-2-p20_e"%>
+              <%= f.radio_button :p20_e, "no" , id:"radio-2-p20_e"%>
               <%= f.label :p20_e, "", for: "radio-2-p20_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p20_e, "3" , id:"radio-3-p20_e"%>
+              <%= f.radio_button :p20_e, "99" , id:"radio-3-p20_e"%>
               <%= f.label :p20_e, "", for: "radio-3-p20_e", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p20_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p20_a">
     <i class="fas fa-check-circle"></i>
@@ -5192,40 +5121,15 @@ document.getElementById("radio-3-p20_e").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp21_a">
+<div class="container hidden" style="width: 90%;" id="div_bp21_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
-  <div class="field qts">
+  
     <table class="table">
       <thead style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Nada importante </th>
-<th style="text-align: center;">Poco importante </th>
-<th style="text-align: center;">Bastante importante </th>
-<th style="text-align: center;">Muy importante </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Mucho </th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">Nada</th>
-<th style="text-align: center;">Poco </th>
-<th style="text-align: center;">Algo</th>
-<th style="text-align: center;">Mucho</th>
-<th style="text-align: center;">Ns/Nr </th>
-<th style="text-align: center;">No aplica </th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
-<th style="text-align: center;">SI</th>
-<th style="text-align: center;">NO</th>
-<th style="text-align: center;">NS/NR</th>
-<th style="text-align: center;">Si</th>
-<th style="text-align: center;">No</th>
-<th style="text-align: center;">Ns/Nr</th>
 <th style="text-align: center;">Si</th>
 <th style="text-align: center;">No</th>
 <th style="text-align: center;">Ns/Nr</th>
@@ -5237,19 +5141,19 @@ document.getElementById("radio-3-p20_e").addEventListener("click", fun_multi);
           <td>a. Simulo estar enfermo(a) para no trabajar</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_a, "1" , id:"radio-1-p21_a"%>
+              <%= f.radio_button :p21_a, "si" , id:"radio-1-p21_a"%>
               <%= f.label :p21_a, "", for: "radio-1-p21_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_a, "2" , id:"radio-2-p21_a"%>
+              <%= f.radio_button :p21_a, "no" , id:"radio-2-p21_a"%>
               <%= f.label :p21_a, "", for: "radio-2-p21_a", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_a, "3" , id:"radio-3-p21_a"%>
+              <%= f.radio_button :p21_a, "99" , id:"radio-3-p21_a"%>
               <%= f.label :p21_a, "", for: "radio-3-p21_a", style:"color:transparent;"%>
             </div>
           </td>
@@ -5257,40 +5161,39 @@ document.getElementById("radio-3-p20_e").addEventListener("click", fun_multi);
           <td>b. Utilizo materiales de la oficina para beneficio personal</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_b, "1" , id:"radio-1-p21_b"%>
+              <%= f.radio_button :p21_b, "si" , id:"radio-1-p21_b"%>
               <%= f.label :p21_b, "", for: "radio-1-p21_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_b, "2" , id:"radio-2-p21_b"%>
+              <%= f.radio_button :p21_b, "no" , id:"radio-2-p21_b"%>
               <%= f.label :p21_b, "", for: "radio-2-p21_b", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_b, "3" , id:"radio-3-p21_b"%>
+              <%= f.radio_button :p21_b, "99" , id:"radio-3-p21_b"%>
               <%= f.label :p21_b, "", for: "radio-3-p21_b", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
-          <td>"c. Pidio favores a cambio de cumplir con
-su obligacion"</td>
+          <td>c. Pidio favores a cambio de cumplir con su obligacion</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_c, "1" , id:"radio-1-p21_c"%>
+              <%= f.radio_button :p21_c, "si" , id:"radio-1-p21_c"%>
               <%= f.label :p21_c, "", for: "radio-1-p21_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_c, "2" , id:"radio-2-p21_c"%>
+              <%= f.radio_button :p21_c, "no" , id:"radio-2-p21_c"%>
               <%= f.label :p21_c, "", for: "radio-2-p21_c", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_c, "3" , id:"radio-3-p21_c"%>
+              <%= f.radio_button :p21_c, "99" , id:"radio-3-p21_c"%>
               <%= f.label :p21_c, "", for: "radio-3-p21_c", style:"color:transparent;"%>
             </div>
           </td>
@@ -5298,19 +5201,19 @@ su obligacion"</td>
           <td>d. Influyo en las decisiones institucionales para beneficiarse personalmente o a terceros</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_d, "1" , id:"radio-1-p21_d"%>
+              <%= f.radio_button :p21_d, "si" , id:"radio-1-p21_d"%>
               <%= f.label :p21_d, "", for: "radio-1-p21_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_d, "2" , id:"radio-2-p21_d"%>
+              <%= f.radio_button :p21_d, "no" , id:"radio-2-p21_d"%>
               <%= f.label :p21_d, "", for: "radio-2-p21_d", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_d, "3" , id:"radio-3-p21_d"%>
+              <%= f.radio_button :p21_d, "99" , id:"radio-3-p21_d"%>
               <%= f.label :p21_d, "", for: "radio-3-p21_d", style:"color:transparent;"%>
             </div>
           </td>
@@ -5318,26 +5221,26 @@ su obligacion"</td>
           <td>e. No ha escuchado ningun comentario</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_e, "1" , id:"radio-1-p21_e"%>
+              <%= f.radio_button :p21_e, "si" , id:"radio-1-p21_e"%>
               <%= f.label :p21_e, "", for: "radio-1-p21_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_e, "2" , id:"radio-2-p21_e"%>
+              <%= f.radio_button :p21_e, "no" , id:"radio-2-p21_e"%>
               <%= f.label :p21_e, "", for: "radio-2-p21_e", style:"color:transparent;"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p21_e, "3" , id:"radio-3-p21_e"%>
+              <%= f.radio_button :p21_e, "99" , id:"radio-3-p21_e"%>
               <%= f.label :p21_e, "", for: "radio-3-p21_e", style:"color:transparent;"%>
             </div>
           </td>
         <tr>
 </tbody>
     </table>
-  </div>
+  <br> <br>
   <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p21_a">Por favor, <strong>escoge una respuesta</strong></div>
   <button type="button" class="boton3 hidden" id="but_res_p21_a">
     <i class="fas fa-check-circle"></i>
@@ -5450,7 +5353,7 @@ document.getElementById("radio-3-p21_e").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_bp22">
+<div class="container hidden" style="width: 90%" id="div_bp22">
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -5540,7 +5443,7 @@ $("#radio-5-p22").is(':checked') == true
   
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp23_a">
+<div class="container hidden" style="width: 90%;" id="div_bp23_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
   <div class="field qts">
@@ -5738,7 +5641,7 @@ document.getElementById("radio-3-p23_c").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp24_a">
+<div class="container hidden" style="width: 90%;" id="div_bp24_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
   <div class="field qts">
@@ -5947,7 +5850,7 @@ document.getElementById("radio-5-p24_b").addEventListener("click", fun_multi);
   }
 
 </script>
-<div class="centrado hidden" style="width: 90%;" id="div_bp25_a">
+<div class="container hidden" style="width: 90%;" id="div_bp25_a">
   <span style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; font-style: italic;">(Marca un recuadro en cada caso)</span>
   <br>
   <div class="field qts">
