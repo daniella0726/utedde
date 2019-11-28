@@ -285,7 +285,7 @@
   function fun_pa_dev() {
       $('#div_p0').slideDown();
       $('#div_p0').removeClass('hidden');
-      $('#div_bp0').removeClass('hidden');
+      $('#div_bgit adp0').removeClass('hidden');
       $('#pregunta_p0_footer').removeClass('hidden');
       $('#div_pa').slideUp();
       $('#div_pa').addClass('hidden');
@@ -1944,10 +1944,10 @@
 
   document.getElementById("pregunta_p3_p4_boton").addEventListener("click", fun_p4_dev);
   function fun_p4_dev() {
-      $('#div_p3').slideDown();
-      $('#div_p3').removeClass('hidden');
-      $('#div_bp3').removeClass('hidden');
-      $('#pregunta_p3_footer').removeClass('hidden');
+      $('#div_p2').slideDown();
+      $('#div_p2').removeClass('hidden');
+      $('#div_bp2').removeClass('hidden');
+      $('#pregunta_p2_footer').removeClass('hidden');
       $('#div_p4').slideUp();
       $('#div_p4').addClass('hidden');
       $('#div_bp4').addClass('hidden');
@@ -2092,28 +2092,28 @@
 </script>
 
 
-<div class="centrado hidden" style="width: 90%" id="div_bp9">
+<div class="centrado" style="width: 90%" id="div_bp9">
     <br>
-    <div class="field qts">
-<div class="inputGroup">
+    
+      <div class="inputGroup">
         <%= f.radio_button :p9, "1" , id:"radio-1-p9"%>
         <%= f.label :p9, "Casa ", for: "radio-1-p9"%>
       </div>
-<div class="inputGroup">
+      <div class="inputGroup">
         <%= f.radio_button :p9, "2" , id:"radio-2-p9"%>
         <%= f.label :p9, "Apartamento ", for: "radio-2-p9"%>
       </div>
-<div class="inputGroup">
+      <div class="inputGroup">
         <%= f.radio_button :p9, "3" , id:"radio-3-p9"%>
         <%= f.label :p9, "Tipo Cuarto (ej: Inquilinato) ", for: "radio-3-p9"%>
       </div>
-<div class="inputGroup">
+      <div class="inputGroup">
         <%= f.radio_button :p9, "99" , id:"radio-4-p9"%>
         <%= f.label :p9, "Ns/Nr ", for: "radio-4-p9"%>
       </div>
-</div>
-    <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p9">Por favor, <strong>escoge una respuesta</strong></div>
-    <button type="button" class="boton3 hidden" id="but_res_p9">
+      
+      <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p9">Por favor, <strong>escoge una respuesta</strong></div>
+      <button type="button" class="boton3 hidden" id="but_res_p9">
       <i class="fas fa-check-circle"></i>
         OK
     </button>
