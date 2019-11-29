@@ -22958,26 +22958,30 @@ $("#radio-6-p106").is(':checked') == true
 
 <div class="inputGroup">
         <%= f.radio_button :p107, "1" , id:"radio-1-p107"%>
-        <%= f.label :p107, "Falta de voluntad o pereza ", for: "radio-1-p107"%>
+        <%= f.label :p107, "Falta de voluntad o pereza", for: "radio-1-p107"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p107, "2" , id:"radio-2-p107"%>
         <%= f.label :p107, "No le gusta ", for: "radio-2-p107"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p107, "3" , id:"radio-3-p107"%>
+        <%= f.radio_button :p107, "3" , id:"radio-8-p107"%>
+        <%= f.label :p107, "No tiene tiempo", for: "radio-8-p107"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p107, "4" , id:"radio-3-p107"%>
         <%= f.label :p107, "No cuenta con instalaciones deportivas cerca ", for: "radio-3-p107"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :p107, "4" , id:"radio-4-p107"%>
-        <%= f.label :p107, "Tiene limitaciones fi?sicas para practicarlo ", for: "radio-4-p107"%>
+        <%= f.radio_button :p107, "5" , id:"radio-4-p107"%>
+        <%= f.label :p107, "Tiene limitaciones físicas para practicarlo ", for: "radio-4-p107"%>
       </div>
 
 <div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
   <br>
       <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :p107, "Otra ¿Cuál? ", for: "radio-5-p107", style: "font-size:18px; font-family:Heebo;" %></div>
       <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :p107o, class: "form-control" %></div>
-      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :p107, "5" , id:"radio-5-p107"%></div> 
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :p107, "6" , id:"radio-5-p107"%></div> 
     </div>
 
 <div class="inputGroup">
@@ -23027,6 +23031,7 @@ document.getElementById("radio-5-p107").addEventListener("click", fun_p107);
 document.getElementById("radio-6-p107").addEventListener("click", fun_p107);
 
 document.getElementById("radio-7-p107").addEventListener("click", fun_p107);
+document.getElementById("radio-8-p107").addEventListener("click", fun_p107);
 
 function fun_p107() {
       if (
@@ -23040,7 +23045,9 @@ $("#radio-4-p107").is(':checked') == true ||
 
 $("#radio-5-p107").is(':checked') == true || 
 
-$("#radio-6-p107").is(':checked') == true || 
+$("#radio-6-p107").is(':checked') == true ||
+
+$("#radio-8-p107").is(':checked') == true || 
 
 $("#radio-7-p107").is(':checked') == true 
 ) {
