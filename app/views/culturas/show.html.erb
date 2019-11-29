@@ -35,29 +35,7 @@
     </div>
   </div>
 
-  <div class="hidden">
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Entrevistador:</strong>
-  <%= @cultura.entrevistador %>
-</p>
-
-<p>
-  <strong>Critico:</strong>
-  <%= @cultura.critico %>
-</p>
-
-<p>
-  <strong>Supervisor:</strong>
-  <%= @cultura.supervisor %>
-</p>
-
-<p>
-  <strong>Digitador:</strong>
-  <%= @cultura.digitador %>
-</p>
-
-<%= link_to 'Edit', edit_cultura_path(@cultura) %> |
-<%= link_to 'Back', culturas_path %>
+<% link_to 'Edit', edit_cultura_path(@cultura) %> 
+<% link_to 'Back', culturas_path %>
 </div>

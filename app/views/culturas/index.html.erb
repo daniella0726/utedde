@@ -39,39 +39,8 @@
 
 
 
-<div class="hidden">
-<p id="notice"><%= notice %></p>
 
-<h1>Culturas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Entrevistador</th>
-      <th>Critico</th>
-      <th>Supervisor</th>
-      <th>Digitador</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @culturas.each do |cultura| %>
-      <tr>
-        <td><%= cultura.entrevistador %></td>
-        <td><%= cultura.critico %></td>
-        <td><%= cultura.supervisor %></td>
-        <td><%= cultura.digitador %></td>
-        <td><%= link_to 'Show', cultura %></td>
-        <td><%= link_to 'Edit', edit_cultura_path(cultura) %></td>
-        <td><%= link_to 'Destroy', cultura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cultura', new_cultura_path %>
+<% link_to 'New Cultura', new_cultura_path %>
 
 </div>

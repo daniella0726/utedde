@@ -1,0 +1,6 @@
+<div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
+  <br>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :p44, "Otra ¿Cuál?", for: "radio-10-p44", style: "font-size:18px; font-family:Heebo;" %></div>
+      <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :p44o, class: "form-control" %></div>
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :p44, "8" , id:"radio-10-p44"%></div> 
+    </div>
