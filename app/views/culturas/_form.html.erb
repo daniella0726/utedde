@@ -676,7 +676,7 @@
       frase2 = frase2.replace("$"," ");
       frase2 = frase2.replace("  "," ");
       document.getElementById("res_fv_3").value = frase2;
-    if (document.getElementById("res_fv_1").value == "" || document.getElementById("res_fv_2").value == "" ||document.getElementById("res_fv_3").value == "") {
+    if (document.getElementById("res_fv_1").value == "") {
       $('#but_res_pd').addClass('hidden');
       $('#p_pd').addClass('hidden');
       $('#div_error_pd').removeClass('hidden');
@@ -702,7 +702,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_fv_1").value = frase;
-      if (document.getElementById("res_fv_1").value == "" || document.getElementById("res_fv_2").value == "" ||document.getElementById("res_fv_3").value == "") {
+      if (document.getElementById("res_fv_1").value == "") {
       $('#but_res_pd').addClass('hidden');
       $('#p_pd').addClass('hidden');
       $('#div_error_pd').removeClass('hidden');
@@ -721,7 +721,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_fv_2").value = frase;
-      if (document.getElementById("res_fv_1").value == "" || document.getElementById("res_fv_2").value == "" ||document.getElementById("res_fv_3").value == "") {
+      if (document.getElementById("res_fv_1").value == "") {
       $('#but_res_pd').addClass('hidden');
       $('#p_pd').addClass('hidden');
       $('#div_error_pd').removeClass('hidden');
@@ -740,7 +740,7 @@
       frase = frase.replace("$"," ");
       frase = frase.replace("  "," ");
       document.getElementById("res_fv_3").value = frase;
-      if (document.getElementById("res_fv_1").value == "" || document.getElementById("res_fv_2").value == "" ||document.getElementById("res_fv_3").value == "") {
+      if (document.getElementById("res_fv_1").value == "") {
       $('#but_res_pd').addClass('hidden');
       $('#p_pd').addClass('hidden');
       $('#div_error_pd').removeClass('hidden');
@@ -12129,14 +12129,18 @@ $("#radio-7-p53").is(':checked') == true
         <%= f.radio_button :p54, "8" , id:"radio-8-p54"%>
         <%= f.label :p54, "Denuncia ante alguna oganización en pro de los derechos de los animales", for: "radio-8-p54"%>
       </div>
+<div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
+  <br>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :p54, "Otra ¿Cuál?", for: "radio-10-p54", style: "font-size:18px; font-family:Heebo;" %></div>
+      <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :p54o, class: "form-control" %></div>
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :p54, "9" , id:"radio-10-p54"%></div> 
+    </div>
+
 <div class="inputGroup">
         <%= f.radio_button :p54, "99" , id:"radio-9-p54"%>
         <%= f.label :p54, "No responde", for: "radio-9-p54"%>
       </div>
-<div class="inputGroup">
-        <%= f.radio_button :p54, "9" , id:"radio-10-p54"%>
-        <%= f.label :p54, "Otra ¿Cuál?", for: "radio-10-p54"%>
-      </div>
+
 <br> <br>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p54">Por favor, <strong>escoge una respuesta</strong></div>
     <button type="button" class="boton3 hidden" id="but_res_p54">
@@ -25368,7 +25372,7 @@ $("#radio-1-p122").is(':checked') == true
     }); 
   }); 
 </script>
-<div class="centrado hidden" style="width: 90%" id="div_bp123">>
+<div class="centrado hidden" style="width: 90%" id="div_bp123">
   <br>
   <div class="field qts">
 
