@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_194611) do
+ActiveRecord::Schema.define(version: 2019_11_29_204543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -706,10 +706,6 @@ ActiveRecord::Schema.define(version: 2019_11_29_194611) do
     t.string "m3_p9"
     t.string "m3_p10"
     t.string "m3_p11"
-    t.string "m4_p1_1"
-    t.string "m4_p1_2"
-    t.string "m4_p1_3"
-    t.string "m4_p1_4"
     t.string "m4_p2_1"
     t.string "m4_p2_2"
     t.string "m4_p2_3"
@@ -750,6 +746,35 @@ ActiveRecord::Schema.define(version: 2019_11_29_194611) do
     t.string "m1_p7o"
     t.string "m1_p12_7o"
     t.string "m2_p4o"
+    t.string "m4_p4_10"
+    t.string "m4_p1a_1"
+    t.string "m4_p1a_2"
+    t.string "m4_p1a_3"
+    t.string "m4_p1a_4"
+    t.string "m4_p1a_5"
+    t.string "m4_p1a_6"
+    t.string "m4_p1a_7"
+    t.string "m4_p1b_1"
+    t.string "m4_p1b_2"
+    t.string "m4_p1b_3"
+    t.string "m4_p1b_4"
+    t.string "m4_p1b_5"
+    t.string "m4_p1b_6"
+    t.string "m4_p1b_7"
+    t.string "m4_p1c_1"
+    t.string "m4_p1c_2"
+    t.string "m4_p1c_3"
+    t.string "m4_p1c_4"
+    t.string "m4_p1c_5"
+    t.string "m4_p1c_6"
+    t.string "m4_p1c_7"
+    t.string "m4_p1d_1"
+    t.string "m4_p1d_2"
+    t.string "m4_p1d_3"
+    t.string "m4_p1d_4"
+    t.string "m4_p1d_5"
+    t.string "m4_p1d_6"
+    t.string "m4_p1d_7"
   end
 
   create_table "directors", force: :cascade do |t|
