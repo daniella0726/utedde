@@ -220,7 +220,7 @@
     </div>
   <% end %>
 
-<div class="container" style="text-align: center; max-width: 1400px;">
+<div class="container hidden" style="text-align: center; max-width: 1400px;">
 
     <div class="centrado" style="width: 90%; text-align: center; position: absolute;" id="div_bp0">
       <button type="button" class="boton3" style="" id="but_res_p0">
@@ -7089,9 +7089,9 @@ $("#radio-5-p30").is(':checked') == true
         <tr>
           <th style="text-align: center;"></th>
 
-<th style="text-align: center;">Bonita</th>
-<th style="text-align: center;">Fea</th>
-<th style="text-align: center;">NS/NR</th>
+<th style="text-align: center; color: transparent;">NS/NR</th>
+<th style="text-align: center; color: transparent;">NS/NR</th>
+<th style="text-align: center; color: transparent;">NS/NR</th>
           </tr>
       </thead>
       <tbody style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">
@@ -7100,100 +7100,100 @@ $("#radio-5-p30").is(':checked') == true
           <td>Para usted Bogota es…</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_a, "1" , id:"radio-1-p31_a"%>
-              <%= f.label :p31_a, "", for: "radio-1-p31_a", style:"color:transparent;"%>
+              <%= f.radio_button :p31_a, "bonita" , id:"radio-1-p31_a"%>
+              <%= f.label :p31_a, "Bonita", for: "radio-1-p31_a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_a, "2" , id:"radio-2-p31_a"%>
-              <%= f.label :p31_a, "", for: "radio-2-p31_a", style:"color:transparent;"%>
+              <%= f.radio_button :p31_a, "fea" , id:"radio-2-p31_a"%>
+              <%= f.label :p31_a, "Fea", for: "radio-2-p31_a"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_a, "99" , id:"radio-3-p31_a"%>
-              <%= f.label :p31_a, "", for: "radio-3-p31_a", style:"color:transparent;"%>
+              <%= f.label :p31_a, "Ns/NrNs/Nr", for: "radio-3-p31_a"%>
             </div>
           </td>
         <tr>
           <td>Para usted Bogota es…</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_b, "1" , id:"radio-1-p31_b"%>
-              <%= f.label :p31_b, "", for: "radio-1-p31_b", style:"color:transparent;"%>
+              <%= f.radio_button :p31_b, "ordenada" , id:"radio-1-p31_b"%>
+              <%= f.label :p31_b, "Ordenada", for: "radio-1-p31_b"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_b, "2" , id:"radio-2-p31_b"%>
-              <%= f.label :p31_b, "", for: "radio-2-p31_b", style:"color:transparent;"%>
+              <%= f.radio_button :p31_b, "desordenada" , id:"radio-2-p31_b"%>
+              <%= f.label :p31_b, "Desordenada", for: "radio-2-p31_b"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_b, "99" , id:"radio-3-p31_b"%>
-              <%= f.label :p31_b, "", for: "radio-3-p31_b", style:"color:transparent;"%>
+              <%= f.label :p31_b, "Ns/Nr", for: "radio-3-p31_b"%>
             </div>
           </td>
         <tr>
           <td>Para usted Bogota es…</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_c, "1" , id:"radio-1-p31_c"%>
-              <%= f.label :p31_c, "", for: "radio-1-p31_c", style:"color:transparent;"%>
+              <%= f.radio_button :p31_c, "de oportunidades" , id:"radio-1-p31_c"%>
+              <%= f.label :p31_c, "De oportunidades", for: "radio-1-p31_c"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_c, "2" , id:"radio-2-p31_c"%>
-              <%= f.label :p31_c, "", for: "radio-2-p31_c", style:"color:transparent;"%>
+              <%= f.radio_button :p31_c, "dificil para sobrevivir" , id:"radio-2-p31_c"%>
+              <%= f.label :p31_c, "Díficil para sobrevivir", for: "radio-2-p31_c"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_c, "99" , id:"radio-3-p31_c"%>
-              <%= f.label :p31_c, "", for: "radio-3-p31_c", style:"color:transparent;"%>
+              <%= f.label :p31_c, "Ns/Nr", for: "radio-3-p31_c"%>
             </div>
           </td>
         <tr>
           <td>Para usted Bogota es…</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_d, "1" , id:"radio-1-p31_d"%>
-              <%= f.label :p31_d, "", for: "radio-1-p31_d", style:"color:transparent;"%>
+              <%= f.radio_button :p31_d, "incluyente" , id:"radio-1-p31_d"%>
+              <%= f.label :p31_d, "Incluyente", for: "radio-1-p31_d"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_d, "2" , id:"radio-2-p31_d"%>
-              <%= f.label :p31_d, "", for: "radio-2-p31_d", style:"color:transparent;"%>
+              <%= f.radio_button :p31_d, "excluyente" , id:"radio-2-p31_d"%>
+              <%= f.label :p31_d, "Excluyente", for: "radio-2-p31_d"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_d, "99" , id:"radio-3-p31_d"%>
-              <%= f.label :p31_d, "", for: "radio-3-p31_d", style:"color:transparent;"%>
+              <%= f.label :p31_d, "Ns/Nr", for: "radio-3-p31_d"%>
             </div>
           </td>
         <tr>
           <td>Para usted Bogota es…</td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_e, "1" , id:"radio-1-p31_e"%>
-              <%= f.label :p31_e, "", for: "radio-1-p31_e", style:"color:transparent;"%>
+              <%= f.radio_button :p31_e, "segura" , id:"radio-1-p31_e"%>
+              <%= f.label :p31_e, "Segura", for: "radio-1-p31_e"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
-              <%= f.radio_button :p31_e, "2" , id:"radio-2-p31_e"%>
-              <%= f.label :p31_e, "", for: "radio-2-p31_e", style:"color:transparent;"%>
+              <%= f.radio_button :p31_e, "insegura" , id:"radio-2-p31_e"%>
+              <%= f.label :p31_e, "Insegura", for: "radio-2-p31_e"%>
             </div>
           </td>
           <td>
             <div class="inputGroup">
               <%= f.radio_button :p31_e, "99" , id:"radio-3-p31_e"%>
-              <%= f.label :p31_e, "", for: "radio-3-p31_e", style:"color:transparent;"%>
+              <%= f.label :p31_e, "Ns/Nr", for: "radio-3-p31_e"%>
             </div>
           </td>
         <tr>
@@ -11669,16 +11669,12 @@ document.getElementById("radio-3-p48_g").addEventListener("click", fun_multi);
   
     document.getElementById("pregunta_p50_p49_boton").addEventListener("click", fun_p49);
 
-document.getElementById("radio-1-p49").addEventListener("click", fun_p49);
-
 document.getElementById("radio-2-p49").addEventListener("click", fun_p49);
 
 document.getElementById("radio-3-p49").addEventListener("click", fun_p49);
 
 function fun_p49() {
       if (
-$("#radio-1-p49").is(':checked') == true || 
-
 $("#radio-2-p49").is(':checked') == true || 
 
 $("#radio-3-p49").is(':checked') == true 
@@ -11698,7 +11694,26 @@ $("#radio-3-p49").is(':checked') == true
     } else {
         $('#div_error_p49').removeClass('hidden');
       }
-      } 
+      }
+
+    document.getElementById("radio-1-p49").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-1-p49").is(':checked') == true) {
+      setTimeout(function(){
+        $('#div_p49').slideUp();
+        $('#div_p49').addClass('hidden');
+        $('#div_bp49').addClass('hidden');
+        $('#pregunta_p49_footer').addClass('hidden');
+        $('#div_p51').slideDown();
+        $('#div_p51').removeClass('hidden');
+        $('#div_bp51').removeClass('hidden');
+        $('#pregunta_p51_footer').removeClass('hidden');
+        $('#div_error_p51').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_p49').removeClass('hidden');
+      }
+      }
   
 
 </script>
@@ -20763,7 +20778,7 @@ $("#radio-5-p100").is(':checked') == true
     </div>
     <div class="inputGroup">
       <%= f.check_box :p101_12, checked: "12", id:"radio-12-p101_12"%>
-      <%= f.label :p101_12, "Barrios", for: "radio-12-p101_12"%>
+      <%= f.label :p101_12, "Barrios Unidos", for: "radio-12-p101_12"%>
     </div>
     <div class="inputGroup">
       <%= f.check_box :p101_13, checked: "13", id:"radio-13-p101_13"%>
@@ -20776,6 +20791,33 @@ $("#radio-5-p100").is(':checked') == true
     <div class="inputGroup">
       <%= f.check_box :p101_15, checked: "15", id:"radio-15-p101_15"%>
       <%= f.label :p101_15, "Antonio Nariño", for: "radio-15-p101_15"%>
+    </div>
+
+
+
+    <div class="inputGroup">
+      <%= f.check_box :p101_16, checked: "16", id:"radio-16-p101_16"%>
+      <%= f.label :p101_16, "Puente Aranda", for: "radio-16-p101_16"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p101_17, checked: "17", id:"radio-17-p101_17"%>
+      <%= f.label :p101_17, "La Candelaria", for: "radio-17-p101_17"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p101_18, checked: "18", id:"radio-18-p101_18"%>
+      <%= f.label :p101_18, "Rafael Uribe Uribe", for: "radio-18-p101_18"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p101_19, checked: "19", id:"radio-19-p101_19"%>
+      <%= f.label :p101_19, "Ciudad Bolivar", for: "radio-19-p101_19"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p101_20, checked: "20", id:"radio-20-p101_20"%>
+      <%= f.label :p101_20, "Sumapaz", for: "radio-20-p101_20"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p101_21, checked: "21", id:"radio-21-p101_21"%>
+      <%= f.label :p101_21, "Ns/Nr", for: "radio-21-p101_21"%>
     </div>
 <br> <br>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p101">Por favor, <strong>escoge una respuesta</strong></div>
@@ -20819,7 +20861,13 @@ function fun_p101() {
         $("#radio-12-p101_12").is(':checked') == true || 
         $("#radio-13-p101_13").is(':checked') == true ||
         $("#radio-14-p101_14").is(':checked') == true ||
-        $("#radio-15-p101_15").is(':checked') == true) {
+        $("#radio-15-p101_15").is(':checked') == true ||
+        $("#radio-16-p101_16").is(':checked') == true ||
+        $("#radio-17-p101_17").is(':checked') == true ||
+        $("#radio-18-p101_18").is(':checked') == true ||
+        $("#radio-19-p101_19").is(':checked') == true ||
+        $("#radio-20-p101_20").is(':checked') == true ||
+        $("#radio-21-p101_21").is(':checked') == true) {
   
       setTimeout(function(){
         $('#div_p101').slideUp();
@@ -20852,6 +20900,12 @@ function fun_p101() {
     document.getElementById("radio-13-p101_13").addEventListener("click", fun_multi);
     document.getElementById("radio-14-p101_14").addEventListener("click", fun_multi);
     document.getElementById("radio-15-p101_15").addEventListener("click", fun_multi);
+    document.getElementById("radio-16-p101_16").addEventListener("click", fun_multi);
+    document.getElementById("radio-17-p101_17").addEventListener("click", fun_multi);
+    document.getElementById("radio-18-p101_18").addEventListener("click", fun_multi);
+    document.getElementById("radio-19-p101_19").addEventListener("click", fun_multi);
+    document.getElementById("radio-20-p101_20").addEventListener("click", fun_multi);
+    document.getElementById("radio-21-p101_21").addEventListener("click", fun_multi);
 
   function fun_multi() {
       $('#but_res_p101').removeClass('hidden');
@@ -23760,6 +23814,7 @@ $("#radio-5-p114").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_a">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">a. Conversar sobre temas de interés</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -23850,6 +23905,7 @@ $("#radio-5-p115_a").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_b">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">b. Leer, contar historias o cuentos</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -23940,6 +23996,7 @@ $("#radio-5-p115_b").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_c">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">c. Salir a un parque</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24030,6 +24087,7 @@ $("#radio-5-p115_c").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_d">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">d. Realizar actividades artísticas o manualidades</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24120,6 +24178,7 @@ $("#radio-5-p115_d").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_e">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">e. Compartir al menos una comida al día</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24210,6 +24269,7 @@ $("#radio-5-p115_e").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_f">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">f. Ver televisión</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24300,6 +24360,7 @@ $("#radio-5-p115_f").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_g">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">g. Salir a cine o a alguna actividad cultural</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24390,6 +24451,7 @@ $("#radio-5-p115_g").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_h">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">h. Salir a hacer deporte o alguna actividad física</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -24480,6 +24542,7 @@ $("#radio-5-p115_h").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_bp115_i">
+  <h4 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064;">i. Ayudarle a hacer tareas a algún(a) niño(a)</h4>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -26193,7 +26256,7 @@ $("#radio-12-p129").is(':checked') == true
 
 
 
-<div class="centrado hidden" style="width: 90%; text-align: center;" id="div_ultima">
+<div class="centrado " style="width: 90%; text-align: center;" id="div_ultima">
   <div class="row">
   <div  class="col-md-3">
     <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">Modulo 1</h2>
@@ -26515,6 +26578,7 @@ $("#radio-5-m1_p2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_1">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_1. Biciusuarios(as) invadiendo las vías exclusivas de los(as) peatones(as)</h3>
     <br>
     <div class="field qts">
@@ -26608,6 +26672,7 @@ $("#radio-3-m1_p3_1").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_2">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_2. Peatones(as) invadiendo las vías exclusivas de los(as) biciusuarios(as)</h3>
     <br>
     <div class="field qts">
@@ -26701,6 +26766,7 @@ $("#radio-3-m1_p3_2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_3">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_3. Motociclistas invadiendo las vías exclusivas de biciusuarios(as) y peatones(as).</h3>
     <br>
     <div class="field qts">
@@ -26794,6 +26860,7 @@ $("#radio-3-m1_p3_3").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_4. Personas comprando a los(as) vendedores(as) ambulantes informales</h3>
     <br>
     <div class="field qts">
@@ -26887,6 +26954,7 @@ $("#radio-3-m1_p3_4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_5">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_5. Personas tirando basura en espacio público</h3>
     <br>
     <div class="field qts">
@@ -26980,6 +27048,7 @@ $("#radio-3-m1_p3_5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_6">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_6. Acoso hacia las mujeres en el espacio público (calle, transporte)</h3>
     <br>
     <div class="field qts">
@@ -27073,6 +27142,7 @@ $("#radio-3-m1_p3_6").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_7">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_7. Hechos violentos hacia las mujeres que afecten su integridad física y moral</h3>
     <br>
     <div class="field qts">
@@ -27166,6 +27236,7 @@ $("#radio-3-m1_p3_7").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p3_8">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">3. Ahora voy a leerle una lista de situaciones. Dígame si las presenció durante la semana pasada.</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p3_8. Hechos violentos de discriminación hacia personas por su condición étnica, de discapacidad o nivel socioeconómico de género, </h3>
     <br>
     <div class="field qts">
@@ -27399,10 +27470,14 @@ $("#radio-6-m1_p4").is(':checked') == true
         <%= f.radio_button :m1_p5, "5" , id:"radio-5-m1_p5"%>
         <%= f.label :m1_p5, "Pide ayuda a una autoridad", for: "radio-5-m1_p5"%>
       </div>
-<div class="inputGroup">
-        <%= f.radio_button :m1_p5, "6" , id:"radio-6-m1_p5"%>
-        <%= f.label :m1_p5, "Otra ¿Cuál?", for: "radio-6-m1_p5"%>
-      </div>
+
+<div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
+  <br>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :m1_p5, "Otra ¿Cuál?", for: "radio-6-m1_p5", style: "font-size:18px; font-family:Heebo;color:gray;" %></div>
+      <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :m1_p5o, class: "form-control" %></div>
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :m1_p5, "6" , id:"radio-6-m1_p5"%></div> 
+    </div>
+
 <div class="inputGroup">
         <%= f.radio_button :m1_p5, "7" , id:"radio-7-m1_p5"%>
         <%= f.label :m1_p5, "No ha sido agredido", for: "radio-7-m1_p5"%>
@@ -27509,6 +27584,7 @@ $("#radio-8-m1_p5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_1">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_1. La calle</h3>
     <br>
     <div class="field qts">
@@ -27610,6 +27686,7 @@ $("#radio-4-m1_p6_1").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_2">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_2. Los parques</h3>
     <br>
     <div class="field qts">
@@ -27711,6 +27788,7 @@ $("#radio-4-m1_p6_2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_3">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_3. Las plazas</h3>
     <br>
     <div class="field qts">
@@ -27812,6 +27890,7 @@ $("#radio-4-m1_p6_3").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_4">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_4. Los andenes y vías peatonales</h3>
     <br>
     <div class="field qts">
@@ -27913,6 +27992,7 @@ $("#radio-4-m1_p6_4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_5">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_5. Las fachadas y cubiertas de los edificios</h3>
     <br>
     <div class="field qts">
@@ -28014,6 +28094,7 @@ $("#radio-4-m1_p6_5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p6_6">
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">Dígame, ¿qué tanto las personas cuidan los siguientes espacios...?</h2>
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p6_6. Equipamientos de los Sistemas de transporte (paraderos del SITP, estaciones de Transmilenio, portales, puentes, etc.)</h3>
     <br>
     <div class="field qts">
@@ -28142,10 +28223,14 @@ $("#radio-4-m1_p6_6").is(':checked') == true
         <%= f.radio_button :m1_p7, "6" , id:"radio-6-m1_p7"%>
         <%= f.label :m1_p7, "Ninguna de las anteriores", for: "radio-6-m1_p7"%>
       </div>
-<div class="inputGroup">
-        <%= f.radio_button :m1_p7, "7" , id:"radio-7-m1_p7"%>
-        <%= f.label :m1_p7, "Otra ¿Cuál?", for: "radio-7-m1_p7"%>
-      </div>
+
+<div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
+  <br>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :m1_p7, "Otra ¿Cuál?", for: "radio-7-m1_p7", style: "font-size:18px; font-family:Heebo;color:gray;" %></div>
+      <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :m1_p7o, class: "form-control" %></div>
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :m1_p7, "7" , id:"radio-7-m1_p7"%></div> 
+    </div>
+
 <div class="inputGroup">
         <%= f.radio_button :m1_p7, "99" , id:"radio-8-m1_p7"%>
         <%= f.label :m1_p7, "Ns/Nr", for: "radio-8-m1_p7"%>
@@ -28631,6 +28716,10 @@ $("#radio-3-m1_p8_4").is(':checked') == true
         <%= f.radio_button :m1_p8_5, "2" , id:"radio-2-m1_p8_5"%>
         <%= f.label :m1_p8_5, "Insegura", for: "radio-2-m1_p8_5"%>
       </div>
+<div class="inputGroup">
+        <%= f.radio_button :m1_p8_5, "99" , id:"radio-3-m1_p8_5"%>
+        <%= f.label :m1_p8_5, "Ns/Nr", for: "radio-3-m1_p8_5"%>
+      </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_m1_p8_5">Por favor, <strong>escoge una respuesta</strong></div>
     <button type="button" class="boton3 hidden" id="but_res_m1_p8_5">
@@ -28680,10 +28769,13 @@ $("#radio-3-m1_p8_4").is(':checked') == true
 document.getElementById("radio-1-m1_p8_5").addEventListener("click", fun_m1_p8_5);
 
 document.getElementById("radio-2-m1_p8_5").addEventListener("click", fun_m1_p8_5);
+document.getElementById("radio-3-m1_p8_5").addEventListener("click", fun_m1_p8_5);
 
 function fun_m1_p8_5() {
       if (
-$("#radio-1-m1_p8_5").is(':checked') == true || 
+$("#radio-1-m1_p8_5").is(':checked') == true ||
+
+$("#radio-3-m1_p8_5").is(':checked') == true || 
 
 $("#radio-2-m1_p8_5").is(':checked') == true 
 ) {
@@ -29375,7 +29467,9 @@ $("#radio-4-m1_p10").is(':checked') == true
   }); 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_1">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_1. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h2>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12a. Que le ataquen por robarle la bicicleta</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29468,7 +29562,9 @@ $("#radio-3-m1_p12_1").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_2">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_2. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12b. Que le atropellen</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29561,7 +29657,9 @@ $("#radio-3-m1_p12_2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_3">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_3. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12c. Que golpee a algún peatón</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29654,7 +29752,9 @@ $("#radio-3-m1_p12_3").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_4">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_4. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12d. Que sea el causante de un accidente de tránsito</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29747,7 +29847,9 @@ $("#radio-3-m1_p12_4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_5">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_5. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12e. Que se caiga por un bache en la vía o un bolardo</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29840,7 +29942,9 @@ $("#radio-3-m1_p12_5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_6">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_6. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12f. Ninguna</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -29933,7 +30037,9 @@ $("#radio-3-m1_p12_6").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_7">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_7. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12g. Otra ¿Cuál?: <%= f.text_field :m1_p12_7o%></h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -30026,7 +30132,9 @@ $("#radio-3-m1_p12_7").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p12_8">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12_8. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12. ¿Cuáles de las siguientes situaciones le desaniman para usar la bicicleta?</h3>
+  <br>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p12h. No sabe</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -30744,10 +30852,14 @@ $("#radio-7-m2_p3").is(':checked') == true
         <%= f.radio_button :m2_p4, "4" , id:"radio-4-m2_p4"%>
         <%= f.label :m2_p4, "Personas influenciadas por una moda", for: "radio-4-m2_p4"%>
       </div>
-<div class="inputGroup">
-        <%= f.radio_button :m2_p4, "5" , id:"radio-5-m2_p4"%>
-        <%= f.label :m2_p4, "Otra, ¿cuál?", for: "radio-5-m2_p4"%>
-      </div>
+
+<div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
+  <br>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :m2_p4, "Otra, ¿cuál?", for: "radio-5-m2_p4", style: "font-size:18px; font-family:Heebo;color:gray;" %></div>
+      <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :m2_p4o, class: "form-control" %></div>
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :m2_p4, "5" , id:"radio-5-m2_p4"%></div> 
+    </div>
+
 <div class="inputGroup">
         <%= f.radio_button :m2_p4, "9" , id:"radio-6-m2_p4"%>
         <%= f.label :m2_p4, "Ns/Nr", for: "radio-6-m2_p4"%>
@@ -30842,7 +30954,8 @@ $("#radio-6-m2_p4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_1">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_1. Existe un cambio de residencia fuera del país</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5a. Existe un cambio de residencia fuera del país</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -30935,7 +31048,8 @@ $("#radio-3-m2_p5_1").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_2">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_2. No se cuentan con los recursos para mantenerlo</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5b. No se cuentan con los recursos para mantenerlo</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -31028,7 +31142,8 @@ $("#radio-3-m2_p5_2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_3">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_3. Tiene comportamientos que generan problemas en el hogar</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5c. Tiene comportamientos que generan problemas en el hogar</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -31121,7 +31236,8 @@ $("#radio-3-m2_p5_3").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_4">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_4. Creció demasiado</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_d. Creció demasiado</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -31214,7 +31330,8 @@ $("#radio-3-m2_p5_4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_5">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_5. Cuando nace un(a) bebé en el hogar</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5e. Cuando nace un(a) bebé en el hogar</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -31307,7 +31424,8 @@ $("#radio-3-m2_p5_5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p5_6">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5_6. Ya no es necesario tenerlo en el hogar</h3>
+  <h2 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5. Usted regalaría o daría en adopción a su perro o a su gato, cuando...</h2>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p5f. Ya no es necesario tenerlo en el hogar</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -31695,21 +31813,34 @@ document.getElementById("radio-1-m2_p8").addEventListener("click", fun_m2_p8);
 
 document.getElementById("radio-2-m2_p8").addEventListener("click", fun_m2_p8);
 
-document.getElementById("radio-3-m2_p8").addEventListener("click", fun_m2_p8);
-
 document.getElementById("radio-4-m2_p8").addEventListener("click", fun_m2_p8);
 
 function fun_m2_p8() {
       if (
 $("#radio-1-m2_p8").is(':checked') == true || 
 
-$("#radio-2-m2_p8").is(':checked') == true || 
-
-$("#radio-3-m2_p8").is(':checked') == true || 
+$("#radio-2-m2_p8").is(':checked') == true ||  
 
 $("#radio-4-m2_p8").is(':checked') == true 
 ) {
   
+      setTimeout(function(){
+        $('#div_m2_p8').slideUp();
+        $('#div_m2_p8').addClass('hidden');
+        $('#pregunta_m2_p8_footer').addClass('hidden');
+        $('#div_m2_p9').slideDown();
+        $('#div_m2_p9').removeClass('hidden');
+        $('#pregunta_m2_p9_footer').removeClass('hidden');
+        $('#div_error_m2_p9').addClass('hidden');
+    } , 500);
+    } else {
+        $('#div_error_m2_p8').removeClass('hidden');
+      }
+      } 
+    
+    document.getElementById("radio-3-m2_p8").addEventListener("click", fun_op1);
+    function fun_op1() {
+      if ($("#radio-3-m2_p8").is(':checked') == true) {
       setTimeout(function(){
         $('#div_m2_p8').slideUp();
         $('#div_m2_p8').addClass('hidden');
@@ -31722,13 +31853,11 @@ $("#radio-4-m2_p8").is(':checked') == true
     } else {
         $('#div_error_m2_p8').removeClass('hidden');
       }
-      } 
-  
+      }
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p8_1">
   <h2 style="font-family: 'Heebo', sans-serif; color: #254064;">m2_p8_1. ¿A cuál entidad distrital llamaría?</h2>
-  <span style="font-style: italic;">(Mencione solo UNA)</span>
   <br>
   <div class="field qts">
 
@@ -32661,7 +32790,8 @@ $("#radio-6-m2_p15").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_1">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_1. Papel higiénico, servilletas, empaques</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16a. Papel higiénico, servilletas, empaques</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -32754,7 +32884,8 @@ $("#radio-3-m2_p16_1").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_2">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_2. Papel usado como hojas, cuadernos, libros</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16b. Papel usado como hojas, cuadernos, libros</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -32847,7 +32978,8 @@ $("#radio-3-m2_p16_2").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_3">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_3. Cajas de huevo de cartón</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16c. Cajas de huevo de cartón</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -32940,7 +33072,8 @@ $("#radio-3-m2_p16_3").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_4">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_4. Empaque de yogurt sucio</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16d. Empaque de yogurt sucio</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -33033,7 +33166,8 @@ $("#radio-3-m2_p16_4").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_5">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_5. Vasos desechables limpios</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16e. Vasos desechables limpios</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -33126,7 +33260,8 @@ $("#radio-3-m2_p16_5").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_6">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_6. Pilas</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16d. Pilas</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -33219,7 +33354,8 @@ $("#radio-3-m2_p16_6").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_7">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_7. Icopor</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16g. Icopor</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
@@ -33312,7 +33448,8 @@ $("#radio-3-m2_p16_7").is(':checked') == true
 
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m2_p16_8">
-  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16_8. Cáscaras de huevo</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">16. ¿Cuáles de estos elementos son reciclables?</h3>
+  <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m2_p16h. Cáscaras de huevo</h3>
     <br>
     <div class="field qts">
 <div class="inputGroup">
