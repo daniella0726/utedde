@@ -8054,6 +8054,14 @@ document.getElementById("radio-5-p34_h").addEventListener("click", fun_multi);
         <%= f.radio_button :p35, "12" , id:"radio-12-p35"%>
         <%= f.label :p35, "Servicio de transporte privado pedido por aplicacion ", for: "radio-12-p35"%>
       </div>
+<div class="inputGroup">
+        <%= f.radio_button :p35, "13" , id:"radio-13-p35"%>
+        <%= f.label :p35, "Otro", for: "radio-13-p35"%>
+      </div>
+<div class="inputGroup">
+        <%= f.radio_button :p35, "14" , id:"radio-14-p35"%>
+        <%= f.label :p35, "NS/NR", for: "radio-14-p35"%>
+      </div>
 <br> <br>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p35">Por favor, <strong>escoge una respuesta</strong></div>
     <button type="button" class="boton3 hidden" id="but_res_p35">
@@ -8103,6 +8111,8 @@ document.getElementById("radio-10-p35").addEventListener("click", fun_p35);
 document.getElementById("radio-11-p35").addEventListener("click", fun_p35);
 
 document.getElementById("radio-12-p35").addEventListener("click", fun_p35);
+document.getElementById("radio-13-p35").addEventListener("click", fun_p35);
+document.getElementById("radio-14-p35").addEventListener("click", fun_p35);
 
 function fun_p35() {
       if (
@@ -8126,7 +8136,9 @@ $("#radio-9-p35").is(':checked') == true ||
 
 $("#radio-10-p35").is(':checked') == true || 
 
-$("#radio-11-p35").is(':checked') == true || 
+$("#radio-11-p35").is(':checked') == true ||
+$("#radio-13-p35").is(':checked') == true ||
+$("#radio-14-p35").is(':checked') == true || 
 
 $("#radio-12-p35").is(':checked') == true 
 ) {
@@ -23921,7 +23933,7 @@ $("#radio-5-p115_a").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_b, "2" , id:"radio-2-p115_b"%>
-        <%= f.label :p115_b, "3 o 3 veces por semana ", for: "radio-2-p115_b"%>
+        <%= f.label :p115_b, "2 o 3 veces por semana ", for: "radio-2-p115_b"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_b, "3" , id:"radio-3-p115_b"%>
@@ -24012,7 +24024,7 @@ $("#radio-5-p115_b").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_c, "2" , id:"radio-2-p115_c"%>
-        <%= f.label :p115_c, "4 o 3 veces por semana ", for: "radio-2-p115_c"%>
+        <%= f.label :p115_c, "2 o 3 veces por semana ", for: "radio-2-p115_c"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_c, "5" , id:"radio-3-p115_c"%>
@@ -24103,7 +24115,7 @@ $("#radio-5-p115_c").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_d, "2" , id:"radio-2-p115_d"%>
-        <%= f.label :p115_d, "5 o 3 veces por semana ", for: "radio-2-p115_d"%>
+        <%= f.label :p115_d, "2 o 3 veces por semana ", for: "radio-2-p115_d"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_d, "3" , id:"radio-3-p115_d"%>
@@ -24194,7 +24206,7 @@ $("#radio-5-p115_d").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_e, "2" , id:"radio-2-p115_e"%>
-        <%= f.label :p115_e, "6 o 3 veces por semana ", for: "radio-2-p115_e"%>
+        <%= f.label :p115_e, "2 o 3 veces por semana ", for: "radio-2-p115_e"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_e, "3" , id:"radio-3-p115_e"%>
@@ -24285,7 +24297,7 @@ $("#radio-5-p115_e").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_f, "2" , id:"radio-2-p115_f"%>
-        <%= f.label :p115_f, "7 o 3 veces por semana ", for: "radio-2-p115_f"%>
+        <%= f.label :p115_f, "2 o 3 veces por semana ", for: "radio-2-p115_f"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_f, "3" , id:"radio-3-p115_f"%>
@@ -24376,7 +24388,7 @@ $("#radio-5-p115_f").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_g, "2" , id:"radio-2-p115_g"%>
-        <%= f.label :p115_g, "8 o 3 veces por semana ", for: "radio-2-p115_g"%>
+        <%= f.label :p115_g, "2 o 3 veces por semana ", for: "radio-2-p115_g"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_g, "3" , id:"radio-3-p115_g"%>
@@ -24467,7 +24479,7 @@ $("#radio-5-p115_g").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_h, "2" , id:"radio-2-p115_h"%>
-        <%= f.label :p115_h, "9 o 3 veces por semana ", for: "radio-2-p115_h"%>
+        <%= f.label :p115_h, "2 o 3 veces por semana ", for: "radio-2-p115_h"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_h, "3" , id:"radio-3-p115_h"%>
@@ -24558,7 +24570,7 @@ $("#radio-5-p115_h").is(':checked') == true
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_i, "2" , id:"radio-2-p115_i"%>
-        <%= f.label :p115_i, "10 o 3 veces por semana ", for: "radio-2-p115_i"%>
+        <%= f.label :p115_i, "2 o 3 veces por semana ", for: "radio-2-p115_i"%>
       </div>
 <div class="inputGroup">
         <%= f.radio_button :p115_i, "3" , id:"radio-3-p115_i"%>
@@ -26114,55 +26126,54 @@ function fun_p128() {
 
 <div class="container hidden" style="width: 90%" id="div_bp129">
     <br>
-
 <div class="inputGroup">
-        <%= f.radio_button :p129, "1" , id:"radio-1-p129"%>
-        <%= f.label :p129, "Hombre", for: "radio-1-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "2" , id:"radio-2-p129"%>
-        <%= f.label :p129, "Mujer", for: "radio-2-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "3" , id:"radio-3-p129"%>
-        <%= f.label :p129, "Intersexual", for: "radio-3-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "4" , id:"radio-4-p129"%>
-        <%= f.label :p129, "De identidad femenina ", for: "radio-4-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "5" , id:"radio-5-p129"%>
-        <%= f.label :p129, "De identidad masculina ", for: "radio-5-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "6" , id:"radio-6-p129"%>
-        <%= f.label :p129, "De identidad transge?nero ", for: "radio-6-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "7" , id:"radio-7-p129"%>
-        <%= f.label :p129, "Lesbiana", for: "radio-7-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "8" , id:"radio-8-p129"%>
-        <%= f.label :p129, "Gay ", for: "radio-8-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "9" , id:"radio-9-p129"%>
-        <%= f.label :p129, "Bisexual ", for: "radio-9-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "10" , id:"radio-10-p129"%>
-        <%= f.label :p129, "Heterosexual ", for: "radio-10-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "11" , id:"radio-11-p129"%>
-        <%= f.label :p129, "Ninguno ", for: "radio-11-p129"%>
-      </div>
-<div class="inputGroup">
-        <%= f.radio_button :p129, "12" , id:"radio-12-p129"%>
-        <%= f.label :p129, "No responde ", for: "radio-12-p129"%>
-      </div>
+      <%= f.check_box :p129_1, checked: "1", id:"radio-1-p129_1"%>
+      <%= f.label :p129_1, "Hombre", for: "radio-1-p129_1"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_2, checked: "2", id:"radio-2-p129_2"%>
+      <%= f.label :p129_2, "Mujer", for: "radio-2-p129_2" %>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_3, checked: "3", id:"radio-3-p129_3"%>
+      <%= f.label :p129_3, "Intersexual", for: "radio-3-p129_3" %>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_4, checked: "4", id:"radio-4-p129_4"%>
+      <%= f.label :p129_4, "De identidad femenina", for: "radio-4-p129_4"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_5, checked: "5", id:"radio-5-p129_5"%>
+      <%= f.label :p129_5, "De identidad masculina", for: "radio-5-p129_5"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_6, checked: "6", id:"radio-6-p129_6"%>
+      <%= f.label :p129_6, "De identidad transgénero", for: "radio-6-p129_6"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_7, checked: "7", id:"radio-7-p129_7"%>
+      <%= f.label :p129_7, "Lesbiana", for: "radio-7-p129_7"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_8, checked: "8", id:"radio-8-p129_8"%>
+      <%= f.label :p129_8, "Gay", for: "radio-8-p129_8"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_9, checked: "9", id:"radio-9-p129_9"%>
+      <%= f.label :p129_9, "Bisexual", for: "radio-9-p129_9"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_10, checked: "10", id:"radio-10-p129_10"%>
+      <%= f.label :p129_10, "Heterosexual", for: "radio-10-p129_10"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_11, checked: "11", id:"radio-11-p129_11"%>
+      <%= f.label :p129_11, "Ninguno", for: "radio-11-p129_11"%>
+    </div>
+    <div class="inputGroup">
+      <%= f.check_box :p129_12, checked: "99", id:"radio-12-p129_12"%>
+      <%= f.label :p129_12, "No responde", for: "radio-12-p129_12"%>
+    </div>
 <br> <br>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_p129">Por favor, <strong>escoge una respuesta</strong></div>
     <button type="button" class="boton3 hidden" id="but_res_p129">
@@ -26188,56 +26199,22 @@ function fun_p128() {
     }
   
     document.getElementById("pregunta_ultima_p129_boton").addEventListener("click", fun_p129);
-
-document.getElementById("radio-1-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-2-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-3-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-4-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-5-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-6-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-7-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-8-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-9-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-10-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-11-p129").addEventListener("click", fun_p129);
-
-document.getElementById("radio-12-p129").addEventListener("click", fun_p129);
+    document.getElementById("but_res_p129").addEventListener("click", fun_p129);
 
 function fun_p129() {
       if (
-$("#radio-1-p129").is(':checked') == true || 
-
-$("#radio-2-p129").is(':checked') == true || 
-
-$("#radio-3-p129").is(':checked') == true || 
-
-$("#radio-4-p129").is(':checked') == true || 
-
-$("#radio-5-p129").is(':checked') == true || 
-
-$("#radio-6-p129").is(':checked') == true || 
-
-$("#radio-7-p129").is(':checked') == true || 
-
-$("#radio-8-p129").is(':checked') == true || 
-
-$("#radio-9-p129").is(':checked') == true || 
-
-$("#radio-10-p129").is(':checked') == true || 
-
-$("#radio-11-p129").is(':checked') == true || 
-
-$("#radio-12-p129").is(':checked') == true 
+$("#radio-1-p129_1").is(':checked') == true || 
+$("#radio-2-p129_2").is(':checked') == true || 
+$("#radio-3-p129_3").is(':checked') == true || 
+$("#radio-4-p129_4").is(':checked') == true || 
+$("#radio-5-p129_5").is(':checked') == true || 
+$("#radio-6-p129_6").is(':checked') == true || 
+$("#radio-7-p129_7").is(':checked') == true || 
+$("#radio-8-p129_8").is(':checked') == true || 
+$("#radio-9-p129_9").is(':checked') == true || 
+$("#radio-10-p129_10").is(':checked') == true || 
+$("#radio-11-p129_11").is(':checked') == true || 
+$("#radio-12-p129_12").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -26253,13 +26230,30 @@ $("#radio-12-p129").is(':checked') == true
     } else {
         $('#div_error_p129').removeClass('hidden');
       }
-      } 
+      }
+
+document.getElementById("radio-1-p129_1").addEventListener("click", fun_multi);
+document.getElementById("radio-2-p129_2").addEventListener("click", fun_multi);
+document.getElementById("radio-3-p129_3").addEventListener("click", fun_multi);
+document.getElementById("radio-4-p129_4").addEventListener("click", fun_multi);
+document.getElementById("radio-5-p129_5").addEventListener("click", fun_multi);
+document.getElementById("radio-6-p129_6").addEventListener("click", fun_multi);
+document.getElementById("radio-7-p129_7").addEventListener("click", fun_multi);
+document.getElementById("radio-8-p129_8").addEventListener("click", fun_multi);
+document.getElementById("radio-9-p129_9").addEventListener("click", fun_multi);
+document.getElementById("radio-10-p129_10").addEventListener("click", fun_multi);
+document.getElementById("radio-11-p129_11").addEventListener("click", fun_multi);
+document.getElementById("radio-12-p129_12").addEventListener("click", fun_multi);
+
+
+    function fun_multi() {
+      $('#but_res_p129').removeClass('hidden');
+      $('#div_error_p129').addClass('hidden');
+
+  } 
   
 
 </script>
-
-
-
 
 
 
