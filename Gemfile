@@ -35,7 +35,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'rails_admin', '~> 2.0.0.rc'
 gem 'rails_admin_rollincode', '~> 1.0'
-gem 'chartkick', '~> 3.2', '>= 3.2.1'
+gem 'chartkick', '~> 3.3'
 
 # gem 'rails_admin', '~> 2.0'
 # Use ActiveStorage variant
