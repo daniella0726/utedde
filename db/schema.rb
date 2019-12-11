@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_205452) do
+ActiveRecord::Schema.define(version: 2019_12_11_052314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,7 +190,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_205452) do
     t.string "p18_l"
     t.string "p18_m"
     t.string "p18_n"
-    t.string "p18_ñ"
     t.string "p18_o"
     t.string "p18_p"
     t.string "p18_q"
@@ -787,6 +786,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_205452) do
     t.string "p129_10"
     t.string "p129_11"
     t.string "p129_12"
+    t.string "p18_z"
   end
 
   create_table "directors", force: :cascade do |t|
