@@ -35464,32 +35464,32 @@ $("#radio-7-m3_p10").is(':checked') == true
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "1" , id:"radio-1-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera más presencia de policía y ESMAD", for: "radio-1-m3_p11"%>
+        <%= f.check_box :m3_p11_1, checked: "1", id:"radio-1-m3_p11_1"%>
+        <%= f.label :m3_p11, "Si hubiera más presencia de policía y ESMAD", for: "radio-1-m3_p11_1"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "2" , id:"radio-2-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera más cámaras de seguridad y servicio de vigilancia.", for: "radio-2-m3_p11"%>
+        <%= f.check_box :m3_p11_2, checked: "2", id:"radio-2-m3_p11_2"%>
+        <%= f.label :m3_p11, "Si hubiera más cámaras de seguridad y servicio de vigilancia.", for: "radio-2-m3_p11_2"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "3" , id:"radio-3-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera castigos más severos para ladrones y otros delincuentes.", for: "radio-3-m3_p11"%>
+        <%= f.check_box :m3_p11_3, checked: "3", id:"radio-3-m3_p11_3"%>
+        <%= f.label :m3_p11, "Si hubiera castigos más severos para ladrones y otros delincuentes.", for: "radio-3-m3_p11_3"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "4" , id:"radio-4-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera más oportunidades de educación y de trabajo", for: "radio-4-m3_p11"%>
+        <%= f.check_box :m3_p11_4, checked: "4", id:"radio-4-m3_p11_4"%>
+        <%= f.label :m3_p11, "Si hubiera más oportunidades de educación y de trabajo", for: "radio-4-m3_p11_4"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "5" , id:"radio-5-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera más diálogo entre ciudadanos para solucionar los conflictos", for: "radio-5-m3_p11"%>
+        <%= f.check_box :m3_p11_5, checked: "5", id:"radio-5-m3_p11_5"%>
+        <%= f.label :m3_p11, "Si hubiera más diálogo entre ciudadanos para solucionar los conflictos", for: "radio-5-m3_p11_5"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "6" , id:"radio-6-m3_p11"%>
-        <%= f.label :m3_p11, "Si hubiera menos desigualdad social.", for: "radio-6-m3_p11"%>
+        <%= f.check_box :m3_p11_6, checked: "6", id:"radio-6-m3_p11_6"%>
+        <%= f.label :m3_p11, "Si hubiera menos desigualdad social.", for: "radio-6-m3_p11_6"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m3_p11, "99" , id:"radio-7-m3_p11"%>
-        <%= f.label :m3_p11, "Ns/Nr", for: "radio-7-m3_p11"%>
+        <%= f.check_box :m3_p11_7, checked: "99", id:"radio-7-m3_p11_7"%>
+        <%= f.label :m3_p11, "Ns/Nr", for: "radio-7-m3_p11_7"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_m3_p11">Por favor, <strong>escoge una respuesta</strong></div>
@@ -35537,35 +35537,23 @@ $("#radio-7-m3_p10").is(':checked') == true
   
     document.getElementById("pregunta_ultima_m3_p11_boton").addEventListener("click", fun_m3_p11);
 
-document.getElementById("radio-1-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-2-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-3-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-4-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-5-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-6-m3_p11").addEventListener("click", fun_m3_p11);
-
-document.getElementById("radio-7-m3_p11").addEventListener("click", fun_m3_p11);
+    document.getElementById("but_res_m3_p11").addEventListener("click", fun_m3_p11);
 
 function fun_m3_p11() {
       if (
-$("#radio-1-m3_p11").is(':checked') == true || 
+$("#radio-1-m3_p11_1").is(':checked') == true || 
 
-$("#radio-2-m3_p11").is(':checked') == true || 
+$("#radio-2-m3_p11_2").is(':checked') == true || 
 
-$("#radio-3-m3_p11").is(':checked') == true || 
+$("#radio-3-m3_p11_3").is(':checked') == true || 
 
-$("#radio-4-m3_p11").is(':checked') == true || 
+$("#radio-4-m3_p11_4").is(':checked') == true || 
 
-$("#radio-5-m3_p11").is(':checked') == true || 
+$("#radio-5-m3_p11_5").is(':checked') == true || 
 
-$("#radio-6-m3_p11").is(':checked') == true || 
+$("#radio-6-m3_p11_6").is(':checked') == true || 
 
-$("#radio-7-m3_p11").is(':checked') == true 
+$("#radio-7-m3_p11_7").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -35581,8 +35569,20 @@ $("#radio-7-m3_p11").is(':checked') == true
         $('#div_error_m3_p11').removeClass('hidden');
       }
       } 
-  
 
+  document.getElementById("radio-1-m3_p11_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-m3_p11_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-m3_p11_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-m3_p11_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-m3_p11_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-m3_p11_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-m3_p11_7").addEventListener("click", fun_multi);
+  
+  function fun_multi() {
+      $('#but_res_m3_p11').removeClass('hidden');
+      $('#div_error_m3_p11').addClass('hidden');
+
+  }
 </script>
 
 

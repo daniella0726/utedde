@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_151628) do
+ActiveRecord::Schema.define(version: 2019_12_17_172609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -662,6 +662,13 @@ ActiveRecord::Schema.define(version: 2019_12_17_151628) do
     t.string "m1_p7_6"
     t.string "m1_p7_7"
     t.string "m1_p7_8"
+    t.string "m3_p11_1"
+    t.string "m3_p11_2"
+    t.string "m3_p11_3"
+    t.string "m3_p11_4"
+    t.string "m3_p11_5"
+    t.string "m3_p11_6"
+    t.string "m3_p11_7"
   end
 
   create_table "culturas", force: :cascade do |t|
