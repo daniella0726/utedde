@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cultura1s
   resources :culturas
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
