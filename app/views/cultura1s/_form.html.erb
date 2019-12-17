@@ -623,11 +623,12 @@ $("#radio-7-p10").is(':checked') == true
   
 
 </script>
+
 <div class="centrado hidden" style="width: 90%" id="div_bp11">
   <br>
   <div class="field qts">
 
-    <%= f.text_field :p11, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p11", placeholder: "¿Cuál?"}%> 
+    <%= f.text_field :p11, {class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_p11", placeholder: "Nombre del Entrevistad@"}%> 
 
   </div>
   <div class="hidden" style="color: #254064;" id="div_error_p11"><strong>Por favor, escribe sin signos</strong></div>
@@ -660,7 +661,7 @@ $("#radio-7-p10").is(':checked') == true
       $('#div_error_p11').addClass('hidden');
   }
 
-  document.getElementById("pregunta_p12_p11_boton").addEventListener("click", fun_p11);
+  document.getElementById("pregunta_p13_p11_boton").addEventListener("click", fun_p11);
   document.getElementById("but_res_p11").addEventListener("click", fun_p11);
     function fun_p11() {
     var frase = document.getElementById("res_p11").value; 
@@ -679,12 +680,12 @@ $("#radio-7-p10").is(':checked') == true
       $('#div_p11').addClass('hidden');
       $('#div_bp11').addClass('hidden');
       $('#pregunta_p11_footer').addClass('hidden');
-      $('#div_p12').slideDown();
-      $('#div_p12').removeClass('hidden');
-      $('#div_bp12').removeClass('hidden');
-      $('#pregunta_p12_footer').removeClass('hidden');
-      $('#div_error_p12').addClass('hidden');
-      document.getElementById("res_p12").focus();
+      $('#div_p13').slideDown();
+      $('#div_p13').removeClass('hidden');
+      $('#div_bp13').removeClass('hidden');
+      $('#pregunta_p13_footer').removeClass('hidden');
+      $('#div_error_p13').addClass('hidden');
+      document.getElementById("res_p13").focus();
     }
   }
 
@@ -709,6 +710,7 @@ $("#radio-7-p10").is(':checked') == true
     }); 
   }); 
 </script>
+
 <div class="centrado hidden" style="width: 90%" id="div_bp12">
   <br>
   <div class="field qts">
@@ -845,7 +847,7 @@ $("#radio-7-p10").is(':checked') == true
           <a class="boton1" id="pregunta_p14_a_p13_boton">
             <i class="fas fa-caret-square-down fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>
-          <a class="boton1" id="pregunta_p12_p13_boton">
+          <a class="boton1" id="pregunta_p11_p13_boton">
             <i class="fas fa-caret-square-up fa-3x" style="color: #254064; margin: 10px;"></i>
           </a>          
         </div>
@@ -863,12 +865,12 @@ $("#radio-7-p10").is(':checked') == true
       }
     });
 
-  document.getElementById("pregunta_p12_p13_boton").addEventListener("click", fun_p13_dev);
+  document.getElementById("pregunta_p11_p13_boton").addEventListener("click", fun_p13_dev);
   function fun_p13_dev() {
-      $('#div_p12').slideDown();
-      $('#div_p12').removeClass('hidden');
-      $('#div_bp12').removeClass('hidden');
-      $('#pregunta_p12_footer').removeClass('hidden');
+      $('#div_p11').slideDown();
+      $('#div_p11').removeClass('hidden');
+      $('#div_bp11').removeClass('hidden');
+      $('#pregunta_p11_footer').removeClass('hidden');
       $('#div_p13').slideUp();
       $('#div_p13').addClass('hidden');
       $('#div_bp13').addClass('hidden');
