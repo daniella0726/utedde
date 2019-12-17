@@ -263,7 +263,7 @@
   <br>
   <div class="field qts">
 
-    <%= f.text_field :pa, {type: "Numero", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pa", placeholder: "No. Formulario"}%> 
+    <%= f.text_field :pa, {type: "Number", class: "", autocomplete: "off" , style: "background-color: transparent;height: 50px;border-left: 0px;border-right: 0px;border-top: 0px; display: block;width: 100%;font-family: inherit; color: gray;-webkit-appearance: none;transform: translateZ(0px);font-size: 18px;line-height: 38px;-webkit-font-smoothing: antialiased;border-width: initial;border-color: #254064;border-image: initial;outline: none;box-shadow: none;background: none;", id:"res_pa", placeholder: "No. Formulario"}%> 
 
   </div>
   <div class="hidden" style="color: #254064;" id="div_error_pa"><strong>Por favor, escribe sin signos</strong></div>
@@ -344,6 +344,7 @@
       }
     }); 
   }); 
+
 </script>
 
 <div class="centrado hidden" style="width: 90%" id="div_bp8">
@@ -26543,40 +26544,41 @@ $("#radio-4-m1_p6_6").is(':checked') == true
     <br>
     <div class="field qts">
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "1" , id:"radio-1-m1_p7"%>
-        <%= f.label :m1_p7, "Han mejorado la calidad de vida de las personas en la ciudad", for: "radio-1-m1_p7"%>
+
+        <%= f.check_box :m1_p7_1, checked: "1", id:"radio-1-m1_p7_1"%>
+        <%= f.label :m1_p7, "Han mejorado la calidad de vida de las personas en la ciudad", for: "radio-1-m1_p7_1"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "2" , id:"radio-2-m1_p7"%>
-        <%= f.label :m1_p7, "Han promovido mejores comportamientos ciudadanos", for: "radio-2-m1_p7"%>
+        <%= f.check_box :m1_p7_2, checked: "2", id:"radio-2-m1_p7_2"%>
+        <%= f.label :m1_p7, "Han promovido mejores comportamientos ciudadanos", for: "radio-2-m1_p7_2"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "3" , id:"radio-3-m1_p7"%>
-        <%= f.label :m1_p7, "Han promovido la apropiación y disfrute del espacio público", for: "radio-3-m1_p7"%>
+        <%= f.check_box :m1_p7_3, checked: "3", id:"radio-3-m1_p7_3"%>
+        <%= f.label :m1_p7, "Han promovido la apropiación y disfrute del espacio público", for: "radio-3-m1_p7_3"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "4" , id:"radio-4-m1_p7"%>
-        <%= f.label :m1_p7, "Han fortalecido la convivencia", for: "radio-4-m1_p7"%>
+        <%= f.check_box :m1_p7_4, checked: "4", id:"radio-4-m1_p7_4"%>
+        <%= f.label :m1_p7, "Han fortalecido la convivencia", for: "radio-4-m1_p7_4"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "5" , id:"radio-5-m1_p7"%>
-        <%= f.label :m1_p7, "Han aumentado el orgullo y aprecio por la ciudad", for: "radio-5-m1_p7"%>
+        <%= f.check_box :m1_p7_5, checked: "5", id:"radio-5-m1_p7_5"%>
+        <%= f.label :m1_p7, "Han aumentado el orgullo y aprecio por la ciudad", for: "radio-5-m1_p7_5"%>
       </div>
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "6" , id:"radio-6-m1_p7"%>
-        <%= f.label :m1_p7, "Ninguna de las anteriores", for: "radio-6-m1_p7"%>
+        <%= f.check_box :m1_p7_6, checked: "6", id:"radio-6-m1_p7_6"%>
+        <%= f.label :m1_p7, "Ninguna de las anteriores", for: "radio-6-m1_p7_6"%>
       </div>
 
 <div class="form-group row" style="width: 80%; border: 1px solid #43a2d2; margin-left: 1px;">
   <br>
-      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :m1_p7, "Otra ¿Cuál?", for: "radio-7-m1_p7", style: "font-size:18px; font-family:Heebo;color:gray;" %></div>
+      <div class="col-md-2" style="text-align: center; margin-bottom: 10px;"><%= f.label :m1_p7, "Otra ¿Cuál?", for: "radio-7-m1_p7_7", style: "font-size:18px; font-family:Heebo;color:gray;" %></div>
       <div class="col-md-6" style="margin-bottom: 10px;"><%= f.text_field :m1_p7o, class: "form-control" %></div>
-      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.radio_button :m1_p7, "7" , id:"radio-7-m1_p7"%></div> 
+      <div class="col-md-4" style="margin-bottom: 10px; text-align: right; margin-left: -25px;" ><%= f.check_box :m1_p7_7, checked: "7", id:"radio-7-m1_p7_7"%></div> 
     </div>
 
 <div class="inputGroup">
-        <%= f.radio_button :m1_p7, "99" , id:"radio-8-m1_p7"%>
-        <%= f.label :m1_p7, "Ns/Nr", for: "radio-8-m1_p7"%>
+        <%= f.check_box :m1_p7_8, checked: "8", id:"radio-8-m1_p7_8"%>
+        <%= f.label :m1_p7, "Ns/Nr", for: "radio-8-m1_p7_8"%>
       </div>
 </div>
     <div class="invalid-feedback hidden" style="color: #254064;" id="div_error_m1_p7">Por favor, <strong>escoge una respuesta</strong></div>
@@ -26624,39 +26626,33 @@ $("#radio-4-m1_p6_6").is(':checked') == true
   
     document.getElementById("pregunta_m1_p8_1_m1_p7_boton").addEventListener("click", fun_m1_p7);
 
-document.getElementById("radio-1-m1_p7").addEventListener("click", fun_m1_p7);
+    document.getElementById("but_res_m1_p7").addEventListener("click", fun_m1_p7);
 
-document.getElementById("radio-2-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-3-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-4-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-5-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-6-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-7-m1_p7").addEventListener("click", fun_m1_p7);
-
-document.getElementById("radio-8-m1_p7").addEventListener("click", fun_m1_p7);
-
+  document.getElementById("radio-1-m1_p7_1").addEventListener("click", fun_multi);
+  document.getElementById("radio-2-m1_p7_2").addEventListener("click", fun_multi);
+  document.getElementById("radio-3-m1_p7_3").addEventListener("click", fun_multi);
+  document.getElementById("radio-4-m1_p7_4").addEventListener("click", fun_multi);
+  document.getElementById("radio-5-m1_p7_5").addEventListener("click", fun_multi);
+  document.getElementById("radio-6-m1_p7_6").addEventListener("click", fun_multi);
+  document.getElementById("radio-7-m1_p7_7").addEventListener("click", fun_multi);
+  document.getElementById("radio-8-m1_p7_8").addEventListener("click", fun_multi);
 function fun_m1_p7() {
       if (
-$("#radio-1-m1_p7").is(':checked') == true || 
+$("#radio-1-m1_p7_1").is(':checked') == true || 
 
-$("#radio-2-m1_p7").is(':checked') == true || 
+$("#radio-2-m1_p7_2").is(':checked') == true || 
 
-$("#radio-3-m1_p7").is(':checked') == true || 
+$("#radio-3-m1_p7_3").is(':checked') == true || 
 
-$("#radio-4-m1_p7").is(':checked') == true || 
+$("#radio-4-m1_p7_4").is(':checked') == true || 
 
-$("#radio-5-m1_p7").is(':checked') == true || 
+$("#radio-5-m1_p7_5").is(':checked') == true || 
 
-$("#radio-6-m1_p7").is(':checked') == true || 
+$("#radio-6-m1_p7_6").is(':checked') == true || 
 
-$("#radio-7-m1_p7").is(':checked') == true || 
+$("#radio-7-m1_p7_7").is(':checked') == true || 
 
-$("#radio-8-m1_p7").is(':checked') == true 
+$("#radio-8-m1_p7_8").is(':checked') == true 
 ) {
   
       setTimeout(function(){
@@ -26671,9 +26667,13 @@ $("#radio-8-m1_p7").is(':checked') == true
     } else {
         $('#div_error_m1_p7').removeClass('hidden');
       }
-      } 
-  
+      }
 
+  function fun_multi() {
+      $('#but_res_m1_p7').removeClass('hidden');
+      $('#div_error_m1_p7').addClass('hidden');
+
+  }
 </script>
 <div class="centrado hidden" style="width: 90%" id="div_m1_p8_1">
   <h3 style="font-weight: bold;font-family: 'Heebo', sans-serif; color: #254064; text-align: center;">m1_p8_1. Para usted su localidad es…</h3>
