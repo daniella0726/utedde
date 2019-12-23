@@ -1,0 +1,17 @@
+<%= form_with(model: abiertum, local: true) do |form| %>
+  <% if abiertum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(abiertum.errors.count, "error") %> prohibited this abiertum from being saved:</h2>
+
+      <ul>
+      <% abiertum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

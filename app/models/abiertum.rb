@@ -1,0 +1,2 @@
+class Abiertum < ApplicationRecord
+end
