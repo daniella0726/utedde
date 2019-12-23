@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_171554) do
+ActiveRecord::Schema.define(version: 2019_12_23_185112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,31 +169,17 @@ ActiveRecord::Schema.define(version: 2019_12_23_171554) do
     t.string "p90o"
     t.string "p93"
     t.string "p93o"
-    t.string "p95"
-    t.string "p102i"
-    t.string "p102_i_1"
-    t.string "p102_i_2"
-    t.string "p102_i_3"
     t.string "p106o"
     t.string "p106"
     t.string "p107"
     t.string "p107o"
     t.string "p110"
     t.string "p110o"
-    t.string "p119"
-    t.string "p122_a"
-    t.string "p123"
     t.string "p125"
     t.string "p125o"
-    t.string "p128_9"
-    t.string "p128o"
     t.string "m1_p5"
     t.string "m1_p5o"
-    t.string "m1_p7"
-    t.string "m1_p7o"
     t.string "m1_p11"
-    t.string "m1_p12_7o"
-    t.string "m1_p12_7"
     t.string "m2_p4"
     t.string "m2_p4o"
     t.string "m2_p8_1"
